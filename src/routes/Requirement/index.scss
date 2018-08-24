@@ -1,0 +1,13 @@
+.header{
+    button{
+        margin-bottom: 16px;
+        margin-right: 16px;
+    }
+    :global{
+        .ant-calendar-picker,
+        .ant-input-search{
+            margin-bottom: 16px;
+            margin-right: 16px;
+        }
+    }
+}
