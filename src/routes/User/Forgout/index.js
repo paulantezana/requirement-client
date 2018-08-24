@@ -12,22 +12,22 @@ import { Link } from 'dva/router';
 
 const Step = Steps.Step;
 
-const Forgout = ({user})=>(
+const Forgot = ({user})=>(
     <div className={styles.steps}>
-        <Steps size="small" current={user.forgoutStep}>
+        <Steps size="small" current={user.forgotStep}>
             <Step title="Buscar"/>
             <Step title="Validar"/>
             <Step title="Cambiar"/>
         </Steps>
         <div className={styles.content}>
             {
-                user.forgoutStep === 0 && <Search/>
+                user.forgotStep === 0 && <Search/>
             }
             {
-                user.forgoutStep === 1 && <Validate/>
+                user.forgotStep === 1 && <Validate/>
             }
             {
-                user.forgoutStep === 2 && <Change/>
+                user.forgotStep === 2 && <Change/>
             }
         </div>
         <Link to="/user/login">Login</Link>
@@ -40,4 +40,4 @@ const mapStateToProps = ({user}) => {
     }
 }
 
-export default connect(mapStateToProps)(Forgout);
+export default connect(mapStateToProps)(Forgot);

@@ -28,7 +28,7 @@ class LoginForm extends Component{
 
     render(){
         const { getFieldDecorator } = this.props.form;
-        const {user: {loading}} = this.props;
+        const { loading } = this.props;
         return(
             <div>
                 <Form onSubmit={this.handleSubmit} className={styles.form}>
@@ -59,7 +59,6 @@ class LoginForm extends Component{
                         )}
                         <Link className={styles.forgot} to="/user/forgot">¿Olvidaste tu contraseña?</Link>
                         <Button type="primary" loading={loading} htmlType="submit" className={styles.submit}>Iniciar Sesión</Button>
-                        O <Link to="/user/register">¡Regístrate ahora!</Link>
                     </Form.Item>
                 </Form>
             </div>
@@ -69,9 +68,9 @@ class LoginForm extends Component{
 
 const LoginPage = Form.create()(LoginForm)
 
-const mapStateToProps = ({user}) => {
+const mapStateToProps = ({ loading}) => {
     return {
-        user,
+        loading: loading.effects['user/login'],
     }
 }
 

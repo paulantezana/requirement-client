@@ -39,7 +39,7 @@ const Change = Form.create()(
                     return;
                 }
                 dispatch({
-                    type: 'user/forgoutChange',
+                    type: 'user/forgotChange',
                     payload: values,
                 });
                 form.resetFields();
@@ -47,7 +47,8 @@ const Change = Form.create()(
         }
 
         render(){
-            const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
+            const { getFieldDecorator } = this.props.form;
+            const { loading } = this.props;
 
             return(
                 <Form onSubmit={this.handleSubmit}>
@@ -75,7 +76,7 @@ const Change = Form.create()(
                         }
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" loading={this.state.loading} className={styles.submit}> Recuperar contraseña </Button>
+                        <Button type="primary" htmlType="submit" loading={loading} className={styles.submit}> Recuperar contraseña </Button>
                     </Form.Item>
                 </Form>
             )
@@ -83,9 +84,9 @@ const Change = Form.create()(
     }
 )
 
-const mapStateToProps = ({user}) => {
+const mapStateToProps = ({loading}) => {
     return {
-        user,
+        loading: loading.effects['user/forgotChange'],
     }
 }
 

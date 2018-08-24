@@ -19,7 +19,7 @@ const Validate = Form.create()(
                     return;
                 }
                 dispatch({
-                    type: 'user/forgoutValidate',
+                    type: 'user/forgotValidate',
                     payload: values,
                 });
                 form.resetFields();
@@ -28,6 +28,7 @@ const Validate = Form.create()(
 
         render(){
             const { getFieldDecorator } = this.props.form;
+            const { loading } = this.props;
             return(
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Item label="Código de seguridad" hasFeedback>
@@ -43,7 +44,7 @@ const Validate = Form.create()(
                         }
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" className={styles.submit}>Continuar</Button>
+                        <Button type="primary" loading={loading} htmlType="submit" className={styles.submit}>Continuar</Button>
                     </Form.Item>
                 </Form>
             )
@@ -51,9 +52,9 @@ const Validate = Form.create()(
     }
 )
 
-const mapStateToProps = ({user}) => {
+const mapStateToProps = ({loading}) => {
     return {
-        user,
+        loading: loading.effects['user/forgotSearch'],
     }
 }
 

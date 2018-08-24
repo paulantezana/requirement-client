@@ -10,33 +10,25 @@ export async function login(body) {
     })
 }
 
-// User Register
-export async function register(body) {
-    return request(`${USER_API}/register`,{
+// User forgot search email
+export async function userForgotSearch(body) { 
+    return request(`${USER_API}/forgot/search`,{
         method: 'POST',
         body
     })
 }
 
-// User forgout search email
-export async function userForgoutSearch(body) { 
-    return request(`${USER_API}/forgout/serach`,{
+// User forgot validate key change password
+export async function userForgotValidate(body) { 
+    return request(`${USER_API}/forgot/validate`,{
         method: 'POST',
         body
     })
 }
 
-// User forgout validate key change password
-export async function userForgoutValidate(body) { 
-    return request(`${USER_API}/forgout/validate`,{
-        method: 'POST',
-        body
-    })
-}
-
-// User forgout change password
-export async function userForgoutChange(body) { 
-    return request(`${USER_API}/forgout/change`,{
+// User forgot change password
+export async function userForgotChange(body) { 
+    return request(`${USER_API}/forgot/change`,{
         method: 'POST',
         body
     })

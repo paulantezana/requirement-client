@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from 'dva/router';
+import { Route, Switch, Redirect } from 'dva/router';
 import { Row, Col, } from 'antd';
 import Particles from 'react-particles-js';
 
@@ -12,7 +12,6 @@ import { app } from 'config/app';
 ////////////////////////////////////////////
 import LoginPage from '../routes/User/Login';
 import Forgout from '../routes/User/Forgout';
-import Register from '../routes/User/Register';
 import styles from './UserLayout.scss';
 ///////////////////////////////////////////
 
@@ -59,7 +58,7 @@ class UserLayout extends Component{
                     <Switch>
                         <Route exact path={`${match.url}/login`} component={LoginPage}/>
                         <Route exact path={`${match.url}/forgot`} component={Forgout}/>
-                        <Route exact path={`${match.url}/register`} component={Register}/>
+                        <Redirect from="/user" to="/user/login" />
                     </Switch>
                 </Col>
             </Row>

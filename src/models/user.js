@@ -1,16 +1,14 @@
 import { 
     login, 
-    register, 
-    userById, 
     userCreate, 
     userUpdate, 
     userResetPassword,
     userChangePassword,
     userAll, 
     userDelete, 
-    userForgoutSearch, 
-    userForgoutValidate, 
-    userForgoutChange,
+    userForgotSearch, 
+    userForgotValidate, 
+    userForgotChange,
     userUploadAvatar,
 } from '../services/user';
 
@@ -30,16 +28,15 @@ export default {
         currentItem: {},
         modalType: 'create',
 
-        loading: false,
-        forgoutStep: 0,
-        forgoutID: 0,
+        forgotStep: 0,
+        forgotID: 0,
     },
     subscriptions: {
         setup({dispatch, history}) {
             history.listen(location => {
                 if (location.pathname == '/user/forgot') {
                     dispatch({
-                        type: 'resetForgout',
+                        type: 'resetForgot',
                     });
                 }
             });
@@ -60,41 +57,32 @@ export default {
             yield destroy();
             yield put(routerRedux.push('/user/login'));
         },
-        *forgoutSearch({payload},{call,put}){
-            const response = yield call(userForgoutSearch,payload);
+        *forgotSearch({payload},{call,put}){
+            const response = yield call(userForgotSearch,payload);
             if(response.success){
-                yield put({type: 'forgotSuccess',payload: { forgoutStep: 1, forgoutID: response.data }})
+                yield put({type: 'forgotSuccess',payload: { forgotStep: 1, forgotID: response.data }})
             }else{
                 Modal.error({title: "Error al buscar una cuenta",content: response.message})
             }
         },
-        *forgoutValidate({payload},{ select, call,put}){
-            const id = yield select(({ user }) => user.forgoutID);
-            const response = yield call(userForgoutValidate,{...payload, id});
+        *forgotValidate({payload},{ select, call,put}){
+            const id = yield select(({ user }) => user.forgotID);
+            const response = yield call(userForgotValidate,{...payload, id});
             if(response.success){
-                yield put({type: 'forgotSuccess',payload: { forgoutStep: 2 }})
+                yield put({type: 'forgotSuccess',payload: { forgotStep: 2 }})
             }else{
                 Modal.error({title: "Error al validar el código",content: response.message})
             }
         },
-        *forgoutChange({payload},{ select, call,put}){
-            const id = yield select(({ user }) => user.forgoutID);
-            const response = yield call(userForgoutChange,{...payload, id});
+        *forgotChange({payload},{ select, call,put}){
+            const id = yield select(({ user }) => user.forgotID);
+            const response = yield call(userForgotChange,{...payload, id});
             if(response.success){
                 Modal.success({title: "Cambiar contraseña",content: response.message})
-                yield put({type: 'forgotSuccess',payload: { forgoutStep: 3, forgoutID: 0 }})
+                yield put({type: 'forgotSuccess',payload: { forgotStep: 3, forgotID: 0 }})
                 yield put(routerRedux.push('/user/login'));
             }else{
                 Modal.error({title: "Error al cambiar la contraseña",content: response.message})
-            }
-        },
-        *register({payload},{call,put}){
-            const response = yield call(register,payload);
-            if(response.success){
-                Modal.success({title: "Registrar usuario",content: response.message})
-                yield put(routerRedux.push('/user/login'));
-            }else{
-                Modal.error({title: "Registrar usuario",content: response.message})
             }
         },
 
@@ -174,13 +162,6 @@ export default {
         },
     },
     reducers: {
-        loginSuccess(state, action){
-            return {...state, loading: false}
-        },
-        registerSuccess(state, action){
-            return {...state, loading: false}
-        },
-
         forgotSuccess(state, { payload }){
             return {...state, ...payload}
         },
@@ -200,10 +181,10 @@ export default {
             return {...state, ...payload, modalVisible: true };
         },
         resetUser(state, action){
-            return {...state, currentItem: {}, modalVisible: false, modalType: 'create', forgoutStep: 0, forgoutID: 0 };
+            return {...state, currentItem: {}, modalVisible: false, modalType: 'create', forgotStep: 0, forgotID: 0 };
         },
-        resetForgout(state, action){
-            return {...state, forgoutStep: 0, forgoutID: 0 };
+        resetForgot(state, action){
+            return {...state, forgotStep: 0, forgotID: 0 };
         },
     }
 }

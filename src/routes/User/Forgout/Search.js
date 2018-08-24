@@ -19,7 +19,7 @@ const Search = Form.create()(
                     return;
                 }
                 dispatch({
-                    type: 'user/forgoutSearch',
+                    type: 'user/forgotSearch',
                     payload: values,
                 });
                 form.resetFields();
@@ -28,6 +28,7 @@ const Search = Form.create()(
 
         render(){
             const { getFieldDecorator } = this.props.form;
+            const { loading } = this.props;
             return(
                 <Form onSubmit={this.handleSubmit}>
                     <p>Ingresa tu correo electrónico para buscar tu cuenta</p>
@@ -44,7 +45,7 @@ const Search = Form.create()(
                         }
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" className={styles.submit}>Buscar</Button>
+                        <Button type="primary" loading={loading} htmlType="submit" className={styles.submit}>Buscar</Button>
                     </Form.Item>
                 </Form>
             )
@@ -52,9 +53,9 @@ const Search = Form.create()(
     }
 )
 
-const mapStateToProps = ({user}) => {
+const mapStateToProps = ({loading}) => {
     return {
-        user,
+        loading: loading.effects['user/forgotSearch'],
     }
 }
 

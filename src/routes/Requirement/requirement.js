@@ -37,7 +37,7 @@ class Requirement extends Component{
         })
     }
     render(){
-        const { dispatch, setting, requirement, modelLoading } = this.props;
+        const { dispatch, setting, requirement, loadingAll } = this.props;
         const { onQueryAll } = this;
         const {
             list,
@@ -54,7 +54,7 @@ class Requirement extends Component{
             total,
             pageSize: setting.item,
             dataSource: list,
-            loading: false,
+            loadingAll: loadingAll,
             onPageChange(page){
                 dispatch({
                     type:'requirement/all',
@@ -141,7 +141,7 @@ const mapStateToProps = ({requirement, global, loading}) => {
     return {
         requirement,
         setting: global.setting,
-        modelLoading: loading.models.requirement,
+        loadingAll: loading.effects['requirement/all'],
     }
 }
 

@@ -1,7 +1,7 @@
-import { settingUpdate, settingOnly, settingGlobal } from '../services/setting';
+import { settingUpdate, settingGlobal } from '../services/setting';
 import { statisticTopWinner, statisticTopUsers, statisticTopProducts, statisticTopRequirememnts } from '../services/statistic';
 import { userUpdate } from '../services/user';
-import { Modal, message } from 'antd';
+import { Modal } from 'antd';
 import { getAuthorityUser } from 'utilities/authority';
 export default {
     namespace: 'global',

@@ -36,7 +36,7 @@ class DataList extends Component{
         let { sortedInfo, filteredInfo } = this.state;
         sortedInfo = sortedInfo || {};
         filteredInfo = filteredInfo || {};
-        const { onPageChange, onShowModalEdit, onShowPrinter, onDelete, dataSource, loading, total, pageSize, current } = this.props;
+        const { onPageChange, onShowModalEdit, onShowPrinter, onDelete, dataSource, loadingAll, total, pageSize, current } = this.props;
 
         const columns = [
             {
@@ -162,7 +162,7 @@ class DataList extends Component{
                     <StandardTable 
                         columns={columns}
                         dataSource={dataSource}
-                        loading={loading}
+                        loading={loadingAll}
                         pagination={false}
                         onChange={this.onChange}
                         minWidth={800}

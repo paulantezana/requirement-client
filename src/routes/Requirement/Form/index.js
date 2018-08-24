@@ -25,13 +25,8 @@ const AddForm = Form.create()(
             const { visible, onCancel, onOk, form, type, confirmLoading, data } = this.props;
             const { getFieldDecorator } = form;
             
-            const { require, requirement, dispatch } = this.props;
-            const {
-                list,
-                currentItem,
-                // modalVisible,
-                modalType,
-            } = require;
+            const { require, requirement, dispatch, loadingRequire } = this.props;
+            const { list } = require;
 
             // Obteniendo el tipo de modal del modelo requirement 
             // Para activar o desactivar los datos del formulario
@@ -48,7 +43,7 @@ const AddForm = Form.create()(
 
             const requirementListProps = {
                 dataSource: list,
-                loading: false,
+                loading: loadingRequire,
                 disabled: disabledItems,
                 onUpdate(param){
                     // dispatch({
@@ -211,7 +206,7 @@ class ModalForm extends Component{
     }
 
     render(){
-        const { dispatch, requirement, require, loading } = this.props;
+        const { dispatch, requirement, require, loading, loadingRequire } = this.props;
         
         // Recuperando los estado y datos desde el modelo requirement
         const {
@@ -229,6 +224,7 @@ class ModalForm extends Component{
             disabled: modalType == 'detail',
             type: modalType,
             visible: modalVisible,
+            confirmLoading: loading,
             onOk(){
                 handleConfirm(modalType); // Metodo de esta clase
             },
@@ -246,6 +242,7 @@ class ModalForm extends Component{
                 dispatch={dispatch}
                 require={require}
                 requirement={requirement}
+                loadingRequire={loadingRequire}
                 wrappedComponentRef={(formRef) => this.formRef = formRef}/>
         )
     }
@@ -255,7 +252,8 @@ const mapStateToProps = ({requirement, require, loading}) => {
     return {
         requirement,
         require,
-        loading: loading.effects,
+        loadingRequire: loading.effects['require/byRequirement'],
+        loading: loading.effects['requirement/create'] || loading.effects['requirement/update'],
     }
 }
 

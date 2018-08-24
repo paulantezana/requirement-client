@@ -51,7 +51,7 @@ class DataList extends Component{
         let { sortedInfo, filteredInfo } = this.state;
         sortedInfo = sortedInfo || {};
         filteredInfo = filteredInfo || {};
-        const { onWinner, requirementItem, onShowModalEdit, onShowModalCTZ, onDelete, dataSource, loading, total } = this.props;
+        const { onWinner, requirementItem, onShowModalEdit, onShowModalCTZ, onDelete, dataSource, loadingAll, total } = this.props;
         
         const columns = [
             {
@@ -142,40 +142,18 @@ class DataList extends Component{
         return (
             <div>
                 <div className={styles.table}>
-                    {/* <div className={styles.tableAlert}>
-                        <Alert
-                            message={
-                                <Fragment>
-                                    <span>{`${total} Cotización`}</span>
-                                    <a onClick={this.clearAllFilters} style={{ marginLeft: 24 }}> Borrar filtros y actualizar </a>
-                                </Fragment>
-                            }
-                            type="info" showIcon/>
-                    </div> */}
                     <StandardTable 
                         columns={columns}
                         dataSource={dataSource}
-                        loading={loading}
+                        loading={loadingAll}
                         pagination={false}
                         onChange={this.onChange}
                         minWidth={800}
-                        // rowSelection={rowSelection}
                         rowKey={record=>record.id}/>
                 </div>
             </div>
         )
     }
 }
-
-DataList.propTypes = {
-    onPageChange: PropTypes.func,
-    onUpdate: PropTypes.func,
-    onDelete: PropTypes.func,
-    onRefresh: PropTypes.func,
-    dataSource: PropTypes.array,
-    loading: PropTypes.any,
-    total: PropTypes.any,
-    current: PropTypes.any
-};
 
 export default DataList;

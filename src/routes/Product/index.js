@@ -26,7 +26,7 @@ class Product extends Component{
         });
     }
     render(){
-        const {dispatch, setting, product, loading} = this.props;
+        const { dispatch, setting, product, loadingAll, loadingUpdate} = this.props;
         const { onQueryAll } = this;
         const {
             list,
@@ -43,7 +43,8 @@ class Product extends Component{
             total,
             pageSize: setting.item,
             dataSource: list,
-            loading: false,
+            loadingAll: loadingAll,
+            loadingUpdate: loadingUpdate,
             onPageChange(page){
                 dispatch({
                     type:'product/all',
@@ -111,7 +112,8 @@ const mapStateToProps = ({product, global, loading}) => {
     return {
         product,
         setting: global.setting,
-        loading: loading.effects,
+        loadingAll: loading.effects['product/all'],
+        loadingUpdate: loading.effects['product/update'],
     }
 }
 

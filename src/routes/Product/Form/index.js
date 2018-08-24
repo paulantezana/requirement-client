@@ -125,6 +125,7 @@ class ModalForm extends Component{
             disabled: modalType == 'detail',
             type: modalType,
             visible: modalVisible,
+            confirmLoading: loading,
             onOk(){
                 handleConfirm(modalType);
             },
@@ -147,7 +148,7 @@ class ModalForm extends Component{
 const mapStateToProps = ({product, loading}) => {
     return {
         product,
-        loading: loading.effects,
+        loading: loading.effects['product/create'] || loading.effects['product/update'],
     }
 }
 

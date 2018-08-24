@@ -43,7 +43,7 @@ class Quotation extends Component{
         })
     }
     render(){
-        const { dispatch, setting, quotation, loading } = this.props;
+        const { dispatch, setting, quotation, loadingAll } = this.props;
         const {
             list,
             total,
@@ -58,7 +58,7 @@ class Quotation extends Component{
             requirementItem,
             total,
             dataSource: list,
-            loading: false,
+            loadingAll: loadingAll,
             onUpdate(param){
                 dispatch({
                     type: 'quotation/update',
@@ -169,7 +169,7 @@ const mapStateToProps = ({quotation, global, loading}) => {
     return {
         quotation,
         setting: global.setting,
-        loading: loading.effects,
+        loadingAll: loading.effects['quotation/all'],
     }
 }
 

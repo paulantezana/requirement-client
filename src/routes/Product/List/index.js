@@ -34,7 +34,7 @@ class DataList extends Component{
         let { sortedInfo, filteredInfo } = this.state;
         sortedInfo = sortedInfo || {};
         filteredInfo = filteredInfo || {};
-        const { onPageChange, onUpdate, onShowModalEdit, onDelete, dataSource, loading, total, pageSize, current } = this.props;
+        const { onPageChange, onUpdate, onShowModalEdit, onDelete, dataSource, loadingAll, loadingUpdate, total, pageSize, current } = this.props;
         const columns = [
             {
                 title: 'Nombre',
@@ -65,7 +65,7 @@ class DataList extends Component{
                 key: 'state',
                 width: '60px',
                 render: (a,record)=>(
-                    <Switch size="small" checked={a.state} onChange={checked=>onUpdate({id: a.id, state: checked})}/>
+                    <Switch size="small" loading={loadingUpdate} checked={a.state} onChange={checked=>onUpdate({id: a.id, state: checked})}/>
                 )
             },
             {
@@ -114,7 +114,7 @@ class DataList extends Component{
                     <StandardTable 
                         columns={columns}
                         dataSource={dataSource}
-                        loading={loading}
+                        loading={loadingAll}
                         pagination={false}
                         onChange={this.onChange}
                         minWidth={800}
