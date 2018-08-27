@@ -38,6 +38,11 @@ class DataList extends Component{
 
         const columns = [
             {
+                title: 'N°',
+                key: 'n',
+                render: (a, record, index)=>(index + 1)
+            },
+            {
                 title: 'Cantidad',
                 dataIndex: 'amount',
                 key: 'amount',

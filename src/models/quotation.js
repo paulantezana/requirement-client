@@ -15,6 +15,8 @@ import { routerRedux } from 'dva/router';
 import { getDataUrl } from '../utilities/generate';
 import { docProperties } from '../config/app';
 
+import { rowToCol } from 'utilities/utils';
+
 export default {
     namespace: 'quotation',
     state: {
@@ -81,7 +83,13 @@ export default {
             const id = yield select(({ quotation }) => quotation.requirementID);
             const response = yield call(quotationComparativeTable,{...payload, id});
             if(response.success){
-                yield put({ type: 'comparativeTableSuccess', payload: response.data })
+                // Agregando un enumeracion sucesiva a la lista
+                const requires = response.data.ct_response_requires.map((item,key) => item ? {...item, num: key + 1 } : {});
+
+                // Refactorizando la lista
+                const newData = rowToCol(requires,response.data.ct_response_quotations)
+                console.log(newData);
+                yield put({ type: 'comparativeTableSuccess', payload: newData })
             }else{
                 Modal.error({title: 'Error al consultar cuadro comparativo ', content: response.message});
             }

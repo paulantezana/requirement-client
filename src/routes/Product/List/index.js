@@ -44,9 +44,9 @@ class DataList extends Component{
                 sortOrder: sortedInfo.columnKey === 'name' && sortedInfo.order,
             },
             {
-                title: 'Description',
-                dataIndex: 'description',
-                key: 'description',
+                title: 'Unidad de medida',
+                dataIndex: 'unit_measure',
+                key: 'unit_measure',
             },
             {
                 title: 'Tipo',

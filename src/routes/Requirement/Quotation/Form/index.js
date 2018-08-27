@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Select, Modal, Form, Input, Checkbox, Button, AutoComplete, InputNumber } from 'antd';
+import { Select, Modal, Form, Input, Checkbox, Button, AutoComplete, InputNumber, DatePicker } from 'antd';
 import styles from './index.scss';
 import { connect } from 'dva';
+import moment from 'moment';
 
 import NewProvider from 'routes/Provider/Form';
 import QuotationDetail from './QuotationDetail';
@@ -111,6 +112,16 @@ const AddForm = Form.create()(
                                     initialValue: data.suggest_winner,
                                 })(
                                     <Checkbox/>
+                                )
+                            }
+                        </Form.Item>
+                        <Form.Item label="Fecha de entrega">
+                            {
+                                getFieldDecorator('deliver_date',{
+                                    valuePropName: 'checked',
+                                    initialValue: data.deliver_date ? moment(data.deliver_date,'DD/MM/YYYY') : moment(new Date(),'DD/MM/YYYY'),
+                                })(
+                                    <DatePicker format='DD/MM/YYYY'/>
                                 )
                             }
                         </Form.Item>

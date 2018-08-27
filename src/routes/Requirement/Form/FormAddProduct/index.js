@@ -16,16 +16,18 @@ const CollectionRequire = Form.create()(
     class extends React.Component {
         constructor(props){
             super(props);
-            this.state = {
-                selectProduct: '',
-                selectProductID: 0,
-            }
         }
 
         handleChangeSelectProduct(value, text){
-            this.setState({
-                selectProductID: value,
-                selectProduct: text,
+            this.props.form.setFieldsValue({
+                product_name: text,
+                product_id: value,
+            })
+
+            // Llenando el campo unidad de medida segun el producto seleccionado
+            const currentProduct = this.props.product.searchResult.find(item => item.id == value);
+            this.props.form.setFieldsValue({
+                unit_measure: currentProduct.unit_measure
             })
         }
 
@@ -94,7 +96,7 @@ const CollectionRequire = Form.create()(
                         <Form.Item className={styles.hidden}>
                             {
                                 getFieldDecorator('product_id', {
-                                    initialValue: this.state.selectProductID || data.product_id,
+                                    initialValue: data.product_id,
                                 })(
                                     <InputNumber/>
                                 )
@@ -103,7 +105,7 @@ const CollectionRequire = Form.create()(
                         <Form.Item className={styles.hidden}>
                             {
                                 getFieldDecorator('product_name', {
-                                    initialValue: this.state.selectProduct || data.product_name,
+                                    initialValue: data.product_name,
                                 })(
                                     <Input/>
                                 )

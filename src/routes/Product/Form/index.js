@@ -42,12 +42,12 @@ const AddForm = Form.create()(
                                 )
                             }
                         </Form.Item>
-                        <Form.Item hasFeedback {...formItemLayout} label="Descripción">
+                        <Form.Item hasFeedback {...formItemLayout} label="Unidad de medida">
                             {
-                                getFieldDecorator('description', {
-                                    initialValue: data.description,
+                                getFieldDecorator('unit_measure', {
+                                    initialValue: data.unit_measure,
                                 })(
-                                    <Input.TextArea autosize placeholder="Descripción"/>
+                                    <Input placeholder="Unidad de medida"/>
                                 )
                             }
                         </Form.Item>
