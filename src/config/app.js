@@ -5,10 +5,10 @@ export const app = {
     author: 'paul antezana',
 }
 
-// export const service = {
-//     path: "http://localhost:1323",
-//     api_path: "http://localhost:1323/api/v1",
-// }
+export const service = {
+    path: "http://localhost:1323",
+    api_path: "http://localhost:1323/api/v1",
+}
 
 export const docProperties = {
     pageSize: 'A4',
@@ -16,7 +16,7 @@ export const docProperties = {
     creator: app.author,
 }
 
-export const service = {
-    path: "https://rqsystem-server.herokuapp.com",
-    api_path: "https://rqsystem-server.herokuapp.com/api/v1",
-}
+// export const service = {
+//     path: "https://rqsystem-server.herokuapp.com",
+//     api_path: "https://rqsystem-server.herokuapp.com/api/v1",
+// }

@@ -91,7 +91,7 @@ class DataList extends Component{
                         case '2':
                             return <span className={styles.rejected}><Badge status="error"/> Rechazado</span>
                         case '3':
-                            return <span className={styles.accepted}><Badge status="success"/> Aceptado</span>
+                            return <span className={styles.accepted}><Badge status="success"/> Aprobado</span>
                         case '4':
                             return <span className={styles.close}><Badge status="default"/> Cerrado</span>
                         default:

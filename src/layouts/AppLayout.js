@@ -50,6 +50,7 @@ enquireScreen(b => {
 
 //////////////////////////////////////////////////////////////////
 import logo from 'assets/logo.png';
+import logoWhite from 'assets/logo-white.png';
 import { app as appConfig } from 'config/app';
 import Requirement from '../routes/Requirement';
 import Product from '../routes/Product';
@@ -127,7 +128,7 @@ class AppLayout extends Component{
             ? (
                 <Layout>
                     <SiderMenu
-                        logo={logo}
+                        logo={logoWhite}
                         Authorized={Authorized}
                         menuData={getMenuData()}
                         collapsed={collapsed}
