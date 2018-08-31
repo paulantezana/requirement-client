@@ -1,9 +1,21 @@
-import { requirementAll, requirementCreate, requirementUpdate, requirementSetRejected, requirementSetClosed, requirementDelete } from '../services/requirement';
-import { requireByRequirement } from '../services/require';
 import { Modal, message } from 'antd';
 
+import { 
+    requirementAll, 
+    requirementCreate, 
+    requirementUpdate, 
+    requirementSetRejected, 
+    requirementSetClosed, 
+    requirementDelete 
+} from '../services/requirement';
+import { requireByRequirement } from '../services/require';
+import { settingDownloadLogo } from '../services/setting';
+
+
 import { getDataUrl } from '../utilities/generate';
-import { docProperties } from '../config/app';
+import { convertBlobToBase64 } from '../utilities/utils';
+
+import solicitudeDF from './definitions/solicitudeDF';
 
 export default {
     namespace: 'requirement',
@@ -90,137 +102,12 @@ export default {
             const setting = yield select(({ global }) => global.setting);
             const response = yield call(requireByRequirement,{ requirement_id: payload.id });
             if (response.success){
-
-                // Mapenando los tados de la tabla
-                let requires = response.data.map(require => {
-                    return [
-                        require.amount,
-                        require.unit_measure,
-                        require.product_name,
-                        '',
-                        '',
-                        '',
-                    ]
-                });
-
-                const rows = requires.length;
-                if (rows <= 13) {
-                    for (let i = rows; i < 13; i++) {
-                        requires.push([
-                            ' ',
-                            ' ',
-                            ' ',
-                            ' ',
-                            ' ',
-                            ' ',
-                        ])
-                    }
-                }
-
-                // Mapeando los encabezados de la tabla
-                requires.unshift([ 
-                    { text: 'CANTIDAD', style: 'tableHeader' },
-                    { text: 'UNIDAD DE MEDIDA', style: 'tableHeader' },
-                    { text: 'DESCRIPCION',  style: 'tableHeader' },
-                    { text: 'PRECIO UNIDARIO', style: 'tableHeader' },
-                    { text: 'PRECIO TOTAL', style: 'tableHeader' },
-                    { text: '', style: 'tableHeader' },
-                ]);
-
-                const currentDate = new Date();
-                let currentDay = currentDate.getDay();
-                let currentMounth = currentDate.getMonth();
-                let currentYear = currentDate.getFullYear();
-
-                if (currentDay < 10) currentDay = '0' + currentDay;
-                if (currentMounth < 10) currentMounth = '0' + currentMounth;
-
-                // Definiendo el documento
-                const docDefinition = {
-                    info: {
-                        title: 'SOLICITUD DE COTIZACION',
-                        author: docProperties.author,
-                        creator: docProperties.creator,
-                    },
-                    pageSize: docProperties.pageSize,
-                    pageMargins: [ 48, 120, 48, 48 ],
-                    header: [
-                        { text: setting.company, alignment: 'center',  bold: true, fontSize: 12, margin: [ 0, 50, 0, 4 ] },
-                        { text: setting.city, alignment: 'center', margin: [ 0, 4, 0, 4 ] },
-                        { text: 'SOLICITUD DE COTIZACION', bold: true, alignment: 'center', margin: [ 0, 4, 0, 4 ] },
-                    ],
-                
-                    content: [
-                        {
-                            text: 'N°..............................................',
-                            alignment: 'right',
-                            margin: [ 0, 2, 0, 8 ],
-                        },
-                        {
-                            table: {
-                                widths: [ 30, 30, 30, 30 ],
-                                body: [
-                                    ['N°','DIAS','MES','AÑO'],
-                                    ['',currentDay,currentMounth,currentYear],
-                                ],
-                            },
-                            margin: [ 342, 2, 0, 8 ],
-                        },
-                        { 
-                            text: `REFERENCIA :.............................................................................................................................`, 
-                            fontSize: 12, 
-                            margin: [ 0, 2, 0, 2 ],
-                        },
-                        { 
-                            text: `SEÑOR(ES)   :....................................................................Telefono: ......................................... `, 
-                            fontSize: 12,
-                            margin: [ 0, 2, 0, 2 ],
-                        },
-                        { 
-                            text: `DIRECCIÓN    :........................................................................RUC: .............................................` , 
-                            fontSize: 12, 
-                            margin: [ 0, 2, 0, 3 ],
-                        },
-                        { 
-                            text: 'Sirva(n)se cotizarnos precios netos de los artículos que se detallan más abajo, para ser entregados en nuestro almacén del ' + setting.company,
-                            margin: [ 0, 2, 0, 8 ],
-                        },
-                        {
-                            table: {
-                                headerRows: 1,
-                                widths: [ 30, 30, '*', 30, 50, 5 ],
-                                body: requires,
-                            }
-                        },
-                        {
-                            text:'Si por cualquier otra causa no esta en condiciones de cotizar, sirvan(se) firmar y devolver este documento',
-                            margin: [ 0, 2, 0, 8 ],
-                        },
-                        {
-                            text:'Si esta en condiciones de cotizar, sirvan (se) UD. (s) hacerlo firmar o devolver este documento “sobre cerrado”',
-                            margin: [ 0, 2, 0, 24 ],
-                        },
-                        
-                        {
-                            text: 'Plazo de entrega _____________________________             Fecha_______________________________',
-                            margin: [ 0, 2, 0, 24 ],
-                        },
-                        {
-                            text: 'Firma del director del abastecimiento ______________________    Firma y cello del proveedor________________________',   
-                        },
-                    ],
-                    footer:[
-                        { text: '_____________________________________________________________________________________',  alignment: 'center', color: '#AAAAAA'},
-                        { text: docProperties.author, alignment: 'right', fontSize: 8, italics: true, color: '#AAAAAA', margin: [ 0, 0, 72, 0 ] },
-                    ],
-                    styles: {
-                        tableHeader: {
-                            bold: true, 
-                            fontSize: 10,
-                        },
-                    }
-                }
-                console.log(docDefinition);
+                const logoBlob = yield call(settingDownloadLogo,{ id: setting.id });   
+                // Comvertiendo imagen blog en Base64
+                const logoBase64 = yield call(convertBlobToBase64,logoBlob)
+                // Procesando la definicion del documento
+                const docDefinition = yield call(solicitudeDF,{response,setting,logoBase64})
+                // Enviando el estado
                 const dataUrl = yield call(getDataUrl,docDefinition);
                 yield put({type: 'setDocSCDataUrl', payload: dataUrl})
             }else{

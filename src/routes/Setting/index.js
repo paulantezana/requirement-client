@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { connect } from 'dva';
-import { message, Button, Input, Tooltip, Pagination, Modal, Card } from 'antd';
-import SettingForm from './SettingForm';
+import { Card, Divider } from 'antd';
+import SettingForm from './Form';
+import UploadLogo from './UploadLogo';
 
 class Setting extends Component{
     render(){
         return (
             <Card bordered={false}>
                 <SettingForm/>
+                <Divider orientation="left">Logo</Divider>
+                <UploadLogo/>
             </Card>
         )
     }

@@ -1,26 +1,41 @@
-import request from '../utilities/request';
+import request, { dowloandFetch } from '../utilities/request';
 
-const PROVIDER_API = '/setting';
+const SETTING_API = '/setting';
 
-// Get ByID provider
+// Get ByID setting
 export async function settingOnly() { 
-    return request(`${PROVIDER_API}`,{
+    return request(`${SETTING_API}`,{
         method: 'GET',
     })
 }
 
 // Get Global settings
 export async function settingGlobal(body) { 
-    return request(`${PROVIDER_API}/global`,{
+    return request(`${SETTING_API}/global`,{
         method: 'POST',
         body,
     })
 }
 
-// Update provider
+// Update setting
 export async function settingUpdate(body) { 
-    return request(PROVIDER_API,{
+    return request(SETTING_API,{
         method: 'PUT',
         body,
+    })
+}
+
+// POST upload logo
+export async function settingUploadLogo(body) { 
+    return request(`${SETTING_API}/upload/logo`,{
+        method: 'POST',
+        body
+    })
+}
+
+// DOWLOAND
+export async function settingDownloadLogo() { 
+    return dowloandFetch(`${SETTING_API}/download/logo`,{
+        method: 'GET',
     })
 }

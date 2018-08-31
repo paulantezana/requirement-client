@@ -35,19 +35,25 @@ class ViwerCC extends Component{
         }
 
         const onPrintOC = ()=> {
-            // MOstra el printer de OC = orden de compra
+            // Mostra el printer de OC = orden de compra
             dispatch({
                 type: 'quotation/showPrinterOC',
             });
 
-            // Dar como finalizado el proceso del requerimeinto
+            // Cargar la definicion del documento
             dispatch({
-                type: 'requirement/finished',
-                payload: { requirement_id: requirementItem.id }
+                type: 'quotation/loadDataOC',
+                // payload: record,
             });
 
+            // Dar como finalizado el proceso del requerimeinto
+            // dispatch({
+            //     type: 'requirement/finished',
+            //     payload: { requirement_id: requirementItem.id }
+            // });
+
             // Actualizar los datos del requerimeento actual
-            dispatch({type: 'quotation/requirement'});
+            // dispatch({type: 'quotation/requirement'});
         }
 
         const quotationCTProps = {
@@ -66,14 +72,10 @@ class ViwerCC extends Component{
         return (
             <Card bordered={false} className={stateCard}>
                 <div className={styles.header}>
-                    <Tooltip title="Imprimir el cuadro comparartivo">
-                        <Button disabled={enabledButtonCC} icon="printer" onClick={()=>onPrintCC()}>Imprimir CC</Button>
-                        <CuadroComparativo/>
-                    </Tooltip>
-                    <Tooltip title="Imprimir orden de compra y guia de internamiento">
-                        <Button disabled={enabledButtonOC} icon="printer" onClick={()=>onPrintOC()}>Imprimir OC</Button>
-                        <OrdenCompra/>
-                    </Tooltip>
+                    <Button disabled={enabledButtonCC} icon="printer" onClick={()=>onPrintCC()}>Imprimir Cuadro Comparativo</Button>
+                    <CuadroComparativo/>
+                    <Button disabled={enabledButtonOC} icon="printer" onClick={()=>onPrintOC()}>Imprimir Orden Compra</Button>
+                    <OrdenCompra/>
                 </div>
                 <ComparativeTable { ...quotationCTProps }/>
             </Card>

@@ -6,16 +6,18 @@ import {
     quotationDelete, 
     quotationSetWinner 
 } from '../services/quotation';
+import { settingDownloadLogo } from '../services/setting';
 import { requirementById } from '../services/requirement';
-import { requireByRequirement } from '../services/require';
+import { convertBlobToBase64 } from '../utilities/utils';
 
 import { Modal, message } from 'antd';
 import { routerRedux } from 'dva/router';
 
 import { getDataUrl } from '../utilities/generate';
-import { docProperties } from '../config/app';
-
 import { rowToCol } from 'utilities/utils';
+
+import comparativeTableDefinition from './definitions/comparativeTable';
+import purchaseOrderDefinition from './definitions/purchaseOrder';
 
 export default {
     namespace: 'quotation',
@@ -88,7 +90,6 @@ export default {
 
                 // Refactorizando la lista
                 const newData = rowToCol(requires,response.data.ct_response_quotations)
-                console.log(newData);
                 yield put({ type: 'comparativeTableSuccess', payload: newData })
             }else{
                 Modal.error({title: 'Error al consultar cuadro comparativo ', content: response.message});
@@ -196,91 +197,38 @@ export default {
         },
         *loadDataCC({ payload }, { select, call, put }){
             const setting = yield select(({ global }) => global.setting);
-            // const response = yield call(requireByRequirement,{ requirement_id: payload.id });
-            if (true){
-
-                // Mapenando los tados de la tabla
-                // let requires = response.data.map(require => {
-                //     return [
-                //         require.amount,
-                //         require.unit_measure,
-                //         require.product_name,
-                //         '',
-                //         '',
-                //         '',
-                //     ]
-                // });
-
-                // const rows = requires.length;
-                // if (rows <= 13) {
-                //     for (let i = rows; i < 13; i++) {
-                //         requires.push([
-                //             ' ',
-                //             ' ',
-                //             ' ',
-                //             ' ',
-                //             ' ',
-                //             ' ',
-                //         ])
-                //     }
-                // }
-
-                // // Mapeando los encabezados de la tabla
-                // requires.unshift([ 
-                //     { text: 'CANTIDAD', style: 'tableHeader' },
-                //     { text: 'UNIDAD DE MEDIDA', style: 'tableHeader' },
-                //     { text: 'DESCRIPCION',  style: 'tableHeader' },
-                //     { text: 'PRECIO UNIDARIO', style: 'tableHeader' },
-                //     { text: 'PRECIO TOTAL', style: 'tableHeader' },
-                //     { text: '', style: 'tableHeader' },
-                // ]);
-
-                // const currentDate = new Date();
-                // let currentDay = currentDate.getDay();
-                // let currentMounth = currentDate.getMonth();
-                // let currentYear = currentDate.getFullYear();
-
-                // if (currentDay < 10) currentDay = '0' + currentDay;
-                // if (currentMounth < 10) currentMounth = '0' + currentMounth;
-
-                // Definiendo el documento
-                const docDefinition = {
-                    info: {
-                        title: 'CUADRO COMPARATIVO DE COTIZACIONES',
-                        author: docProperties.author,
-                        creator: docProperties.creator,
-                    },
-                    pageOrientation: 'landscape',
-                    pageSize: docProperties.pageSize,
-                    pageMargins: [ 48, 120, 48, 48 ],
-                    header: [
-                        { text: setting.company, alignment: '',  bold: true, fontSize: 12, margin: [ 48, 40, 0, 4 ] },
-                        { text: setting.city, alignment: '', margin: [ 48, 4, 0, 4 ] },
-                        { text: 'CUADRO COMPARATIVO DE COTIZACIONES', bold: true, alignment: 'center', margin: [ 0, 4, 0, 4 ] },
-                    ],
-                
-                    content: [
-                        {
-                            text: 'N°..............................................',
-                            alignment: 'right',
-                            margin: [ 0, 2, 0, 8 ],
-                        },
-                    
-                    ],
-                    styles: {
-                        tableHeader: {
-                            bold: true, 
-                            fontSize: 10,
-                        },
-                    }
-                }
-                console.log(docDefinition);
+            const id = yield select(({ quotation }) => quotation.requirementID);
+            const response = yield call(quotationComparativeTable,{...payload, id});
+            if (response.success){
+                const blob = yield call(settingDownloadLogo,{ id: setting.id });   
+                // Comvertiendo imagen blog en Base64
+                const logoBase64 = yield call(convertBlobToBase64,blob)
+                // Procesando la definicion del documento
+                const docDefinition = yield call(comparativeTableDefinition,{response,setting,logoBase64})
+                // Enviando el estado
                 const dataUrl = yield call(getDataUrl,docDefinition);
                 yield put({type: 'setDocCCDataUrl', payload: dataUrl})
             }else{
                 Modal.error({title: 'Error al consultar el requerimiento', content: response.message});
             }
         },
+        *loadDataOC({ payload }, { select, call, put }){
+            const setting = yield select(({ global }) => global.setting);
+            const id = yield select(({ quotation }) => quotation.requirementID);
+            const response = yield call(quotationComparativeTable,{...payload, id});
+            if (response.success){
+                const blob = yield call(settingDownloadLogo,{ id: setting.id });   
+                // Comvertiendo imagen blog en Base64
+                const logoBase64 = yield call(convertBlobToBase64,blob)
+                // Procesando la definicion del documento
+                const docDefinition = yield call(purchaseOrderDefinition,{response,setting,logoBase64})
+                // Enviando el estado
+                const dataUrl = yield call(getDataUrl,docDefinition);
+                yield put({type: 'setDocOCDataUrl', payload: dataUrl})
+            }else{
+                Modal.error({title: 'Error al consultar el requerimiento', content: response.message});
+            }
+        }
     },
     reducers: {
         updateRequirementID(state, { payload }){

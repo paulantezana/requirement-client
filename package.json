@@ -71,7 +71,7 @@
     "moment": "^2.19.3",
     "nprogress": "^0.2.0",
     "path-to-regexp": "^2.2.1",
-    "pdfmake": "^0.1.37",
+    "pdfmake-calibri": "^1.0.0",
     "prop-types": "^15.6.2",
     "rc-drawer": "^1.7.1",
     "react": "^16.4.2",

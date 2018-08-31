@@ -1,4 +1,4 @@
-import { settingUpdate, settingGlobal } from '../services/setting';
+import { settingUpdate, settingGlobal, settingUploadLogo } from '../services/setting';
 import { statisticTopWinner, statisticTopUsers, statisticTopProducts, statisticTopRequirememnts } from '../services/statistic';
 import { userUpdate } from '../services/user';
 import { Modal } from 'antd';
@@ -40,6 +40,18 @@ export default {
                     type: 'updateSettingSuccess',
                     payload
                 });
+            }
+        },
+
+        *uploadLogo({ payload }, { call, put }){
+            let data = new FormData();
+            data.append('logo',payload.logo);
+            data.append('id',payload.id);
+            const response = yield call(settingUploadLogo,data);
+            if (response.success){
+                Modal.success({title: 'Setting', content: response.message});
+            }else{
+                Modal.error({title: 'Error subir el avatar usuario', content: response.message});
             }
         },
 

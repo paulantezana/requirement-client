@@ -11,7 +11,7 @@ import { app } from 'config/app';
 
 ////////////////////////////////////////////
 import LoginPage from '../routes/User/Login';
-import Forgout from '../routes/User/Forgout';
+import Forgot from '../routes/User/Forgot';
 import styles from './UserLayout.scss';
 ///////////////////////////////////////////
 
@@ -57,7 +57,7 @@ class UserLayout extends Component{
                     <h1 className={styles.title}>{app.name}</h1>
                     <Switch>
                         <Route exact path={`${match.url}/login`} component={LoginPage}/>
-                        <Route exact path={`${match.url}/forgot`} component={Forgout}/>
+                        <Route exact path={`${match.url}/forgot`} component={Forgot}/>
                         <Redirect from="/user" to="/user/login" />
                     </Switch>
                 </Col>

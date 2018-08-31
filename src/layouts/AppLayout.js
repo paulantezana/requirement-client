@@ -48,18 +48,16 @@ enquireScreen(b => {
   isMobile = b;
 });
 
-//////////////////////////////////////////////////////////////////
 import logo from 'assets/logo.png';
 import logoWhite from 'assets/logo-white.png';
-import { app as appConfig } from 'config/app';
+import { app as appConfig, service } from 'config/app';
 import Requirement from '../routes/Requirement';
 import Product from '../routes/Product';
 import Provider from '../routes/Provider';
-import User from '../routes/User';
+import User from '../routes/User/Users';
 import General from '../routes/Setting';
-import Profile from '../routes/Setting/Profile';
+import Profile from '../routes/User/Profile';
 import Dashboard from '../routes/Dashboard';
-//////////////////////////////////////////////////////////////////
 
 class AppLayout extends Component{
     constructor(props){
@@ -117,7 +115,7 @@ class AppLayout extends Component{
     }
 
     render(){
-        const { global: { collapsed, success, user }, match, location } = this.props;
+        const { global: { collapsed, success, user, setting }, match, location } = this.props;
         const { isMobile: mb } = this.state;
 
         // Usando el componente de atorizacion
@@ -141,6 +139,7 @@ class AppLayout extends Component{
                         <Header style={{ padding: 0}}>
                             <GlobalHeader
                                 logo={logo}
+                                setting={setting}
                                 currentUser={user}
                                 collapsed={collapsed}
                                 isMobile={mb}

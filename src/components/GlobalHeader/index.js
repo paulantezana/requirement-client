@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Menu, Icon, Spin, Dropdown, Avatar, Divider, Badge, Popover } from 'antd';
+import { Menu, Icon, Spin, Dropdown, Avatar, Divider } from 'antd';
 import NoticeIcon from '../NoticeIcon';
 import styles from './index.scss';
 import { service } from 'config/app';
@@ -24,6 +24,7 @@ class GlobalHeader extends PureComponent {
             isMobile,
             logo,
             onMenuClick,
+            setting,
         } = this.props;
 
         const menu = (
@@ -44,12 +45,7 @@ class GlobalHeader extends PureComponent {
             </Menu>
         )
 
-        const content = ()=> (
-            <div>
-                <p>Content</p>
-                <p>Content</p>
-            </div>
-        );
+        const customAvatar = currentUser.avatar == "" ? setting.logo : currentUser.avatar;
 
         return (
             <header className={styles.header}>
@@ -83,7 +79,7 @@ class GlobalHeader extends PureComponent {
                     { currentUser.user_name ? (
                         <Dropdown overlay={menu}>
                             <span className={`${styles.action} ${styles.account}`}>
-                                <Avatar size="small" className={styles.avatar} src={`${service.path}/${currentUser.avatar}`} />
+                                <Avatar size="small" className={styles.avatar} src={`${service.path}/${customAvatar}`} />
                                 <span className={styles.name}>{currentUser.user_name}</span>
                             </span>
                         </Dropdown>
