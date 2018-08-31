@@ -5,6 +5,7 @@ import { message, Button, Input, Tooltip, Pagination, Modal, Card } from 'antd';
 import styles from './index.scss';
 import List from './List';
 import ModalForm from './Form';
+import UploadModal from './UploadModal';
 
 const Search = Input.Search;
 
@@ -86,6 +87,7 @@ class Provider extends Component{
             });
         }
 
+        // Set text search text
         const onSetSearchText = (search)=>{
             dispatch({
                 type: 'provider/setSearchText',
@@ -93,13 +95,24 @@ class Provider extends Component{
             });
         }
 
+        // Show modal upload
+        const onShowModalUpload = ()=>{
+            dispatch({
+                type: 'provider/toggleModalUpload',
+                payload: true,
+            });
+        }
+
         return (
             <Card bordered={false}>
                 <div className={styles.header}>
                     <Button icon="plus" type="primary" onClick={()=>onShowModal('create')}>Nuevo proveedor</Button>
+                    <Button icon="upload" onClick={()=>onShowModalUpload()}>Importar</Button>
+                    {/* <Button icon="export" onClick={()=>onShowModalExport()} >Exportar</Button> */}
                     <Button icon="reload" onClick={()=>this.onQueryAll()}>Actualizar</Button>
                     <Search placeholder="Buscar usuario" value={searchText} onChange={e=>onSetSearchText(e.target.value)} onSearch={value => this.onQueryAll()} style={{ width: 200 }}/>
                     <ModalForm/>
+                    <UploadModal/>
                 </div>
                 <List {...providerListProps}/>
             </Card>

@@ -16,6 +16,7 @@ import { getDataUrl } from '../utilities/generate';
 import { convertBlobToBase64 } from '../utilities/utils';
 
 import solicitudeDF from './definitions/solicitudeDF';
+import requirementDF from './definitions/requirementDF';
 
 export default {
     namespace: 'requirement',
@@ -32,7 +33,10 @@ export default {
         quote: false,
 
         scVisible: false,
+        rqVisible: false,
+
         docSCDataUrl: null,
+        docRQDataUrl: null,
     },
     effects: {
         *all({ payload }, { select, call, put }){
@@ -114,6 +118,17 @@ export default {
                 Modal.error({title: 'Error al consultar el requerimiento', content: response.message});
             }
         },
+        *loadDataRQ({ payload }, { select, call, put }){
+            const setting = yield select(({ global }) => global.setting);
+            const logoBlob = yield call(settingDownloadLogo,{ id: setting.id });   
+            // Comvertiendo imagen blog en Base64
+            const logoBase64 = yield call(convertBlobToBase64,logoBlob)
+            // Procesando la definicion del documento
+            const docDefinition = yield call(requirementDF,{setting,logoBase64})
+            // Enviando el estado
+            const dataUrl = yield call(getDataUrl,docDefinition);
+            yield put({type: 'setDocRQDataUrl', payload: dataUrl})
+        },
     },
     reducers: {
         allSuccess(state, { payload }){
@@ -125,12 +140,24 @@ export default {
         showModal(state, { payload }){
             return {...state, ...payload, modalVisible: true };
         },
+
+        // Solicitud de cotizaciones
         showPrinterSC(state, { payload }){
             return {...state, ...payload, scVisible: true };
         },
         hidePrinterSC(state, { payload }){
             return {...state, ...payload, scVisible: false, docSCDataUrl: null };
         },
+
+        // Requerimiento
+        showPrinterRQ(state, { payload }){
+            return {...state, ...payload, rqVisible: true };
+        },
+        hidePrinterRQ(state, { payload }){
+            return {...state, ...payload, rqVisible: false, docRQDataUrl: null };
+        },
+
+        // Reset
         resetRequirement(state, action){
             return {...state, currentItem: {}, modalVisible: false, modalType: 'create'};
         },
@@ -151,6 +178,9 @@ export default {
         // Doc printer definition reducers
         setDocSCDataUrl(state, { payload }){
             return {...state, docSCDataUrl: payload };
-        }
+        },
+        setDocRQDataUrl(state, { payload }){
+            return {...state, docRQDataUrl: payload };
+        },
     }
 }

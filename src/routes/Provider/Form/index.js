@@ -19,8 +19,9 @@ const AddForm = Form.create()(
             }
         }
         render(){
-            const { visible, onCancel, onOk, form, type, confirmLoading, data } = this.props;
+            const { visible, onCancel, onOk, form, type, confirmLoading, data, validRuc, dispatch } = this.props;
             const { getFieldDecorator } = form;
+
             return (
                 <Modal 
                     title="Proveedor"
@@ -43,16 +44,24 @@ const AddForm = Form.create()(
                                 )
                             }
                         </Form.Item>
-                        <Form.Item hasFeedback {...formItemLayout} label="Nombre">
+                        <Form.Item hasFeedback {...formItemLayout} label="Nombre o razón social">
                             {
                                 getFieldDecorator('name', {
                                     initialValue: data.name,
                                     rules: [
-                                        { required: true, message: '¡Por favor un nombre!' },
-                                        { pattern: /^[a-zA-Z áéíóúÁÉÍÓÚñÑ]{2,50}$/, message: '¡Ingrese un nombre válido!' }
+                                        { required: true, message: '¡Por favor un Nombre o razón social!' },
                                     ],
                                 })(
-                                    <Input placeholder="Nombre"/>
+                                    <Input placeholder="Nombre o razón social"/>
+                                )
+                            }
+                        </Form.Item>
+                        <Form.Item hasFeedback {...formItemLayout} label="Representante">
+                            {
+                                getFieldDecorator('manager', {
+                                    initialValue: data.manager,
+                                })(
+                                    <Input placeholder="Representante"/>
                                 )
                             }
                         </Form.Item>
@@ -152,10 +161,12 @@ class ModalForm extends Component{
         const {
             currentItem,
             modalType,
-            modalVisible
+            modalVisible,
+            validRuc,
         } = provider;
 
         const providerModal = {
+            validRuc,
             data: modalType == 'create' ? { state: true } : currentItem,
             disabled: modalType == 'detail',
             type: modalType,
@@ -175,6 +186,7 @@ class ModalForm extends Component{
         return (
             <AddForm
                 {...providerModal}
+                dispatch={dispatch}
                 wrappedComponentRef={(formRef) => this.formRef = formRef}/>
         )
     }

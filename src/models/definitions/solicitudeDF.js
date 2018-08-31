@@ -10,13 +10,21 @@ const solicitudeDF = async ({response, setting, logoBase64})=> {
         // Mapenando los tados de la tabla
         let requires = response.data.map(require => {
             return [
-                require.amount,
-                require.unit_measure,
+                { text: require.amount, alignment: 'center' },
+                { text: require.unit_measure, alignment: 'center' },
                 require.product_name,
                 '',
                 '',
             ]
         });
+
+        requires.push([
+            ' ',
+            ' ',
+            { text: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', alignment: 'center' },
+            ' ',
+            ' ',
+        ]);
 
         const rows = requires.length;
         if (rows <= 13) {
@@ -124,7 +132,19 @@ const solicitudeDF = async ({response, setting, logoBase64})=> {
                             ],
                             ...requires
                         ],
-                    }
+                    },
+                    layout: {
+                        hLineWidth: function (i, node) {
+                            return 0.5;
+                        },
+                        vLineWidth: function (i, node) {
+                            return 0.5;
+                        },
+                        fillColor: function (i, node) {
+                            if(i < 2 ) return '#F1F1F1';
+                            return null; 
+                        }
+                    },
                 },
                 {
                     text:'Si por cualquier otra causa no esta en condiciones de cotizar, sirvan(se) firmar y devolver este documento',

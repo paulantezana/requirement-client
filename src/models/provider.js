@@ -1,4 +1,13 @@
-import { providerAll, providerById, providerCreate, providerUpdate, providerDelete,providerSearch } from '../services/provider';
+import { 
+    providerAll,
+    providerCreate, 
+    providerUpdate, 
+    providerDelete,
+    providerSearch,
+    providerValidateRuc,
+    providerDowloandTemplate,
+    providerUploadTemplate,
+} from '../services/provider';
 import { Modal, message } from 'antd';
 export default {
     namespace: 'provider',
@@ -12,7 +21,12 @@ export default {
         currentItem: {},
         modalType: 'create',
 
+        modalUploadVisible: false,
+        modalExportVisible: false,
+
         searchResult: [],
+
+        validRuc: true,
     },
     effects: {
         *all({ payload }, { select, call, put }){
@@ -66,6 +80,36 @@ export default {
                 Modal.error({title: 'Error al actualizar el proveedor', content: response.message});
             }
         },
+        *validateRuc({ payload }, { call, put }){
+            const response = yield call(providerValidateRuc, { ruc: payload });
+            yield put({
+                type: 'validateRucSuccess', payload: { validateRuc: response.success }
+            });
+        },
+        *uploadProviders({ payload }, { call, put }){
+            let data = new FormData();
+            data.append('file',payload.file);
+            const response = yield call(providerUploadTemplate,data);
+            if (response.success){
+                yield put({type: 'resetProvider'});
+                Modal.success({title: 'Importar proveedores', content: response.message});
+                yield put({type: 'all'});
+            }else{
+                Modal.error({title: 'Algo salió mal', content: response.message});
+            }
+        },
+        *downloadTemp({ payload }, { call, put }){
+            const response = yield call(providerDowloandTemplate);
+            try {
+                let url = window.URL.createObjectURL(response);
+                let a = document.createElement('a');
+                a.href = url;
+                a.download = "templateProviders.xlsx";
+                a.click(); 
+            } catch (error) {
+                Modal.warning({title: 'Algo salió mal', content: response.message});
+            }
+        },
     },
     reducers: {
         allSuccess(state, { payload }){
@@ -81,11 +125,22 @@ export default {
         setSearchText(state, { payload }){
             return {...state, searchText: payload };
         },
+        // Modals ------------------------
         showModal(state, { payload }){
             return {...state, ...payload, modalVisible: true };
         },
+        toggleModalUpload(state, { payload }){
+            return {...state, modalUploadVisible: payload };
+        },
+        toggleModalExport(state, { payload }){
+            return {...state, modalExportVisible: payload };
+        },
+        // End Mmodals ---------------------
         resetProvider(state, action){
             return {...state, currentItem: {}, modalVisible: false, modalType: 'create'};
+        },
+        validateRucSuccess(state, { payload }){
+            return {...state, ...payload};
         },
     }
 }

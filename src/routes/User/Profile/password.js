@@ -83,6 +83,7 @@ const PasswordForm = Form.create()(
                             getFieldDecorator('password', {
                                 rules: [
                                     { required: true, message: 'Por favor ingrese su contraseña!' },
+                                    { pattern: /^[a-zA-Z0-9 áéíóúÁÉÍÓÚñÑ$@$!%*?&]{6,30}$/, message: '¡La contraseña debe contener entre 6 a 30 caracteres!' },
                                     { validator: this.validateToNextPassword}
                                 ],
                             })(

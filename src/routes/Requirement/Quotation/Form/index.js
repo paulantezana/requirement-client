@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Select, Modal, Form, Input, Checkbox, Button, AutoComplete, InputNumber, DatePicker } from 'antd';
+import { Select, Modal, Form, Input, Checkbox, Button, AutoComplete, InputNumber, DatePicker, Row, Col } from 'antd';
 import styles from './index.scss';
 import { connect } from 'dva';
 import moment from 'moment';
@@ -8,8 +8,8 @@ import NewProvider from 'routes/Provider/Form';
 import QuotationDetail from './QuotationDetail';
 
 const formItemLayout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 12 },
+    labelCol: { span: 6 },
+    wrapperCol: { span: 18 },
 };
 
 const Option = Select.Option;
@@ -74,66 +74,76 @@ const AddForm = Form.create()(
                     onCancel={onCancel}
                     onOk={onOk}
                     visible={visible}>
-                    <Form layout="inline">
-                        <Form.Item hasFeedback label="Proveedor">
-                            <div className={styles.search}>
-                                <div className={styles.item}>
-                                    {getFieldDecorator('provider_name_aux', {
-                                        initialValue: data.provider_name,
-                                        rules: [{ required: true, message: '¡Por favor elija un proveedor!' }],
-                                    })(
-                                        <AutoComplete
-                                            dataSource={renderSerachItem}
-                                            onSelect={onSearchSelect}
-                                            onSearch={onSearchProvider}
-                                            placeholder="Buscar proveedor"
-                                        />
-                                    )}
-                                </div>
-                                <div className={styles.more}>
-                                    <Button icon="plus" onClick={()=>showModalAddProvider()}/>
-                                    <NewProvider/>
-                                </div>
-                            </div>
-                        </Form.Item>
-                        <Form.Item label="ID" className={styles.hidden}>
-                            {
-                                getFieldDecorator('provider_id', {
-                                    initialValue: data.provider_id || this.state.selectProviderID,
-                                })(
-                                    <InputNumber/>
-                                )
-                            }
-                        </Form.Item>
-                        <Form.Item label="Sugerir ganador">
-                            {
-                                getFieldDecorator('suggest_winner',{
-                                    valuePropName: 'checked',
-                                    initialValue: data.suggest_winner,
-                                })(
-                                    <Checkbox/>
-                                )
-                            }
-                        </Form.Item>
-                        <Form.Item label="Fecha de entrega">
-                            {
-                                getFieldDecorator('deliver_date',{
-                                    valuePropName: 'checked',
-                                    initialValue: data.deliver_date ? moment(data.deliver_date,'DD/MM/YYYY') : moment(new Date(),'DD/MM/YYYY'),
-                                })(
-                                    <DatePicker format='DD/MM/YYYY'/>
-                                )
-                            }
-                        </Form.Item>
-                        <Form.Item hasFeedback label="Observación">
-                            {
-                                getFieldDecorator('observation', {
-                                    initialValue: data.observation,
-                                })(
-                                    <Input.TextArea autosize/>
-                                )
-                            }
-                        </Form.Item>
+                    <Form layout="horizontal">
+                        <Row gutter={16}>
+                            <Col xs={24} sm={16} md={12} lg={8}>
+                                <Form.Item hasFeedback {...formItemLayout} label="Proveedor">
+                                    <div className={styles.search}>
+                                        <div className={styles.item}>
+                                            {getFieldDecorator('provider_name_aux', {
+                                                initialValue: data.provider_name,
+                                                rules: [{ required: true, message: '¡Por favor elija un proveedor!' }],
+                                            })(
+                                                <AutoComplete
+                                                    dataSource={renderSerachItem}
+                                                    onSelect={onSearchSelect}
+                                                    onSearch={onSearchProvider}
+                                                    placeholder="Buscar proveedor"
+                                                />
+                                            )}
+                                        </div>
+                                        <div className={styles.more}>
+                                            <Button icon="plus" onClick={()=>showModalAddProvider()}/>
+                                            <NewProvider/>
+                                        </div>
+                                    </div>
+                                </Form.Item>
+                                <Form.Item label="ID" className={styles.hidden}>
+                                    {
+                                        getFieldDecorator('provider_id', {
+                                            initialValue: data.provider_id || this.state.selectProviderID,
+                                        })(
+                                            <InputNumber/>
+                                        )
+                                    }
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={16} md={12} lg={8}>
+                                <Form.Item {...formItemLayout} label="Fecha entrega">
+                                    {
+                                        getFieldDecorator('deliver_date',{
+                                            valuePropName: 'checked',
+                                            initialValue: data.deliver_date ? moment(data.deliver_date,'DD/MM/YYYY') : moment(new Date(),'DD/MM/YYYY'),
+                                        })(
+                                            <DatePicker format='DD/MM/YYYY'/>
+                                        )
+                                    }
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={16} md={12} lg={8}>
+                                <Form.Item {...formItemLayout} hasFeedback label="Observación">
+                                    {
+                                        getFieldDecorator('observation', {
+                                            initialValue: data.observation,
+                                        })(
+                                            <Input.TextArea autosize/>
+                                        )
+                                    }
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={16} md={12} lg={8}>
+                                <Form.Item {...formItemLayout} label="Sugerir ganador">
+                                    {
+                                        getFieldDecorator('suggest_winner',{
+                                            valuePropName: 'checked',
+                                            initialValue: data.suggest_winner,
+                                        })(
+                                            <Checkbox/>
+                                        )
+                                    }
+                                </Form.Item>
+                            </Col>
+                        </Row>
                     </Form>
                     <QuotationDetail/>
                 </Modal>

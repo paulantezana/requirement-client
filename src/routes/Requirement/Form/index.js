@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Select, Modal, Form, Input, DatePicker, Button } from 'antd';
+import { Row, Col, Modal, Form, Input, DatePicker, Button } from 'antd';
 import styles from './index.scss';
 import { connect } from 'dva';
 import moment from 'moment';
@@ -8,8 +8,8 @@ import FormAddProduct from './FormAddProduct';
 import Spacing from 'components/Spacing';
 
 const formItemLayout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 12 },
+    labelCol: { span: 6 },
+    wrapperCol: { span: 18 },
 };
 
 const dateFormat = 'YYYY/MM/DD';
@@ -95,54 +95,63 @@ const AddForm = Form.create()(
                     onOk={onOk}
                     {...disabledFooter()}
                     visible={visible}>
-                    <Form layout="inline">
-                        <Form.Item hasFeedback label="Nombre">
-                            {
-                                getFieldDecorator('name', {
-                                    initialValue: data.name,
-                                    rules: [
-                                        { required: true, message: '¡Por favor ingrese un nombre!' },
-                                    ],
-                                })(
-                                    <Input placeholder="Nombre" disabled={disabledItems}/>
-                                )
-                            }
-                        </Form.Item>
-                        <Form.Item hasFeedback label="Lugar">
-                            {
-                                getFieldDecorator('place', {
-                                    initialValue: data.place || 'Sicuani',
-                                })(
-                                    <Input placeholder="Lugar" disabled={disabledItems}/>
-                                )
-                            }
-                        </Form.Item>
-                        <Form.Item hasFeedback {...formItemLayout} label="Destino">
-                            {
-                                getFieldDecorator('destination', {
-                                    initialValue: data.destination,
-                                    rules: [
-                                        { required: true, message: '¡Por favor ingrese un destino!' },
-                                    ],
-                                })(
-                                    <Input placeholder="Destino" disabled={disabledItems}/>
-                                )
-                            }
-                        </Form.Item>
-                        <Form.Item hasFeedback {...formItemLayout} label="Solicitante">
-                            {
-                                getFieldDecorator('claimant', {
-                                    initialValue: data.claimant,
-                                    rules: [
-                                        { required: true, message: '¡Por favor ingrese un solicitante!' },
-                                    ],
-                                })(
-                                    <Input placeholder="Solicitante" disabled={disabledItems}/>
-                                )
-                            }
-                        </Form.Item>
+                    <Form layout="horizontal">
+                        <Row gutter={16}>
+                            <Col xs={24} sm={16} md={12} lg={8}>
+                                <Form.Item hasFeedback {...formItemLayout} label="Nombre">
+                                    {
+                                        getFieldDecorator('name', {
+                                            initialValue: data.name,
+                                            rules: [
+                                                { required: true, message: '¡Por favor ingrese un nombre!' },
+                                            ],
+                                        })(
+                                            <Input placeholder="Nombre" disabled={disabledItems}/>
+                                        )
+                                    }
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={16} md={12} lg={8}>
+                                <Form.Item hasFeedback {...formItemLayout} label="Lugar">
+                                    {
+                                        getFieldDecorator('place', {
+                                            initialValue: data.place || 'Sicuani',
+                                        })(
+                                            <Input placeholder="Lugar" disabled={disabledItems}/>
+                                        )
+                                    }
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={16} md={12} lg={8}>
+                                <Form.Item hasFeedback {...formItemLayout} label="Destino">
+                                    {
+                                        getFieldDecorator('destination', {
+                                            initialValue: data.destination,
+                                            rules: [
+                                                { required: true, message: '¡Por favor ingrese un destino!' },
+                                            ],
+                                        })(
+                                            <Input placeholder="Destino" disabled={disabledItems}/>
+                                        )
+                                    }
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={16} md={12} lg={8}>
+                                <Form.Item hasFeedback {...formItemLayout} label="Solicitante">
+                                    {
+                                        getFieldDecorator('claimant', {
+                                            initialValue: data.claimant,
+                                            rules: [
+                                                { required: true, message: '¡Por favor ingrese un solicitante!' },
+                                            ],
+                                        })(
+                                            <Input placeholder="Solicitante" disabled={disabledItems}/>
+                                        )
+                                    }
+                                </Form.Item>
+                            </Col>
+                        </Row>
                     </Form>
-                    <Spacing size="large"/>
                     <div className={styles.operations}> 
                         <Button.Group>
                             <Button disabled={disabledItems} type="primary" icon="plus" onClick={()=>onShowModal('create')}>Agregar</Button>      

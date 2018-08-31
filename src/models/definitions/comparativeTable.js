@@ -1,7 +1,6 @@
 // ------------------------------------------------------------------------------
 // TABLA COMPARATIVO ------------------------------------------------------------
 // ------------------------------------------------------------------------------
-
 import { rowToCol } from 'utilities/utils';
 import moment from 'moment';
 import { docProperties } from 'config/app';
@@ -15,31 +14,29 @@ const comparativeTable = async ({response, setting, logoBase64})=> {
 
         const coreData = rowToCol(requires,quotations);
 
-
         // ----------------------------------
         // Preparando los datos proveedores
         // ----------------------------------
-        const companies = [
+        let companies = [
             [
                { text:  'Nombre o Razón Social ................................'},
-               { text:  providers[0].name, alignment: 'center'},
-               { text:  providers[1].name, alignment: 'center'},
-               { text:  providers[2].name, alignment: 'center'},
+               { text:  providers[0] ? providers[0].name : ' ', alignment: 'center'},
+               { text:  providers[1] ? providers[1].name : ' ', alignment: 'center'},
+               { text:  providers[2] ? providers[2].name : ' ', alignment: 'center'},
             ],
             [
                 { text:  'Representante ..............................................'},
-                { text:  providers[0].manager, alignment: 'center'},
-                { text:  providers[1].manager, alignment: 'center'},
-                { text:  providers[2].manager, alignment: 'center'},
+                { text:  providers[0] ? providers[0].manager : ' ', alignment: 'center'},
+                { text:  providers[1] ? providers[1].manager : ' ', alignment: 'center'},
+                { text:  providers[2] ? providers[2].manager : ' ', alignment: 'center'},
             ],
             [
                 { text:  'Fecha de entrega ofrecida ...........................'},
-                { text:  moment(providers[0].deliver_date).format('DD/MM/YYYY'), alignment: 'center'},
-                { text:  moment(providers[1].deliver_date).format('DD/MM/YYYY'), alignment: 'center'},
-                { text:  moment(providers[2].deliver_date).format('DD/MM/YYYY'), alignment: 'center'},
+                { text:  providers[0] ? moment(providers[0].deliver_date).format('DD/MM/YYYY') : ' ', alignment: 'center'},
+                { text:  providers[1] ? moment(providers[1].deliver_date).format('DD/MM/YYYY') : ' ', alignment: 'center'},
+                { text:  providers[2] ? moment(providers[2].deliver_date).format('DD/MM/YYYY') : ' ', alignment: 'center'},
             ],
         ];
-
 
         // ----------------------------------
         // Preparando los datos de la tabla principal de comparacion
@@ -49,12 +46,12 @@ const comparativeTable = async ({response, setting, logoBase64})=> {
             require.name,
             require.amount,
             require.unit_measure,
-            require.price1,
-            require.price1 * require.amount,
-            require.price2,
-            require.price2 * require.amount,
-            require.price3,
-            require.price3 * require.amount,
+            require.price1 ? require.price1 : ' ',
+            require.price1 ? require.price1 * require.amount : ' ',
+            require.price2 ? require.price2 : ' ',
+            require.price2 ? require.price2 * require.amount : ' ',
+            require.price3 ? require.price3 : ' ',
+            require.price3 ? require.price3 * require.amount : ' ',
         ]);
         coreTable.push([
             ' ',
@@ -91,9 +88,9 @@ const comparativeTable = async ({response, setting, logoBase64})=> {
             total3 : 0,
         };
         coreData.map(require => {
-            totales.total1 = totales.total1 + (require.price1 * require.amount)
-            totales.total2 = totales.total2 + (require.price2 * require.amount)
-            totales.total3 = totales.total3 + (require.price3 * require.amount)
+            totales.total1 = require.price1 ? totales.total1 + (require.price1 * require.amount) : 0;
+            totales.total2 = require.price2 ? totales.total2 + (require.price2 * require.amount) : 0;
+            totales.total3 = require.price3 ? totales.total3 + (require.price3 * require.amount) : 0;
         });
         coreTable.push([
             ' ',
@@ -101,11 +98,11 @@ const comparativeTable = async ({response, setting, logoBase64})=> {
             ' ',
             ' ',
             ' ',
-            totales.total1,
+            totales.total1 ? totales.total1 : ' ', 
             ' ',
-            totales.total2,
+            totales.total2 ? totales.total2 : ' ',
             ' ',
-            totales.total3,
+            totales.total3 ? totales.total3 : ' ',
         ])
 
 

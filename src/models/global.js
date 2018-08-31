@@ -1,7 +1,7 @@
 import { settingUpdate, settingGlobal, settingUploadLogo } from '../services/setting';
 import { statisticTopWinner, statisticTopUsers, statisticTopProducts, statisticTopRequirememnts } from '../services/statistic';
 import { userUpdate } from '../services/user';
-import { Modal } from 'antd';
+import { Modal, message } from 'antd';
 import { getAuthorityUser } from 'utilities/authority';
 export default {
     namespace: 'global',
@@ -22,24 +22,26 @@ export default {
             const response = yield call(settingGlobal,{ id: tokenUser.user.id });
             if (response.success){
                 yield put({ type: 'settingSuccess', payload: response });
+            }else{
+                Modal.error({title: 'Error al consultar la configuración general', content: response.message});
             }
         },
         *updateProfile({ payload }, { call, put }){
             const response = yield call(userUpdate, payload);
             if(response.success){
-                yield put({
-                    type: 'updateProfileSuccess',
-                    payload
-                });
+                yield put({ type: 'updateProfileSuccess', payload });
+                message.success(response.message)
+            }else{
+                Modal.error({title: 'Error al actualizar el perfil', content: response.message});
             }
         },
         *updateSetting({ payload }, { call, put }){
             const response = yield call(settingUpdate, payload);
             if(response.success){
-                yield put({
-                    type: 'updateSettingSuccess',
-                    payload
-                });
+                yield put({ type: 'updateSettingSuccess', payload });
+                message.success(response.message)
+            }else{
+                Modal.error({title: 'Error al actualizar la configuración general', content: response.message});
             }
         },
 
@@ -49,7 +51,7 @@ export default {
             data.append('id',payload.id);
             const response = yield call(settingUploadLogo,data);
             if (response.success){
-                Modal.success({title: 'Setting', content: response.message});
+                message.success(response.message);
             }else{
                 Modal.error({title: 'Error subir el avatar usuario', content: response.message});
             }

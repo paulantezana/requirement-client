@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { connect } from 'dva';
-import { message, Button, Input, Tooltip, Pagination, Modal, Card } from 'antd';
+import { Button, Input, Card } from 'antd';
 
 import styles from './index.scss';
 import List from './List';
 import ExportData from './export';
 import PrinterRequirement from './print';
 import ModalForm from './Form';
+
+import PrintModalRQ from './PrintModalRQ';
 
 const Search = Input.Search;
 
@@ -120,16 +122,35 @@ class Requirement extends Component{
             });
         }
 
+        const onPrintRQ = ()=> {
+            // Mostrar el printer CC = cuadro comparativo
+            dispatch({
+                type: 'requirement/showPrinterRQ',
+            });
+
+            // Cargar la definicion del documento
+            dispatch({
+                type: 'requirement/loadDataRQ',
+                // payload: record,
+            });
+        }
+
         return (
             <Card bordered={false}>
                 <div className={styles.header}>
                     <Button icon="plus" type="primary" onClick={()=>onShowModal('create')}>Nuevo requerieminto</Button>
-                    <Button icon="reload" onClick={()=>this.onQueryAll()}>Actualizar</Button>
-                    <Button icon="export" onClick={()=>this.handleToggleExport(true)}>Exportar</Button>
-                    <Search placeholder="Buscar requerimiento" value={searchText} onChange={e=>onSearchText(e.target.value)} onSearch={value => this.onQueryAll()} style={{ width: 200 }}/>
                     <ModalForm/>
-                    <PrinterRequirement/>
+
+                    <Button icon="export" onClick={()=>this.handleToggleExport(true)}>Exportar</Button>
                     <ExportData visible={this.state.visibleExport} onCancel={()=>this.handleToggleExport(false)}/>
+
+                    <Button icon="printer" onClick={()=>onPrintRQ()}>Imprimir plantilla</Button>
+                    <PrintModalRQ/>
+
+                    <Button icon="reload" onClick={()=>this.onQueryAll()}>Actualizar</Button>
+                    <Search placeholder="Buscar requerimiento" value={searchText} onChange={e=>onSearchText(e.target.value)} onSearch={value => this.onQueryAll()} style={{ width: 200 }}/>
+                    
+                    <PrinterRequirement/>
                 </div>
                 <List {...requirementListProps}/>
             </Card>

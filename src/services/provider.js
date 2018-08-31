@@ -1,4 +1,4 @@
-import request from '../utilities/request';
+import request, { dowloandFetch } from '../utilities/request';
 
 const PROVIDER_API = '/provider';
 
@@ -46,6 +46,31 @@ export async function providerUpdate(body) {
 export async function providerDelete(body) { 
     return request(PROVIDER_API,{
         method: 'DELETE',
+        body
+    })
+}
+
+// upload provider
+export async function providerDowloandTemplate() { 
+    return dowloandFetch(`${PROVIDER_API}/download/template`,{
+        method: 'GET',
+    })
+}
+
+// dowloand provider
+export async function providerUploadTemplate(body) { 
+    return request(`${PROVIDER_API}/upload/template`,{
+        method: 'POST',
+        body,
+    })
+}
+
+// ------------------------------------------------
+// VALIDATE ---------------------------------------
+// ------------------------------------------------
+export async function providerValidateRuc(body) { 
+    return request(`${PROVIDER_API}/validate/ruc`,{
+        method: 'POST',
         body
     })
 }

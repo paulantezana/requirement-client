@@ -134,6 +134,7 @@ export default {
                 Modal.success({title: 'Crear cotizacion', content: response.message});
                 yield put({type: 'requirement'});
                 yield put({type: 'all'});
+                yield put({type: 'getComparativeTable'}); // Update comparative table
             }else{
                 Modal.error({title: 'Error al crear cotizacion', content: response.message});
             }
@@ -167,6 +168,7 @@ export default {
                 yield put({type: 'requirement'});
                 message.success("Se actualizo el cotizacion con el id = "  + payload.id);
                 yield put({type: 'all'});
+                yield put({type: 'getComparativeTable'}); // Update comparative table
             }else{
                 Modal.error({title: 'Error al actualizar el cotizacion', content: response.message});
             }
@@ -180,6 +182,7 @@ export default {
                 yield put({type: 'resetQuotation'});
                 yield put({type: 'requirement'});
                 yield put({type: 'all'});
+                yield put({type: 'getComparativeTable'}); // Update comparative table
                 message.success("Se actualizo el cotizacion con el id = "  + payload.id);
             }else{
                 Modal.error({title: 'Error al actualizar el cotizacion', content: response.message});

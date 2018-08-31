@@ -57,14 +57,17 @@ const ProfileForm = Form.create()(
         }
         render(){
             const { getFieldDecorator } = this.props.form;
-            const { data } = this.props;
+            const { data, loading } = this.props;
             return (
                 <Fragment>
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Item hasFeedback {...formItemLayout} label="DNI">
                             {getFieldDecorator('dni', {
                                 initialValue: data.dni,
-                                rules: [{ required: true, message: '¡Ingrese un nombre válido!' }],
+                                rules: [
+                                    { required: true, message: '¡Por favor ingrese su DNI!' },
+                                    { pattern: /^[0-9]{8}$/, message: '¡Ingrese un DNI válido!' }
+                                ],
                             })(
                                 <Input/>
                             )}
@@ -113,7 +116,7 @@ const ProfileForm = Form.create()(
                             )}
                         </Form.Item>
                         <Form.Item  {...tailFormItemLayout} >
-                            <Button type="primary" htmlType="submit">Guardar cambios</Button>
+                            <Button type="primary" loading={loading} htmlType="submit">Guardar cambios</Button>
                         </Form.Item>
                     </Form>
                 </Fragment>
@@ -122,9 +125,10 @@ const ProfileForm = Form.create()(
     }
 )
 
-const mapStateToProps = ({global}) => {
+const mapStateToProps = ({global, loading}) => {
     return {
         data: global.user,
+        loading: loading.effects['global/updateProfile'],
     }
 }
 

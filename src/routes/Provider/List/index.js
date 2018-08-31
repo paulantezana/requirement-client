@@ -42,11 +42,18 @@ class DataList extends Component{
                 key: 'ruc',
             },
             {
-                title: 'Nombre',
+                title: 'Razon social',
                 dataIndex: 'name',
                 key: 'name',
                 sorter: (a, b) => a.name.length - b.name.length,
                 sortOrder: sortedInfo.columnKey === 'name' && sortedInfo.order,
+            },
+            {
+                title: 'Representante',
+                dataIndex: 'manager',
+                key: 'manager',
+                sorter: (a, b) => a.manager.length - b.manager.length,
+                sortOrder: sortedInfo.columnKey === 'manager' && sortedInfo.order,
             },
             {
                 title: 'Email',
