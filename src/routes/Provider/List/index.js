@@ -40,6 +40,7 @@ class DataList extends Component{
                 title: 'RUC',
                 dataIndex: 'ruc',
                 key: 'ruc',
+                width: '120px',
             },
             {
                 title: 'Razon social',

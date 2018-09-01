@@ -12,7 +12,15 @@ export async function quotationAll(body) {
 
 // Get Comparative Table
 export async function quotationComparativeTable(body) { 
-    return request(`${QUOTATION_API}/comparativetable`,{
+    return request(`${QUOTATION_API}/comparativeTable`,{
+        method: 'POST',
+        body
+    })
+}
+
+// Get Purchase Order
+export async function quotationPurchaseOrder(body) { 
+    return request(`${QUOTATION_API}/purchaseOrder`,{
         method: 'POST',
         body
     })

@@ -42,7 +42,7 @@ const comparativeTable = async ({response, setting, logoBase64})=> {
         // Preparando los datos de la tabla principal de comparacion
         // ----------------------------------
         const coreTable = coreData.map((require, key) => [
-            ((key + 1)< 10) ? `0${key + 1 }` : key + 1,
+            ((key + 1)< 10) ? `0${key + 1 }` : key + 1, // Numeracion suseciva
             require.name,
             require.amount,
             require.unit_measure,

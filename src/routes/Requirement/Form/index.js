@@ -106,7 +106,7 @@ const AddForm = Form.create()(
                                                 { required: true, message: '¡Por favor ingrese un nombre!' },
                                             ],
                                         })(
-                                            <Input placeholder="Nombre" disabled={disabledItems}/>
+                                            <Input placeholder="Nombre"/>
                                         )
                                     }
                                 </Form.Item>

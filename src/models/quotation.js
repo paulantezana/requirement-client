@@ -1,6 +1,7 @@
 import { 
     quotationAll, 
     quotationComparativeTable,
+    quotationPurchaseOrder,
     quotationCreate, 
     quotationUpdate, 
     quotationDelete, 
@@ -95,6 +96,7 @@ export default {
                 Modal.error({title: 'Error al consultar cuadro comparativo ', content: response.message});
             }
         },
+
         // Query todo los requerirmientos del requerimeinto actual
         *all({ payload }, { select, call, put }){
             const requirement_id = yield select(({ quotation }) => quotation.requirementID);
@@ -218,7 +220,7 @@ export default {
         *loadDataOC({ payload }, { select, call, put }){
             const setting = yield select(({ global }) => global.setting);
             const id = yield select(({ quotation }) => quotation.requirementID);
-            const response = yield call(quotationComparativeTable,{...payload, id});
+            const response = yield call(quotationPurchaseOrder,{...payload, requirement_id: id});
             if (response.success){
                 const blob = yield call(settingDownloadLogo,{ id: setting.id });   
                 // Comvertiendo imagen blog en Base64

@@ -7,38 +7,26 @@ import moment from 'moment';
 import { docProperties } from 'config/app';
 
 const purchaseOrder = async ({response, setting, logoBase64})=> {
-    const requires = response.data.ct_response_requires;
-    const quotations = response.data.ct_response_quotations;
-    const providers = response.data.ct_response_providers;
-
     return new Promise((resoleve,reject)=>{
 
-        const coreData = rowToCol(requires,quotations);
+        const coreData = response.data;
 
         // ----------------------------------
         // Preparando los datos de la tabla principal de comparacion
         // ----------------------------------
         const coreTable = coreData.map((require, key) => [
-            ((key + 1)< 10) ? `0${key + 1 }` : key + 1,
-            require.name,
+            require.code,
             require.amount,
             require.unit_measure,
-            require.price1,
-            require.price1 * require.amount,
-            require.price2,
-            require.price2 * require.amount,
-            require.price3,
-            require.price3 * require.amount,
+            require.description,
+            require.unit_price,
+            require.total,
         ]);
         coreTable.push([
             ' ',
+            ' ',
+            ' ',
             { text: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', alignment: 'center' },
-            ' ',
-            ' ',
-            ' ',
-            ' ',
-            ' ',
-            ' ',
             ' ',
             ' ',
         ])
@@ -52,35 +40,23 @@ const purchaseOrder = async ({response, setting, logoBase64})=> {
                     ' ',
                     ' ',
                     ' ',
-                    ' ',
-                    ' ',
-                    ' ',
-                    ' ',
                 ])
             }
         }
-        let totales = {
-            total1 : 0,
-            total2 : 0,
-            total3 : 0,
-        };
+        let total = 0;
         coreData.map(require => {
-            totales.total1 = totales.total1 + (require.price1 * require.amount)
-            totales.total2 = totales.total2 + (require.price2 * require.amount)
-            totales.total3 = totales.total3 + (require.price3 * require.amount)
+            total = require.total + total;
         });
         coreTable.push([
             ' ',
+            ' ',
+            ' ',
+            ' ',
             { text: 'TOTAL', alignment: 'center' },
-            ' ',
-            ' ',
-            ' ',
-            totales.total1,
-            ' ',
-            totales.total2,
-            ' ',
-            totales.total3,
+            total,
         ])
+
+        console.log(coreTable);
 
 
         // ------------------------------------------------
@@ -138,7 +114,15 @@ const purchaseOrder = async ({response, setting, logoBase64})=> {
                                     ['',currentDay,currentMounth,currentYear],
                                 ],
                             },
-                            margin: [ 57, 2, 0, 8 ],
+                            margin: [ 68.5, 2, 0, 8 ],
+                            layout: {
+                                hLineWidth: function (i, node) {
+                                    return 0.5;
+                                },
+                                vLineWidth: function (i, node) {
+                                    return 0.5;
+                                },
+                            },
                         },
                     ]
                 },
@@ -150,11 +134,6 @@ const purchaseOrder = async ({response, setting, logoBase64})=> {
                 },
             ],
             content: [
-                {
-                    text: 'REFERENCIA DEL COTIZANTE',
-                    alignment: 'center',
-                    margin: [ 0, 2, 0, 8 ],
-                },
                 {
                     table: {
                         widths: [ 60, 45, 45, '*', 45, 45 ],
@@ -196,7 +175,7 @@ const purchaseOrder = async ({response, setting, logoBase64})=> {
                                 { text: 'A \n \n Unitario', style: 'tableHeader' },
                                 { text: 'B \n \n Total', style: 'tableHeader' },
                             ],
-                            // ...coreTable
+                            ...coreTable
                         ],
                     }
                 },
