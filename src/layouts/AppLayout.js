@@ -178,10 +178,9 @@ class AppLayout extends Component{
     }
 }
 
-const mapStateToProps = ({global, user}) => {
+const mapStateToProps = ({global}) => {
     return {
         global: global,
-        currentUser: user.currentUser,
     }
 }
 

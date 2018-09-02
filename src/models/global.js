@@ -53,7 +53,7 @@ export default {
             if (response.success){
                 message.success(response.message);
             }else{
-                Modal.error({title: 'Error subir el avatar usuario', content: response.message});
+                Modal.error({title: 'Error subir el logo principal', content: response.message});
             }
         },
 

@@ -72,10 +72,23 @@ class ViwerCC extends Component{
         return (
             <Card bordered={false} className={stateCard}>
                 <div className={styles.header}>
-                    <Button disabled={enabledButtonCC} icon="printer" onClick={()=>onPrintCC()}>Imprimir Cuadro Comparativo</Button>
+
+                    {/* Imprimir cuadro comparativo */}
+                    <Button disabled={enabledButtonCC} icon="printer" onClick={()=>onPrintCC()}>Cuadro Comparativo</Button>
                     <CuadroComparativo/>
-                    <Button disabled={enabledButtonOC} icon="printer" onClick={()=>onPrintOC()}>Imprimir Orden Compra</Button>
+
+                    {/* Imprimir orden de compra */}
+                    <Button disabled={enabledButtonOC} icon="printer" onClick={()=>onPrintOC()}>Orden De Compra</Button>
                     <OrdenCompra/>
+
+                    {/* Imprimir Comprobante de pago */}
+                    <Button icon="printer">Comprobante De Pago</Button>
+
+                    {/* Imprimir memorandum */}
+                    <Button icon="printer">Memorandum</Button>
+
+                    {/* Imprimir pedido comprobante de salida */}
+                    <Button icon="printer">Pecosa</Button>
                 </div>
                 <ComparativeTable { ...quotationCTProps }/>
             </Card>
