@@ -6,6 +6,7 @@ import requirement from './requirement';
 import quotation from './quotation';
 import require from './require';
 import dowloand from './dowloand';
+import print from './print';
 
 const models = app => {
     app.model(global);
@@ -16,6 +17,7 @@ const models = app => {
     app.model(quotation);
     app.model(require);
     app.model(dowloand);
+    app.model(print);
 }
 
 export default models;

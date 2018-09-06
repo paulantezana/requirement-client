@@ -1,10 +1,10 @@
 // ------------------------------------------------------------------------------
-// MEMORANDUM -------------------------------------------------------------------
+// PEDIDO COMPROBANTE DE SALIDA -------------------------------------------------
 // ------------------------------------------------------------------------------
-const memorandum = async ({response, setting, logoBase64})=> {
+const pecosaDF = async ({response, setting, logoBase64})=> {
     return new Promise((resoleve,reject)=>{
 
     })
 }
 
-export default purchaseOrder;
+export default pecosaDF;

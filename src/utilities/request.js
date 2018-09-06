@@ -105,7 +105,7 @@ export default (path, options)=>{
     const newOptions = setHeaders({...defaultOptions, ...options});
 
     const url = service.api_path + path; // Formando la URL de la peticion
-    
+
     // Realizando la peticion con los parametros pertinentes
     return fetch(url, newOptions)
         .then(checkStatus)

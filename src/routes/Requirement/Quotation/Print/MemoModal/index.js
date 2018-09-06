@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 import { Button, Modal } from 'antd';
 import { connect } from 'dva';
 
-class OrdenCompra extends Component{
+class Memorandum extends Component{
     constructor(props){
         super(props);
     }
 
     render(){
-        const { quotation, dispatch } = this.props;
+        const { print, dispatch } = this.props;
 
         const onCancel = () =>{
             dispatch({
-                type: 'quotation/hidePrinterOC',
+                type: 'print/hidePrinterMemo',
             });
         }
 
@@ -24,17 +24,17 @@ class OrdenCompra extends Component{
                 width="95vw"
                 footer={null}
                 bodyStyle={{padding: 0}}
-                visible={quotation.ocVisible}>
-                    <iframe src={quotation.docOCDataUrl} height="600px" width="100%"></iframe>
+                visible={print.memoVisible}>
+                    <iframe src={print.docMemoDataUrl} height="600px" width="100%"></iframe>
             </Modal>
         )
     }
 }
 
-const mapStateToProps = ({quotation}) => {
+const mapStateToProps = ({print}) => {
     return {
-        quotation,
+        print,
     }
 }
 
-export default connect(mapStateToProps)(OrdenCompra);
+export default connect(mapStateToProps)(Memorandum);

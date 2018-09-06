@@ -8,11 +8,11 @@ class CuadroComparativo extends Component{
     }
 
     render(){
-        const { quotation, dispatch } = this.props;
+        const { print, dispatch } = this.props;
 
         const onCancel = () =>{
             dispatch({
-                type: 'quotation/hidePrinterCC',
+                type: 'print/hidePrinterCC',
             });
         }
 
@@ -24,16 +24,16 @@ class CuadroComparativo extends Component{
                 width="95vw"
                 footer={null}
                 bodyStyle={{padding: 0}}
-                visible={quotation.ccVisible}>
-                    <iframe src={quotation.docCCDataUrl} height="600px" width="100%"></iframe>
+                visible={print.ccVisible}>
+                    <iframe src={print.docCCDataUrl} height="600px" width="100%"></iframe>
             </Modal>
         )
     }
 }
 
-const mapStateToProps = ({quotation}) => {
+const mapStateToProps = ({print}) => {
     return {
-        quotation,
+        print,
     }
 }
 

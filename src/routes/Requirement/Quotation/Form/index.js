@@ -62,7 +62,7 @@ const AddForm = Form.create()(
 
             const renderSerachItem = searchResult.map(item => <Option key={item.id}>{item.name}</Option> )
 
-            // this.handleChangeSelectProvider(data.provider_id); // Valor por defecto del id provider
+           console.log(data);
 
             return (
                 <Modal 
@@ -112,8 +112,7 @@ const AddForm = Form.create()(
                                 <Form.Item {...formItemLayout} label="Fecha entrega">
                                     {
                                         getFieldDecorator('deliver_date',{
-                                            valuePropName: 'checked',
-                                            initialValue: data.deliver_date ? moment(data.deliver_date,'DD/MM/YYYY') : moment(new Date(),'DD/MM/YYYY'),
+                                            initialValue: data.deliver_date ? moment(new Date(data.deliver_date), 'DD/MM/YYYY') : undefined,
                                         })(
                                             <DatePicker format='DD/MM/YYYY'/>
                                         )
