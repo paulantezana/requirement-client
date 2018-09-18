@@ -1,6 +1,6 @@
 export const app = {
     version: '0.0.1',
-    name: 'RQSystem',
+    name: 'R-WEB',
     description: 'paulantezana.com',
     author: 'paul antezana',
 }

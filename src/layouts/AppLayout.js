@@ -147,7 +147,7 @@ class AppLayout extends Component{
                                 onCollapse={this.handleMenuCollapse}
                             />
                         </Header>
-                        <Content style={{ height: '100%', margin: '24px 24px 0' }}>
+                        <Content style={{ height: '100%' }}>
                             <Switch>
                                 <PrivateRoute exact path={match.url} component={Dashboard}/>
                                 <PrivateRoute path={`${match.url}requirements`} component={Requirement}/>

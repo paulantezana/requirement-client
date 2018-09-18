@@ -1,20 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Route, Switch, Redirect } from 'dva/router';
-import { Row, Col, } from 'antd';
-import Particles from 'react-particles-js';
+import { Icon }  from 'antd';
 
-////////////////////////////////////////////
 import logo from 'assets/logo.png';
 import logoWhite from 'assets/logo-white.png';
 import { app } from 'config/app';
-////////////////////////////////////////////
 
-////////////////////////////////////////////
+import GlobalFooter from 'components/GlobalFooter';
+
 import LoginPage from '../routes/User/Login';
 import Forgot from '../routes/User/Forgot';
 import styles from './UserLayout.scss';
-///////////////////////////////////////////
-
 
 const options = {
     particles: {
@@ -45,23 +41,22 @@ class UserLayout extends Component{
         super(props);
     }
     render(){
-        const {  match } = this.props;
+        const { match } = this.props;
         return (
-            <Row className={styles.container}>
-                <Col xs={24} md={12} className={styles.particle}>
-                    <img src={logoWhite} className={styles.logoWhite}/>
-                    <Particles params={options}/>
-                </Col>
-                <Col xs={24} md={12} className={styles.content}>
-                    <img src={logo} className={styles.logo}/>
-                    <h1 className={styles.title}>{app.name}</h1>
-                    <Switch>
-                        <Route exact path={`${match.url}/login`} component={LoginPage}/>
-                        <Route exact path={`${match.url}/forgot`} component={Forgot}/>
-                        <Redirect from="/user" to="/user/login" />
-                    </Switch>
-                </Col>
-            </Row>
+            <div className={styles.container}>
+                {/* <img src={logo} className={styles.logo}/> */}
+                <h1 className={styles.title}>{app.name}</h1>
+                <Switch>
+                    <Route exact path={`${match.url}/login`} component={LoginPage}/>
+                    <Route exact path={`${match.url}/forgot`} component={Forgot}/>
+                    <Redirect from="/user" to="/user/login" />
+                </Switch>
+                <GlobalFooter copyright={
+                    <Fragment>
+                        Copyright <Icon type="copyright" /> 2018 paulantezana.com
+                    </Fragment>
+                }/>
+            </div>
         )
     }
 }
