@@ -62,7 +62,7 @@ const solicitudeDF = async ({response, setting, logoBase64})=> {
             pageMargins: [ 48, 115, 48, 48 ],
             header: [
                 { image: logoBase64, width: 50, margin: [ 48, 35, 0, 4 ] },
-                { text: setting.company.toUpperCase(), alignment:'center', bold: true, fontSize: 11, margin: [ 48, -50, 48, 2 ] },
+                { text: setting.company_name.toUpperCase(), alignment:'center', bold: true, fontSize: 11, margin: [ 48, -50, 48, 2 ] },
                 { text: `"${setting.city.toUpperCase()}"`, alignment: 'center', bold: true, fontSize: 16, margin: [ 48, 2, 48, 2  ] },
                 { text: 'SOLICITUD DE COTIZACION', alignment: 'center', bold: true, fontSize: 13, margin: [ 48, 4, 48, 0 ] },
                 { text: '___________________________________________________________________________________________', alignment: 'center',  margin: [ 48, -4, 48, 4 ] },
@@ -108,7 +108,7 @@ const solicitudeDF = async ({response, setting, logoBase64})=> {
                     margin: [ 0, 2, 0, 3 ],
                 },
                 { 
-                    text: 'Sirva(n)se cotizarnos precios netos de los artículos que se detallan más abajo, para ser entregados en nuestro almacén del ' + setting.company,
+                    text: 'Sirva(n)se cotizarnos precios netos de los artículos que se detallan más abajo, para ser entregados en nuestro almacén del ' + setting.company_name,
                     margin: [ 0, 2, 0, 8 ],
                 },
                 {

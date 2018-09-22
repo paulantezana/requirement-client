@@ -33,7 +33,7 @@ const requirementDF = async ({setting, logoBase64})=> {
             pageMargins: [ 48, 115, 48, 48 ],
             header: [
                 { image: logoBase64, width: 50, margin: [ 48, 35, 0, 4 ] },
-                { text: setting.company.toUpperCase(), alignment:'center', bold: true, fontSize: 11, margin: [ 48, -50, 48, 2 ] },
+                { text: setting.company_name.toUpperCase(), alignment:'center', bold: true, fontSize: 11, margin: [ 48, -50, 48, 2 ] },
                 { text: `"${setting.city.toUpperCase()}"`, alignment: 'center', bold: true, fontSize: 16, margin: [ 48, 2, 48, 2  ] },
                 { text: 'REQUERIMIENTO', alignment: 'center', bold: true, fontSize: 13, margin: [ 48, 4, 48, 0 ] },
                 { text: '___________________________________________________________________________________________', alignment: 'center',  margin: [ 48, -4, 48, 4 ] },

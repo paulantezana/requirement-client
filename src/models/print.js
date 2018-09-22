@@ -13,6 +13,7 @@ import { getDataUrl } from '../utilities/generate';
 
 import comparativeTableDefinition from './definitions/comparativeTable';
 import purchaseOrderDefinition from './definitions/purchaseOrder';
+import paymentVoucherDF from './definitions/paymentVoucherDF';
 import memoDF from './definitions/memoDF';
 import pecosaDF from './definitions/pecosaDF';
 
@@ -78,7 +79,7 @@ export default {
                 // Comvertiendo imagen blog en Base64
                 const logoBase64 = yield call(convertBlobToBase64,blob)
                 // Procesando la definicion del documento
-                const docDefinition = yield call(purchaseOrderDefinition,{response,setting,logoBase64})
+                const docDefinition = yield call(paymentVoucherDF,{response,setting,logoBase64})
                 // Enviando el estado
                 const dataUrl = yield call(getDataUrl,docDefinition);
                 yield put({type: 'setDocCPDataUrl', payload: dataUrl})
@@ -112,7 +113,7 @@ export default {
                 // Comvertiendo imagen blog en Base64
                 const logoBase64 = yield call(convertBlobToBase64,blob)
                 // Procesando la definicion del documento
-                const docDefinition = yield call(purchaseOrderDefinition,{response,setting,logoBase64})
+                const docDefinition = yield call(pecosaDF,{response,setting,logoBase64})
                 // Enviando el estado
                 const dataUrl = yield call(getDataUrl,docDefinition);
                 yield put({type: 'setDocPecosaDataUrl', payload: dataUrl})

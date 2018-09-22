@@ -100,7 +100,7 @@ const purchaseOrder = async ({response, setting, logoBase64})=> {
                                 columns: [
                                     { image: logoBase64, width: 40, },
                                     [
-                                        { text: setting.company, fontSize: 10, margin: [5, 0, 0, 3] },
+                                        { text: setting.company_name, fontSize: 10, margin: [5, 0, 0, 3] },
                                         { text: setting.city, margin: [ 5, 0, 0, 5 ] },
                                     ]
                                 ]
