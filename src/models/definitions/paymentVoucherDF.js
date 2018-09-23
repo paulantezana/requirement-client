@@ -134,23 +134,42 @@ const paymentVoucher = async ({response, setting, logoBase64})=> {
             ],
             content: [
                 {
+                    margin: [ 0, 4, 0, 4 ],
                     table: {
-                        widths: [ 50, '*' ],
+                        widths: [50, '*', '*'],
                         headerRows: 0,
                         body: [
-                            ['NOMBRE :','EDHUIN EBER ENRIQUEZ CORDOVA'],
-                            ['SON        :','TRE MIL SESENTA Y UNO CON 00/100 NUEVOS SOLES'],
+                            [{text: 'NOMBRE :', bold: true},{text: 'EDHUIN EBER ENRIQUEZ CORDOVA', colSpan: 2},''],
+                            [{text: 'SON        :', bold: true},{text: 'TRE MIL SESENTA Y UNO CON 00/100 NUEVOS SOLES', colSpan: 2},''],
+                            ['','6,062.00','(En letras)'],
                         ],
-                    }
+                    },
+                    layout: {
+                        hLineWidth: function (i, node) {
+                            return (i === 2 ) ? 0 : 0.5;
+                        },
+                        vLineWidth: function (i, node) {
+                            return (i === 2 ) ? 0 : 0.5;
+                        },
+                    },
                 },
                 {
+                    margin: [ 0, 4, 0, 4 ],
                     table: {
                         widths: ['*'],
                         headerRows: 0,
                         body: [
                             ['IMPORTE QUE SE GIRA A LA ORDEN DE: EDHUIN EBER ENRÍQUEZ CÓRDOBA, PAGO POR LA ADQUISICIÓN DE MATERIALES DE ESCRITORIO PARA LA ATENCIÓN DE DIFERENTES OFICINAS JEFATURAS Y DOCENTES DEL I.E.S.T.P VILCANOTA – SICUANI, SEGÚN FACCTURA N.º 0001 – 000599 Y 000600, H/R, S/C, C/C, O/C, PECOSA Y MEMORANDUM'],
                         ],
-                    }
+                    },
+                    layout: {
+                        hLineWidth: function (i, node) {
+                            return 0.5;
+                        },
+                        vLineWidth: function (i, node) {
+                            return 0.5;
+                        },
+                    },
                 },
                 {
                     margin: [ 0, 4, 0, 4 ],
@@ -159,17 +178,19 @@ const paymentVoucher = async ({response, setting, logoBase64})=> {
                         body: [
                             [[
                                 {
+                                    margin: [ 0, 4, 0, 4 ],
                                     table: {
+                                        // widths: ['*','*','*','*','*','*','*'],
                                         body: [
                                             [{text:'CODIFICACION PROGRAMATICA', colSpan: 7, alignment: 'center'}, '', '', '','','',''],
                                             [
-                                                {text:'Rector',fontSize: 8,alignment: 'center'}, 
-                                                {text:'Pliego',fontSize: 8,alignment: 'center'}, 
-                                                {text:'Programa',fontSize: 8,alignment: 'center'}, 
-                                                {text:'Sub programa',fontSize: 8,alignment: 'center'},
+                                                {text:'Rector',fontSize: 9,alignment: 'center'}, 
+                                                {text:'Pliego',fontSize: 9,alignment: 'center'}, 
+                                                {text:'Programa',fontSize: 9,alignment: 'center'}, 
+                                                {text:'Sub programa',fontSize: 9,alignment: 'center'},
                                                 ' ',
-                                                {text:'fuente financiamiento',fontSize: 8,alignment: 'center'},
-                                                {text:'funcional',fontSize: 8,alignment: 'center'},
+                                                {text:'fuente financiamiento',fontSize: 9,alignment: 'center'},
+                                                {text:'funcional',fontSize: 9,alignment: 'center'},
                                             ],
                                             ['', '', '','','','RDR', ''],
                                         ]
@@ -182,12 +203,131 @@ const paymentVoucher = async ({response, setting, logoBase64})=> {
                                             return 0.5;
                                         },
                                     },
-                                }
+                                },
+                                {
+                                    margin: [ 0, 8, 0, 0 ],
+                                    text: 'CONTABILIDAD PRESUPUESTAL',
+                                    alignment: 'center',
+                                },
+                                {
+                                    margin: [ 0, 4, 0, 4 ],
+                                    table: {
+                                        widths: ['*','*','*','*'],
+                                        body: [
+                                            [{text:'DEBE', colSpan: 2, alignment: 'center'}, '', {text: 'HABER', colSpan: 2, alignment: 'center'}, ''],
+                                            ['CUENTA', 'IMPORTE', 'CUENTA', 'IMPORTE'],
+                                            ['84010201', 'S/. 3,062.00', '86010201', 'S/. 3,062.00'],
+                                        ]
+                                    },
+                                    layout: {
+                                        hLineWidth: function (i, node) {
+                                            return 0.5;
+                                        },
+                                        vLineWidth: function (i, node) {
+                                            return 0.5;
+                                        },
+                                    },
+                                },
+                                {
+                                    margin: [ 0, 8, 0, 0 ],
+                                    text: 'CONTABILIDAD PATRIMONIAL',
+                                    alignment: 'center',
+                                },
+                                {
+                                    margin: [ 0, 4, 0, 4 ],
+                                    table: {
+                                        widths: ['*','*','*','*'],
+                                        body: [
+                                            [{text:'DEBE', colSpan: 2, alignment: 'center'}, '', {text: 'HABER', colSpan: 2, alignment: 'center'}, ''],
+                                            ['CUENTA', 'IMPORTE', 'CUENTA', 'IMPORTE'],
+                                            ['84010201', 'S/. 3,062.00', '86010201', 'S/. 3,062.00'],
+                                        ]
+                                    },
+                                    layout: {
+                                        hLineWidth: function (i, node) {
+                                            return 0.5;
+                                        },
+                                        vLineWidth: function (i, node) {
+                                            return 0.5;
+                                        },
+                                    },
+                                },
+                                {
+                                    margin: [ 0, 8, 0, 0 ],
+                                    text: 'PARA USO DEL TESORO O CAJERO',
+                                    alignment: 'center',
+                                },
+                                {
+                                    margin: [ 0, 4, 0, 4 ],
+                                    table: {
+                                        widths: ['*','*','*'],
+                                        heights: [10, 40],
+                                        body: [
+                                            ['FECHA', 'HECHO POR', 'CONFORME'],
+                                            ['25/09/2017', 'B.Q.Q', '86010201'],
+                                        ]
+                                    },
+                                    layout: {
+                                        hLineWidth: function (i, node) {
+                                            return 0.5;
+                                        },
+                                        vLineWidth: function (i, node) {
+                                            return 0.5;
+                                        },
+                                    },
+                                },
+                                {
+                                    margin: [ 0, 8, 0, 4 ],
+                                    table: {
+                                        widths: ['*','*'],
+                                        heights: [10, 35, 10],
+                                        body: [
+                                            [{text: 'VISACIÓN', colSpan: 2, alignment: 'center'}, ''],
+                                            [' ', ' '],
+                                            ['Control Interno', 'Jefe de Unidad administrativa'],
+                                        ]
+                                    },
+                                    layout: {
+                                        hLineWidth: function (i, node) {
+                                            return 0.5;
+                                        },
+                                        vLineWidth: function (i, node) {
+                                            return 0.5;
+                                        },
+                                    },
+                                },
+                                {
+                                    margin: [ 0, 8, 0, 0 ],
+                                    text: 'RECIBÍ CONFORME',
+                                    alignment: 'center',
+                                },
+                                {
+                                    margin: [ 0, 2, 0, 4 ],
+                                    table: {
+                                        widths: ['*','*'],
+                                        heights: [50, 10, 10, 10, 10],
+                                        body: [
+                                            [{text: ' ',colSpan: 2}, ' '],
+                                            [{text: 'FECHA', alignment: 'center'}, {text: 'FIRMA', alignment: 'center'}],
+                                            [' ', 'D.N.I.Nº:'],
+                                            [' ', 'R.U.C.Nº:'],
+                                            [' ', 'Libreta Militar Nº'],
+                                        ]
+                                    },
+                                    layout: {
+                                        hLineWidth: function (i, node) {
+                                            return 0.5;
+                                        },
+                                        vLineWidth: function (i, node) {
+                                            return 0.5;
+                                        },
+                                    },
+                                },
                             ], [
                                 {
+                                    margin: [ 0, 4, 0, 4 ],  
                                     text: 'ESTADISTICA OBJETO DE GASTO', 
                                     alignment: 'center',
-                                    margin: [ 0, 4, 0, 4 ],  
                                 },
                                 {
                                     margin: [ 0, 4, 0, 4 ],  
