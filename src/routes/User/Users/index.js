@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "dva";
-import { message, Button, Input, Tooltip, Pagination, Modal, Card } from 'antd';
+import { Button, Input, Icon, Divider, Card } from 'antd';
 
 import styles from './index.scss';
 import List from './List';
@@ -82,7 +82,15 @@ const genUsers = ({dispatch, setting, user, loading})=>{
     }
 
     return (
-        <Card bordered={false}>
+        <Card
+            title={
+                <Fragment>
+                    <Icon type="user" theme="outlined" />
+                    <Divider type="vertical"/>
+                    Usuarios
+                </Fragment>
+            } 
+            bordered={false}>
             <div className={styles.header}>
                 <div className={styles.group}>
                     <Button icon="plus" type="primary" onClick={()=>onShowModal('create')}>Nuevo usuario</Button>

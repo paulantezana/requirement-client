@@ -13,7 +13,7 @@ const menuData = [
     },
     {
         name: 'Producto',
-        icon: 'folder',
+        icon: 'inbox',
         path: 'products',
     },
     {

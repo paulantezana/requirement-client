@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from 'dva';
-import { Button, Input, Card } from 'antd';
+import { Button, Input, Card, Icon, Divider } from 'antd';
 
 import styles from './index.scss';
 import List from './List';
@@ -136,7 +136,15 @@ class Requirement extends Component{
         }
 
         return (
-            <Card bordered={false}>
+            <Card
+                title={
+                    <Fragment>
+                        <Icon type="share-alt" theme="outlined" />
+                        <Divider type="vertical"/>
+                        Requerimientos
+                    </Fragment>
+                } 
+                bordered={false}>
                 <div className={styles.header}>
                     <Button icon="plus" type="primary" onClick={()=>onShowModal('create')}>Nuevo requerieminto</Button>
                     <ModalForm/>

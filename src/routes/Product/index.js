@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "dva";
-import { message, Button, Input, Tooltip, Pagination, Modal, Card } from 'antd';
+import { Button, Input, Divider, Icon, Card } from 'antd';
 
 import styles from './index.scss';
 import List from './List';
@@ -95,10 +95,18 @@ class Product extends Component{
         }
 
         return (
-            <Card bordered={false}>
+            <Card 
+                title={
+                    <Fragment>
+                        <Icon type="inbox" theme="outlined" />
+                        <Divider type="vertical"/>
+                        Productos
+                    </Fragment>
+                }
+                bordered={false}>
                 <div className={styles.header}>
                     <Button icon="plus" type="primary" onClick={()=>onShowModal('create')}>Nuevo producto</Button>
-                    <Button icon="reload" onClick={()=>this.onQueryAll()}>Actualizar</Button>
+                    <Button icon="reload" onClick={()=>this.onQueryAll()}/>
                     <Search placeholder="Buscar producto" value={searchText} onChange={e=>onSearchText(e.target.value)} onSearch={value => this.onQueryAll()} style={{ width: 200 }}/>
                     <ModalForm/>
                 </div>
