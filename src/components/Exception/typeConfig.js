@@ -2,17 +2,17 @@ const config = {
     403: {
         img: 'https://gw.alipayobjects.com/zos/rmsportal/wZcnGqRDyhPOEYFcZDnb.svg',
         title: '403',
-        desc: 'El usuario está autorizado, pero el acceso está prohibido.',
+        desc: '抱歉，你无权访问该页面',
     },
     404: {
         img: 'https://gw.alipayobjects.com/zos/rmsportal/KpnpchXsobRgLElEozzI.svg',
         title: '404',
-        desc: 'La solicitud se realizó a un registro que no existe y el servidor no funcionó.',
+        desc: '抱歉，你访问的页面不存在',
     },
     500: {
         img: 'https://gw.alipayobjects.com/zos/rmsportal/RVRUAYdCGeYNBWoKiIwB.svg',
         title: '500',
-        desc: 'El servidor tiene un error, por favor revise el servidor.',
+        desc: '抱歉，服务器出错了',
     },
 };
 

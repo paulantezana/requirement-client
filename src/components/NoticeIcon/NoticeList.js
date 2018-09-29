@@ -11,6 +11,7 @@ export default function NoticeList({
     locale,
     emptyText,
     emptyImage,
+    showClear = true,
 }) {
     if (data.length === 0) {
         return (
@@ -27,11 +28,24 @@ export default function NoticeList({
                     const itemCls = classNames(styles.item, {
                         [styles.read]: item.read,
                     });
+                    // eslint-disable-next-line no-nested-ternary
+                    const leftIcon = item.avatar ? (
+                        typeof item.avatar === 'string' ? (
+                            <Avatar className={styles.avatar} src={item.avatar} />
+                        ) : (
+                            item.avatar
+                        )
+                    ) : null;
+
                     return (
-                        <List.Item className={itemCls} key={item.key || i} onClick={() => onClick(item)}>
+                        <List.Item
+                            className={itemCls}
+                            key={item.key || i}
+                            onClick={() => onClick(item)}
+                        >
                             <List.Item.Meta
                                 className={styles.meta}
-                                avatar={item.avatar ? <Avatar className={styles.avatar} src={item.avatar} /> : null}
+                                avatar={<span className={styles.iconElement}>{leftIcon}</span>}
                                 title={
                                     <div className={styles.title}>
                                         {item.title}
@@ -40,8 +54,11 @@ export default function NoticeList({
                                 }
                                 description={
                                     <div>
-                                        <div className={styles.description} title={item.description}>
-                                        {item.description}
+                                        <div
+                                            className={styles.description}
+                                            title={item.description}
+                                        >
+                                            {item.description}
                                         </div>
                                         <div className={styles.datetime}>{item.datetime}</div>
                                     </div>
@@ -51,10 +68,11 @@ export default function NoticeList({
                     );
                 })}
             </List>
-            <div className={styles.clear} onClick={onClear}>
-                {locale.clear}
-                {title}
-            </div>
+            {showClear ? (
+                <div className={styles.clear} onClick={onClear}>
+                    {locale.clear} {title}
+                </div>
+            ) : null}
         </div>
     );
 }

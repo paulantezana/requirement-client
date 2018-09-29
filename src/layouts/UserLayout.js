@@ -1,63 +1,86 @@
-import React, { Component, Fragment } from "react";
-import { Route, Switch, Redirect } from 'dva/router';
-import { Icon }  from 'antd';
+import React, { Fragment } from 'react';
+import { formatMessage } from 'umi/locale';
+import Link from 'umi/link';
+import { Icon } from 'antd';
+import GlobalFooter from '@/components/GlobalFooter';
+import SelectLang from '@/components/SelectLang';
+import styles from './UserLayout.less';
+import logo from '../assets/logo.svg';
 
-import logo from 'assets/logo.png';
-import logoWhite from 'assets/logo-white.png';
-import { app } from 'config/app';
+const links = [
+    {
+        key: 'question',
+        title: (
+            <span>
+                <Icon type="question-circle" theme="outlined" /> Ayuda{' '}
+            </span>
+        ),
+        href: 'https://github.com/paulantezana/requirement-client',
+        blankTarget: '_blank',
+    },
+    {
+        key: 'facebook',
+        title: (
+            <span>
+                <Icon type="facebook" theme="outlined" /> Facebook{' '}
+            </span>
+        ),
+        href: 'https://www.facebook.com/Paulantezana-764145183607069/',
+        blankTarget: '_blank',
+    },
+    {
+        key: 'github',
+        title: (
+            <span>
+                <Icon type="github" theme="outlined" /> GitHub{' '}
+            </span>
+        ),
+        href: 'https://github.com/paulantezana',
+        blankTarget: '_blank',
+    },
+];
 
-import GlobalFooter from 'components/GlobalFooter';
+const copyright = (
+    <Fragment>
+        Copyright <Icon type="copyright" /> 2018 paulantezana.com
+    </Fragment>
+);
 
-import LoginPage from '../routes/User/Login';
-import Forgot from '../routes/User/Forgot';
-import styles from './UserLayout.scss';
+class UserLayout extends React.PureComponent {
+    // @TODO title
+    // getPageTitle() {
+    //   const { routerData, location } = this.props;
+    //   const { pathname } = location;
+    //   let title = 'Ant Design Pro';
+    //   if (routerData[pathname] && routerData[pathname].name) {
+    //     title = `${routerData[pathname].name} - Ant Design Pro`;
+    //   }
+    //   return title;
+    // }
 
-const options = {
-    particles: {
-        number: {
-            value: 15 ,
-        },
-        size: {
-            value: 40,
-            random: true,
-            anim: {
-                enable: false,
-                speed: 200,
-                size_min: 0.1,
-                sync: false
-            }
-        },
-        line_linked: {
-            enable: false,
-        },
-        move: {
-            speed: 10,
-        }
-    }
-}
-
-class UserLayout extends Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        const { match } = this.props;
+    render() {
+        const { children } = this.props;
         return (
+            // @TODO <DocumentTitle title={this.getPageTitle()}>
             <div className={styles.container}>
-                {/* <img src={logo} className={styles.logo}/> */}
-                <h1 className={styles.title}>{app.name}</h1>
-                <Switch>
-                    <Route exact path={`${match.url}/login`} component={LoginPage}/>
-                    <Route exact path={`${match.url}/forgot`} component={Forgot}/>
-                    <Redirect from="/user" to="/user/login" />
-                </Switch>
-                <GlobalFooter copyright={
-                    <Fragment>
-                        Copyright <Icon type="copyright" /> 2018 paulantezana.com
-                    </Fragment>
-                }/>
+                <div className={styles.lang}>
+                    <SelectLang />
+                </div>
+                <div className={styles.content}>
+                    <div className={styles.top}>
+                        <div className={styles.header}>
+                            <Link to="/">
+                                <img alt="logo" className={styles.logo} src={logo} />
+                                <span className={styles.title}>Rqm WebApp</span>
+                            </Link>
+                        </div>
+                        <div className={styles.desc}>Aqm Web App Sistema De Requerimiento Web</div>
+                    </div>
+                    {children}
+                </div>
+                <GlobalFooter links={links} copyright={copyright} />
             </div>
-        )
+        );
     }
 }
 
