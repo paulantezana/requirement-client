@@ -1,122 +1,57 @@
 import React, { PureComponent, Fragment } from 'react';
-import { Table, Alert } from 'antd';
 import styles from './index.less';
-
-function initTotalList(columns) {
-    const totalList = [];
-    columns.forEach(column => {
-        if (column.needTotal) {
-            totalList.push({ ...column, total: 0 });
-        }
-    });
-    return totalList;
-}
+import { Table, Alert } from 'antd';
 
 class StandardTable extends PureComponent {
     constructor(props) {
         super(props);
-        const { columns } = props;
-        const needTotalList = initTotalList(columns);
-
-        this.state = {
-            selectedRowKeys: [],
-            needTotalList,
-        };
+        this.handleTableChange = this.handleTableChange.bind(this);
     }
 
-    static getDerivedStateFromProps(nextProps) {
-        // clean state
-        if (nextProps.selectedRows.length === 0) {
-            const needTotalList = initTotalList(nextProps.columns);
-            return {
-                selectedRowKeys: [],
-                needTotalList,
-            };
-        }
-        return null;
-    }
-
-    handleRowSelectChange = (selectedRowKeys, selectedRows) => {
-        let { needTotalList } = this.state;
-        needTotalList = needTotalList.map(item => ({
-            ...item,
-            total: selectedRows.reduce((sum, val) => sum + parseFloat(val[item.dataIndex], 10), 0),
-        }));
-        const { onSelectRow } = this.props;
-        if (onSelectRow) {
-            onSelectRow(selectedRows);
-        }
-
-        this.setState({ selectedRowKeys, needTotalList });
-    };
-
-    handleTableChange = (pagination, filters, sorter) => {
+    handleTableChange(pagination, filters, sorter) {
         const { onChange } = this.props;
-        if (onChange) {
-            onChange(pagination, filters, sorter);
-        }
-    };
-
-    cleanSelectedKeys = () => {
-        this.handleRowSelectChange([], []);
-    };
+        onChange(pagination, filters, sorter);
+    }
 
     render() {
-        const { selectedRowKeys, needTotalList } = this.state;
         const {
-            data: { list, pagination },
+            dataSource,
             loading,
             columns,
             rowKey,
+            rowSelection,
+            pagination,
+            rowClassName,
+            components,
+            minWidth = '700',
         } = this.props;
-
-        const paginationProps = {
-            showSizeChanger: true,
-            showQuickJumper: true,
-            ...pagination,
-        };
-
-        const rowSelection = {
-            selectedRowKeys,
-            onChange: this.handleRowSelectChange,
-            getCheckboxProps: record => ({
-                disabled: record.disabled,
-            }),
-        };
 
         return (
             <div className={styles.standardTable}>
-                <div className={styles.tableAlert}>
+                {/* <div className={styles.tableAlert}>
                     <Alert
-                        message={
+                        message = {
                             <Fragment>
-                                已选择 <a style={{ fontWeight: 600 }}>{selectedRowKeys.length}</a>{' '}
-                                项&nbsp;&nbsp;
-                                {needTotalList.map(item => (
-                                    <span style={{ marginLeft: 8 }} key={item.dataIndex}>
-                                        {item.title}
-                                        总计&nbsp;
-                                        <span style={{ fontWeight: 600 }}>
-                                            {item.render ? item.render(item.total) : item.total}
-                                        </span>
-                                    </span>
-                                ))}
-                                <a onClick={this.cleanSelectedKeys} style={{ marginLeft: 24 }}>
-                                    清空
-                                </a>
+                                <a  style={{ marginLeft: 24 }}> vaciado</a>
                             </Fragment>
                         }
                         type="info"
                         showIcon
                     />
-                </div>
+                </div> */}
+
                 <Table
                     loading={loading}
                     rowKey={rowKey || 'key'}
                     rowSelection={rowSelection}
-                    dataSource={list}
+                    dataSource={dataSource}
+                    components={components}
                     columns={columns}
-                    pagination={paginationProps}
+                    size="small"
+                    style={{ minWidth: `${minWidth}px` }}
+                    bordered
+                    rowClassName={rowClassName}
+                    pagination={pagination}
                     onChange={this.handleTableChange}
                 />
             </div>

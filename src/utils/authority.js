@@ -1,22 +1,40 @@
+import decoder from 'jwt-decode';
 // use localStorage to store the authority info, which might be sent from server in actual project.
-export function getAuthority(str) {
-    // return localStorage.getItem('antd-pro-authority') || ['admin', 'user'];
-    const authorityString =
-        typeof str === 'undefined' ? localStorage.getItem('antd-pro-authority') : str;
-    // authorityString could be admin, "admin", ["admin"]
-    let authority;
-    try {
-        authority = JSON.parse(authorityString);
-    } catch (e) {
-        authority = authorityString;
+const ATUH_KEY = '/&AV(';
+
+export const getToken = () => {
+    let token = localStorage.getItem(ATUH_KEY);
+    if (token === null) {
+        token = sessionStorage.getItem(ATUH_KEY);
     }
-    if (typeof authority === 'string') {
-        return [authority];
+    return token;
+};
+
+export const getAuthority = str => {
+    const token = getToken();
+    if (token === null) return [''];
+    const data = decoder(getToken());
+    return [data.user.profile];
+};
+
+// Set authority
+export function setAuthority(authority, remember = false) {
+    if (remember) {
+        localStorage.setItem(ATUH_KEY, authority);
+    } else {
+        sessionStorage.setItem(ATUH_KEY, authority);
     }
-    return authority || ['admin'];
 }
 
-export function setAuthority(authority) {
-    const proAuthority = typeof authority === 'string' ? [authority] : authority;
-    return localStorage.setItem('antd-pro-authority', JSON.stringify(proAuthority));
-}
+// // Get user token
+export const getAuthorityUser = () => {
+    const token = getToken();
+    if (token === null) return {};
+    return decoder(getToken());
+};
+
+// Logout
+export const destroy = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+};

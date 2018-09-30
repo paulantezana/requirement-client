@@ -1,0 +1,24 @@
+.search {
+    display: flex;
+    width: 100%;
+    .item {
+        flex: auto;
+        margin-right: -1px;
+        :global {
+            .ant-input {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+    :global {
+        .ant-btn-icon-only {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+
+.hidden {
+    display: none !important;
+}

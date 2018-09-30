@@ -89,7 +89,7 @@ export default {
                     .split('/')
                     .map(a => a.replace(/([A-Z])/g, '-$1'))
                     .map(a => a.toLowerCase());
-                return `antd-pro${arr.join('-')}-${localName}`.replace(/--/g, '-');
+                return `sn${arr.join('-')}-${localName}`.replace(/--/g, '-');
             }
             return localName;
         },

@@ -1,156 +1,164 @@
-import fetch from 'dva/fetch';
 import { notification } from 'antd';
 import router from 'umi/router';
-import hash from 'hash.js';
-import { isAntdPro } from './utils';
+import { service } from './config';
+import { getToken } from './authority';
+
+import NProgress from 'nprogress'; // Barra de progreso superior
+import 'nprogress/nprogress.css'; // Estylos de la barra de progreso
 
 const codeMessage = {
-    200: '服务器成功返回请求的数据。',
-    201: '新建或修改数据成功。',
-    202: '一个请求已经进入后台排队（异步任务）。',
-    204: '删除数据成功。',
-    400: '发出的请求有错误，服务器没有进行新建或修改数据的操作。',
-    401: '用户没有权限（令牌、用户名、密码错误）。',
-    403: '用户得到授权，但是访问是被禁止的。',
-    404: '发出的请求针对的是不存在的记录，服务器没有进行操作。',
-    406: '请求的格式不可得。',
-    410: '请求的资源被永久删除，且不会再得到的。',
-    422: '当创建一个对象时，发生一个验证错误。',
-    500: '服务器发生错误，请检查服务器。',
-    502: '网关错误。',
-    503: '服务不可用，服务器暂时过载或维护。',
-    504: '网关超时。',
+    200: 'El servidor devolvió con éxito los datos solicitados. ',
+    201: 'Datos nuevos o modificados son exitosos. ',
+    202: 'Una solicitud ha ingresado a la cola de fondo (tarea asíncrona). ',
+    204: 'Eliminar datos con éxito. ',
+    400: 'La solicitud se envió con un error. El servidor no realizó ninguna operación para crear o modificar datos. ',
+    401: 'El usuario no tiene permiso (token, nombre de usuario, contraseña es incorrecta). ',
+    403: 'El usuario está autorizado, pero el acceso está prohibido. ',
+    404: 'La solicitud se realizó a un registro que no existe y el servidor no funcionó. ',
+    406: 'El formato de la solicitud no está disponible. ',
+    410: 'El recurso solicitado se elimina permanentemente y no se obtendrá de nuevo. ',
+    422: 'Al crear un objeto, se produjo un error de validación. ',
+    500: 'El servidor tiene un error, por favor revise el servidor. ',
+    502: 'Error de puerta de enlace. ',
+    503: 'El servicio no está disponible, el servidor está temporalmente sobrecargado o mantenido. ',
+    504: 'La puerta de enlace agotó el tiempo. ',
 };
 
-const checkStatus = response => {
+// Verificando el estado de la respuesta
+// por cada codigo de error
+function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
         return response;
     }
     const errortext = codeMessage[response.status] || response.statusText;
     notification.error({
-        message: `请求错误 ${response.status}: ${response.url}`,
+        message: `Error de solicitud ${response.status}: ${response.url}`,
         description: errortext,
     });
     const error = new Error(errortext);
     error.name = response.status;
     error.response = response;
     throw error;
-};
+}
 
-const cachedSave = (response, hashcode) => {
-    /**
-     * Clone a response data and store it in sessionStorage
-     * Does not support data other than json, Cache only json
-     */
-    const contentType = response.headers.get('Content-Type');
-    if (contentType && contentType.match(/application\/json/i)) {
-        // All data is saved as text
-        response
-            .clone()
-            .text()
-            .then(content => {
-                sessionStorage.setItem(hashcode, content);
-                sessionStorage.setItem(`${hashcode}:timestamp`, Date.now());
-            });
+//  Check Catch response
+function checkCatch(e) {
+    // Evaluando y disparando acciones correspondientes
+    // por cada codigo de error
+    const status = e.name;
+
+    // Error 401 unautorized or not send token
+    if (status === 401) {
+        window.g_app._store.dispatch({
+            type: 'user/logout',
+        });
+        return e;
+    } else if (status === 403) {
+        router.push('/exception/403');
+        return e;
+    } else if (status <= 504 && status >= 500) {
+        router.push('/exception/500');
+        return e;
+    } else if (status >= 404 && status < 422) {
+        router.push('/exception/404');
+        return e;
     }
-    return response;
-};
+    return e;
+}
 
-/**
- * Requests a URL, returning a promise.
- *
- * @param  {string} url       The URL we want to request
- * @param  {object} [options] The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
- */
-export default function request(
-    url,
-    options = {
-        expirys: isAntdPro(),
-    }
-) {
-    /**
-     * Produce fingerprints based on url and parameters
-     * Maybe url has the same parameters
-     */
-    const fingerprint = url + (options.body ? JSON.stringify(options.body) : '');
-    const hashcode = hash
-        .sha256()
-        .update(fingerprint)
-        .digest('hex');
-
-    const defaultOptions = {
-        credentials: 'include',
-    };
-    const newOptions = { ...defaultOptions, ...options };
-    if (
-        newOptions.method === 'POST' ||
-        newOptions.method === 'PUT' ||
-        newOptions.method === 'DELETE'
-    ) {
-        if (!(newOptions.body instanceof FormData)) {
-            newOptions.headers = {
+// Metod type
+// Establece los headers de las peticiones
+function setHeaders(options) {
+    if (options.method === 'POST' || options.method === 'PUT' || options.method === 'DELETE') {
+        if (!(options.body instanceof FormData)) {
+            options.headers = {
                 Accept: 'application/json',
                 'Content-Type': 'application/json; charset=utf-8',
-                ...newOptions.headers,
+                ...options.headers,
             };
-            newOptions.body = JSON.stringify(newOptions.body);
+            options.body = JSON.stringify(options.body);
         } else {
             // newOptions.body is FormData
-            newOptions.headers = {
+            options.headers = {
                 Accept: 'application/json',
-                ...newOptions.headers,
+                ...options.headers,
             };
         }
     }
+    return options;
+}
 
-    const expirys = options.expirys || 60;
-    // options.expirys !== false, return the cache,
-    if (options.expirys !== false) {
-        const cached = sessionStorage.getItem(hashcode);
-        const whenCached = sessionStorage.getItem(`${hashcode}:timestamp`);
-        if (cached !== null && whenCached !== null) {
-            const age = (Date.now() - whenCached) / 1000;
-            if (age < expirys) {
-                const response = new Response(new Blob([cached]));
-                return response.json();
-            }
-            sessionStorage.removeItem(hashcode);
-            sessionStorage.removeItem(`${hashcode}:timestamp`);
-        }
-    }
+// Fetch con mas opciones
+export default (path, options) => {
+    const token = getToken();
+    const defaultOptions = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    NProgress.start(); // Iniciando la barra de progreso
+
+    // Estableciendo los headers de las peticiones
+    // POST | PUT | DELETE
+    const newOptions = setHeaders({ ...defaultOptions, ...options });
+
+    const url = service.api_path + path; // Formando la URL de la peticion
+
+    // Realizando la peticion con los parametros pertinentes
     return fetch(url, newOptions)
         .then(checkStatus)
-        .then(response => cachedSave(response, hashcode))
         .then(response => {
-            // DELETE and 204 do not return data by default
-            // using .json will report an error.
-            if (newOptions.method === 'DELETE' || response.status === 204) {
-                return response.text();
-            }
-            return response.json();
+            NProgress.done(); // End progresbar
+            return response.json(); // Return response
         })
         .catch(e => {
-            const status = e.name;
-            if (status === 401) {
-                // @HACK
-                /* eslint-disable no-underscore-dangle */
-                window.g_app._store.dispatch({
-                    type: 'login/logout',
-                });
-                return;
-            }
-            // environment should not be used
-            if (status === 403) {
-                router.push('/exception/403');
-                return;
-            }
-            if (status <= 504 && status >= 500) {
-                router.push('/exception/500');
-                return;
-            }
-            if (status >= 404 && status < 422) {
-                router.push('/exception/404');
-            }
+            NProgress.done(); // End progresbar
+            return checkCatch(e); // Check catch
         });
-}
+};
+
+export const customFetch = (url, options) => {
+    // Estableciendo los headers de las peticiones
+    // POST | PUT | DELETE
+    const newOptions = setHeaders(options);
+
+    NProgress.start(); // Iniciando la barra de de progreso
+
+    // Realizando la peticion
+    return fetch(url, newOptions)
+        .then(checkStatus)
+        .then(response => {
+            NProgress.done(); // End progresbar
+            return response.json(); // Return response
+        })
+        .catch(e => {
+            NProgress.done(); // End progresbar
+            return checkCatch(e); // Check catch
+        });
+};
+
+export const dowloandFetch = (path, options) => {
+    const token = getToken();
+    const defaultOptions = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    const url = service.api_path + path; // Formando la URL de la peticion
+
+    NProgress.start(); // Iniciando la barra de de progreso
+
+    // Realizando la peticion
+    return fetch(url, defaultOptions)
+        .then(checkStatus)
+        .then(response => {
+            NProgress.done(); // End progresbar
+            return response.blob();
+        })
+        .catch(e => {
+            NProgress.done(); // End progresbar
+            return checkCatch(e); // Check catch
+        });
+};

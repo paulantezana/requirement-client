@@ -1,60 +1,109 @@
-import { fakeChartData } from '@/services/api';
+import {
+    statisticTopWinner,
+    statisticTopUsers,
+    statisticTopProducts,
+    statisticTopRequirememnts,
+} from '@/services/statistic';
+import { Modal } from 'antd';
 
 export default {
     namespace: 'chart',
-
     state: {
-        visitData: [],
-        visitData2: [],
-        salesData: [],
-        searchData: [],
-        offlineData: [],
-        offlineChartData: [],
-        salesTypeData: [],
-        salesTypeDataOnline: [],
-        salesTypeDataOffline: [],
-        radarData: [],
-        loading: false,
+        topWinners: {},
+        topUsers: {},
+        topProducts: {},
+        topRequirememnts: {},
     },
 
     effects: {
-        *fetch(_, { call, put }) {
-            const response = yield call(fakeChartData);
-            yield put({
-                type: 'save',
-                payload: response,
-            });
+        *topWinners({ payload }, { call, put }) {
+            const response = yield call(statisticTopWinner);
+            if (response.success) {
+                yield put({
+                    type: 'statisticSuccess',
+                    payload: {
+                        topWinners: {
+                            data: response.data,
+                            total: response.total,
+                        },
+                    },
+                });
+            } else {
+                Modal.error({
+                    title: 'Error al consultar las estadisticas',
+                    content: response.message,
+                });
+            }
         },
-        *fetchSalesData(_, { call, put }) {
-            const response = yield call(fakeChartData);
-            yield put({
-                type: 'save',
-                payload: {
-                    salesData: response.salesData,
-                },
-            });
+        *topUsers({ payload }, { call, put }) {
+            const response = yield call(statisticTopUsers);
+            if (response.success) {
+                yield put({
+                    type: 'statisticSuccess',
+                    payload: {
+                        topUsers: {
+                            data: response.data,
+                            total: response.total,
+                        },
+                    },
+                });
+            } else {
+                Modal.error({
+                    title: 'Error al consultar las estadisticas',
+                    content: response.message,
+                });
+            }
+        },
+        *topProducts({ payload }, { call, put }) {
+            const response = yield call(statisticTopProducts);
+            if (response.success) {
+                yield put({
+                    type: 'statisticSuccess',
+                    payload: {
+                        topProducts: {
+                            data: response.data,
+                            total: response.total,
+                        },
+                    },
+                });
+            } else {
+                Modal.error({
+                    title: 'Error al consultar las estadisticas',
+                    content: response.message,
+                });
+            }
+        },
+        *topRequirememnts({ payload }, { call, put }) {
+            const response = yield call(statisticTopRequirememnts);
+            if (response.success) {
+                yield put({
+                    type: 'statisticSuccess',
+                    payload: {
+                        topRequirememnts: {
+                            data: response.data,
+                            total: response.total,
+                        },
+                    },
+                });
+            } else {
+                Modal.error({
+                    title: 'Error al consultar las estadisticas',
+                    content: response.message,
+                });
+            }
         },
     },
 
     reducers: {
-        save(state, { payload }) {
-            return {
-                ...state,
-                ...payload,
-            };
+        statisticSuccess(state, { payload }) {
+            return { ...state, ...payload };
         },
-        clear() {
+        statisticReset() {
             return {
-                visitData: [],
-                visitData2: [],
-                salesData: [],
-                searchData: [],
-                offlineData: [],
-                offlineChartData: [],
-                salesTypeData: [],
-                salesTypeDataOnline: [],
-                salesTypeDataOffline: [],
-                radarData: [],
+                topWinners: {},
+                topUsers: {},
+                topProducts: {},
+                topRequirememnts: {},
             };
         },
     },

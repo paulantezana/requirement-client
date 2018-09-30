@@ -71,8 +71,6 @@ export default {
     'menu.account.settings': 'Configurar Conta',
     'menu.account.trigger': 'Disparar Erro',
     'menu.account.logout': 'Sair',
-    'app.login.tab-login-credentials': 'Credenciais',
-    'app.login.tab-login-mobile': 'Telefone',
     'app.login.remember-me': 'Lembre-me',
     'app.login.forgot-password': 'Esqueceu sua senha?',
     'app.login.sign-in-with': 'Login com',

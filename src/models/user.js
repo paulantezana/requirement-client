@@ -1,51 +1,172 @@
-import { query as queryUsers, queryCurrent } from '@/services/user';
+import {
+    login,
+    userCreate,
+    userUpdate,
+    userResetPassword,
+    userChangePassword,
+    userAll,
+    userDelete,
+    userUploadAvatar,
+} from '@/services/user';
+
+import { routerRedux } from 'dva/router';
+import { Modal, message } from 'antd';
+import { setAuthority } from '@/utils/authority';
+import { getPageQuery } from '@/utils/utils';
+import { reloadAuthorized } from '@/utils/Authorized';
 
 export default {
     namespace: 'user',
-
     state: {
-        list: [],
         currentUser: {},
+
+        list: [],
+        total: null,
+        current: null,
+        searchText: '',
+
+        modalVisible: false,
+        currentItem: {},
+        modalType: 'create',
     },
 
     effects: {
-        *fetch(_, { call, put }) {
-            const response = yield call(queryUsers);
-            yield put({
-                type: 'save',
-                payload: response,
-            });
+        *login({ payload }, { call, put }) {
+            const response = yield call(login, payload);
+            if (response.success) {
+                setAuthority(response.data.token, payload.remember);
+                message.success(response.message);
+                reloadAuthorized();
+                const urlParams = new URL(window.location.href);
+                const params = getPageQuery();
+                let { redirect } = params;
+                if (redirect) {
+                    const redirectUrlParams = new URL(redirect);
+                    if (redirectUrlParams.origin === urlParams.origin) {
+                        redirect = redirect.substr(urlParams.origin.length);
+                        if (redirect.startsWith('/#')) {
+                            redirect = redirect.substr(2);
+                        }
+                    } else {
+                        window.location.href = redirect;
+                        return;
+                    }
+                }
+                yield put(routerRedux.replace(redirect || '/'));
+            } else {
+                Modal.error({ title: 'Login', content: response.message });
+            }
         },
-        *fetchCurrent(_, { call, put }) {
-            const response = yield call(queryCurrent);
-            yield put({
-                type: 'saveCurrentUser',
-                payload: response,
-            });
+        *logout({ _ }, { put }) {
+            yield destroy();
+            yield put(routerRedux.push('/user/login'));
+        },
+
+        *all({ payload }, { select, call, put }) {
+            const setting = yield select(({ global }) => global.setting); // Get setting item
+            const response = yield call(userAll, { ...payload, limit: setting.item });
+            if (response.success) {
+                yield put({
+                    type: 'allSuccess',
+                    payload: {
+                        list: response.data,
+                        total: response.total,
+                        current: response.current_page,
+                    },
+                });
+            } else {
+                Modal.error({ title: 'Error al consultar el Usuario', content: response.message });
+            }
+        },
+        *create({ payload }, { call, put }) {
+            const response = yield call(userCreate, payload);
+            if (response.success) {
+                yield put({ type: 'resetUser' });
+                Modal.success({ title: 'Crear usuario', content: response.message });
+                yield put({ type: 'all' });
+            } else {
+                Modal.error({ title: 'Error al crear usuario', content: response.message });
+            }
+        },
+        *update({ payload }, { call, put }) {
+            const response = yield call(userUpdate, payload);
+            if (response.success) {
+                yield put({ type: 'updateSuccess', payload });
+                message.success(response.message);
+            } else {
+                Modal.error({ title: 'Error al actualizar usuario', content: response.message });
+            }
+        },
+        *changePassword({ payload }, { call, put }) {
+            const response = yield call(userChangePassword, payload);
+            if (response.success) {
+                yield put({ type: 'updateSuccess', payload });
+                message.success(response.message);
+            } else {
+                Modal.error({ title: 'Error al actualizar usuario', content: response.message });
+            }
+        },
+        *resetPassword({ payload }, { call, put }) {
+            console.log(payload);
+            const response = yield call(userResetPassword, payload);
+            if (response.success) {
+                yield put({ type: 'updateSuccess', payload });
+                message.success(response.message);
+            } else {
+                Modal.error({ title: 'Error al actualizar usuario', content: response.message });
+            }
+        },
+        *delete({ payload }, { call, put }) {
+            const response = yield call(userDelete, payload);
+            if (response.success) {
+                yield put({ type: 'resetUser', payload });
+                message.success('Se elimino el usuario con el id = ' + payload.id);
+                yield put({ type: 'all' });
+            } else {
+                Modal.error({ title: 'Error al actualizar usuario', content: response.message });
+            }
+        },
+        *uploadAvatar({ payload }, { call, put }) {
+            let data = new FormData();
+            data.append('picture', payload.picture);
+            data.append('id', payload.id);
+            const response = yield call(userUploadAvatar, data);
+            if (response.success) {
+                yield put({ type: 'resetUser' });
+                Modal.success({ title: 'Subir avatar', content: response.message });
+                yield put({ type: 'all' });
+            } else {
+                Modal.error({ title: 'Error subir el avatar usuario', content: response.message });
+            }
         },
     },
 
     reducers: {
-        save(state, action) {
+        allSuccess(state, { payload }) {
+            return { ...state, ...payload };
+        },
+        updateSuccess(state, { payload }) {
+            const newList = state.list.map(
+                user => (user.id == payload.id ? { ...user, ...payload } : user)
+            );
+            return { ...state, list: newList };
+        },
+        search(state, { payload }) {
+            return { ...state, searchText: payload };
+        },
+        showModal(state, { payload }) {
+            return { ...state, ...payload, modalVisible: true };
+        },
+        resetUser(state, action) {
             return {
                 ...state,
-                list: action.payload,
+                currentItem: {},
+                modalVisible: false,
+                modalType: 'create',
             };
         },
-        saveCurrentUser(state, action) {
-            return {
-                ...state,
-                currentUser: action.payload || {},
-            };
-        },
-        changeNotifyCount(state, action) {
-            return {
-                ...state,
-                currentUser: {
-                    ...state.currentUser,
-                    notifyCount: action.payload,
-                },
-            };
+        resetForgot(state, action) {
+            return { ...state, forgotStep: 0, forgotID: 0 };
         },
     },
 };
