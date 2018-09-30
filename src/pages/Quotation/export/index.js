@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal } from 'antd';
-import Spacing from 'components/Spacing';
+import Spacing from '@/components/Spacing';
 import Workbook from 'react-excel-workbook';
 import { connect } from 'dva';
 

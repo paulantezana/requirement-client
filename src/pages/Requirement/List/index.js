@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'dva/router';
 import { Pagination, Modal, Tooltip, Icon, Alert, Badge } from 'antd';
 import PropTypes from 'prop-types';
-import StandardTable from 'components/StandardTable';
+import StandardTable from '@/components/StandardTable';
 import styles from './index.less';
 import moment from 'moment';
 
@@ -162,7 +162,7 @@ class DataList extends Component {
                                 />
                             </Tooltip>
                             <Tooltip title="Cotizar">
-                                <Link to={`/requirements/quote/${a.id}`}>
+                                <Link to={`/quotations/${a.id}`}>
                                     <Icon type="calculator" className={styles.quote} />
                                 </Link>
                             </Tooltip>

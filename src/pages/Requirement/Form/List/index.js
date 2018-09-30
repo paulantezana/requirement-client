@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Popconfirm, Tooltip, Icon } from 'antd';
 import PropTypes from 'prop-types';
-import StandardTable from 'components/StandardTable';
+import StandardTable from '@/components/StandardTable';
 import styles from './index.less';
 
 class DataList extends Component {

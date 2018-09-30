@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Modal, Tooltip, Icon, Badge, Tag } from 'antd';
 import PropTypes from 'prop-types';
-import StandardTable from 'components/StandardTable';
+import StandardTable from '@/components/StandardTable';
 import styles from './index.less';
 
 const WinnerLevel = ({ total, level, state, onClick }) => {

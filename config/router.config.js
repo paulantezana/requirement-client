@@ -7,6 +7,7 @@ export default [
             { path: '/user', redirect: '/user/login' },
             { path: '/user/login', component: './User/Login' },
             { path: '/user/forgot', component: './User/Forgot' },
+            { component: '404' },
         ],
     },
     // exception
@@ -27,6 +28,7 @@ export default [
                 path: '/exception/500',
                 component: './Exception/500',
             },
+            { component: '404' },
         ],
     },
     // app
@@ -43,6 +45,18 @@ export default [
                 name: 'dashboard',
                 icon: 'dashboard',
                 component: './Dashboard',
+            },
+            {
+                path: '/requirements',
+                name: 'requirement',
+                icon: 'share-alt',
+                component: './Requirement',
+            },
+            {
+                path: '/quotations/:id',
+                name: 'quotation',
+                hideInMenu: true,
+                component: './Quotation',
             },
             {
                 path: '/products',
@@ -65,6 +79,7 @@ export default [
                         path: '/account/users',
                         name: 'users',
                         component: './User/Users',
+                        authority: ['admin'],
                     },
                     {
                         path: '/account/profile',
@@ -77,7 +92,7 @@ export default [
                 path: '/settings',
                 name: 'setting',
                 icon: 'setting',
-                component: './Dashboard',
+                component: './Setting',
             },
             {
                 component: '404',

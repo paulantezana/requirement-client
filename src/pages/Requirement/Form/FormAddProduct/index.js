@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Modal, Form, Input, InputNumber, AutoComplete, Row, Col, Icon } from 'antd';
 import { connect } from 'dva';
 
-import NewProduct from 'routes/Product/Form';
+import NewProduct from '@/pages/Product/Form';
 import styles from './index.less';
 
 const formItemLayout = {

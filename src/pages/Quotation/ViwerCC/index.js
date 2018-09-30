@@ -4,12 +4,12 @@ import { Card, Tooltip, Button } from 'antd';
 
 import styles from './index.less';
 
-import CuadroComparativo from 'routes/Requirement/Quotation/Print/CCModal';
-import OrdenCompra from 'routes/Requirement/Quotation/Print/OCModal';
+import CuadroComparativo from '../Print/CCModal';
+import OrdenCompra from '../Print/OCModal';
 
-import CPModal from 'routes/Requirement/Quotation/Print/CPModal';
-import MemoModal from 'routes/Requirement/Quotation/Print/MemoModal';
-import PecosaModal from 'routes/Requirement/Quotation/Print/PecosaModal';
+import CPModal from '../Print/CPModal';
+import MemoModal from '../Print/MemoModal';
+import PecosaModal from '../Print/PecosaModal';
 
 import ComparativeTable from './List';
 

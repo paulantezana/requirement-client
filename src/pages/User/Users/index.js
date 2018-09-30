@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'dva';
 import { Button, Input, Icon, Divider, Card } from 'antd';
+import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
 import styles from './index.less';
 import List from './List';
@@ -74,36 +75,32 @@ const genUsers = ({ dispatch, setting, user, loading }) => {
     };
 
     return (
-        <Card
-            title={
-                <Fragment>
-                    <Icon type="user" theme="outlined" />
-                    <Divider type="vertical" />
-                    Usuarios
-                </Fragment>
-            }
-            bordered={false}
+        <PageHeaderWrapper
+            title="Usuarios"
+            // content="Lista de productos"
         >
-            <div className={styles.header}>
-                <div className={styles.group}>
-                    <Button icon="plus" type="primary" onClick={() => onShowModal('create')}>
-                        Nuevo usuario
-                    </Button>
-                    <Button icon="reload" onClick={() => onQueryAll()}>
-                        Actualizar
-                    </Button>
-                    <Search
-                        placeholder="Buscar usuario"
-                        value={searchText}
-                        onChange={e => onSearch(e.target.value)}
-                        onSearch={value => onQueryAll()}
-                        style={{ width: 200 }}
-                    />
+            <Card bordered={false}>
+                <div className={styles.header}>
+                    <div className={styles.group}>
+                        <Button icon="plus" type="primary" onClick={() => onShowModal('create')}>
+                            Nuevo usuario
+                        </Button>
+                        <Button icon="reload" onClick={() => onQueryAll()}>
+                            Actualizar
+                        </Button>
+                        <Search
+                            placeholder="Buscar usuario"
+                            value={searchText}
+                            onChange={e => onSearch(e.target.value)}
+                            onSearch={value => onQueryAll()}
+                            style={{ width: 200 }}
+                        />
+                    </div>
+                    <ModalForm />
                 </div>
-                <ModalForm />
-            </div>
-            <List {...providerListProps} />
-        </Card>
+                <List {...providerListProps} />
+            </Card>
+        </PageHeaderWrapper>
     );
 };
 

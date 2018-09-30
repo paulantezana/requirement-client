@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import { Row, Col, Modal, Form, Input, DatePicker, Button } from 'antd';
 import styles from './index.less';
 import { connect } from 'dva';
-import moment from 'moment';
 import DataList from './List';
 import FormAddProduct from './FormAddProduct';
-import Spacing from 'components/Spacing';
+import Spacing from '@/components/Spacing';
 
 const formItemLayout = {
     labelCol: { span: 6 },
     wrapperCol: { span: 18 },
 };
-
-const dateFormat = 'YYYY/MM/DD';
 
 const AddForm = Form.create()(
     class extends React.Component {

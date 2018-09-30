@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'dva';
 import { Button, Input, Icon, Divider, Card } from 'antd';
+import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
 import styles from './index.less';
 import List from './List';
@@ -107,39 +108,35 @@ class Provider extends Component {
         };
 
         return (
-            <Card
-                title={
-                    <Fragment>
-                        <Icon type="contacts" theme="outlined" />
-                        <Divider type="vertical" />
-                        Proveedores
-                    </Fragment>
-                }
-                bordered={false}
+            <PageHeaderWrapper
+                title="Proveedores"
+                // content="Lista de productos"
             >
-                <div className={styles.header}>
-                    <Button icon="plus" type="primary" onClick={() => onShowModal('create')}>
-                        Nuevo proveedor
-                    </Button>
-                    <Button icon="upload" onClick={() => onShowModalUpload()}>
-                        Importar
-                    </Button>
-                    {/* <Button icon="export" onClick={()=>onShowModalExport()} >Exportar</Button> */}
-                    <Button icon="reload" onClick={() => this.onQueryAll()}>
-                        Actualizar
-                    </Button>
-                    <Search
-                        placeholder="Buscar usuario"
-                        value={searchText}
-                        onChange={e => onSetSearchText(e.target.value)}
-                        onSearch={value => this.onQueryAll()}
-                        style={{ width: 200 }}
-                    />
-                    <ModalForm />
-                    <UploadModal />
-                </div>
-                <List {...providerListProps} />
-            </Card>
+                <Card bordered={false}>
+                    <div className={styles.header}>
+                        <Button icon="plus" type="primary" onClick={() => onShowModal('create')}>
+                            Nuevo proveedor
+                        </Button>
+                        <Button icon="upload" onClick={() => onShowModalUpload()}>
+                            Importar
+                        </Button>
+                        {/* <Button icon="export" onClick={()=>onShowModalExport()} >Exportar</Button> */}
+                        <Button icon="reload" onClick={() => this.onQueryAll()}>
+                            Actualizar
+                        </Button>
+                        <Search
+                            placeholder="Buscar usuario"
+                            value={searchText}
+                            onChange={e => onSetSearchText(e.target.value)}
+                            onSearch={value => this.onQueryAll()}
+                            style={{ width: 200 }}
+                        />
+                        <ModalForm />
+                        <UploadModal />
+                    </div>
+                    <List {...providerListProps} />
+                </Card>
+            </PageHeaderWrapper>
         );
     }
 }

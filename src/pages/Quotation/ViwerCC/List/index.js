@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { Modal, Alert, Icon, Badge, Tag } from 'antd';
 import PropTypes from 'prop-types';
-import StandardTable from 'components/StandardTable';
-import styles from './index.scss';
+import StandardTable from '@/components/StandardTable';
+import styles from './index.less';
 
 class DataList extends Component {
     constructor(props) {

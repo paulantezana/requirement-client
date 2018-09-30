@@ -57,17 +57,13 @@ class HeaderView extends PureComponent {
             router.push('/account/center');
             return;
         }
-        if (key === 'triggerError') {
-            router.push('/exception/trigger');
-            return;
-        }
         if (key === 'userinfo') {
             router.push('/account/settings/base');
             return;
         }
         if (key === 'logout') {
             dispatch({
-                type: 'login/logout',
+                type: 'user/logout',
             });
         }
     };

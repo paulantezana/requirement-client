@@ -11,7 +11,7 @@ import {
 
 import { routerRedux } from 'dva/router';
 import { Modal, message } from 'antd';
-import { setAuthority } from '@/utils/authority';
+import { setAuthority, destroy } from '@/utils/authority';
 import { getPageQuery } from '@/utils/utils';
 import { reloadAuthorized } from '@/utils/Authorized';
 
@@ -59,7 +59,7 @@ export default {
         },
         *logout({ _ }, { put }) {
             yield destroy();
-            yield put(routerRedux.push('/user/login'));
+            yield put(routerRedux.replace('/user/login'));
         },
 
         *all({ payload }, { select, call, put }) {

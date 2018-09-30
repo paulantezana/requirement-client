@@ -8,7 +8,7 @@ import ModalForm from './Form';
 
 import ViwerCC from './ViwerCC';
 import ExportData from './export';
-import Spacing from 'components/Spacing';
+import Spacing from '@/components/Spacing';
 
 const Search = Input.Search;
 

@@ -1661,13 +1661,6 @@ i.antd-pro-components-global-header-index-trigger {
 }
 
 @media (min-width: @screen-md-min) {
-    .antd-pro-layouts-user-layout-container {
-        background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
-        background-repeat: no-repeat;
-        background-position: center 110px;
-        background-size: 100%;
-    }
-
     .antd-pro-layouts-user-layout-content {
         padding: 72px 0 24px 0;
     }
@@ -1726,6 +1719,7 @@ i.antd-pro-components-global-header-index-trigger {
         margin-left: -7px;
     }
 }
+
 .antd-pro-pages-product-index-header {
     button {
         margin-bottom: 16px;
@@ -1846,6 +1840,121 @@ i.antd-pro-components-global-header-index-trigger {
     }
 }
 
+.antd-pro-pages-quotation-form-index-search {
+    display: flex;
+    width: 100%;
+    .antd-pro-pages-quotation-form-index-item {
+        flex: auto;
+        margin-right: -1px;
+        .ant-input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+    .ant-btn-icon-only {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+.antd-pro-pages-quotation-form-index-hidden {
+    display: none !important;
+}
+
+.antd-pro-pages-quotation-form-quotation-detail-index-editing {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.antd-pro-pages-quotation-index-header {
+    button {
+        margin-bottom: 16px;
+        margin-right: 16px;
+    }
+}
+
+// states color
+// @primary-color          : @blue-6;
+// @info-color             : @blue-6;
+// @success-color          : @green-6;
+// @processing-color       : @blue-6;
+// @error-color            : @red-6;
+// @highlight-color        : @red-6;
+// @warning-color          : @gold-6;
+// @normal-color           : #d9d9d9;
+// .check{
+//     // box-shadow: 0 3px  @state-check inset;
+// }
+// .process{
+//     box-shadow: 0 3px @info-color inset;
+// }
+// .rejected{
+//     box-shadow: 0 3px  @error-color inset;
+// }
+// .accepted{
+//     box-shadow: 0 3px  @success-color inset;
+//     color: @state-accepted;
+// }
+// .expired{
+//     box-shadow: 0 3px  @state-close inset;
+// }
+// .close{
+//     box-shadow: 0 3px  @state-close inset;
+// }
+
+.antd-pro-pages-quotation-list-index-table {
+    margin-bottom: 16px;
+    .antd-pro-pages-quotation-list-index-tableAlert {
+        margin-bottom: 16px;
+    }
+}
+
+.antd-pro-pages-quotation-list-index-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .antd-pro-pages-quotation-list-index-delete,
+    .antd-pro-pages-quotation-list-index-update {
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .antd-pro-pages-quotation-list-index-delete {
+        color: #ff4d4f;
+    }
+    .antd-pro-pages-quotation-list-index-update {
+        color: @primary-color;
+    }
+}
+
+// ===============================================================
+// Cating winners styles =========================================
+.antd-pro-pages-quotation-list-index-onWinner1,
+.antd-pro-pages-quotation-list-index-onWinner2 {
+    cursor: pointer;
+}
+.antd-pro-pages-quotation-list-index-onWinner1,
+.antd-pro-pages-quotation-list-index-onWinner2,
+.antd-pro-pages-quotation-list-index-onWinner3 {
+    font-size: 18px;
+}
+.antd-pro-pages-quotation-list-index-onWinner1 {
+    color: @primary-color;
+}
+.antd-pro-pages-quotation-list-index-onWinner2 {
+    color: #faad14;
+}
+.antd-pro-pages-quotation-list-index-onWinner3 {
+    color: #f5222d;
+}
+
+.antd-pro-pages-quotation-viwer-c-c-index-header {
+    button {
+        margin-bottom: 16px;
+        margin-right: 16px;
+    }
+}
+
 .antd-pro-pages-requirement-form-form-add-product-index-search {
     display: flex;
     .antd-pro-pages-requirement-form-form-add-product-index-item {
@@ -1889,6 +1998,13 @@ i.antd-pro-components-global-header-index-trigger {
     // .update{
     //     color: $primary-color;
     // }
+}
+
+.antd-pro-pages-requirement-index-header {
+    button {
+        margin-bottom: 16px;
+        margin-right: 16px;
+    }
 }
 
 .antd-pro-pages-requirement-list-index-table {
@@ -1943,118 +2059,7 @@ i.antd-pro-components-global-header-index-trigger {
 // .close{
 //     color: @state-close;
 // }
-.antd-pro-pages-requirement-quotation-form-index-search {
-    display: flex;
-    width: 100%;
-    .antd-pro-pages-requirement-quotation-form-index-item {
-        flex: auto;
-        margin-right: -1px;
-        .ant-input {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-    }
-    .ant-btn-icon-only {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-}
 
-.antd-pro-pages-requirement-quotation-form-index-hidden {
-    display: none !important;
-}
-.antd-pro-pages-requirement-quotation-form-quotation-detail-index-editing {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.antd-pro-pages-requirement-quotation-index-header {
-    button {
-        margin-bottom: 16px;
-        margin-right: 16px;
-    }
-}
-
-// states color
-// @primary-color          : @blue-6;
-// @info-color             : @blue-6;
-// @success-color          : @green-6;
-// @processing-color       : @blue-6;
-// @error-color            : @red-6;
-// @highlight-color        : @red-6;
-// @warning-color          : @gold-6;
-// @normal-color           : #d9d9d9;
-// .check{
-//     // box-shadow: 0 3px  @state-check inset;
-// }
-// .process{
-//     box-shadow: 0 3px @info-color inset;
-// }
-// .rejected{
-//     box-shadow: 0 3px  @error-color inset;
-// }
-// .accepted{
-//     box-shadow: 0 3px  @success-color inset;
-//     color: @state-accepted;
-// }
-// .expired{
-//     box-shadow: 0 3px  @state-close inset;
-// }
-// .close{
-//     box-shadow: 0 3px  @state-close inset;
-// }
-
-.antd-pro-pages-requirement-quotation-list-index-table {
-    margin-bottom: 16px;
-    .antd-pro-pages-requirement-quotation-list-index-tableAlert {
-        margin-bottom: 16px;
-    }
-}
-
-.antd-pro-pages-requirement-quotation-list-index-actions {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    .antd-pro-pages-requirement-quotation-list-index-delete,
-    .antd-pro-pages-requirement-quotation-list-index-update {
-        font-size: 20px;
-        cursor: pointer;
-    }
-    .antd-pro-pages-requirement-quotation-list-index-delete {
-        color: #ff4d4f;
-    }
-    .antd-pro-pages-requirement-quotation-list-index-update {
-        color: @primary-color;
-    }
-}
-
-// ===============================================================
-// Cating winners styles =========================================
-.antd-pro-pages-requirement-quotation-list-index-onWinner1,
-.antd-pro-pages-requirement-quotation-list-index-onWinner2 {
-    cursor: pointer;
-}
-.antd-pro-pages-requirement-quotation-list-index-onWinner1,
-.antd-pro-pages-requirement-quotation-list-index-onWinner2,
-.antd-pro-pages-requirement-quotation-list-index-onWinner3 {
-    font-size: 18px;
-}
-.antd-pro-pages-requirement-quotation-list-index-onWinner1 {
-    color: @primary-color;
-}
-.antd-pro-pages-requirement-quotation-list-index-onWinner2 {
-    color: #faad14;
-}
-.antd-pro-pages-requirement-quotation-list-index-onWinner3 {
-    color: #f5222d;
-}
-.antd-pro-pages-requirement-quotation-viwer-c-c-index-header {
-    button {
-        margin-bottom: 16px;
-        margin-right: 16px;
-    }
-}
 .antd-pro-pages-user-forgot-index-submit {
     width: 100%;
 }
@@ -2075,6 +2080,7 @@ i.antd-pro-components-global-header-index-trigger {
 .antd-pro-pages-user-login-index-forgot {
     float: right;
 }
+
 .antd-pro-pages-user-users-index-row {
     margin-bottom: 16px;
 }
@@ -2122,6 +2128,7 @@ i.antd-pro-components-global-header-index-trigger {
         color: @primary-color;
     }
 }
+
 .textOverflow() {
     overflow: hidden;
     text-overflow: ellipsis;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Upload, Button, Icon, Row, Col, Avatar } from 'antd';
 import { connect } from 'dva';
-import { service } from 'config/app';
+import { service } from '@/utils/config';
 
 class UploadLogo extends React.Component {
     constructor(props) {

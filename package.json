@@ -51,6 +51,7 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-document-title": "^2.0.3",
     "react-dom": "^16.5.1",
+    "react-excel-workbook": "0.0.4",
     "react-fittext": "^1.0.0",
     "react-router-dom": "^4.3.1"
   },

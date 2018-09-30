@@ -35,7 +35,6 @@ export default {
     'component.noticeIcon.clear': 'Clear',
     'component.noticeIcon.cleared': 'Cleared',
     'component.noticeIcon.empty': 'No notifications',
-
     'menu.home': 'Home',
     'menu.dashboard': 'Dashboard',
     'menu.product': 'Product',
@@ -46,7 +45,6 @@ export default {
     'menu.account.profile': 'Profile',
     'menu.account.settings': 'Account Settings',
     'menu.account.logout': 'Logout',
-
     'app.login.remember-me': 'Remember me',
     'app.login.forgot-password': 'Forgot your password?',
     'app.login.sign-in-with': 'Sign in with',

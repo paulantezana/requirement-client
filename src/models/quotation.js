@@ -47,7 +47,7 @@ export default {
             history.listen(location => {
                 let index = location.pathname.indexOf('/', location.pathname.indexOf('quote'));
                 let param = location.pathname.substring(index + 1);
-                if (location.pathname == `/requirements/quote/${param}`) {
+                if (location.pathname == `/quotation/${param}`) {
                     if (/^[0-9]*$/.exec(param)) {
                         dispatch({
                             type: 'setupApp',

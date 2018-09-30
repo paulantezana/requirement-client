@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Popconfirm, InputNumber, Badge, Form, Tooltip, Tag } from 'antd';
-import Spacing from 'components/Spacing';
-import StandardTable from 'components/StandardTable';
+import Spacing from '@/components/Spacing';
+import StandardTable from '@/components/StandardTable';
 import styles from './index.less';
 import { connect } from 'dva';
 
