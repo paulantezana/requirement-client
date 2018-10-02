@@ -5,25 +5,6 @@ import { connect } from 'dva';
 import { service } from '@/utils/config';
 import styles from './avatar.less';
 
-const AvatarView = ({ avatar }) => (
-    <Fragment>
-        <div className={styles.avatar_title}>Avatar</div>
-        <div className={styles.avatar}>
-            <img src={avatar} alt="avatar" />
-        </div>
-        <Upload fileList={[]}>
-            <div className={styles.button_view}>
-                <Button icon="upload">
-                    <FormattedMessage
-                        id="app.settings.basic.avatar"
-                        defaultMessage="Change avatar"
-                    />
-                </Button>
-            </div>
-        </Upload>
-    </Fragment>
-);
-
 class Demo extends React.Component {
     constructor(props) {
         super(props);

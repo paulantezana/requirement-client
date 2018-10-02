@@ -1,12 +1,12 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3737;
+const PORT = process.env.PORT || 3535;
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('*', function(request, response) {
-    response.sendFile(__dirname + '/dist/index.html');
+    response.sendFile(__dirname + 'index.html');
 });
 
 app.listen(PORT, error => {

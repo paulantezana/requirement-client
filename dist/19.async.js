@@ -3,45 +3,40 @@
     {
         PRw2: function(e, t, a) {
             'use strict';
-            var l = a('TqRt');
-            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('14J3');
-            var n = l(a('BMrR'));
-            a('DZo9');
-            var u = l(a('8z0m'));
+            var l = a('284h'),
+                n = a('TqRt');
+            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('DZo9');
+            var i = n(a('8z0m'));
             a('+L6B');
-            var i = l(a('2/Rp'));
-            a('Pwec');
-            var r = l(a('CtXQ'));
-            a('jCWc');
-            var d = l(a('kPKH'));
-            a('Telt');
-            var o = l(a('Tckk')),
-                s = l(a('RIqP')),
-                f = l(a('lwsE')),
-                c = l(a('W8MJ')),
-                m = l(a('a1gu')),
-                p = l(a('Nsbk')),
-                g = l(a('7W2i')),
-                v = l(a('PJYZ')),
-                h = l(a('q1tI')),
-                b = a('MuoO'),
-                E = a('Aeqt'),
-                y = (function(e) {
+            var u = n(a('2/Rp')),
+                r = n(a('RIqP')),
+                d = n(a('lwsE')),
+                o = n(a('W8MJ')),
+                s = n(a('a1gu')),
+                f = n(a('Nsbk')),
+                c = n(a('7W2i')),
+                m = n(a('PJYZ')),
+                p = l(a('q1tI')),
+                g = a('LLXN'),
+                v = a('MuoO'),
+                h = a('Aeqt'),
+                b = n(a('xr1I')),
+                E = (function(e) {
                     function t(e) {
                         var a;
                         return (
-                            (0, f.default)(this, t),
-                            (a = (0, m.default)(this, (0, p.default)(t).call(this, e))),
+                            (0, d.default)(this, t),
+                            (a = (0, s.default)(this, (0, f.default)(t).call(this, e))),
                             (a.state = { fileList: [], uploading: !1 }),
                             (a.handleUpload = a.handleUpload.bind(
-                                (0, v.default)((0, v.default)(a))
+                                (0, m.default)((0, m.default)(a))
                             )),
                             a
                         );
                     }
                     return (
-                        (0, g.default)(t, e),
-                        (0, c.default)(t, [
+                        (0, c.default)(t, e),
+                        (0, o.default)(t, [
                             {
                                 key: 'handleUpload',
                                 value: function() {
@@ -56,8 +51,8 @@
                                 key: 'render',
                                 value: function() {
                                     var e = this,
-                                        t = this.state.uploading,
-                                        a = {
+                                        t = (this.state.uploading,
+                                        {
                                             action: '//jsonplaceholder.typicode.com/posts/',
                                             onRemove: function(t) {
                                                 e.setState(function(e) {
@@ -72,52 +67,45 @@
                                                     e.setState(function(e) {
                                                         var a = e.fileList;
                                                         return {
-                                                            fileList: (0, s.default)(a).concat([t]),
+                                                            fileList: (0, r.default)(a).concat([t]),
                                                         };
                                                     }),
                                                     !1
                                                 );
                                             },
                                             fileList: this.state.fileList,
-                                        },
-                                        l = this.props.setting;
-                                    return h.default.createElement(
-                                        n.default,
+                                        }),
+                                        a = this.props.setting;
+                                    return p.default.createElement(
+                                        p.Fragment,
                                         null,
-                                        h.default.createElement(
-                                            d.default,
-                                            { xs: 24, md: 12, lg: 8, xl: 6 },
-                                            h.default.createElement(o.default, {
-                                                shape: 'square',
-                                                size: 200,
-                                                src: ''.concat(E.service.path, '/').concat(l.logo),
+                                        p.default.createElement(
+                                            'div',
+                                            { className: b.default.avatar_title },
+                                            'Avatar'
+                                        ),
+                                        p.default.createElement(
+                                            'div',
+                                            { className: b.default.avatar },
+                                            p.default.createElement('img', {
+                                                src: ''.concat(h.service.path, '/').concat(a.logo),
+                                                alt: 'avatar',
                                             })
                                         ),
-                                        h.default.createElement(
-                                            d.default,
-                                            { xs: 24, md: 12, lg: 8, xl: 6 },
-                                            h.default.createElement(
-                                                u.default,
-                                                a,
-                                                h.default.createElement(
-                                                    i.default,
-                                                    null,
-                                                    h.default.createElement(r.default, {
-                                                        type: 'upload',
-                                                    }),
-                                                    ' Select File'
+                                        p.default.createElement(
+                                            i.default,
+                                            t,
+                                            p.default.createElement(
+                                                'div',
+                                                { className: b.default.button_view },
+                                                p.default.createElement(
+                                                    u.default,
+                                                    { icon: 'upload' },
+                                                    p.default.createElement(g.FormattedMessage, {
+                                                        id: 'app.settings.basic.avatar',
+                                                        defaultMessage: 'Change avatar',
+                                                    })
                                                 )
-                                            ),
-                                            h.default.createElement(
-                                                i.default,
-                                                {
-                                                    className: 'upload-demo-start',
-                                                    type: 'primary',
-                                                    onClick: this.handleUpload,
-                                                    disabled: 0 === this.state.fileList.length,
-                                                    loading: t,
-                                                },
-                                                t ? 'Uploading' : 'Start Upload'
                                             )
                                         )
                                     );
@@ -126,22 +114,22 @@
                         ]),
                         t
                     );
-                })(h.default.Component),
-                k = function(e) {
+                })(p.default.Component),
+                y = function(e) {
                     var t = e.global;
                     return { setting: t.setting };
                 },
-                q = (0, b.connect)(k)(y);
-            t.default = q;
+                I = (0, v.connect)(y)(E);
+            t.default = I;
         },
         SV4x: function(e, t, a) {
             'use strict';
             var l = a('284h'),
                 n = a('TqRt');
             Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('IzEo');
-            var u = n(a('bx4M'));
+            var i = n(a('bx4M'));
             a('14J3');
-            var i = n(a('BMrR'));
+            var u = n(a('BMrR'));
             a('jCWc');
             var r = n(a('kPKH'));
             a('/zsF');
@@ -173,10 +161,10 @@
                                         v.default,
                                         { title: 'Configuracion' },
                                         p.default.createElement(
-                                            u.default,
+                                            i.default,
                                             { bordered: !1 },
                                             p.default.createElement(
-                                                i.default,
+                                                u.default,
                                                 { gutter: 24 },
                                                 p.default.createElement(
                                                     r.default,
@@ -211,17 +199,17 @@
                     var t = e.global;
                     return { global: t };
                 },
-                k = (0, g.connect)(y)(E);
-            t.default = k;
+                I = (0, g.connect)(y)(E);
+            t.default = I;
         },
         TTLn: function(e, t, a) {
             'use strict';
             var l = a('284h'),
                 n = a('TqRt');
             Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('+L6B');
-            var u = n(a('2/Rp'));
+            var i = n(a('2/Rp'));
             a('giR+');
-            var i = n(a('fyUT'));
+            var u = n(a('fyUT'));
             a('5NDa');
             var r = n(a('5rEg')),
                 d = n(a('MVZn')),
@@ -372,7 +360,7 @@
                                                         },
                                                     ],
                                                 })(
-                                                    v.default.createElement(i.default, {
+                                                    v.default.createElement(u.default, {
                                                         min: 3,
                                                         max: 255,
                                                         step: 1,
@@ -401,7 +389,7 @@
                                                         },
                                                     ],
                                                 })(
-                                                    v.default.createElement(i.default, {
+                                                    v.default.createElement(u.default, {
                                                         min: 1,
                                                         max: 15,
                                                         step: 1,
@@ -412,7 +400,7 @@
                                                 g.default.Item,
                                                 null,
                                                 v.default.createElement(
-                                                    u.default,
+                                                    i.default,
                                                     { type: 'primary', htmlType: 'submit' },
                                                     'Guardar cambios'
                                                 )
@@ -431,6 +419,13 @@
                 },
                 y = (0, h.connect)(E)(b);
             t.default = y;
+        },
+        xr1I: function(e, t, a) {
+            e.exports = {
+                avatar_title: 'sn\\pages\\-setting\\-upload-logo\\index-avatar_title',
+                avatar: 'sn\\pages\\-setting\\-upload-logo\\index-avatar',
+                button_view: 'sn\\pages\\-setting\\-upload-logo\\index-button_view',
+            };
         },
     },
 ]);

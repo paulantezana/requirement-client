@@ -1,7 +1,9 @@
-import React from 'react';
-import { Upload, Button, Icon, Row, Col, Avatar } from 'antd';
+import React, { Fragment } from 'react';
+import { Upload, Button } from 'antd';
+import { formatMessage, FormattedMessage } from 'umi/locale';
 import { connect } from 'dva';
 import { service } from '@/utils/config';
+import styles from './index.less';
 
 class UploadLogo extends React.Component {
     constructor(props) {
@@ -50,27 +52,22 @@ class UploadLogo extends React.Component {
         const { setting } = this.props;
 
         return (
-            <Row>
-                <Col xs={24} md={12} lg={8} xl={6}>
-                    <Avatar shape="square" size={200} src={`${service.path}/${setting.logo}`} />
-                </Col>
-                <Col xs={24} md={12} lg={8} xl={6}>
-                    <Upload {...props}>
-                        <Button>
-                            <Icon type="upload" /> Select File
+            <Fragment>
+                <div className={styles.avatar_title}>Avatar</div>
+                <div className={styles.avatar}>
+                    <img src={`${service.path}/${setting.logo}`} alt="avatar" />
+                </div>
+                <Upload {...props}>
+                    <div className={styles.button_view}>
+                        <Button icon="upload">
+                            <FormattedMessage
+                                id="app.settings.basic.avatar"
+                                defaultMessage="Change avatar"
+                            />
                         </Button>
-                    </Upload>
-                    <Button
-                        className="upload-demo-start"
-                        type="primary"
-                        onClick={this.handleUpload}
-                        disabled={this.state.fileList.length === 0}
-                        loading={uploading}
-                    >
-                        {uploading ? 'Uploading' : 'Start Upload'}
-                    </Button>
-                </Col>
-            </Row>
+                    </div>
+                </Upload>
+            </Fragment>
         );
     }
 }

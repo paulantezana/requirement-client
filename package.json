@@ -20,7 +20,9 @@
     "generate-mock": "node ./scripts/generateMock.js",
     "test:component": "umi test ./src/components",
     "test:all": "node ./tests/run-tests.js",
-    "prettier": "prettier --write ./src/**/**/**/*"
+    "prettier": "prettier --write ./src/**/**/**/*",
+    "serve": "serve ./dist",
+    "pro": "node server.js"
   },
   "dependencies": {
     "@antv/data-set": "^0.9.6",
@@ -54,7 +56,8 @@
     "react-dom": "^16.5.1",
     "react-excel-workbook": "0.0.4",
     "react-fittext": "^1.0.0",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "serve": "^10.0.2"
   },
   "devDependencies": {
     "@types/react": "^16.4.11",

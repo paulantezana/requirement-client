@@ -79,16 +79,15 @@ const query = {
 class BasicLayout extends React.PureComponent {
     constructor(props) {
         super(props);
+        this.state = {
+            rendering: true,
+            isMobile: false,
+        };
         this.getPageTitle = memoizeOne(this.getPageTitle);
         this.getBreadcrumbNameMap = memoizeOne(this.getBreadcrumbNameMap, isEqual);
         this.breadcrumbNameMap = this.getBreadcrumbNameMap();
         this.matchParamsPath = memoizeOne(this.matchParamsPath, isEqual);
     }
-
-    state = {
-        rendering: true,
-        isMobile: false,
-    };
 
     componentDidMount() {
         const { dispatch } = this.props;
@@ -174,13 +173,13 @@ class BasicLayout extends React.PureComponent {
         const currRouterData = this.matchParamsPath(pathname);
 
         if (!currRouterData) {
-            return 'Ant Design Pro';
+            return 'RQM WebApp';
         }
         const message = formatMessage({
             id: currRouterData.locale || currRouterData.name,
             defaultMessage: currRouterData.name,
         });
-        return `${message} - Ant Design Pro`;
+        return `${message} - RQM WebApp`;
     };
 
     getLayoutStyle = () => {

@@ -523,18 +523,17 @@
             'use strict';
             var l = t('284h'),
                 r = t('TqRt');
-            Object.defineProperty(a, '__esModule', { value: !0 }), (a.default = void 0);
-            var u = r(t('RIqP')),
-                n = r(t('lwsE')),
-                d = r(t('W8MJ')),
-                s = r(t('a1gu')),
-                f = r(t('Nsbk')),
-                i = r(t('7W2i')),
-                o = r(t('PJYZ'));
-            t('DZo9');
-            var c = r(t('8z0m'));
+            Object.defineProperty(a, '__esModule', { value: !0 }), (a.default = void 0), t('DZo9');
+            var u = r(t('8z0m'));
             t('+L6B');
-            var m = r(t('2/Rp')),
+            var n = r(t('2/Rp')),
+                d = r(t('RIqP')),
+                s = r(t('lwsE')),
+                f = r(t('W8MJ')),
+                i = r(t('a1gu')),
+                o = r(t('Nsbk')),
+                c = r(t('7W2i')),
+                m = r(t('PJYZ')),
                 p = l(t('q1tI')),
                 v = t('LLXN'),
                 b = t('MuoO'),
@@ -544,18 +543,18 @@
                     function a(e) {
                         var t;
                         return (
-                            (0, n.default)(this, a),
-                            (t = (0, s.default)(this, (0, f.default)(a).call(this, e))),
+                            (0, s.default)(this, a),
+                            (t = (0, i.default)(this, (0, o.default)(a).call(this, e))),
                             (t.state = { fileList: [], uploading: !1 }),
                             (t.handleUpload = t.handleUpload.bind(
-                                (0, o.default)((0, o.default)(t))
+                                (0, m.default)((0, m.default)(t))
                             )),
                             t
                         );
                     }
                     return (
-                        (0, i.default)(a, e),
-                        (0, d.default)(a, [
+                        (0, c.default)(a, e),
+                        (0, f.default)(a, [
                             {
                                 key: 'handleUpload',
                                 value: function() {
@@ -586,7 +585,7 @@
                                                     e.setState(function(e) {
                                                         var t = e.fileList;
                                                         return {
-                                                            fileList: (0, u.default)(t).concat([a]),
+                                                            fileList: (0, d.default)(t).concat([a]),
                                                         };
                                                     }),
                                                     !1
@@ -614,13 +613,13 @@
                                             })
                                         ),
                                         p.default.createElement(
-                                            c.default,
+                                            u.default,
                                             a,
                                             p.default.createElement(
                                                 'div',
                                                 { className: E.default.button_view },
                                                 p.default.createElement(
-                                                    m.default,
+                                                    n.default,
                                                     { icon: 'upload' },
                                                     p.default.createElement(v.FormattedMessage, {
                                                         id: 'app.settings.basic.avatar',

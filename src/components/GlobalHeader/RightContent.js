@@ -6,6 +6,7 @@ import groupBy from 'lodash/groupBy';
 import NoticeIcon from '../NoticeIcon';
 import SelectLang from '../SelectLang';
 import styles from './index.less';
+import { service } from '@/utils/config';
 
 export default class GlobalHeaderRight extends PureComponent {
     getNoticeData() {
@@ -50,13 +51,9 @@ export default class GlobalHeaderRight extends PureComponent {
         } = this.props;
         const menu = (
             <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
-                <Menu.Item key="userCenter">
+                <Menu.Item key="profile">
                     <Icon type="user" />
                     <FormattedMessage id="menu.account.profile" defaultMessage="Profile" />
-                </Menu.Item>
-                <Menu.Item key="userinfo">
-                    <Icon type="setting" />
-                    <FormattedMessage id="menu.account.settings" defaultMessage="Settings" />
                 </Menu.Item>
                 <Menu.Divider />
                 <Menu.Item key="logout">
@@ -75,7 +72,7 @@ export default class GlobalHeaderRight extends PureComponent {
                 <Tooltip title={formatMessage({ id: 'component.globalHeader.help' })}>
                     <a
                         target="_blank"
-                        href="https://pro.ant.design/docs/getting-started"
+                        href="https://paulantezana.com"
                         rel="noopener noreferrer"
                         className={styles.action}
                         title="{ formatMessage({id: 'component.globalHeader.help'}) }"
@@ -83,7 +80,7 @@ export default class GlobalHeaderRight extends PureComponent {
                         <Icon type="question-circle-o" />
                     </a>
                 </Tooltip>
-                <NoticeIcon
+                {/* <NoticeIcon
                     className={styles.action}
                     count={currentUser.notifyCount}
                     onItemClick={(item, tabProps) => {
@@ -110,21 +107,14 @@ export default class GlobalHeaderRight extends PureComponent {
                         emptyText={formatMessage({ id: 'component.globalHeader.message.empty' })}
                         emptyImage="https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg"
                     />
-                    <NoticeIcon.Tab
-                        list={noticeData.event}
-                        title={formatMessage({ id: 'component.globalHeader.event' })}
-                        name="event"
-                        emptyText={formatMessage({ id: 'component.globalHeader.event.empty' })}
-                        emptyImage="https://gw.alipayobjects.com/zos/rmsportal/HsIsxMZiWKrNUavQUXqx.svg"
-                    />
-                </NoticeIcon>
+                </NoticeIcon> */}
                 {currentUser.user_name ? (
                     <Dropdown overlay={menu}>
                         <span className={`${styles.action} ${styles.account}`}>
                             <Avatar
                                 size="small"
                                 className={styles.avatar}
-                                src={currentUser.avatar}
+                                src={`${service.path}/${currentUser.avatar}`}
                                 alt="avatar"
                             />
                             <span className={styles.name}>{currentUser.user_name}</span>

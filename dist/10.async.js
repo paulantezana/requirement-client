@@ -305,11 +305,7 @@
                                                     src: a,
                                                     alt: 'logo',
                                                 }),
-                                                p.default.createElement(
-                                                    'h1',
-                                                    null,
-                                                    'Ant Design Pro'
-                                                )
+                                                p.default.createElement('h1', null, 'RQM WebApp')
                                             )
                                         ),
                                         p.default.createElement(
@@ -1133,9 +1129,9 @@
                 b = a('LLXN'),
                 E = l(a('wd/R')),
                 k = l(a('bt/X')),
-                M = l(a('8TWP')),
-                C = l(a('bfXr')),
-                x = l(a('h3zL')),
+                M = (l(a('8TWP')), l(a('bfXr'))),
+                C = l(a('h3zL')),
+                x = a('Aeqt'),
                 N = (function(e) {
                     function t() {
                         return (
@@ -1182,38 +1178,26 @@
                                 value: function() {
                                     var e = this.props,
                                         t = e.currentUser,
-                                        a = e.fetchingNotices,
-                                        n = e.onNoticeVisibleChange,
-                                        l = e.onMenuClick,
-                                        d = e.onNoticeClear,
-                                        f = e.theme,
-                                        m = y.default.createElement(
+                                        a = (e.fetchingNotices,
+                                        e.onNoticeVisibleChange,
+                                        e.onMenuClick),
+                                        n = (e.onNoticeClear, e.theme),
+                                        l = y.default.createElement(
                                             c.default,
                                             {
-                                                className: x.default.menu,
+                                                className: C.default.menu,
                                                 selectedKeys: [],
-                                                onClick: l,
+                                                onClick: a,
                                             },
                                             y.default.createElement(
                                                 c.default.Item,
-                                                { key: 'userCenter' },
+                                                { key: 'profile' },
                                                 y.default.createElement(s.default, {
                                                     type: 'user',
                                                 }),
                                                 y.default.createElement(b.FormattedMessage, {
                                                     id: 'menu.account.profile',
                                                     defaultMessage: 'Profile',
-                                                })
-                                            ),
-                                            y.default.createElement(
-                                                c.default.Item,
-                                                { key: 'userinfo' },
-                                                y.default.createElement(s.default, {
-                                                    type: 'setting',
-                                                }),
-                                                y.default.createElement(b.FormattedMessage, {
-                                                    id: 'menu.account.settings',
-                                                    defaultMessage: 'Settings',
                                                 })
                                             ),
                                             y.default.createElement(c.default.Divider, null),
@@ -1229,16 +1213,15 @@
                                                 })
                                             )
                                         ),
-                                        p = this.getNoticeData(),
-                                        h = x.default.right;
+                                        d = (this.getNoticeData(), C.default.right);
                                     return (
-                                        'dark' === f &&
-                                            (h = ''
-                                                .concat(x.default.right, '  ')
-                                                .concat(x.default.dark)),
+                                        'dark' === n &&
+                                            (d = ''
+                                                .concat(C.default.right, '  ')
+                                                .concat(C.default.dark)),
                                         y.default.createElement(
                                             'div',
-                                            { className: h },
+                                            { className: d },
                                             y.default.createElement(
                                                 u.default,
                                                 {
@@ -1250,10 +1233,9 @@
                                                     'a',
                                                     {
                                                         target: '_blank',
-                                                        href:
-                                                            'https://pro.ant.design/docs/getting-started',
+                                                        href: 'https://paulantezana.com',
                                                         rel: 'noopener noreferrer',
-                                                        className: x.default.action,
+                                                        className: C.default.action,
                                                         title:
                                                             "{ formatMessage({id: 'component.globalHeader.help'}) }",
                                                     },
@@ -1262,77 +1244,28 @@
                                                     })
                                                 )
                                             ),
-                                            y.default.createElement(
-                                                M.default,
-                                                {
-                                                    className: x.default.action,
-                                                    count: t.notifyCount,
-                                                    onItemClick: function(e, t) {
-                                                        console.log(e, t);
-                                                    },
-                                                    onClear: d,
-                                                    onPopupVisibleChange: n,
-                                                    loading: a,
-                                                    popupAlign: { offset: [20, -16] },
-                                                },
-                                                y.default.createElement(M.default.Tab, {
-                                                    list: p.notification,
-                                                    title: (0, b.formatMessage)({
-                                                        id: 'component.globalHeader.notification',
-                                                    }),
-                                                    name: 'notification',
-                                                    emptyText: (0, b.formatMessage)({
-                                                        id:
-                                                            'component.globalHeader.notification.empty',
-                                                    }),
-                                                    emptyImage:
-                                                        'https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg',
-                                                }),
-                                                y.default.createElement(M.default.Tab, {
-                                                    list: p.message,
-                                                    title: (0, b.formatMessage)({
-                                                        id: 'component.globalHeader.message',
-                                                    }),
-                                                    name: 'message',
-                                                    emptyText: (0, b.formatMessage)({
-                                                        id: 'component.globalHeader.message.empty',
-                                                    }),
-                                                    emptyImage:
-                                                        'https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg',
-                                                }),
-                                                y.default.createElement(M.default.Tab, {
-                                                    list: p.event,
-                                                    title: (0, b.formatMessage)({
-                                                        id: 'component.globalHeader.event',
-                                                    }),
-                                                    name: 'event',
-                                                    emptyText: (0, b.formatMessage)({
-                                                        id: 'component.globalHeader.event.empty',
-                                                    }),
-                                                    emptyImage:
-                                                        'https://gw.alipayobjects.com/zos/rmsportal/HsIsxMZiWKrNUavQUXqx.svg',
-                                                })
-                                            ),
                                             t.user_name
                                                 ? y.default.createElement(
                                                       r.default,
-                                                      { overlay: m },
+                                                      { overlay: l },
                                                       y.default.createElement(
                                                           'span',
                                                           {
                                                               className: ''
-                                                                  .concat(x.default.action, ' ')
-                                                                  .concat(x.default.account),
+                                                                  .concat(C.default.action, ' ')
+                                                                  .concat(C.default.account),
                                                           },
                                                           y.default.createElement(i.default, {
                                                               size: 'small',
-                                                              className: x.default.avatar,
-                                                              src: t.avatar,
+                                                              className: C.default.avatar,
+                                                              src: ''
+                                                                  .concat(x.service.path, '/')
+                                                                  .concat(t.avatar),
                                                               alt: 'avatar',
                                                           }),
                                                           y.default.createElement(
                                                               'span',
-                                                              { className: x.default.name },
+                                                              { className: C.default.name },
                                                               t.user_name
                                                           )
                                                       )
@@ -1341,8 +1274,8 @@
                                                       size: 'small',
                                                       style: { marginLeft: 8, marginRight: 8 },
                                                   }),
-                                            y.default.createElement(C.default, {
-                                                className: x.default.action,
+                                            y.default.createElement(M.default, {
+                                                className: C.default.action,
                                             })
                                         )
                                     );
@@ -1429,11 +1362,9 @@
                             (a.handleMenuClick = function(e) {
                                 var t = e.key,
                                     n = a.props.dispatch;
-                                'userCenter' !== t
-                                    ? 'userinfo' !== t
-                                        ? 'logout' === t && n({ type: 'user/logout' })
-                                        : v.default.push('/account/settings/base')
-                                    : v.default.push('/account/center');
+                                'profile' !== t
+                                    ? 'logout' === t && n({ type: 'user/logout' })
+                                    : v.default.push('/account/profile');
                             }),
                             (a.handleNoticeVisibleChange = function(e) {
                                 if (e) {
@@ -1699,7 +1630,7 @@
                 P = n(a('R1Dz')),
                 S = n(a('wOmh')),
                 T = d.default.Content;
-            function I(e) {
+            function W(e) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : '',
                     a = arguments.length > 2 ? arguments[2] : void 0,
                     n = arguments.length > 3 ? arguments[3] : void 0;
@@ -1712,13 +1643,13 @@
                             : n && (l = n);
                     var o = (0, s.default)({}, e, { locale: l, authority: e.authority || a });
                     if (e.routes) {
-                        var r = I(e.routes, ''.concat(t).concat(e.path, '/'), e.authority, l);
+                        var r = W(e.routes, ''.concat(t).concat(e.path, '/'), e.authority, l);
                         o.children = r;
                     }
                     return delete o.routes, o;
                 });
             }
-            var W = {
+            var I = {
                     'screen-xs': { maxWidth: 575 },
                     'screen-sm': { minWidth: 576, maxWidth: 767 },
                     'screen-md': { minWidth: 768, maxWidth: 991 },
@@ -1732,7 +1663,6 @@
                         return (
                             (0, o.default)(this, t),
                             (a = (0, i.default)(this, (0, u.default)(t).call(this, e))),
-                            (a.state = { rendering: !0, isMobile: !1 }),
                             (a.matchParamsPath = function(e) {
                                 var t = Object.keys(a.breadcrumbNameMap).find(function(t) {
                                     return (0, b.default)(t).test(e);
@@ -1741,12 +1671,12 @@
                             }),
                             (a.getPageTitle = function(e) {
                                 var t = a.matchParamsPath(e);
-                                if (!t) return 'Ant Design Pro';
+                                if (!t) return 'RQM WebApp';
                                 var n = (0, k.formatMessage)({
                                     id: t.locale || t.name,
                                     defaultMessage: t.name,
                                 });
-                                return ''.concat(n, ' - Ant Design Pro');
+                                return ''.concat(n, ' - RQM WebApp');
                             }),
                             (a.getLayoutStyle = function() {
                                 var e = a.state.isMobile,
@@ -1766,6 +1696,7 @@
                                 var t = a.props.dispatch;
                                 t({ type: 'global/changeLayoutCollapsed', payload: e });
                             }),
+                            (a.state = { rendering: !0, isMobile: !1 }),
                             (a.getPageTitle = (0, h.default)(a.getPageTitle)),
                             (a.getBreadcrumbNameMap = (0, h.default)(
                                 a.getBreadcrumbNameMap,
@@ -1825,7 +1756,7 @@
                                 key: 'getMenuData',
                                 value: function() {
                                     var e = this.props.route.routes;
-                                    return I(e);
+                                    return W(e);
                                 },
                             },
                             {
@@ -1927,7 +1858,7 @@
                                             { title: this.getPageTitle(r) },
                                             f.default.createElement(
                                                 v.ContainerQuery,
-                                                { query: W },
+                                                { query: I },
                                                 function(t) {
                                                     return f.default.createElement(
                                                         P.default.Provider,
