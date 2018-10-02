@@ -17,6 +17,6 @@ export const docProperties = {
 };
 
 export const service = {
-    path: 'https://rqsystem-server.herokuapp.com',
-    api_path: 'https://rqsystem-server.herokuapp.com/api/v1',
+    path: 'https://rqm-web-server.herokuapp.com',
+    api_path: 'https://rqm-web-server.herokuapp.com/api/v1',
 };
