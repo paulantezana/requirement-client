@@ -38,6 +38,8 @@ export default {
     'component.noticeIcon.empty': '暂无数据',
     'menu.home': 'Home',
     'menu.dashboard': 'Dashboard',
+    'menu.requirement': 'Requirement',
+    'menu.quotation': 'Quotation',
     'menu.product': 'Product',
     'menu.provider': 'Provider',
     'menu.setting': 'Setting',

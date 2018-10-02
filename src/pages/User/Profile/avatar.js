@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { formatMessage, FormattedMessage } from 'umi/locale';
 import { Upload, Button, Icon, Row, Col, Avatar } from 'antd';
 import { connect } from 'dva';
 import { service } from '@/utils/config';
+import styles from './avatar.less';
+
+const AvatarView = ({ avatar }) => (
+    <Fragment>
+        <div className={styles.avatar_title}>Avatar</div>
+        <div className={styles.avatar}>
+            <img src={avatar} alt="avatar" />
+        </div>
+        <Upload fileList={[]}>
+            <div className={styles.button_view}>
+                <Button icon="upload">
+                    <FormattedMessage
+                        id="app.settings.basic.avatar"
+                        defaultMessage="Change avatar"
+                    />
+                </Button>
+            </div>
+        </Upload>
+    </Fragment>
+);
 
 class Demo extends React.Component {
     constructor(props) {
@@ -48,29 +69,23 @@ class Demo extends React.Component {
         };
 
         const { user } = this.props;
-
         return (
-            <Row>
-                <Col xs={24} md={12} lg={8} xl={6}>
-                    <Avatar shape="square" size={200} src={`${service.path}/${user.avatar}`} />
-                </Col>
-                <Col xs={24} md={12} lg={8} xl={6}>
-                    <Upload {...props}>
-                        <Button>
-                            <Icon type="upload" /> Select File
+            <Fragment>
+                <div className={styles.avatar_title}>Avatar</div>
+                <div className={styles.avatar}>
+                    <img src={`${service.path}/${user.avatar}`} alt="avatar" />
+                </div>
+                <Upload {...props}>
+                    <div className={styles.button_view}>
+                        <Button icon="upload">
+                            <FormattedMessage
+                                id="app.settings.basic.avatar"
+                                defaultMessage="Change avatar"
+                            />
                         </Button>
-                    </Upload>
-                    <Button
-                        className="upload-demo-start"
-                        type="primary"
-                        onClick={this.handleUpload}
-                        disabled={this.state.fileList.length === 0}
-                        loading={uploading}
-                    >
-                        {uploading ? 'Uploading' : 'Start Upload'}
-                    </Button>
-                </Col>
-            </Row>
+                    </div>
+                </Upload>
+            </Fragment>
         );
     }
 }

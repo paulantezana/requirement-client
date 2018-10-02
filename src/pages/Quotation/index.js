@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'dva';
-import { message, Button, Input, Tooltip, Pagination, Modal, Card } from 'antd';
+import { Button, Input, Modal, Card } from 'antd';
+import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
 import styles from './index.less';
 import List from './List';
@@ -137,7 +138,10 @@ class Quotation extends Component {
         );
 
         return (
-            <Fragment>
+            <PageHeaderWrapper
+                title="Cotizaciones"
+                // content="Lista de productos"
+            >
                 <Card bordered={false} className={stateCard}>
                     <div className={styles.header}>
                         {/* Button para insertar una nueva cotizacion esta activo solo cuando el requeriemiento esta en proceso */}
@@ -183,7 +187,7 @@ class Quotation extends Component {
                 </Card>
                 <Spacing size="large" />
                 <ViwerCC stateCard={stateCard} />
-            </Fragment>
+            </PageHeaderWrapper>
         );
     }
 }

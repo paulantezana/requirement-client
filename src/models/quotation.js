@@ -45,9 +45,9 @@ export default {
     subscriptions: {
         setup({ dispatch, history }) {
             history.listen(location => {
-                let index = location.pathname.indexOf('/', location.pathname.indexOf('quote'));
+                let index = location.pathname.indexOf('/', location.pathname.indexOf('quotations'));
                 let param = location.pathname.substring(index + 1);
-                if (location.pathname == `/quotation/${param}`) {
+                if (location.pathname == `/quotations/${param}`) {
                     if (/^[0-9]*$/.exec(param)) {
                         dispatch({
                             type: 'setupApp',

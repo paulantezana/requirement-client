@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'dva';
 import { Button, Input, Card, Icon, Divider } from 'antd';
+import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
 import styles from './index.less';
 import List from './List';
@@ -139,50 +140,46 @@ class Requirement extends Component {
         };
 
         return (
-            <Card
-                title={
-                    <Fragment>
-                        <Icon type="share-alt" theme="outlined" />
-                        <Divider type="vertical" />
-                        Requerimientos
-                    </Fragment>
-                }
-                bordered={false}
+            <PageHeaderWrapper
+                title="Requerimientos"
+                // content="Lista de productos"
             >
-                <div className={styles.header}>
-                    <Button icon="plus" type="primary" onClick={() => onShowModal('create')}>
-                        Nuevo requerieminto
-                    </Button>
-                    <ModalForm />
+                <Card bordered={false}>
+                    <div className={styles.header}>
+                        <Button icon="plus" type="primary" onClick={() => onShowModal('create')}>
+                            Nuevo requerieminto
+                        </Button>
+                        <ModalForm />
 
-                    <Button icon="export" onClick={() => this.handleToggleExport(true)}>
-                        Exportar
-                    </Button>
-                    <ExportData
-                        visible={this.state.visibleExport}
-                        onCancel={() => this.handleToggleExport(false)}
-                    />
+                        <Button icon="export" onClick={() => this.handleToggleExport(true)}>
+                            Exportar
+                        </Button>
+                        <ExportData
+                            visible={this.state.visibleExport}
+                            onCancel={() => this.handleToggleExport(false)}
+                        />
 
-                    <Button icon="printer" onClick={() => onPrintRQ()}>
-                        Imprimir plantilla
-                    </Button>
-                    <PrintModalRQ />
+                        <Button icon="printer" onClick={() => onPrintRQ()}>
+                            Imprimir plantilla
+                        </Button>
+                        <PrintModalRQ />
 
-                    <Button icon="reload" onClick={() => this.onQueryAll()}>
-                        Actualizar
-                    </Button>
-                    <Search
-                        placeholder="Buscar requerimiento"
-                        value={searchText}
-                        onChange={e => onSearchText(e.target.value)}
-                        onSearch={value => this.onQueryAll()}
-                        style={{ width: 200 }}
-                    />
+                        <Button icon="reload" onClick={() => this.onQueryAll()}>
+                            Actualizar
+                        </Button>
+                        <Search
+                            placeholder="Buscar requerimiento"
+                            value={searchText}
+                            onChange={e => onSearchText(e.target.value)}
+                            onSearch={value => this.onQueryAll()}
+                            style={{ width: 200 }}
+                        />
 
-                    <PrinterRequirement />
-                </div>
-                <List {...requirementListProps} />
-            </Card>
+                        <PrinterRequirement />
+                    </div>
+                    <List {...requirementListProps} />
+                </Card>
+            </PageHeaderWrapper>
         );
     }
 }

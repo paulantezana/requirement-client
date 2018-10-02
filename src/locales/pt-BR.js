@@ -37,6 +37,8 @@ export default {
     'component.noticeIcon.empty': 'Sem notificações',
     'menu.home': 'Home',
     'menu.dashboard': 'Dashboard',
+    'menu.requirement': 'Requirement',
+    'menu.quotation': 'Quotation',
     'menu.product': 'Product',
     'menu.provider': 'Provider',
     'menu.setting': 'Setting',

@@ -1874,34 +1874,25 @@ i.antd-pro-components-global-header-index-trigger {
     }
 }
 
-// states color
-// @primary-color          : @blue-6;
-// @info-color             : @blue-6;
-// @success-color          : @green-6;
-// @processing-color       : @blue-6;
-// @error-color            : @red-6;
-// @highlight-color        : @red-6;
-// @warning-color          : @gold-6;
-// @normal-color           : #d9d9d9;
-// .check{
-//     // box-shadow: 0 3px  @state-check inset;
-// }
-// .process{
-//     box-shadow: 0 3px @info-color inset;
-// }
-// .rejected{
-//     box-shadow: 0 3px  @error-color inset;
-// }
-// .accepted{
-//     box-shadow: 0 3px  @success-color inset;
-//     color: @state-accepted;
-// }
-// .expired{
-//     box-shadow: 0 3px  @state-close inset;
-// }
-// .close{
-//     box-shadow: 0 3px  @state-close inset;
-// }
+.antd-pro-pages-quotation-index-check {
+    box-shadow: 0 3px @warning-color inset;
+}
+.antd-pro-pages-quotation-index-process {
+    box-shadow: 0 3px @info-color inset;
+}
+.antd-pro-pages-quotation-index-rejected {
+    box-shadow: 0 3px @error-color inset;
+}
+.antd-pro-pages-quotation-index-accepted {
+    box-shadow: 0 3px @success-color inset;
+    // color: @state-accepted;
+}
+.antd-pro-pages-quotation-index-expired {
+    box-shadow: 0 3px @highlight-color inset;
+}
+.antd-pro-pages-quotation-index-close {
+    box-shadow: 0 3px @highlight-color inset;
+}
 
 .antd-pro-pages-quotation-list-index-table {
     margin-bottom: 16px;
@@ -2040,25 +2031,25 @@ i.antd-pro-components-global-header-index-trigger {
     }
 }
 
-// // states color
-// .check{
-//     // color: @state-check;
-// }
-// .process{
-//     color: @state-process;
-// }
-// .rejected{
-//     color: @state-rejected;
-// }
-// .accepted{
-//     color: @state-accepted;
-// }
-// .expired{
-//     color: @state-close;
-// }
-// .close{
-//     color: @state-close;
-// }
+.antd-pro-pages-requirement-list-index-check {
+    color: @warning-color;
+}
+.antd-pro-pages-requirement-list-index-process {
+    color: @info-color;
+}
+.antd-pro-pages-requirement-list-index-rejected {
+    color: @error-color;
+}
+.antd-pro-pages-requirement-list-index-accepted {
+    color: @success-color;
+    // color: @state-accepted;
+}
+.antd-pro-pages-requirement-list-index-expired {
+    color: @highlight-color;
+}
+.antd-pro-pages-requirement-list-index-close {
+    color: @highlight-color;
+}
 
 .antd-pro-pages-user-forgot-index-submit {
     width: 100%;
@@ -2079,6 +2070,33 @@ i.antd-pro-components-global-header-index-trigger {
 }
 .antd-pro-pages-user-login-index-forgot {
     float: right;
+}
+
+.antd-pro-pages-user-profile-avatar-avatar_title {
+    height: 22px;
+    font-size: @font-size-base;
+    color: @heading-color;
+    line-height: 22px;
+    margin-bottom: 8px;
+}
+.antd-pro-pages-user-profile-avatar-avatar {
+    width: 144px;
+    height: 144px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    img {
+        width: 100%;
+    }
+}
+.antd-pro-pages-user-profile-avatar-button_view {
+    width: 144px;
+    text-align: center;
+}
+
+@media screen and (max-width: @screen-xl) {
+    .antd-pro-pages-user-profile-avatar-avatar_title {
+        display: none;
+    }
 }
 
 .antd-pro-pages-user-users-index-row {
