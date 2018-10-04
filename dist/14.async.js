@@ -29,8 +29,8 @@
             a('y8nQ');
             var h = l(a('Vl3Y')),
                 E = n(a('q1tI')),
-                y = a('MuoO'),
-                g = { labelCol: { span: 8 }, wrapperCol: { span: 12 } },
+                g = a('MuoO'),
+                y = { labelCol: { span: 8 }, wrapperCol: { span: 12 } },
                 C = h.default.create()(
                     (function(e) {
                         function t(e) {
@@ -53,9 +53,9 @@
                                             a = e.onCancel,
                                             n = e.onOk,
                                             l = e.form,
-                                            r = (e.type, e.confirmLoading),
+                                            r = e.confirmLoading,
                                             i = e.data,
-                                            f = (e.validRuc, e.dispatch, l.getFieldDecorator);
+                                            f = l.getFieldDecorator;
                                         return E.default.createElement(
                                             u.default,
                                             {
@@ -71,7 +71,7 @@
                                                 { layout: 'horizontal' },
                                                 E.default.createElement(
                                                     h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, g, {
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
                                                         label: 'RUC',
                                                     }),
                                                     f('ruc', {
@@ -96,7 +96,7 @@
                                                 ),
                                                 E.default.createElement(
                                                     h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, g, {
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
                                                         label: 'Nombre o raz\xf3n social',
                                                     }),
                                                     f('name', {
@@ -116,7 +116,7 @@
                                                 ),
                                                 E.default.createElement(
                                                     h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, g, {
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
                                                         label: 'Representante',
                                                     }),
                                                     f('manager', { initialValue: i.manager })(
@@ -127,7 +127,7 @@
                                                 ),
                                                 E.default.createElement(
                                                     h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, g, {
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
                                                         label: 'Email',
                                                     }),
                                                     f('email', {
@@ -147,7 +147,7 @@
                                                 ),
                                                 E.default.createElement(
                                                     h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, g, {
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
                                                         label: 'Telefono',
                                                     }),
                                                     f('phone', {
@@ -167,7 +167,7 @@
                                                 ),
                                                 E.default.createElement(
                                                     h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, g, {
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
                                                         label: 'Direcci\xf3n',
                                                     }),
                                                     f('address', { initialValue: i.address })(
@@ -178,7 +178,7 @@
                                                 ),
                                                 E.default.createElement(
                                                     h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, g, {
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
                                                         label: 'Observaci\xf3n',
                                                     }),
                                                     f('observation', {
@@ -192,7 +192,7 @@
                                                 ),
                                                 E.default.createElement(
                                                     h.default.Item,
-                                                    (0, o.default)({}, g, { label: 'Estado' }),
+                                                    (0, o.default)({}, y, { label: 'Estado' }),
                                                     f('state', {
                                                         valuePropName: 'checked',
                                                         initialValue: i.state,
@@ -300,7 +300,7 @@
                         loading: a.effects['provider/create'] || a.effects['provider/update'],
                     };
                 },
-                q = (0, y.connect)(k)(b);
+                q = (0, g.connect)(k)(b);
             t.default = q;
         },
         HWB5: function(e, t, a) {
@@ -603,23 +603,23 @@
                 h = l(a('PJYZ')),
                 E = l(a('QILm'));
             a('y8nQ');
-            var y = l(a('Vl3Y')),
-                g = n(a('q1tI')),
+            var g = l(a('Vl3Y')),
+                y = n(a('q1tI')),
                 C = l(a('oDxf')),
                 b = l(a('CkN6')),
                 k = l(a('4OMY')),
                 q = a('MuoO'),
-                I = (y.default.Item, g.default.createContext()),
+                I = (g.default.Item, y.default.createContext()),
                 x = function(e) {
                     var t = e.form,
                         a = (e.index, (0, E.default)(e, ['form', 'index']));
-                    return g.default.createElement(
+                    return y.default.createElement(
                         I.Provider,
                         { value: t },
-                        g.default.createElement('tr', a)
+                        y.default.createElement('tr', a)
                     );
                 },
-                w = y.default.create()(x),
+                w = g.default.create()(x),
                 P = (function(e) {
                     function t(e) {
                         var a;
@@ -696,7 +696,7 @@
                                             'index',
                                             'handleSave',
                                         ]));
-                                    return g.default.createElement(
+                                    return y.default.createElement(
                                         'td',
                                         (0, i.default)(
                                             {
@@ -707,23 +707,23 @@
                                             c
                                         ),
                                         a
-                                            ? g.default.createElement(I.Consumer, null, function(
+                                            ? y.default.createElement(I.Consumer, null, function(
                                                   t
                                               ) {
                                                   return (
                                                       (e.form = t),
-                                                      g.default.createElement(
+                                                      y.default.createElement(
                                                           u.default,
                                                           {
                                                               placement: 'left',
                                                               title:
                                                                   'Ingrese el precio de la cotizaci\xf3n',
                                                           },
-                                                          g.default.createElement(
+                                                          y.default.createElement(
                                                               'div',
                                                               { className: k.default.editing },
-                                                              g.default.createElement(
-                                                                  y.default.Item,
+                                                              y.default.createElement(
+                                                                  g.default.Item,
                                                                   { style: { margin: 0 } },
                                                                   t.getFieldDecorator(n, {
                                                                       initialValue: r[n],
@@ -744,7 +744,7 @@
                                                                           },
                                                                       ],
                                                                   })(
-                                                                      g.default.createElement(
+                                                                      y.default.createElement(
                                                                           o.default,
                                                                           {
                                                                               min: 0,
@@ -757,7 +757,7 @@
                                                                       )
                                                                   )
                                                               ),
-                                                              g.default.createElement(d.default, {
+                                                              y.default.createElement(d.default, {
                                                                   status: 'processing',
                                                               })
                                                           )
@@ -771,7 +771,7 @@
                         ]),
                         t
                     );
-                })(g.default.Component),
+                })(y.default.Component),
                 M = (function(e) {
                     function t(e) {
                         var a;
@@ -895,11 +895,11 @@
                                                 f += t;
                                             }
                                         }),
-                                        g.default.createElement(
+                                        y.default.createElement(
                                             'div',
                                             null,
-                                            g.default.createElement(C.default, null),
-                                            g.default.createElement(b.default, {
+                                            y.default.createElement(C.default, null),
+                                            y.default.createElement(b.default, {
                                                 columns: u,
                                                 dataSource: l.list,
                                                 components: o,
@@ -913,8 +913,8 @@
                                                     return e.id;
                                                 },
                                             }),
-                                            g.default.createElement(C.default, { size: 'small' }),
-                                            g.default.createElement(
+                                            y.default.createElement(C.default, { size: 'small' }),
+                                            y.default.createElement(
                                                 r.default,
                                                 { color: '#108ee9' },
                                                 'Total : ',
@@ -927,7 +927,7 @@
                         ]),
                         t
                     );
-                })(g.Component),
+                })(y.Component),
                 _ = function(e) {
                     var t = e.quotation,
                         a = e.require,
@@ -956,8 +956,8 @@
                 v = l(a('zWWL')),
                 h = l(a('R5ak')),
                 E = l(a('u3Cz')),
-                y = l(a('zfuF')),
-                g = l(a('rATF')),
+                g = l(a('zfuF')),
+                y = l(a('rATF')),
                 C = l(a('HWB5')),
                 b = (function(e) {
                     function t(e) {
@@ -1059,7 +1059,7 @@
                                                 },
                                                 'Memorandum'
                                             ),
-                                            s.default.createElement(y.default, null),
+                                            s.default.createElement(g.default, null),
                                             s.default.createElement(
                                                 i.default,
                                                 {
@@ -1070,7 +1070,7 @@
                                                 },
                                                 'Pecosa'
                                             ),
-                                            s.default.createElement(g.default, null)
+                                            s.default.createElement(y.default, null)
                                         ),
                                         s.default.createElement(C.default, k)
                                     );
@@ -1187,7 +1187,7 @@
                 v = n(a('q1tI')),
                 h = (l(a('17x9')), l(a('CkN6'))),
                 E = l(a('R7w7')),
-                y = function(e) {
+                g = function(e) {
                     var t = e.total,
                         a = e.level,
                         n = (e.state, e.onClick),
@@ -1214,7 +1214,7 @@
                                   })
                     );
                 },
-                g = (function(e) {
+                y = (function(e) {
                     function t(e) {
                         var a;
                         return (
@@ -1259,7 +1259,7 @@
                                         f = n.dataSource,
                                         s = n.loadingAll,
                                         m = n.total,
-                                        g = [
+                                        y = [
                                             {
                                                 title: 'Casting',
                                                 key: 'winner',
@@ -1271,7 +1271,7 @@
                                                               { color: '#108ee9' },
                                                               'Ganador'
                                                           )
-                                                        : v.default.createElement(y, {
+                                                        : v.default.createElement(g, {
                                                               total: m,
                                                               state: d.state,
                                                               level: e.winner_level,
@@ -1382,7 +1382,7 @@
                                             'div',
                                             { className: E.default.table },
                                             v.default.createElement(h.default, {
-                                                columns: g,
+                                                columns: y,
                                                 dataSource: f,
                                                 loading: s,
                                                 pagination: !1,
@@ -1400,7 +1400,7 @@
                         t
                     );
                 })(v.Component),
-                C = g;
+                C = y;
             t.default = C;
         },
         fTcV: function(e, t, a) {
@@ -1430,8 +1430,8 @@
             a('O3gP');
             var h = l(a('lrIw')),
                 E = l(a('lwsE')),
-                y = l(a('W8MJ')),
-                g = l(a('a1gu')),
+                g = l(a('W8MJ')),
+                y = l(a('a1gu')),
                 C = l(a('Nsbk')),
                 b = l(a('7W2i'));
             a('y8nQ');
@@ -1452,14 +1452,14 @@
                             var a;
                             return (
                                 (0, E.default)(this, t),
-                                (a = (0, g.default)(this, (0, C.default)(t).call(this, e))),
+                                (a = (0, y.default)(this, (0, C.default)(t).call(this, e))),
                                 (a.state = { selectProviderID: 0 }),
                                 a
                             );
                         }
                         return (
                             (0, b.default)(t, e),
-                            (0, y.default)(t, [
+                            (0, g.default)(t, [
                                 {
                                     key: 'handleChangeSelectProvider',
                                     value: function(e) {
@@ -1477,11 +1477,11 @@
                                             r = t.form,
                                             i = (t.type, t.confirmLoading),
                                             E = t.data,
-                                            y = r.getFieldDecorator,
-                                            g = this.props,
-                                            C = g.dispatch,
-                                            b = g.provider,
-                                            q = (g.loading,
+                                            g = r.getFieldDecorator,
+                                            y = this.props,
+                                            C = y.dispatch,
+                                            b = y.provider,
+                                            q = (y.loading,
                                             function() {
                                                 C({
                                                     type: 'provider/showModal',
@@ -1498,7 +1498,7 @@
                                             D = function(t, a) {
                                                 e.handleChangeSelectProvider(parseInt(t));
                                             },
-                                            R = w.map(function(e) {
+                                            S = w.map(function(e) {
                                                 return I.default.createElement(
                                                     T,
                                                     { key: e.id },
@@ -1544,7 +1544,7 @@
                                                                             className:
                                                                                 x.default.item,
                                                                         },
-                                                                        y('provider_name_aux', {
+                                                                        g('provider_name_aux', {
                                                                             initialValue:
                                                                                 E.provider_name,
                                                                             rules: [
@@ -1558,7 +1558,7 @@
                                                                             I.default.createElement(
                                                                                 h.default,
                                                                                 {
-                                                                                    dataSource: R,
+                                                                                    dataSource: S,
                                                                                     onSelect: D,
                                                                                     onSearch: N,
                                                                                     placeholder:
@@ -1595,7 +1595,7 @@
                                                                     label: 'ID',
                                                                     className: x.default.hidden,
                                                                 },
-                                                                y('provider_id', {
+                                                                g('provider_id', {
                                                                     initialValue:
                                                                         E.provider_id ||
                                                                         this.state.selectProviderID,
@@ -1615,7 +1615,7 @@
                                                                 (0, p.default)({}, O, {
                                                                     label: 'Fecha entrega',
                                                                 }),
-                                                                y('deliver_date', {
+                                                                g('deliver_date', {
                                                                     initialValue: E.deliver_date
                                                                         ? (0, P.default)(
                                                                               new Date(
@@ -1641,7 +1641,7 @@
                                                                     hasFeedback: !0,
                                                                     label: 'Observaci\xf3n',
                                                                 }),
-                                                                y('observation', {
+                                                                g('observation', {
                                                                     initialValue: E.observation,
                                                                 })(
                                                                     I.default.createElement(
@@ -1659,7 +1659,7 @@
                                                                 (0, p.default)({}, O, {
                                                                     label: 'Sugerir ganador',
                                                                 }),
-                                                                y('suggest_winner', {
+                                                                g('suggest_winner', {
                                                                     valuePropName: 'checked',
                                                                     initialValue: E.suggest_winner,
                                                                 })(
@@ -1687,7 +1687,7 @@
                         var a;
                         return (
                             (0, E.default)(this, t),
-                            (a = (0, g.default)(this, (0, C.default)(t).call(this, e))),
+                            (a = (0, y.default)(this, (0, C.default)(t).call(this, e))),
                             (a.handleConfirm = a.handleConfirm.bind(
                                 (0, i.default)((0, i.default)(a))
                             )),
@@ -1696,7 +1696,7 @@
                     }
                     return (
                         (0, b.default)(t, e),
-                        (0, y.default)(t, [
+                        (0, g.default)(t, [
                             {
                                 key: 'handleConfirm',
                                 value: function(e) {
@@ -1756,15 +1756,15 @@
                         t
                     );
                 })(I.Component),
-                R = function(e) {
+                S = function(e) {
                     var t = e.quotation,
                         a = e.provider,
                         n = e.require,
                         l = e.loading;
                     return { quotation: t, provider: a, require: n, loading: l.effects };
                 },
-                S = (0, w.connect)(R)(D);
-            t.default = S;
+                R = (0, w.connect)(S)(D);
+            t.default = R;
         },
         g6Q8: function(e, t, a) {
             'use strict';
@@ -1822,7 +1822,7 @@
                         )
                     );
                 },
-                y = function(e) {
+                g = function(e) {
                     var t = e.dispatch;
                     return m.default.createElement(
                         s.default,
@@ -1835,7 +1835,7 @@
                         'Todo Las Cotizaciones'
                     );
                 },
-                g = (function(e) {
+                y = (function(e) {
                     function t(e) {
                         var a;
                         return (
@@ -1884,7 +1884,7 @@
                                         },
                                         m.default.createElement(E, { data: n.list }),
                                         m.default.createElement(p.default, null),
-                                        m.default.createElement(y, { dispatch: l })
+                                        m.default.createElement(g, { dispatch: l })
                                     );
                                 },
                             },
@@ -1897,7 +1897,7 @@
                         a = e.quotation;
                     return { dowloand: t, quotation: a };
                 },
-                b = (0, h.connect)(C)(g);
+                b = (0, h.connect)(C)(y);
             t.default = b;
         },
         gPi7: function(e, t, a) {
@@ -1921,8 +1921,8 @@
                 v = n(a('q1tI')),
                 h = a('MuoO'),
                 E = l(a('zHco')),
-                y = l(a('xNcC')),
-                g = l(a('d5+N')),
+                g = l(a('xNcC')),
+                y = l(a('d5+N')),
                 C = l(a('fTcV')),
                 b = l(a('Qjay')),
                 k = l(a('g6Q8')),
@@ -2027,14 +2027,14 @@
                                         p = c.state,
                                         h =
                                             '4' === p
-                                                ? y.default.close
+                                                ? g.default.close
                                                 : '3' === p
-                                                    ? y.default.accepted
+                                                    ? g.default.accepted
                                                     : '2' === p
-                                                        ? y.default.rejected
+                                                        ? g.default.rejected
                                                         : '1' === p
-                                                            ? y.default.process
-                                                            : y.default.check,
+                                                            ? g.default.process
+                                                            : g.default.check,
                                         I = !('1' === c.state || '0' === c.state),
                                         x = !(
                                             '1' === c.state ||
@@ -2049,7 +2049,7 @@
                                             { bordered: !1, className: h },
                                             v.default.createElement(
                                                 'div',
-                                                { className: y.default.header },
+                                                { className: g.default.header },
                                                 v.default.createElement(
                                                     u.default,
                                                     {
@@ -2111,7 +2111,7 @@
                                                 ),
                                                 v.default.createElement(C.default, null)
                                             ),
-                                            v.default.createElement(g.default, f)
+                                            v.default.createElement(y.default, f)
                                         ),
                                         v.default.createElement(q.default, { size: 'large' }),
                                         v.default.createElement(b.default, { stateCard: h })

@@ -405,6 +405,7 @@
                                   onClose: function() {
                                       return c(!0);
                                   },
+                                  width: 220,
                                   style: { padding: 0, height: '100vh' },
                               },
                               r.default.createElement(

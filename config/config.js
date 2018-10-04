@@ -89,7 +89,7 @@ export default {
         },
     },
     manifest: {
-        name: 'Requirement Web',
+        name: 'RQM WebApp',
         background_color: '#FFF',
         description: 'Sistema de requerimiento.',
         display: 'standalone',

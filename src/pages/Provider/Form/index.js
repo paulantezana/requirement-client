@@ -14,17 +14,7 @@ const AddForm = Form.create()(
             this.state = {};
         }
         render() {
-            const {
-                visible,
-                onCancel,
-                onOk,
-                form,
-                type,
-                confirmLoading,
-                data,
-                validRuc,
-                dispatch,
-            } = this.props;
+            const { visible, onCancel, onOk, form, confirmLoading, data } = this.props;
             const { getFieldDecorator } = form;
 
             return (

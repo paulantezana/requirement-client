@@ -56,9 +56,9 @@
                                             a = e.onCancel,
                                             l = e.onOk,
                                             n = e.form,
-                                            r = (e.type, e.confirmLoading),
+                                            r = e.confirmLoading,
                                             o = e.data,
-                                            f = (e.validRuc, e.dispatch, n.getFieldDecorator);
+                                            f = n.getFieldDecorator;
                                         return g.default.createElement(
                                             d.default,
                                             {
