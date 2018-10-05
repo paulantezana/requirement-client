@@ -21,9 +21,7 @@
     "test:component": "umi test ./src/components",
     "test:all": "node ./tests/run-tests.js",
     "prettier": "prettier --write ./src/**/**/**/*",
-    "pro": "node server.js",
-    "win": "electron .",
-    "dist": "electron-builder --dir ./build"
+    "pro": "node server.js"
   },
   "build": {
     "appId": "com.paulantezana.cotizacion",
@@ -40,8 +38,6 @@
     "bizcharts-plugin-slider": "^2.0.3",
     "classnames": "^2.2.6",
     "dva": "^2.4.0",
-    "electron": "^3.0.2",
-    "electron-builder": "^20.28.4",
     "enquire-js": "^0.2.1",
     "express": "^4.16.3",
     "hash.js": "^1.1.5",
