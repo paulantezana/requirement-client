@@ -61,6 +61,7 @@ export default {
             const id = yield select(({ quotation }) => quotation.requirementID);
             const response = yield call(quotationPurchaseOrder, { ...payload, requirement_id: id });
             if (response.success) {
+                console.log(response, 'Response');
                 const blob = yield call(settingDownloadLogo, { id: setting.id });
                 // Comvertiendo imagen blog en Base64
                 const logoBase64 = yield call(convertBlobToBase64, blob);
