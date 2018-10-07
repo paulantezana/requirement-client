@@ -1,289 +1,53 @@
 (window['webpackJsonp'] = window['webpackJsonp'] || []).push([
     [14],
     {
-        '4OMY': function(e, t, a) {
-            e.exports = {
-                editing: 'sn\\pages\\-quotation\\-form\\-quotation-detail\\index-editing',
-            };
-        },
-        BRgM: function(e, t, a) {},
-        EBKi: function(e, t, a) {
+        '15XU': function(e, t, a) {
             'use strict';
             var n = a('284h'),
                 l = a('TqRt');
-            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
-            var r = l(a('MVZn')),
-                i = l(a('PJYZ'));
-            a('2qtc');
-            var u = l(a('kLXV'));
-            a('sRBo');
-            var d = l(a('kaz8')),
-                o = l(a('pVnL'));
-            a('5NDa');
-            var c = l(a('5rEg')),
-                f = l(a('lwsE')),
-                s = l(a('W8MJ')),
-                m = l(a('a1gu')),
-                p = l(a('Nsbk')),
-                v = l(a('7W2i'));
-            a('y8nQ');
-            var h = l(a('Vl3Y')),
-                E = n(a('q1tI')),
-                g = a('MuoO'),
-                y = { labelCol: { span: 8 }, wrapperCol: { span: 12 } },
-                C = h.default.create()(
-                    (function(e) {
-                        function t(e) {
-                            var a;
-                            return (
-                                (0, f.default)(this, t),
-                                (a = (0, m.default)(this, (0, p.default)(t).call(this, e))),
-                                (a.state = {}),
-                                a
-                            );
-                        }
-                        return (
-                            (0, v.default)(t, e),
-                            (0, s.default)(t, [
-                                {
-                                    key: 'render',
-                                    value: function() {
-                                        var e = this.props,
-                                            t = e.visible,
-                                            a = e.onCancel,
-                                            n = e.onOk,
-                                            l = e.form,
-                                            r = e.confirmLoading,
-                                            i = e.data,
-                                            f = l.getFieldDecorator;
-                                        return E.default.createElement(
-                                            u.default,
-                                            {
-                                                title: 'Proveedor',
-                                                okText: 'Guardar',
-                                                confirmLoading: r,
-                                                onCancel: a,
-                                                onOk: n,
-                                                visible: t,
-                                            },
-                                            E.default.createElement(
-                                                h.default,
-                                                { layout: 'horizontal' },
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'RUC',
-                                                    }),
-                                                    f('ruc', {
-                                                        initialValue: i.ruc,
-                                                        rules: [
-                                                            {
-                                                                required: !0,
-                                                                message:
-                                                                    '\xa1Por favor ingrese un RUC!',
-                                                            },
-                                                            {
-                                                                pattern: /^[0-9]{11}$/,
-                                                                message:
-                                                                    '\xa1Ingrese un RUC v\xe1lido!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'RUC',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Nombre o raz\xf3n social',
-                                                    }),
-                                                    f('name', {
-                                                        initialValue: i.name,
-                                                        rules: [
-                                                            {
-                                                                required: !0,
-                                                                message:
-                                                                    '\xa1Por favor un Nombre o raz\xf3n social!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'Nombre o raz\xf3n social',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Representante',
-                                                    }),
-                                                    f('manager', { initialValue: i.manager })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'Representante',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Email',
-                                                    }),
-                                                    f('email', {
-                                                        initialValue: i.email,
-                                                        rules: [
-                                                            {
-                                                                type: 'email',
-                                                                message:
-                                                                    '\xa1Ingrese un correo valido!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'Email',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Telefono',
-                                                    }),
-                                                    f('phone', {
-                                                        initialValue: i.phone,
-                                                        rules: [
-                                                            {
-                                                                pattern: /^[0-9]{6,12}$/,
-                                                                message:
-                                                                    '\xa1Ingrese un telefono v\xe1lido!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'Telefono',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Direcci\xf3n',
-                                                    }),
-                                                    f('address', { initialValue: i.address })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'Direcci\xf3n',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Observaci\xf3n',
-                                                    }),
-                                                    f('observation', {
-                                                        initialValue: i.observation,
-                                                    })(
-                                                        E.default.createElement(
-                                                            c.default.TextArea,
-                                                            { placeholder: 'Observaci\xf3n' }
-                                                        )
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({}, y, { label: 'Estado' }),
-                                                    f('state', {
-                                                        valuePropName: 'checked',
-                                                        initialValue: i.state,
-                                                    })(E.default.createElement(d.default, null))
-                                                )
-                                            )
-                                        );
-                                    },
-                                },
-                            ]),
-                            t
-                        );
-                    })(E.default.Component)
-                ),
-                b = (function(e) {
+            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('2qtc');
+            var r = l(a('kLXV')),
+                i = l(a('lwsE')),
+                u = l(a('W8MJ')),
+                d = l(a('a1gu')),
+                o = l(a('Nsbk')),
+                c = l(a('7W2i')),
+                f = n(a('q1tI')),
+                s = a('MuoO'),
+                m = (function(e) {
                     function t(e) {
-                        var a;
                         return (
-                            (0, f.default)(this, t),
-                            (a = (0, m.default)(this, (0, p.default)(t).call(this, e))),
-                            (a.handleConfirm = a.handleConfirm.bind(
-                                (0, i.default)((0, i.default)(a))
-                            )),
-                            (a.handleCancel = a.handleCancel.bind(
-                                (0, i.default)((0, i.default)(a))
-                            )),
-                            a
+                            (0, i.default)(this, t),
+                            (0, d.default)(this, (0, o.default)(t).call(this, e))
                         );
                     }
                     return (
-                        (0, v.default)(t, e),
-                        (0, s.default)(t, [
-                            {
-                                key: 'handleConfirm',
-                                value: function(e) {
-                                    var t = this.props,
-                                        a = t.dispatch,
-                                        n = t.provider.currentItem,
-                                        l = this.formRef.props.form;
-                                    l.validateFields(function(t, i) {
-                                        t ||
-                                            (a({
-                                                type: 'provider/'.concat(e),
-                                                payload: (0, r.default)({}, i, { id: n.id }),
-                                            }),
-                                            l.resetFields());
-                                    });
-                                },
-                            },
-                            {
-                                key: 'handleCancel',
-                                value: function() {
-                                    var e = this.formRef.props.form;
-                                    e.resetFields();
-                                },
-                            },
+                        (0, c.default)(t, e),
+                        (0, u.default)(t, [
                             {
                                 key: 'render',
                                 value: function() {
-                                    var e = this,
-                                        t = this.handleConfirm,
-                                        a = this.handleCancel,
-                                        n = this.props,
-                                        l = n.dispatch,
-                                        r = n.provider,
-                                        i = n.loading,
-                                        u = r.currentItem,
-                                        d = r.modalType,
-                                        c = r.modalVisible,
-                                        f = r.validRuc,
-                                        s = {
-                                            validRuc: f,
-                                            data: 'create' == d ? { state: !0 } : u,
-                                            disabled: 'detail' == d,
-                                            type: d,
-                                            visible: c,
-                                            confirmLoading: i,
-                                            onOk: function() {
-                                                t(d);
-                                            },
-                                            onCancel: function() {
-                                                l({ type: 'provider/resetProvider' }), a();
-                                            },
+                                    var e = this.props,
+                                        t = e.print,
+                                        a = e.dispatch,
+                                        n = function() {
+                                            a({ type: 'print/hidePrinterOC' });
                                         };
-                                    return E.default.createElement(
-                                        C,
-                                        (0, o.default)({}, s, {
-                                            dispatch: l,
-                                            wrappedComponentRef: function(t) {
-                                                return (e.formRef = t);
-                                            },
+                                    return f.default.createElement(
+                                        r.default,
+                                        {
+                                            title: 'Printer modal',
+                                            onCancel: n,
+                                            style: { top: 20 },
+                                            width: '95vw',
+                                            footer: null,
+                                            bodyStyle: { padding: 0 },
+                                            visible: t.ocVisible,
+                                        },
+                                        f.default.createElement('iframe', {
+                                            src: t.docOCDataUrl,
+                                            height: '600px',
+                                            width: '100%',
                                         })
                                     );
                                 },
@@ -291,18 +55,20 @@
                         ]),
                         t
                     );
-                })(E.Component),
-                k = function(e) {
-                    var t = e.provider,
-                        a = e.loading;
-                    return {
-                        provider: t,
-                        loading: a.effects['provider/create'] || a.effects['provider/update'],
-                    };
+                })(f.Component),
+                p = function(e) {
+                    var t = e.print;
+                    return { print: t };
                 },
-                q = (0, g.connect)(k)(b);
-            t.default = q;
+                v = (0, s.connect)(p)(m);
+            t.default = v;
         },
+        '4OMY': function(e, t, a) {
+            e.exports = {
+                editing: 'sn\\pages\\-quotation\\-form\\-quotation-detail\\index-editing',
+            };
+        },
+        BRgM: function(e, t, a) {},
         HWB5: function(e, t, a) {
             'use strict';
             var n = a('284h'),
@@ -605,8 +371,8 @@
             a('y8nQ');
             var g = l(a('Vl3Y')),
                 y = n(a('q1tI')),
-                C = l(a('oDxf')),
-                b = l(a('CkN6')),
+                b = l(a('oDxf')),
+                C = l(a('CkN6')),
                 k = l(a('4OMY')),
                 q = a('MuoO'),
                 I = (g.default.Item, y.default.createContext()),
@@ -898,8 +664,8 @@
                                         y.default.createElement(
                                             'div',
                                             null,
-                                            y.default.createElement(C.default, null),
-                                            y.default.createElement(b.default, {
+                                            y.default.createElement(b.default, null),
+                                            y.default.createElement(C.default, {
                                                 columns: u,
                                                 dataSource: l.list,
                                                 components: o,
@@ -913,7 +679,7 @@
                                                     return e.id;
                                                 },
                                             }),
-                                            y.default.createElement(C.default, { size: 'small' }),
+                                            y.default.createElement(b.default, { size: 'small' }),
                                             y.default.createElement(
                                                 r.default,
                                                 { color: '#108ee9' },
@@ -937,6 +703,68 @@
                 O = (0, q.connect)(_)(M);
             t.default = O;
         },
+        NEcx: function(e, t, a) {
+            'use strict';
+            var n = a('284h'),
+                l = a('TqRt');
+            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('2qtc');
+            var r = l(a('kLXV')),
+                i = l(a('lwsE')),
+                u = l(a('W8MJ')),
+                d = l(a('a1gu')),
+                o = l(a('Nsbk')),
+                c = l(a('7W2i')),
+                f = n(a('q1tI')),
+                s = a('MuoO'),
+                m = (function(e) {
+                    function t(e) {
+                        return (
+                            (0, i.default)(this, t),
+                            (0, d.default)(this, (0, o.default)(t).call(this, e))
+                        );
+                    }
+                    return (
+                        (0, c.default)(t, e),
+                        (0, u.default)(t, [
+                            {
+                                key: 'render',
+                                value: function() {
+                                    var e = this.props,
+                                        t = e.print,
+                                        a = e.dispatch,
+                                        n = function() {
+                                            a({ type: 'print/hidePrinterCC' });
+                                        };
+                                    return f.default.createElement(
+                                        r.default,
+                                        {
+                                            title: 'Cuadro Comparativo',
+                                            onCancel: n,
+                                            style: { top: 20 },
+                                            width: '95vw',
+                                            footer: null,
+                                            bodyStyle: { padding: 0 },
+                                            visible: t.ccVisible,
+                                        },
+                                        f.default.createElement('iframe', {
+                                            src: t.docCCDataUrl,
+                                            height: '600px',
+                                            width: '100%',
+                                        })
+                                    );
+                                },
+                            },
+                        ]),
+                        t
+                    );
+                })(f.Component),
+                p = function(e) {
+                    var t = e.print;
+                    return { print: t };
+                },
+                v = (0, s.connect)(p)(m);
+            t.default = v;
+        },
         Qjay: function(e, t, a) {
             'use strict';
             var n = a('284h'),
@@ -953,13 +781,13 @@
                 s = n(a('q1tI')),
                 m = a('MuoO'),
                 p = l(a('SYP/')),
-                v = l(a('zWWL')),
-                h = l(a('R5ak')),
-                E = l(a('u3Cz')),
-                g = l(a('zfuF')),
-                y = l(a('rATF')),
-                C = l(a('HWB5')),
-                b = (function(e) {
+                v = l(a('NEcx')),
+                h = l(a('15XU')),
+                E = l(a('jUjp')),
+                g = l(a('s7Js')),
+                y = l(a('sKQO')),
+                b = l(a('HWB5')),
+                C = (function(e) {
                     function t(e) {
                         return (
                             (0, u.default)(this, t),
@@ -995,7 +823,7 @@
                                             a({ type: 'print/showPrinterMemo' }),
                                                 a({ type: 'print/loadDataMemo' });
                                         },
-                                        b = function() {
+                                        C = function() {
                                             a({ type: 'print/showPrinterPecosa' }),
                                                 a({ type: 'print/loadDataPecosa' });
                                         },
@@ -1065,14 +893,14 @@
                                                 {
                                                     icon: 'printer',
                                                     onClick: function() {
-                                                        return b();
+                                                        return C();
                                                     },
                                                 },
                                                 'Pecosa'
                                             ),
                                             s.default.createElement(y.default, null)
                                         ),
-                                        s.default.createElement(C.default, k)
+                                        s.default.createElement(b.default, k)
                                     );
                                 },
                             },
@@ -1086,70 +914,8 @@
                         n = e.loading;
                     return { quotation: t, setting: a.setting, loading: n.effects };
                 },
-                q = (0, m.connect)(k)(b);
+                q = (0, m.connect)(k)(C);
             t.default = q;
-        },
-        R5ak: function(e, t, a) {
-            'use strict';
-            var n = a('284h'),
-                l = a('TqRt');
-            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('2qtc');
-            var r = l(a('kLXV')),
-                i = l(a('lwsE')),
-                u = l(a('W8MJ')),
-                d = l(a('a1gu')),
-                o = l(a('Nsbk')),
-                c = l(a('7W2i')),
-                f = n(a('q1tI')),
-                s = a('MuoO'),
-                m = (function(e) {
-                    function t(e) {
-                        return (
-                            (0, i.default)(this, t),
-                            (0, d.default)(this, (0, o.default)(t).call(this, e))
-                        );
-                    }
-                    return (
-                        (0, c.default)(t, e),
-                        (0, u.default)(t, [
-                            {
-                                key: 'render',
-                                value: function() {
-                                    var e = this.props,
-                                        t = e.print,
-                                        a = e.dispatch,
-                                        n = function() {
-                                            a({ type: 'print/hidePrinterOC' });
-                                        };
-                                    return f.default.createElement(
-                                        r.default,
-                                        {
-                                            title: 'Printer modal',
-                                            onCancel: n,
-                                            style: { top: 20 },
-                                            width: '95vw',
-                                            footer: null,
-                                            bodyStyle: { padding: 0 },
-                                            visible: t.ocVisible,
-                                        },
-                                        f.default.createElement('iframe', {
-                                            src: t.docOCDataUrl,
-                                            height: '600px',
-                                            width: '100%',
-                                        })
-                                    );
-                                },
-                            },
-                        ]),
-                        t
-                    );
-                })(f.Component),
-                p = function(e) {
-                    var t = e.print;
-                    return { print: t };
-                },
-                v = (0, s.connect)(p)(m);
-            t.default = v;
         },
         R7w7: function(e, t, a) {
             e.exports = {
@@ -1400,8 +1166,8 @@
                         t
                     );
                 })(v.Component),
-                C = y;
-            t.default = C;
+                b = y;
+            t.default = b;
         },
         fTcV: function(e, t, a) {
             'use strict';
@@ -1432,8 +1198,8 @@
                 E = l(a('lwsE')),
                 g = l(a('W8MJ')),
                 y = l(a('a1gu')),
-                C = l(a('Nsbk')),
-                b = l(a('7W2i'));
+                b = l(a('Nsbk')),
+                C = l(a('7W2i'));
             a('y8nQ');
             var k = l(a('Vl3Y'));
             a('OaEy');
@@ -1442,23 +1208,23 @@
                 x = l(a('v/1x')),
                 w = a('MuoO'),
                 P = l(a('wd/R')),
-                M = l(a('EBKi')),
+                M = l(a('xd0P')),
                 _ = l(a('M8kI')),
                 O = { labelCol: { span: 6 }, wrapperCol: { span: 18 } },
-                T = q.default.Option,
-                N = k.default.create()(
+                N = q.default.Option,
+                T = k.default.create()(
                     (function(e) {
                         function t(e) {
                             var a;
                             return (
                                 (0, E.default)(this, t),
-                                (a = (0, y.default)(this, (0, C.default)(t).call(this, e))),
+                                (a = (0, y.default)(this, (0, b.default)(t).call(this, e))),
                                 (a.state = { selectProviderID: 0 }),
                                 a
                             );
                         }
                         return (
-                            (0, b.default)(t, e),
+                            (0, C.default)(t, e),
                             (0, g.default)(t, [
                                 {
                                     key: 'handleChangeSelectProvider',
@@ -1479,18 +1245,18 @@
                                             E = t.data,
                                             g = r.getFieldDecorator,
                                             y = this.props,
-                                            C = y.dispatch,
-                                            b = y.provider,
+                                            b = y.dispatch,
+                                            C = y.provider,
                                             q = (y.loading,
                                             function() {
-                                                C({
+                                                b({
                                                     type: 'provider/showModal',
                                                     payload: { modalType: 'create' },
                                                 });
                                             }),
-                                            w = b.searchResult,
-                                            N = function(e) {
-                                                C({
+                                            w = C.searchResult,
+                                            T = function(e) {
+                                                b({
                                                     type: 'provider/search',
                                                     payload: { search: e },
                                                 });
@@ -1500,7 +1266,7 @@
                                             },
                                             S = w.map(function(e) {
                                                 return I.default.createElement(
-                                                    T,
+                                                    N,
                                                     { key: e.id },
                                                     e.name
                                                 );
@@ -1560,7 +1326,7 @@
                                                                                 {
                                                                                     dataSource: S,
                                                                                     onSelect: D,
-                                                                                    onSearch: N,
+                                                                                    onSearch: T,
                                                                                     placeholder:
                                                                                         'Buscar proveedor',
                                                                                 }
@@ -1687,7 +1453,7 @@
                         var a;
                         return (
                             (0, E.default)(this, t),
-                            (a = (0, y.default)(this, (0, C.default)(t).call(this, e))),
+                            (a = (0, y.default)(this, (0, b.default)(t).call(this, e))),
                             (a.handleConfirm = a.handleConfirm.bind(
                                 (0, i.default)((0, i.default)(a))
                             )),
@@ -1695,7 +1461,7 @@
                         );
                     }
                     return (
-                        (0, b.default)(t, e),
+                        (0, C.default)(t, e),
                         (0, g.default)(t, [
                             {
                                 key: 'handleConfirm',
@@ -1741,7 +1507,7 @@
                                             },
                                         });
                                     return I.default.createElement(
-                                        N,
+                                        T,
                                         (0, p.default)({}, o, {
                                             dispatch: n,
                                             provider: r,
@@ -1763,8 +1529,8 @@
                         l = e.loading;
                     return { quotation: t, provider: a, require: n, loading: l.effects };
                 },
-                R = (0, w.connect)(S)(D);
-            t.default = R;
+                V = (0, w.connect)(S)(D);
+            t.default = V;
         },
         g6Q8: function(e, t, a) {
             'use strict';
@@ -1892,13 +1658,13 @@
                         t
                     );
                 })(m.Component),
-                C = function(e) {
+                b = function(e) {
                     var t = e.dowloand,
                         a = e.quotation;
                     return { dowloand: t, quotation: a };
                 },
-                b = (0, h.connect)(C)(y);
-            t.default = b;
+                C = (0, h.connect)(b)(y);
+            t.default = C;
         },
         gPi7: function(e, t, a) {
             'use strict';
@@ -1923,8 +1689,8 @@
                 E = l(a('zHco')),
                 g = l(a('xNcC')),
                 y = l(a('d5+N')),
-                C = l(a('fTcV')),
-                b = l(a('Qjay')),
+                b = l(a('fTcV')),
+                C = l(a('Qjay')),
                 k = l(a('g6Q8')),
                 q = l(a('oDxf')),
                 I = (p.default.Search,
@@ -2109,12 +1875,12 @@
                                                     },
                                                     'Actualizar'
                                                 ),
-                                                v.default.createElement(C.default, null)
+                                                v.default.createElement(b.default, null)
                                             ),
                                             v.default.createElement(y.default, f)
                                         ),
                                         v.default.createElement(q.default, { size: 'large' }),
-                                        v.default.createElement(b.default, { stateCard: h })
+                                        v.default.createElement(C.default, { stateCard: h })
                                     );
                                 },
                             },
@@ -2135,69 +1901,7 @@
                 w = (0, h.connect)(x)(I);
             t.default = w;
         },
-        rATF: function(e, t, a) {
-            'use strict';
-            var n = a('284h'),
-                l = a('TqRt');
-            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('2qtc');
-            var r = l(a('kLXV')),
-                i = l(a('lwsE')),
-                u = l(a('W8MJ')),
-                d = l(a('a1gu')),
-                o = l(a('Nsbk')),
-                c = l(a('7W2i')),
-                f = n(a('q1tI')),
-                s = a('MuoO'),
-                m = (function(e) {
-                    function t(e) {
-                        return (
-                            (0, i.default)(this, t),
-                            (0, d.default)(this, (0, o.default)(t).call(this, e))
-                        );
-                    }
-                    return (
-                        (0, c.default)(t, e),
-                        (0, u.default)(t, [
-                            {
-                                key: 'render',
-                                value: function() {
-                                    var e = this.props,
-                                        t = e.print,
-                                        a = e.dispatch,
-                                        n = function() {
-                                            a({ type: 'print/hidePrinterPecosa' });
-                                        };
-                                    return f.default.createElement(
-                                        r.default,
-                                        {
-                                            title: 'Printer modal',
-                                            onCancel: n,
-                                            style: { top: 20 },
-                                            width: '95vw',
-                                            footer: null,
-                                            bodyStyle: { padding: 0 },
-                                            visible: t.pecosaVisible,
-                                        },
-                                        f.default.createElement('iframe', {
-                                            src: t.docPecosaDataUrl,
-                                            height: '600px',
-                                            width: '100%',
-                                        })
-                                    );
-                                },
-                            },
-                        ]),
-                        t
-                    );
-                })(f.Component),
-                p = function(e) {
-                    var t = e.print;
-                    return { print: t };
-                },
-                v = (0, s.connect)(p)(m);
-            t.default = v;
-        },
-        u3Cz: function(e, t, a) {
+        jUjp: function(e, t, a) {
             'use strict';
             var n = a('284h'),
                 l = a('TqRt');
@@ -2259,87 +1963,7 @@
                 v = (0, s.connect)(p)(m);
             t.default = v;
         },
-        'v/1x': function(e, t, a) {
-            e.exports = {
-                search: 'sn\\pages\\-quotation\\-form\\index-search',
-                item: 'sn\\pages\\-quotation\\-form\\index-item',
-                hidden: 'sn\\pages\\-quotation\\-form\\index-hidden',
-            };
-        },
-        xNcC: function(e, t, a) {
-            e.exports = {
-                header: 'sn\\pages\\-quotation\\index-header',
-                check: 'sn\\pages\\-quotation\\index-check',
-                process: 'sn\\pages\\-quotation\\index-process',
-                rejected: 'sn\\pages\\-quotation\\index-rejected',
-                accepted: 'sn\\pages\\-quotation\\index-accepted',
-                expired: 'sn\\pages\\-quotation\\index-expired',
-                close: 'sn\\pages\\-quotation\\index-close',
-            };
-        },
-        zWWL: function(e, t, a) {
-            'use strict';
-            var n = a('284h'),
-                l = a('TqRt');
-            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('2qtc');
-            var r = l(a('kLXV')),
-                i = l(a('lwsE')),
-                u = l(a('W8MJ')),
-                d = l(a('a1gu')),
-                o = l(a('Nsbk')),
-                c = l(a('7W2i')),
-                f = n(a('q1tI')),
-                s = a('MuoO'),
-                m = (function(e) {
-                    function t(e) {
-                        return (
-                            (0, i.default)(this, t),
-                            (0, d.default)(this, (0, o.default)(t).call(this, e))
-                        );
-                    }
-                    return (
-                        (0, c.default)(t, e),
-                        (0, u.default)(t, [
-                            {
-                                key: 'render',
-                                value: function() {
-                                    var e = this.props,
-                                        t = e.print,
-                                        a = e.dispatch,
-                                        n = function() {
-                                            a({ type: 'print/hidePrinterCC' });
-                                        };
-                                    return f.default.createElement(
-                                        r.default,
-                                        {
-                                            title: 'Cuadro Comparativo',
-                                            onCancel: n,
-                                            style: { top: 20 },
-                                            width: '95vw',
-                                            footer: null,
-                                            bodyStyle: { padding: 0 },
-                                            visible: t.ccVisible,
-                                        },
-                                        f.default.createElement('iframe', {
-                                            src: t.docCCDataUrl,
-                                            height: '600px',
-                                            width: '100%',
-                                        })
-                                    );
-                                },
-                            },
-                        ]),
-                        t
-                    );
-                })(f.Component),
-                p = function(e) {
-                    var t = e.print;
-                    return { print: t };
-                },
-                v = (0, s.connect)(p)(m);
-            t.default = v;
-        },
-        zfuF: function(e, t, a) {
+        s7Js: function(e, t, a) {
             'use strict';
             var n = a('284h'),
                 l = a('TqRt');
@@ -2400,6 +2024,382 @@
                 },
                 v = (0, s.connect)(p)(m);
             t.default = v;
+        },
+        sKQO: function(e, t, a) {
+            'use strict';
+            var n = a('284h'),
+                l = a('TqRt');
+            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('2qtc');
+            var r = l(a('kLXV')),
+                i = l(a('lwsE')),
+                u = l(a('W8MJ')),
+                d = l(a('a1gu')),
+                o = l(a('Nsbk')),
+                c = l(a('7W2i')),
+                f = n(a('q1tI')),
+                s = a('MuoO'),
+                m = (function(e) {
+                    function t(e) {
+                        return (
+                            (0, i.default)(this, t),
+                            (0, d.default)(this, (0, o.default)(t).call(this, e))
+                        );
+                    }
+                    return (
+                        (0, c.default)(t, e),
+                        (0, u.default)(t, [
+                            {
+                                key: 'render',
+                                value: function() {
+                                    var e = this.props,
+                                        t = e.print,
+                                        a = e.dispatch,
+                                        n = function() {
+                                            a({ type: 'print/hidePrinterPecosa' });
+                                        };
+                                    return f.default.createElement(
+                                        r.default,
+                                        {
+                                            title: 'Printer modal',
+                                            onCancel: n,
+                                            style: { top: 20 },
+                                            width: '95vw',
+                                            footer: null,
+                                            bodyStyle: { padding: 0 },
+                                            visible: t.pecosaVisible,
+                                        },
+                                        f.default.createElement('iframe', {
+                                            src: t.docPecosaDataUrl,
+                                            height: '600px',
+                                            width: '100%',
+                                        })
+                                    );
+                                },
+                            },
+                        ]),
+                        t
+                    );
+                })(f.Component),
+                p = function(e) {
+                    var t = e.print;
+                    return { print: t };
+                },
+                v = (0, s.connect)(p)(m);
+            t.default = v;
+        },
+        'v/1x': function(e, t, a) {
+            e.exports = {
+                search: 'sn\\pages\\-quotation\\-form\\index-search',
+                item: 'sn\\pages\\-quotation\\-form\\index-item',
+                hidden: 'sn\\pages\\-quotation\\-form\\index-hidden',
+            };
+        },
+        xNcC: function(e, t, a) {
+            e.exports = {
+                header: 'sn\\pages\\-quotation\\index-header',
+                check: 'sn\\pages\\-quotation\\index-check',
+                process: 'sn\\pages\\-quotation\\index-process',
+                rejected: 'sn\\pages\\-quotation\\index-rejected',
+                accepted: 'sn\\pages\\-quotation\\index-accepted',
+                expired: 'sn\\pages\\-quotation\\index-expired',
+                close: 'sn\\pages\\-quotation\\index-close',
+            };
+        },
+        xd0P: function(e, t, a) {
+            'use strict';
+            var n = a('284h'),
+                l = a('TqRt');
+            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
+            var r = l(a('MVZn')),
+                i = l(a('PJYZ'));
+            a('2qtc');
+            var u = l(a('kLXV'));
+            a('sRBo');
+            var d = l(a('kaz8')),
+                o = l(a('pVnL'));
+            a('5NDa');
+            var c = l(a('5rEg')),
+                f = l(a('lwsE')),
+                s = l(a('W8MJ')),
+                m = l(a('a1gu')),
+                p = l(a('Nsbk')),
+                v = l(a('7W2i'));
+            a('y8nQ');
+            var h = l(a('Vl3Y')),
+                E = n(a('q1tI')),
+                g = a('MuoO'),
+                y = { labelCol: { span: 8 }, wrapperCol: { span: 12 } },
+                b = h.default.create()(
+                    (function(e) {
+                        function t(e) {
+                            var a;
+                            return (
+                                (0, f.default)(this, t),
+                                (a = (0, m.default)(this, (0, p.default)(t).call(this, e))),
+                                (a.state = {}),
+                                a
+                            );
+                        }
+                        return (
+                            (0, v.default)(t, e),
+                            (0, s.default)(t, [
+                                {
+                                    key: 'render',
+                                    value: function() {
+                                        var e = this.props,
+                                            t = e.visible,
+                                            a = e.onCancel,
+                                            n = e.onOk,
+                                            l = e.form,
+                                            r = e.confirmLoading,
+                                            i = e.data,
+                                            f = l.getFieldDecorator;
+                                        return E.default.createElement(
+                                            u.default,
+                                            {
+                                                title: 'Proveedor',
+                                                okText: 'Guardar',
+                                                confirmLoading: r,
+                                                onCancel: a,
+                                                onOk: n,
+                                                visible: t,
+                                            },
+                                            E.default.createElement(
+                                                h.default,
+                                                { layout: 'horizontal' },
+                                                E.default.createElement(
+                                                    h.default.Item,
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'RUC',
+                                                    }),
+                                                    f('ruc', {
+                                                        initialValue: i.ruc,
+                                                        rules: [
+                                                            {
+                                                                required: !0,
+                                                                message:
+                                                                    '\xa1Por favor ingrese un RUC!',
+                                                            },
+                                                            {
+                                                                pattern: /^[0-9]{11}$/,
+                                                                message:
+                                                                    '\xa1Ingrese un RUC v\xe1lido!',
+                                                            },
+                                                        ],
+                                                    })(
+                                                        E.default.createElement(c.default, {
+                                                            placeholder: 'RUC',
+                                                        })
+                                                    )
+                                                ),
+                                                E.default.createElement(
+                                                    h.default.Item,
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'Nombre o raz\xf3n social',
+                                                    }),
+                                                    f('name', {
+                                                        initialValue: i.name,
+                                                        rules: [
+                                                            {
+                                                                required: !0,
+                                                                message:
+                                                                    '\xa1Por favor un Nombre o raz\xf3n social!',
+                                                            },
+                                                        ],
+                                                    })(
+                                                        E.default.createElement(c.default, {
+                                                            placeholder: 'Nombre o raz\xf3n social',
+                                                        })
+                                                    )
+                                                ),
+                                                E.default.createElement(
+                                                    h.default.Item,
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'Representante',
+                                                    }),
+                                                    f('manager', { initialValue: i.manager })(
+                                                        E.default.createElement(c.default, {
+                                                            placeholder: 'Representante',
+                                                        })
+                                                    )
+                                                ),
+                                                E.default.createElement(
+                                                    h.default.Item,
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'Email',
+                                                    }),
+                                                    f('email', {
+                                                        initialValue: i.email,
+                                                        rules: [
+                                                            {
+                                                                type: 'email',
+                                                                message:
+                                                                    '\xa1Ingrese un correo valido!',
+                                                            },
+                                                        ],
+                                                    })(
+                                                        E.default.createElement(c.default, {
+                                                            placeholder: 'Email',
+                                                        })
+                                                    )
+                                                ),
+                                                E.default.createElement(
+                                                    h.default.Item,
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'Telefono',
+                                                    }),
+                                                    f('phone', {
+                                                        initialValue: i.phone,
+                                                        rules: [
+                                                            {
+                                                                pattern: /^[0-9]{6,12}$/,
+                                                                message:
+                                                                    '\xa1Ingrese un telefono v\xe1lido!',
+                                                            },
+                                                        ],
+                                                    })(
+                                                        E.default.createElement(c.default, {
+                                                            placeholder: 'Telefono',
+                                                        })
+                                                    )
+                                                ),
+                                                E.default.createElement(
+                                                    h.default.Item,
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'Direcci\xf3n',
+                                                    }),
+                                                    f('address', { initialValue: i.address })(
+                                                        E.default.createElement(c.default, {
+                                                            placeholder: 'Direcci\xf3n',
+                                                        })
+                                                    )
+                                                ),
+                                                E.default.createElement(
+                                                    h.default.Item,
+                                                    (0, o.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'Observaci\xf3n',
+                                                    }),
+                                                    f('observation', {
+                                                        initialValue: i.observation,
+                                                    })(
+                                                        E.default.createElement(
+                                                            c.default.TextArea,
+                                                            { placeholder: 'Observaci\xf3n' }
+                                                        )
+                                                    )
+                                                ),
+                                                E.default.createElement(
+                                                    h.default.Item,
+                                                    (0, o.default)({}, y, { label: 'Estado' }),
+                                                    f('state', {
+                                                        valuePropName: 'checked',
+                                                        initialValue: i.state,
+                                                    })(E.default.createElement(d.default, null))
+                                                )
+                                            )
+                                        );
+                                    },
+                                },
+                            ]),
+                            t
+                        );
+                    })(E.default.Component)
+                ),
+                C = (function(e) {
+                    function t(e) {
+                        var a;
+                        return (
+                            (0, f.default)(this, t),
+                            (a = (0, m.default)(this, (0, p.default)(t).call(this, e))),
+                            (a.handleConfirm = a.handleConfirm.bind(
+                                (0, i.default)((0, i.default)(a))
+                            )),
+                            (a.handleCancel = a.handleCancel.bind(
+                                (0, i.default)((0, i.default)(a))
+                            )),
+                            a
+                        );
+                    }
+                    return (
+                        (0, v.default)(t, e),
+                        (0, s.default)(t, [
+                            {
+                                key: 'handleConfirm',
+                                value: function(e) {
+                                    var t = this.props,
+                                        a = t.dispatch,
+                                        n = t.provider.currentItem,
+                                        l = this.formRef.props.form;
+                                    l.validateFields(function(t, i) {
+                                        t ||
+                                            (a({
+                                                type: 'provider/'.concat(e),
+                                                payload: (0, r.default)({}, i, { id: n.id }),
+                                            }),
+                                            l.resetFields());
+                                    });
+                                },
+                            },
+                            {
+                                key: 'handleCancel',
+                                value: function() {
+                                    var e = this.formRef.props.form;
+                                    e.resetFields();
+                                },
+                            },
+                            {
+                                key: 'render',
+                                value: function() {
+                                    var e = this,
+                                        t = this.handleConfirm,
+                                        a = this.handleCancel,
+                                        n = this.props,
+                                        l = n.dispatch,
+                                        r = n.provider,
+                                        i = n.loading,
+                                        u = r.currentItem,
+                                        d = r.modalType,
+                                        c = r.modalVisible,
+                                        f = r.validRuc,
+                                        s = {
+                                            validRuc: f,
+                                            data: 'create' == d ? { state: !0 } : u,
+                                            disabled: 'detail' == d,
+                                            type: d,
+                                            visible: c,
+                                            confirmLoading: i,
+                                            onOk: function() {
+                                                t(d);
+                                            },
+                                            onCancel: function() {
+                                                l({ type: 'provider/resetProvider' }), a();
+                                            },
+                                        };
+                                    return E.default.createElement(
+                                        b,
+                                        (0, o.default)({}, s, {
+                                            dispatch: l,
+                                            wrappedComponentRef: function(t) {
+                                                return (e.formRef = t);
+                                            },
+                                        })
+                                    );
+                                },
+                            },
+                        ]),
+                        t
+                    );
+                })(E.Component),
+                k = function(e) {
+                    var t = e.provider,
+                        a = e.loading;
+                    return {
+                        provider: t,
+                        loading: a.effects['provider/create'] || a.effects['provider/update'],
+                    };
+                },
+                q = (0, g.connect)(k)(C);
+            t.default = q;
         },
     },
 ]);

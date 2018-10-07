@@ -16,7 +16,7 @@ import styles from './index.less';
 import { connect } from 'dva';
 import moment from 'moment';
 
-import NewProvider from '@/Pages/Provider/Form';
+import NewProvider from '@/Pages/Provider/ProviderForm';
 import QuotationDetail from './QuotationDetail';
 
 const formItemLayout = {

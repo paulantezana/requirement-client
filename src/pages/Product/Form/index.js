@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Select, Modal, Form, Input, Checkbox } from 'antd';
 import { connect } from 'dva';
+import styles from './index.less';
 
 const formItemLayout = {
     labelCol: { span: 8 },
@@ -32,7 +33,7 @@ const AddForm = Form.create()(
                             {getFieldDecorator('name', {
                                 initialValue: data.name,
                                 rules: [{ required: true, message: '¡Por favor un nombre!' }],
-                            })(<Input placeholder="Nombre" />)}
+                            })(<Input placeholder="Nombre" autoFocus />)}
                         </Form.Item>
                         <Form.Item hasFeedback {...formItemLayout} label="Unidad de medida">
                             {getFieldDecorator('unit_measure', {

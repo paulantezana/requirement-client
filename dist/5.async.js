@@ -3,7 +3,6 @@
     {
         '2HGp': function(e, t, a) {
             e.exports = {
-                submit: 'sn\\pages\\-user\\-login\\index-submit',
                 form: 'sn\\pages\\-user\\-login\\index-form',
                 forgot: 'sn\\pages\\-user\\-login\\index-forgot',
             };
@@ -17,27 +16,27 @@
             a('sRBo');
             var o = r(a('kaz8'));
             a('y8nQ');
-            var n = r(a('Vl3Y'));
+            var d = r(a('Vl3Y'));
             a('5NDa');
-            var d = r(a('5rEg'));
+            var n = r(a('5rEg'));
             a('Pwec');
             var s = r(a('CtXQ')),
-                i = r(a('lwsE')),
-                f = r(a('W8MJ')),
+                f = r(a('lwsE')),
+                i = r(a('W8MJ')),
                 m = r(a('a1gu')),
                 c = r(a('Nsbk')),
                 p = r(a('7W2i')),
                 g = r(a('PJYZ')),
-                b = l(a('q1tI')),
-                h = a('MuoO'),
+                h = l(a('q1tI')),
+                b = a('MuoO'),
                 v = r(a('mOP9')),
                 E = a('LLXN'),
                 y = r(a('2HGp')),
-                w = (function(e) {
+                k = (function(e) {
                     function t(e) {
                         var a;
                         return (
-                            (0, i.default)(this, t),
+                            (0, f.default)(this, t),
                             (a = (0, m.default)(this, (0, c.default)(t).call(this, e))),
                             (a.state = {}),
                             (a.handleSubmit = a.handleSubmit.bind(
@@ -48,7 +47,7 @@
                     }
                     return (
                         (0, p.default)(t, e),
-                        (0, f.default)(t, [
+                        (0, i.default)(t, [
                             {
                                 key: 'handleSubmit',
                                 value: function(e) {
@@ -68,17 +67,17 @@
                                 value: function() {
                                     var e = this.props.form.getFieldDecorator,
                                         t = this.props.loading;
-                                    return b.default.createElement(
+                                    return h.default.createElement(
                                         'div',
                                         null,
-                                        b.default.createElement(
-                                            n.default,
+                                        h.default.createElement(
+                                            d.default,
                                             {
                                                 onSubmit: this.handleSubmit,
                                                 className: y.default.form,
                                             },
-                                            b.default.createElement(
-                                                n.default.Item,
+                                            h.default.createElement(
+                                                d.default.Item,
                                                 { hasFeedback: !0 },
                                                 e('user_name', {
                                                     rules: [
@@ -89,8 +88,8 @@
                                                         },
                                                     ],
                                                 })(
-                                                    b.default.createElement(d.default, {
-                                                        prefix: b.default.createElement(s.default, {
+                                                    h.default.createElement(n.default, {
+                                                        prefix: h.default.createElement(s.default, {
                                                             type: 'user',
                                                             style: { color: 'rgba(0,0,0,.25)' },
                                                         }),
@@ -98,8 +97,8 @@
                                                     })
                                                 )
                                             ),
-                                            b.default.createElement(
-                                                n.default.Item,
+                                            h.default.createElement(
+                                                d.default.Item,
                                                 { hasFeedback: !0 },
                                                 e('password', {
                                                     rules: [
@@ -110,8 +109,8 @@
                                                         },
                                                     ],
                                                 })(
-                                                    b.default.createElement(d.default, {
-                                                        prefix: b.default.createElement(s.default, {
+                                                    h.default.createElement(n.default, {
+                                                        prefix: h.default.createElement(s.default, {
                                                             type: 'lock',
                                                             style: { color: 'rgba(0,0,0,.25)' },
                                                         }),
@@ -120,41 +119,41 @@
                                                     })
                                                 )
                                             ),
-                                            b.default.createElement(
-                                                n.default.Item,
+                                            h.default.createElement(
+                                                d.default.Item,
                                                 null,
                                                 e('remember', {
                                                     valuePropName: 'checked',
                                                     initialValue: !1,
                                                 })(
-                                                    b.default.createElement(
+                                                    h.default.createElement(
                                                         o.default,
                                                         null,
-                                                        b.default.createElement(
+                                                        h.default.createElement(
                                                             E.FormattedMessage,
                                                             { id: 'app.login.remember-me' }
                                                         )
                                                     )
                                                 ),
-                                                b.default.createElement(
+                                                h.default.createElement(
                                                     v.default,
                                                     {
                                                         className: y.default.forgot,
                                                         to: '/user/forgot',
                                                     },
-                                                    b.default.createElement(E.FormattedMessage, {
+                                                    h.default.createElement(E.FormattedMessage, {
                                                         id: 'app.login.forgot-password',
                                                     })
                                                 ),
-                                                b.default.createElement(
+                                                h.default.createElement(
                                                     u.default,
                                                     {
                                                         type: 'primary',
                                                         loading: t,
                                                         htmlType: 'submit',
-                                                        className: y.default.submit,
+                                                        block: !0,
                                                     },
-                                                    b.default.createElement(E.FormattedMessage, {
+                                                    h.default.createElement(E.FormattedMessage, {
                                                         id: 'app.login.login',
                                                     })
                                                 )
@@ -166,14 +165,14 @@
                         ]),
                         t
                     );
-                })(b.Component),
-                k = n.default.create()(w),
-                N = function(e) {
+                })(h.Component),
+                w = d.default.create()(k),
+                F = function(e) {
                     var t = e.loading;
                     return { loading: t.effects['user/login'] };
                 },
-                F = (0, h.connect)(N)(k);
-            t.default = F;
+                N = (0, b.connect)(F)(w);
+            t.default = N;
         },
     },
 ]);

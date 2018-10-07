@@ -53,6 +53,8 @@ export default {
         'layout-header-height': '50px',
         'menu-collapsed-width': '60px',
 
+        'layout-body-background': '#fff',
+
         'layout-header-background': '#1D2B36',
         'layout-sider-background': '#1D2B36',
         'layout-trigger-background': '#08141d',

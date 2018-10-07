@@ -32,15 +32,7 @@ class Product extends Component {
     render() {
         const { dispatch, setting, product, loadingAll, loadingUpdate } = this.props;
         const { onQueryAll } = this;
-        const {
-            list,
-            total,
-            current,
-            searchText,
-            currentItem,
-            // modalVisible,
-            // modalType,
-        } = product;
+        const { list, total, current, searchText } = product;
 
         const productListProps = {
             current,
@@ -113,7 +105,7 @@ class Product extends Component {
                             placeholder="Buscar producto"
                             value={searchText}
                             onChange={e => onSearchText(e.target.value)}
-                            onSearch={value => this.onQueryAll()}
+                            onSearch={() => this.onQueryAll()}
                             style={{ width: 200 }}
                         />
                         <ModalForm />

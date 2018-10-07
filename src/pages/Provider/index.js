@@ -4,9 +4,9 @@ import { Button, Input, Icon, Divider, Card } from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
 import styles from './index.less';
-import List from './List';
-import ModalForm from './Form';
-import UploadModal from './UploadModal';
+import ProviderList from './ProviderList';
+import ProviderForm from './ProviderForm';
+import ProviderUpload from './ProviderUpload';
 
 const Search = Input.Search;
 
@@ -131,10 +131,10 @@ class Provider extends Component {
                             onSearch={value => this.onQueryAll()}
                             style={{ width: 200 }}
                         />
-                        <ModalForm />
-                        <UploadModal />
+                        <ProviderForm />
+                        <ProviderUpload />
                     </div>
-                    <List {...providerListProps} />
+                    <ProviderList {...providerListProps} />
                 </Card>
             </PageHeaderWrapper>
         );

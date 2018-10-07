@@ -17,6 +17,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Context from './MenuContext';
 import Exception403 from '../pages/Exception/403';
+import PageLoading from '@/components/PageLoading';
 
 const { Content } = Layout;
 
@@ -284,6 +285,7 @@ class BasicLayout extends React.PureComponent {
 
 export default connect(({ global, setting }) => ({
     collapsed: global.collapsed,
+    global,
     layout: setting.layout,
     ...setting,
 }))(BasicLayout);

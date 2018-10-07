@@ -71,12 +71,7 @@ class LoginForm extends Component {
                         <Link className={styles.forgot} to="/user/forgot">
                             <FormattedMessage id="app.login.forgot-password" />
                         </Link>
-                        <Button
-                            type="primary"
-                            loading={loading}
-                            htmlType="submit"
-                            className={styles.submit}
-                        >
+                        <Button type="primary" loading={loading} htmlType="submit" block>
                             <FormattedMessage id="app.login.login" />
                         </Button>
                     </Form.Item>

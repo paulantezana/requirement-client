@@ -131,8 +131,7 @@ class DataList extends Component {
                                 <Fragment>
                                     <span>{`${total} Productos`}</span>
                                     <a onClick={this.clearAllFilters} style={{ marginLeft: 24 }}>
-                                        {' '}
-                                        Borrar filtros y actualizar{' '}
+                                        Borrar filtros y actualizar
                                     </a>
                                 </Fragment>
                             }

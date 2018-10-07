@@ -1630,7 +1630,7 @@
                 w = n(a('ctiy')),
                 P = n(a('R1Dz')),
                 S = n(a('wOmh')),
-                T = d.default.Content;
+                T = (n(a('xqX8')), d.default.Content);
             function W(e) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : '',
                     a = arguments.length > 2 ? arguments[2] : void 0,
@@ -1884,7 +1884,8 @@
                 q = (0, g.connect)(function(e) {
                     var t = e.global,
                         a = e.setting;
-                    return (0, s.default)({ collapsed: t.collapsed, layout: a.layout }, a);
+                    return (0,
+                    s.default)({ collapsed: t.collapsed, global: t, layout: a.layout }, a);
                 })(O);
             t.default = q;
         },
