@@ -8,12 +8,15 @@ import { docProperties } from '@/utils/config';
 
 const purchaseOrder = async ({ response, setting, logoBase64 }) => {
     return new Promise((resoleve, reject) => {
-        const coreData = response.data;
+        const purchaseOrder = response.data.purchase_order;
+        const provider = response.data.provider;
+        const requirement = response.data.requirement;
+        console.log(setting, 'Setting');
 
         // ----------------------------------
         // Preparando los datos de la tabla principal de comparacion
         // ----------------------------------
-        const coreTable = coreData.map((require, key) => [
+        const coreTable = purchaseOrder.map((require, key) => [
             require.code,
             require.amount,
             require.unit_measure,
@@ -36,12 +39,10 @@ const purchaseOrder = async ({ response, setting, logoBase64 }) => {
             }
         }
         let total = 0;
-        coreData.map(require => {
+        purchaseOrder.map(require => {
             total = require.total + total;
         });
         coreTable.push([' ', ' ', ' ', ' ', { text: 'TOTAL', alignment: 'center' }, total]);
-
-        console.log(coreTable);
 
         // ------------------------------------------------
         // Calculate current date
@@ -131,11 +132,15 @@ const purchaseOrder = async ({ response, setting, logoBase64 }) => {
                                     columns: [
                                         [
                                             {
-                                                text: 'Señor(es)                 : ..',
+                                                text: `Señor(es)                 : ${
+                                                    provider.manager
+                                                }  RUCº: ${provider.ruc}`,
                                                 margin: [0, 4, 0, 4],
                                             },
                                             {
-                                                text: 'Direccion                 : ..',
+                                                text: `Direccion                 : ${
+                                                    provider.address
+                                                }`,
                                                 margin: [0, 4, 0, 4],
                                             },
                                             {
@@ -144,7 +149,9 @@ const purchaseOrder = async ({ response, setting, logoBase64 }) => {
                                                 margin: [0, 4, 0, 4],
                                             },
                                             {
-                                                text: 'Los siguiente           : ..',
+                                                text: `Los siguiente                : ${
+                                                    requirement.name
+                                                }`,
                                                 margin: [0, 4, 0, 4],
                                             },
                                             {
@@ -152,7 +159,9 @@ const purchaseOrder = async ({ response, setting, logoBase64 }) => {
                                                 margin: [0, 4, 0, 4],
                                             },
                                             {
-                                                text: 'Factura a nombre de          : ..',
+                                                text: `Factura a nombre de          : ${
+                                                    setting.company_name
+                                                } RUCNº: ${setting.identification}`,
                                                 margin: [0, 4, 0, 4],
                                             },
                                         ],
@@ -200,8 +209,32 @@ const purchaseOrder = async ({ response, setting, logoBase64 }) => {
                             [
                                 {},
                                 {},
-                                { rowSpan: 2, text: 'Programa' },
-                                [{ text: 'CUENTA POR PAGAR' }, { text: '1,621.00' }],
+                                {
+                                    table: {
+                                        body: [
+                                            [
+                                                { text: 'Programa' },
+                                                {
+                                                    table: {
+                                                        body: [['Nº']],
+                                                    },
+                                                },
+                                            ],
+                                            [
+                                                { text: 'Sub Programa' },
+                                                {
+                                                    table: {
+                                                        body: [
+                                                            [{ text: '1', alignment: 'center' }],
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        ],
+                                    },
+                                    layout: 'noBorders',
+                                },
+                                [{ text: 'CUENTA POR PAGAR' }, { text: total }],
                             ],
                             [
                                 { text: 'Administracion' },
@@ -211,13 +244,54 @@ const purchaseOrder = async ({ response, setting, logoBase64 }) => {
                             ],
                             [
                                 {
-                                    text:
-                                        'NOTA: Esta orden es nula sin la firma mancomunada de abastecimiento el jefe de adquisiciones cada orden de compara se debe  facturar y (2) copias y remitirla a la dirección de la contabilidad. \n Nos reservamos el derecho de devolver de acuerdo con nuestras especificaciones.',
+                                    columns: [
+                                        {
+                                            width: 40,
+                                            text: 'NOTA: ',
+                                            alignment: 'center',
+                                        },
+                                        {
+                                            width: '*',
+                                            text:
+                                                'Esta orden es nula sin la firma mancomunada de abastecimiento el jefe de adquisiciones cada orden de compara se debe  facturar y (2) copias y remitirla a la dirección de la contabilidad. \n Nos reservamos el derecho de devolver de acuerdo con nuestras especificaciones.',
+                                            margin: [0, 10, 0, 4],
+                                        },
+                                    ],
                                     colSpan: 2,
                                 },
                                 {},
-                                { text: 'NOTA: ' },
-                                { text: 'NOTA: ' },
+                                {
+                                    table: {
+                                        body: [
+                                            [{ text: 'RECIBI CONFORME' }],
+                                            [
+                                                {
+                                                    table: {
+                                                        widths: [30, 30, 30],
+                                                        body: [
+                                                            ['DIA', 'MES', 'AÑO'],
+                                                            [
+                                                                currentDay,
+                                                                currentMounth,
+                                                                currentYear,
+                                                            ],
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        ],
+                                    },
+                                    layout: 'noBorders',
+                                },
+                                {
+                                    text: [
+                                        {
+                                            text: '\n\n\n\n\n __________________ \n',
+                                            alignment: 'center',
+                                        },
+                                        { text: 'Jefe de almacen', alignment: 'center' },
+                                    ],
+                                },
                             ],
                         ],
                     },

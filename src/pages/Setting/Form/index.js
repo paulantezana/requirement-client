@@ -54,8 +54,18 @@ const SettingForm = Form.create()(
                         })(<Input />)}
                     </Form.Item>
                     <Form.Item hasFeedback label="Nombre de la empresa" help="Nombre de la empresa">
-                        {getFieldDecorator('company', {
-                            initialValue: setting.company,
+                        {getFieldDecorator('company_name', {
+                            initialValue: setting.company_name,
+                            rules: [{ required: true, message: '¡Ingrese un nombre válido!' }],
+                        })(<Input />)}
+                    </Form.Item>
+                    <Form.Item
+                        hasFeedback
+                        label="Nombre corto de la empresa"
+                        help="Nombre corto de la empresa"
+                    >
+                        {getFieldDecorator('company_short_name', {
+                            initialValue: setting.company_short_name,
                             rules: [{ required: true, message: '¡Ingrese un nombre válido!' }],
                         })(<Input />)}
                     </Form.Item>

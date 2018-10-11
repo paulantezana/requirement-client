@@ -7,40 +7,9 @@ import { docProperties } from '@/utils/config';
 
 const paymentVoucher = async ({ response, setting, logoBase64 }) => {
     return new Promise((resoleve, reject) => {
-        const coreData = response.data;
-
         // ----------------------------------
         // Preparando los datos de la tabla principal de comparacion
         // ----------------------------------
-        const coreTable = coreData.map((require, key) => [
-            require.code,
-            require.amount,
-            require.unit_measure,
-            require.description,
-            require.unit_price,
-            require.total,
-        ]);
-        coreTable.push([
-            ' ',
-            ' ',
-            ' ',
-            { text: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', alignment: 'center' },
-            ' ',
-            ' ',
-        ]);
-        const rows = coreTable.length;
-        if (rows <= 13) {
-            for (let i = rows; i < 13; i++) {
-                coreTable.push([' ', ' ', ' ', ' ', ' ', ' ']);
-            }
-        }
-        let total = 0;
-        coreData.map(require => {
-            total = require.total + total;
-        });
-        coreTable.push([' ', ' ', ' ', ' ', { text: 'TOTAL', alignment: 'center' }, total]);
-
-        console.log(coreTable);
 
         // ------------------------------------------------
         // Calculate current date

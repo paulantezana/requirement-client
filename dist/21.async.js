@@ -6,10 +6,10 @@
             var l = a('284h'),
                 n = a('TqRt');
             Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('DZo9');
-            var i = n(a('8z0m'));
+            var r = n(a('8z0m'));
             a('+L6B');
-            var u = n(a('2/Rp')),
-                r = n(a('RIqP')),
+            var i = n(a('2/Rp')),
+                u = n(a('RIqP')),
                 d = n(a('lwsE')),
                 o = n(a('W8MJ')),
                 s = n(a('a1gu')),
@@ -67,7 +67,7 @@
                                                     e.setState(function(e) {
                                                         var a = e.fileList;
                                                         return {
-                                                            fileList: (0, r.default)(a).concat([t]),
+                                                            fileList: (0, u.default)(a).concat([t]),
                                                         };
                                                     }),
                                                     !1
@@ -93,13 +93,13 @@
                                             })
                                         ),
                                         p.default.createElement(
-                                            i.default,
+                                            r.default,
                                             t,
                                             p.default.createElement(
                                                 'div',
                                                 { className: b.default.button_view },
                                                 p.default.createElement(
-                                                    u.default,
+                                                    i.default,
                                                     { icon: 'upload' },
                                                     p.default.createElement(g.FormattedMessage, {
                                                         id: 'app.settings.basic.avatar',
@@ -127,11 +127,11 @@
             var l = a('284h'),
                 n = a('TqRt');
             Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('IzEo');
-            var i = n(a('bx4M'));
+            var r = n(a('bx4M'));
             a('14J3');
-            var u = n(a('BMrR'));
+            var i = n(a('BMrR'));
             a('jCWc');
-            var r = n(a('kPKH'));
+            var u = n(a('kPKH'));
             a('/zsF');
             var d = n(a('PArb')),
                 o = n(a('lwsE')),
@@ -161,13 +161,13 @@
                                         v.default,
                                         { title: 'Configuracion' },
                                         p.default.createElement(
-                                            i.default,
+                                            r.default,
                                             { bordered: !1 },
                                             p.default.createElement(
-                                                u.default,
+                                                i.default,
                                                 { gutter: 24 },
                                                 p.default.createElement(
-                                                    r.default,
+                                                    u.default,
                                                     { xs: 24, md: 12, lg: 8, xl: 8 },
                                                     p.default.createElement(
                                                         d.default,
@@ -177,7 +177,7 @@
                                                     p.default.createElement(h.default, null)
                                                 ),
                                                 p.default.createElement(
-                                                    r.default,
+                                                    u.default,
                                                     { xs: 24, md: 12, lg: 8, xl: 8 },
                                                     p.default.createElement(
                                                         d.default,
@@ -207,11 +207,11 @@
             var l = a('284h'),
                 n = a('TqRt');
             Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('+L6B');
-            var i = n(a('2/Rp'));
+            var r = n(a('2/Rp'));
             a('giR+');
-            var u = n(a('fyUT'));
+            var i = n(a('fyUT'));
             a('5NDa');
-            var r = n(a('5rEg')),
+            var u = n(a('5rEg')),
                 d = n(a('MVZn')),
                 o = n(a('lwsE')),
                 s = n(a('W8MJ')),
@@ -284,7 +284,7 @@
                                                                 '\xa1Ingrese una identification v\xe1lido!',
                                                         },
                                                     ],
-                                                })(v.default.createElement(r.default, null))
+                                                })(v.default.createElement(u.default, null))
                                             ),
                                             v.default.createElement(
                                                 g.default.Item,
@@ -307,7 +307,7 @@
                                                                 '\xa1Por favor ingrese su correo!',
                                                         },
                                                     ],
-                                                })(v.default.createElement(r.default, null))
+                                                })(v.default.createElement(u.default, null))
                                             ),
                                             v.default.createElement(
                                                 g.default.Item,
@@ -316,8 +316,8 @@
                                                     label: 'Nombre de la empresa',
                                                     help: 'Nombre de la empresa',
                                                 },
-                                                e('company', {
-                                                    initialValue: t.company,
+                                                e('company_name', {
+                                                    initialValue: t.company_name,
                                                     rules: [
                                                         {
                                                             required: !0,
@@ -325,7 +325,25 @@
                                                                 '\xa1Ingrese un nombre v\xe1lido!',
                                                         },
                                                     ],
-                                                })(v.default.createElement(r.default, null))
+                                                })(v.default.createElement(u.default, null))
+                                            ),
+                                            v.default.createElement(
+                                                g.default.Item,
+                                                {
+                                                    hasFeedback: !0,
+                                                    label: 'Nombre corto de la empresa',
+                                                    help: 'Nombre corto de la empresa',
+                                                },
+                                                e('company_short_name', {
+                                                    initialValue: t.company_short_name,
+                                                    rules: [
+                                                        {
+                                                            required: !0,
+                                                            message:
+                                                                '\xa1Ingrese un nombre v\xe1lido!',
+                                                        },
+                                                    ],
+                                                })(v.default.createElement(u.default, null))
                                             ),
                                             v.default.createElement(
                                                 g.default.Item,
@@ -335,7 +353,7 @@
                                                     help: 'Ubicacion geografica de la empresa',
                                                 },
                                                 e('city', { initialValue: t.city })(
-                                                    v.default.createElement(r.default, null)
+                                                    v.default.createElement(u.default, null)
                                                 )
                                             ),
                                             v.default.createElement(
@@ -360,7 +378,7 @@
                                                         },
                                                     ],
                                                 })(
-                                                    v.default.createElement(u.default, {
+                                                    v.default.createElement(i.default, {
                                                         min: 3,
                                                         max: 255,
                                                         step: 1,
@@ -389,7 +407,7 @@
                                                         },
                                                     ],
                                                 })(
-                                                    v.default.createElement(u.default, {
+                                                    v.default.createElement(i.default, {
                                                         min: 1,
                                                         max: 15,
                                                         step: 1,
@@ -400,7 +418,7 @@
                                                 g.default.Item,
                                                 null,
                                                 v.default.createElement(
-                                                    i.default,
+                                                    r.default,
                                                     { type: 'primary', htmlType: 'submit' },
                                                     'Guardar cambios'
                                                 )
