@@ -1,11 +1,10 @@
-import React, { Component, Fragment } from 'react';
-import { Modal, Tooltip, Icon, Badge, Tag } from 'antd';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Modal, Tooltip, Icon, Tag } from 'antd';
 import StandardTable from '@/components/StandardTable';
 import styles from './index.less';
 
 const WinnerLevel = ({ total, level, state, onClick }) => {
-    let limit = 3; // Nuveles de ganadores
+    let limit = 3; // Niveles de ganadores
     let max = 3; // Numero maximo de primeros puestos por Nivel
 
     let space = total < limit ? Math.ceil(total / limit) : Math.floor(total / limit);
