@@ -16,7 +16,7 @@ import styles from './index.less';
 import { connect } from 'dva';
 import moment from 'moment';
 
-import NewProvider from '@/Pages/Provider/ProviderForm';
+import ProviderForm from '../../Provider/ProviderForm';
 import QuotationDetail from './QuotationDetail';
 
 const formItemLayout = {
@@ -75,8 +75,6 @@ const AddForm = Form.create()(
                 <Option key={item.id}>{item.name}</Option>
             ));
 
-            console.log(data);
-
             return (
                 <Modal
                     title="Cotizacion"
@@ -116,7 +114,7 @@ const AddForm = Form.create()(
                                                 icon="plus"
                                                 onClick={() => showModalAddProvider()}
                                             />
-                                            <NewProvider />
+                                            <ProviderForm />
                                         </div>
                                     </div>
                                 </Form.Item>

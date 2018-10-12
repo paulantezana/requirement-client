@@ -9,16 +9,16 @@
             var r = l(a('kLXV')),
                 i = l(a('lwsE')),
                 u = l(a('W8MJ')),
-                d = l(a('a1gu')),
-                o = l(a('Nsbk')),
+                o = l(a('a1gu')),
+                d = l(a('Nsbk')),
                 c = l(a('7W2i')),
                 f = n(a('q1tI')),
                 s = a('MuoO'),
-                m = (function(e) {
+                p = (function(e) {
                     function t(e) {
                         return (
                             (0, i.default)(this, t),
-                            (0, d.default)(this, (0, o.default)(t).call(this, e))
+                            (0, o.default)(this, (0, d.default)(t).call(this, e))
                         );
                     }
                     return (
@@ -56,11 +56,11 @@
                         t
                     );
                 })(f.Component),
-                p = function(e) {
+                m = function(e) {
                     var t = e.print;
                     return { print: t };
                 },
-                v = (0, s.connect)(p)(m);
+                v = (0, s.connect)(m)(p);
             t.default = v;
         },
         '4OMY': function(e, t, a) {
@@ -77,19 +77,19 @@
             var r = l(a('mr32')),
                 i = l(a('lwsE')),
                 u = l(a('W8MJ')),
-                d = l(a('a1gu')),
-                o = l(a('Nsbk')),
+                o = l(a('a1gu')),
+                d = l(a('Nsbk')),
                 c = l(a('7W2i')),
                 f = l(a('PJYZ')),
                 s = n(a('q1tI')),
-                m = (l(a('17x9')), l(a('CkN6'))),
-                p = l(a('BRgM')),
+                p = (l(a('17x9')), l(a('CkN6'))),
+                m = l(a('BRgM')),
                 v = (function(e) {
                     function t(e) {
                         var a;
                         return (
                             (0, i.default)(this, t),
-                            (a = (0, d.default)(this, (0, o.default)(t).call(this, e))),
+                            (a = (0, o.default)(this, (0, d.default)(t).call(this, e))),
                             (a.state = { sortedInfo: null, filteredInfo: null }),
                             (a.onChange = a.onChange.bind((0, f.default)((0, f.default)(a)))),
                             (a.clearAllFilters = a.clearAllFilters.bind(
@@ -316,17 +316,17 @@
                                         ]);
                                     return s.default.createElement(
                                         'div',
-                                        { className: p.default.container },
+                                        { className: m.default.container },
                                         s.default.createElement(
                                             'div',
-                                            { className: p.default.header },
+                                            { className: m.default.header },
                                             s.default.createElement(
                                                 'h2',
                                                 null,
                                                 'CUADRO COMPARATIVO DE COTIZACIONES'
                                             )
                                         ),
-                                        s.default.createElement(m.default, {
+                                        s.default.createElement(p.default, {
                                             columns: u,
                                             dataSource: l,
                                             loading: i,
@@ -357,41 +357,41 @@
             a('5Dmo');
             var u = l(a('3S7+'));
             a('Awhp');
-            var d = l(a('KrTs'));
+            var o = l(a('KrTs'));
             a('giR+');
-            var o = l(a('fyUT')),
+            var d = l(a('fyUT')),
                 c = l(a('MVZn')),
                 f = l(a('lwsE')),
                 s = l(a('W8MJ')),
-                m = l(a('a1gu')),
-                p = l(a('Nsbk')),
+                p = l(a('a1gu')),
+                m = l(a('Nsbk')),
                 v = l(a('7W2i')),
                 h = l(a('PJYZ')),
-                E = l(a('QILm'));
+                y = l(a('QILm'));
             a('y8nQ');
-            var g = l(a('Vl3Y')),
-                y = n(a('q1tI')),
-                b = l(a('oDxf')),
-                C = l(a('CkN6')),
-                k = l(a('4OMY')),
+            var E = l(a('Vl3Y')),
+                g = n(a('q1tI')),
+                C = l(a('oDxf')),
+                k = l(a('CkN6')),
+                b = l(a('4OMY')),
                 q = a('MuoO'),
-                I = (g.default.Item, y.default.createContext()),
-                x = function(e) {
+                x = (E.default.Item, g.default.createContext()),
+                I = function(e) {
                     var t = e.form,
-                        a = (e.index, (0, E.default)(e, ['form', 'index']));
-                    return y.default.createElement(
-                        I.Provider,
+                        a = (e.index, (0, y.default)(e, ['form', 'index']));
+                    return g.default.createElement(
+                        x.Provider,
                         { value: t },
-                        y.default.createElement('tr', a)
+                        g.default.createElement('tr', a)
                     );
                 },
-                w = g.default.create()(x),
-                P = (function(e) {
+                w = E.default.create()(I),
+                M = (function(e) {
                     function t(e) {
                         var a;
                         return (
                             (0, f.default)(this, t),
-                            (a = (0, m.default)(this, (0, p.default)(t).call(this, e))),
+                            (a = (0, p.default)(this, (0, m.default)(t).call(this, e))),
                             (a.handleClickOutside = a.handleClickOutside.bind(
                                 (0, h.default)((0, h.default)(a))
                             )),
@@ -454,7 +454,7 @@
                                         r = t.record,
                                         c = (t.index,
                                         t.handleSave,
-                                        (0, E.default)(t, [
+                                        (0, y.default)(t, [
                                             'editable',
                                             'dataIndex',
                                             'title',
@@ -462,7 +462,7 @@
                                             'index',
                                             'handleSave',
                                         ]));
-                                    return y.default.createElement(
+                                    return g.default.createElement(
                                         'td',
                                         (0, i.default)(
                                             {
@@ -473,23 +473,23 @@
                                             c
                                         ),
                                         a
-                                            ? y.default.createElement(I.Consumer, null, function(
+                                            ? g.default.createElement(x.Consumer, null, function(
                                                   t
                                               ) {
                                                   return (
                                                       (e.form = t),
-                                                      y.default.createElement(
+                                                      g.default.createElement(
                                                           u.default,
                                                           {
                                                               placement: 'left',
                                                               title:
                                                                   'Ingrese el precio de la cotizaci\xf3n',
                                                           },
-                                                          y.default.createElement(
+                                                          g.default.createElement(
                                                               'div',
-                                                              { className: k.default.editing },
-                                                              y.default.createElement(
-                                                                  g.default.Item,
+                                                              { className: b.default.editing },
+                                                              g.default.createElement(
+                                                                  E.default.Item,
                                                                   { style: { margin: 0 } },
                                                                   t.getFieldDecorator(n, {
                                                                       initialValue: r[n],
@@ -510,8 +510,8 @@
                                                                           },
                                                                       ],
                                                                   })(
-                                                                      y.default.createElement(
-                                                                          o.default,
+                                                                      g.default.createElement(
+                                                                          d.default,
                                                                           {
                                                                               min: 0,
                                                                               ref: function(t) {
@@ -523,7 +523,7 @@
                                                                       )
                                                                   )
                                                               ),
-                                                              y.default.createElement(d.default, {
+                                                              g.default.createElement(o.default, {
                                                                   status: 'processing',
                                                               })
                                                           )
@@ -537,13 +537,13 @@
                         ]),
                         t
                     );
-                })(y.default.Component),
-                M = (function(e) {
+                })(g.default.Component),
+                _ = (function(e) {
                     function t(e) {
                         var a;
                         return (
                             (0, f.default)(this, t),
-                            (a = (0, m.default)(this, (0, p.default)(t).call(this, e))),
+                            (a = (0, p.default)(this, (0, m.default)(t).call(this, e))),
                             (a.state = { sortedInfo: null, filteredInfo: null }),
                             (a.onChange = a.onChange.bind((0, h.default)((0, h.default)(a)))),
                             (a.clearAllFilters = a.clearAllFilters.bind(
@@ -643,16 +643,16 @@
                                                           editable: e.editable,
                                                           dataIndex: e.dataIndex,
                                                           title: e.title,
-                                                          handleSave: d,
+                                                          handleSave: o,
                                                       };
                                                   },
                                               })
                                             : e;
                                     });
-                                    var d = function(e) {
+                                    var o = function(e) {
                                             i({ type: 'require/updateItemByID', payload: e });
                                         },
-                                        o = { body: { row: w, cell: P } },
+                                        d = { body: { row: w, cell: M } },
                                         f = 0;
                                     return (
                                         l.list.map(function(e) {
@@ -661,14 +661,14 @@
                                                 f += t;
                                             }
                                         }),
-                                        y.default.createElement(
+                                        g.default.createElement(
                                             'div',
                                             null,
-                                            y.default.createElement(b.default, null),
-                                            y.default.createElement(C.default, {
+                                            g.default.createElement(C.default, null),
+                                            g.default.createElement(k.default, {
                                                 columns: u,
                                                 dataSource: l.list,
-                                                components: o,
+                                                components: d,
                                                 pagination: !1,
                                                 onChange: this.onChange,
                                                 minWidth: 800,
@@ -679,8 +679,8 @@
                                                     return e.id;
                                                 },
                                             }),
-                                            y.default.createElement(b.default, { size: 'small' }),
-                                            y.default.createElement(
+                                            g.default.createElement(C.default, { size: 'small' }),
+                                            g.default.createElement(
                                                 r.default,
                                                 { color: '#108ee9' },
                                                 'Total : ',
@@ -693,14 +693,14 @@
                         ]),
                         t
                     );
-                })(y.Component),
-                _ = function(e) {
+                })(g.Component),
+                P = function(e) {
                     var t = e.quotation,
                         a = e.require,
                         n = e.loading;
                     return { quotation: t, require: a, loading: n };
                 },
-                O = (0, q.connect)(_)(M);
+                O = (0, q.connect)(P)(_);
             t.default = O;
         },
         NEcx: function(e, t, a) {
@@ -711,16 +711,16 @@
             var r = l(a('kLXV')),
                 i = l(a('lwsE')),
                 u = l(a('W8MJ')),
-                d = l(a('a1gu')),
-                o = l(a('Nsbk')),
+                o = l(a('a1gu')),
+                d = l(a('Nsbk')),
                 c = l(a('7W2i')),
                 f = n(a('q1tI')),
                 s = a('MuoO'),
-                m = (function(e) {
+                p = (function(e) {
                     function t(e) {
                         return (
                             (0, i.default)(this, t),
-                            (0, d.default)(this, (0, o.default)(t).call(this, e))
+                            (0, o.default)(this, (0, d.default)(t).call(this, e))
                         );
                     }
                     return (
@@ -758,11 +758,11 @@
                         t
                     );
                 })(f.Component),
-                p = function(e) {
+                m = function(e) {
                     var t = e.print;
                     return { print: t };
                 },
-                v = (0, s.connect)(p)(m);
+                v = (0, s.connect)(m)(p);
             t.default = v;
         },
         Qjay: function(e, t, a) {
@@ -774,29 +774,29 @@
             a('+L6B');
             var i = l(a('2/Rp')),
                 u = l(a('lwsE')),
-                d = l(a('W8MJ')),
-                o = l(a('a1gu')),
+                o = l(a('W8MJ')),
+                d = l(a('a1gu')),
                 c = l(a('Nsbk')),
                 f = l(a('7W2i')),
                 s = n(a('q1tI')),
-                m = a('MuoO'),
-                p = l(a('SYP/')),
+                p = a('MuoO'),
+                m = l(a('SYP/')),
                 v = l(a('NEcx')),
                 h = l(a('15XU')),
-                E = l(a('jUjp')),
-                g = l(a('s7Js')),
-                y = l(a('sKQO')),
-                b = l(a('HWB5')),
-                C = (function(e) {
+                y = l(a('jUjp')),
+                E = l(a('s7Js')),
+                g = l(a('sKQO')),
+                C = l(a('HWB5')),
+                k = (function(e) {
                     function t(e) {
                         return (
                             (0, u.default)(this, t),
-                            (0, o.default)(this, (0, c.default)(t).call(this, e))
+                            (0, d.default)(this, (0, c.default)(t).call(this, e))
                         );
                     }
                     return (
                         (0, f.default)(t, e),
-                        (0, d.default)(t, [
+                        (0, o.default)(t, [
                             {
                                 key: 'render',
                                 value: function() {
@@ -806,8 +806,8 @@
                                         n = (e.setting, e.quotation),
                                         l = (e.loading, n.requirementItem),
                                         u = !('3' === l.state),
-                                        d = '0' === l.state,
-                                        o = function() {
+                                        o = '0' === l.state,
+                                        d = function() {
                                             a({ type: 'print/showPrinterCC' }),
                                                 a({ type: 'print/loadDataCC' });
                                         },
@@ -819,15 +819,15 @@
                                             a({ type: 'print/showPrinterCP' }),
                                                 a({ type: 'print/loadDataCP' });
                                         },
-                                        m = function() {
+                                        p = function() {
                                             a({ type: 'print/showPrinterMemo' }),
                                                 a({ type: 'print/loadDataMemo' });
                                         },
-                                        C = function() {
+                                        k = function() {
                                             a({ type: 'print/showPrinterPecosa' }),
                                                 a({ type: 'print/loadDataPecosa' });
                                         },
-                                        k = {
+                                        b = {
                                             requirementItem: l,
                                             total: 100,
                                             dataSource: n.comparativeTable,
@@ -841,14 +841,14 @@
                                         { bordered: !1, className: t },
                                         s.default.createElement(
                                             'div',
-                                            { className: p.default.header },
+                                            { className: m.default.header },
                                             s.default.createElement(
                                                 i.default,
                                                 {
-                                                    disabled: d,
+                                                    disabled: o,
                                                     icon: 'printer',
                                                     onClick: function() {
-                                                        return o();
+                                                        return d();
                                                     },
                                                 },
                                                 'Cuadro Comparativo'
@@ -876,31 +876,31 @@
                                                 },
                                                 'Comprobante De Pago'
                                             ),
+                                            s.default.createElement(y.default, null),
+                                            s.default.createElement(
+                                                i.default,
+                                                {
+                                                    icon: 'printer',
+                                                    onClick: function() {
+                                                        return p();
+                                                    },
+                                                },
+                                                'Memorandum'
+                                            ),
                                             s.default.createElement(E.default, null),
                                             s.default.createElement(
                                                 i.default,
                                                 {
                                                     icon: 'printer',
                                                     onClick: function() {
-                                                        return m();
-                                                    },
-                                                },
-                                                'Memorandum'
-                                            ),
-                                            s.default.createElement(g.default, null),
-                                            s.default.createElement(
-                                                i.default,
-                                                {
-                                                    icon: 'printer',
-                                                    onClick: function() {
-                                                        return C();
+                                                        return k();
                                                     },
                                                 },
                                                 'Pecosa'
                                             ),
-                                            s.default.createElement(y.default, null)
+                                            s.default.createElement(g.default, null)
                                         ),
-                                        s.default.createElement(b.default, k)
+                                        s.default.createElement(C.default, b)
                                     );
                                 },
                             },
@@ -908,13 +908,13 @@
                         t
                     );
                 })(s.Component),
-                k = function(e) {
+                b = function(e) {
                     var t = e.quotation,
                         a = e.global,
                         n = e.loading;
                     return { quotation: t, setting: a.setting, loading: n.effects };
                 },
-                q = (0, m.connect)(k)(C);
+                q = (0, p.connect)(b)(k);
             t.default = q;
         },
         R7w7: function(e, t, a) {
@@ -942,18 +942,18 @@
             var i = l(a('kLXV'));
             a('+BJd');
             var u = l(a('mr32')),
-                d = l(a('lwsE')),
-                o = l(a('W8MJ')),
+                o = l(a('lwsE')),
+                d = l(a('W8MJ')),
                 c = l(a('a1gu')),
                 f = l(a('Nsbk')),
                 s = l(a('7W2i')),
-                m = l(a('PJYZ'));
+                p = l(a('PJYZ'));
             a('Pwec');
-            var p = l(a('CtXQ')),
+            var m = l(a('CtXQ')),
                 v = n(a('q1tI')),
                 h = (l(a('17x9')), l(a('CkN6'))),
-                E = l(a('R7w7')),
-                g = function(e) {
+                y = l(a('R7w7')),
+                E = function(e) {
                     var t = e.total,
                         a = e.level,
                         n = (e.state, e.onClick),
@@ -963,40 +963,40 @@
                     return (
                         (i = i > r ? r : i),
                         a <= i || 1 === t
-                            ? v.default.createElement(p.default, {
+                            ? v.default.createElement(m.default, {
                                   type: 'arrow-up',
                                   onClick: n,
-                                  className: E.default.onWinner1,
+                                  className: y.default.onWinner1,
                               })
                             : a > i && a <= 2 * i
-                                ? v.default.createElement(p.default, {
+                                ? v.default.createElement(m.default, {
                                       type: 'swap',
                                       onClick: n,
-                                      className: E.default.onWinner2,
+                                      className: y.default.onWinner2,
                                   })
-                                : v.default.createElement(p.default, {
+                                : v.default.createElement(m.default, {
                                       type: 'arrow-down',
-                                      className: E.default.onWinner3,
+                                      className: y.default.onWinner3,
                                   })
                     );
                 },
-                y = (function(e) {
+                g = (function(e) {
                     function t(e) {
                         var a;
                         return (
-                            (0, d.default)(this, t),
+                            (0, o.default)(this, t),
                             (a = (0, c.default)(this, (0, f.default)(t).call(this, e))),
                             (a.state = { sortedInfo: null, filteredInfo: null }),
-                            (a.onChange = a.onChange.bind((0, m.default)((0, m.default)(a)))),
+                            (a.onChange = a.onChange.bind((0, p.default)((0, p.default)(a)))),
                             (a.clearAllFilters = a.clearAllFilters.bind(
-                                (0, m.default)((0, m.default)(a))
+                                (0, p.default)((0, p.default)(a))
                             )),
                             a
                         );
                     }
                     return (
                         (0, s.default)(t, e),
-                        (0, o.default)(t, [
+                        (0, d.default)(t, [
                             {
                                 key: 'onChange',
                                 value: function(e, t, a) {
@@ -1019,13 +1019,13 @@
                                     (t = t || {}), (a = a || {});
                                     var n = this.props,
                                         l = n.onWinner,
-                                        d = n.requirementItem,
-                                        o = n.onShowModalEdit,
+                                        o = n.requirementItem,
+                                        d = n.onShowModalEdit,
                                         c = (n.onShowModalCTZ, n.onDelete),
                                         f = n.dataSource,
                                         s = n.loadingAll,
-                                        m = n.total,
-                                        y = [
+                                        p = n.total,
+                                        g = [
                                             {
                                                 title: 'Casting',
                                                 key: 'winner',
@@ -1037,9 +1037,9 @@
                                                               { color: '#108ee9' },
                                                               'Ganador'
                                                           )
-                                                        : v.default.createElement(g, {
-                                                              total: m,
-                                                              state: d.state,
+                                                        : v.default.createElement(E, {
+                                                              total: p,
+                                                              state: o.state,
                                                               level: e.winner_level,
                                                               onClick: function() {
                                                                   i.default.confirm({
@@ -1090,38 +1090,38 @@
                                                 render: function(e, t) {
                                                     return v.default.createElement(
                                                         'div',
-                                                        { className: E.default.actions },
-                                                        '1' === d.state &&
+                                                        { className: y.default.actions },
+                                                        '1' === o.state &&
                                                             v.default.createElement(
                                                                 r.default,
                                                                 { title: 'Editar' },
-                                                                v.default.createElement(p.default, {
+                                                                v.default.createElement(m.default, {
                                                                     type: 'edit',
-                                                                    className: E.default.update,
+                                                                    className: y.default.update,
                                                                     onClick: function() {
-                                                                        return o('update', e);
+                                                                        return d('update', e);
                                                                     },
                                                                 })
                                                             ),
-                                                        '1' !== d.state &&
+                                                        '1' !== o.state &&
                                                             v.default.createElement(
                                                                 r.default,
                                                                 { title: 'Ver' },
-                                                                v.default.createElement(p.default, {
+                                                                v.default.createElement(m.default, {
                                                                     type: 'eye-o',
-                                                                    className: E.default.update,
+                                                                    className: y.default.update,
                                                                     onClick: function() {
-                                                                        return o('update', e);
+                                                                        return d('update', e);
                                                                     },
                                                                 })
                                                             ),
-                                                        '1' === d.state &&
+                                                        '1' === o.state &&
                                                             v.default.createElement(
                                                                 r.default,
                                                                 { title: 'Eliminar' },
-                                                                v.default.createElement(p.default, {
+                                                                v.default.createElement(m.default, {
                                                                     type: 'delete',
-                                                                    className: E.default.delete,
+                                                                    className: y.default.delete,
                                                                     onClick: function() {
                                                                         i.default.confirm({
                                                                             title:
@@ -1146,9 +1146,9 @@
                                         null,
                                         v.default.createElement(
                                             'div',
-                                            { className: E.default.table },
+                                            { className: y.default.table },
                                             v.default.createElement(h.default, {
-                                                columns: y,
+                                                columns: g,
                                                 dataSource: f,
                                                 loading: s,
                                                 pagination: !1,
@@ -1166,8 +1166,8 @@
                         t
                     );
                 })(v.Component),
-                b = y;
-            t.default = b;
+                C = g;
+            t.default = C;
         },
         fTcV: function(e, t, a) {
             'use strict';
@@ -1179,9 +1179,9 @@
             a('2qtc');
             var u = l(a('kLXV'));
             a('14J3');
-            var d = l(a('BMrR'));
+            var o = l(a('BMrR'));
             a('sRBo');
-            var o = l(a('kaz8'));
+            var d = l(a('kaz8'));
             a('5NDa');
             var c = l(a('5rEg'));
             a('iQDF');
@@ -1189,43 +1189,43 @@
             a('jCWc');
             var s = l(a('kPKH'));
             a('giR+');
-            var m = l(a('fyUT')),
-                p = l(a('pVnL'));
+            var p = l(a('fyUT')),
+                m = l(a('pVnL'));
             a('+L6B');
             var v = l(a('2/Rp'));
             a('O3gP');
             var h = l(a('lrIw')),
-                E = l(a('lwsE')),
-                g = l(a('W8MJ')),
-                y = l(a('a1gu')),
-                b = l(a('Nsbk')),
-                C = l(a('7W2i'));
+                y = l(a('lwsE')),
+                E = l(a('W8MJ')),
+                g = l(a('a1gu')),
+                C = l(a('Nsbk')),
+                k = l(a('7W2i'));
             a('y8nQ');
-            var k = l(a('Vl3Y'));
+            var b = l(a('Vl3Y'));
             a('OaEy');
             var q = l(a('2fM7')),
-                I = n(a('q1tI')),
-                x = l(a('v/1x')),
+                x = n(a('q1tI')),
+                I = l(a('v/1x')),
                 w = a('MuoO'),
-                P = l(a('wd/R')),
-                M = l(a('xd0P')),
-                _ = l(a('M8kI')),
+                M = l(a('wd/R')),
+                _ = l(a('Ioab')),
+                P = l(a('M8kI')),
                 O = { labelCol: { span: 6 }, wrapperCol: { span: 18 } },
                 N = q.default.Option,
-                T = k.default.create()(
+                S = b.default.create()(
                     (function(e) {
                         function t(e) {
                             var a;
                             return (
-                                (0, E.default)(this, t),
-                                (a = (0, y.default)(this, (0, b.default)(t).call(this, e))),
+                                (0, y.default)(this, t),
+                                (a = (0, g.default)(this, (0, C.default)(t).call(this, e))),
                                 (a.state = { selectProviderID: 0 }),
                                 a
                             );
                         }
                         return (
-                            (0, C.default)(t, e),
-                            (0, g.default)(t, [
+                            (0, k.default)(t, e),
+                            (0, E.default)(t, [
                                 {
                                     key: 'handleChangeSelectProvider',
                                     value: function(e) {
@@ -1242,218 +1242,204 @@
                                             l = t.onOk,
                                             r = t.form,
                                             i = (t.type, t.confirmLoading),
-                                            E = t.data,
-                                            g = r.getFieldDecorator,
-                                            y = this.props,
-                                            b = y.dispatch,
-                                            C = y.provider,
-                                            q = (y.loading,
+                                            y = t.data,
+                                            E = r.getFieldDecorator,
+                                            g = this.props,
+                                            C = g.dispatch,
+                                            k = g.provider,
+                                            q = (g.loading,
                                             function() {
-                                                b({
+                                                C({
                                                     type: 'provider/showModal',
                                                     payload: { modalType: 'create' },
                                                 });
                                             }),
-                                            w = C.searchResult,
-                                            T = function(e) {
-                                                b({
+                                            w = k.searchResult,
+                                            S = function(e) {
+                                                C({
                                                     type: 'provider/search',
                                                     payload: { search: e },
                                                 });
                                             },
-                                            D = function(t, a) {
+                                            T = function(t, a) {
                                                 e.handleChangeSelectProvider(parseInt(t));
                                             },
-                                            S = w.map(function(e) {
-                                                return I.default.createElement(
+                                            D = w.map(function(e) {
+                                                return x.default.createElement(
                                                     N,
                                                     { key: e.id },
                                                     e.name
                                                 );
                                             });
-                                        return (
-                                            console.log(E),
-                                            I.default.createElement(
-                                                u.default,
-                                                {
-                                                    title: 'Cotizacion',
-                                                    okText: 'Guardar',
-                                                    width: '90vw',
-                                                    style: { top: 50 },
-                                                    confirmLoading: i,
-                                                    onCancel: n,
-                                                    onOk: l,
-                                                    visible: a,
-                                                },
-                                                I.default.createElement(
-                                                    k.default,
-                                                    { layout: 'horizontal' },
-                                                    I.default.createElement(
-                                                        d.default,
-                                                        { gutter: 16 },
-                                                        I.default.createElement(
-                                                            s.default,
-                                                            { xs: 24, sm: 16, md: 12, lg: 8 },
-                                                            I.default.createElement(
-                                                                k.default.Item,
-                                                                (0, p.default)(
-                                                                    { hasFeedback: !0 },
-                                                                    O,
-                                                                    { label: 'Proveedor' }
-                                                                ),
-                                                                I.default.createElement(
+                                        return x.default.createElement(
+                                            u.default,
+                                            {
+                                                title: 'Cotizacion',
+                                                okText: 'Guardar',
+                                                width: '90vw',
+                                                style: { top: 50 },
+                                                confirmLoading: i,
+                                                onCancel: n,
+                                                onOk: l,
+                                                visible: a,
+                                            },
+                                            x.default.createElement(
+                                                b.default,
+                                                { layout: 'horizontal' },
+                                                x.default.createElement(
+                                                    o.default,
+                                                    { gutter: 16 },
+                                                    x.default.createElement(
+                                                        s.default,
+                                                        { xs: 24, sm: 16, md: 12, lg: 8 },
+                                                        x.default.createElement(
+                                                            b.default.Item,
+                                                            (0, m.default)({ hasFeedback: !0 }, O, {
+                                                                label: 'Proveedor',
+                                                            }),
+                                                            x.default.createElement(
+                                                                'div',
+                                                                { className: I.default.search },
+                                                                x.default.createElement(
                                                                     'div',
-                                                                    { className: x.default.search },
-                                                                    I.default.createElement(
-                                                                        'div',
-                                                                        {
-                                                                            className:
-                                                                                x.default.item,
-                                                                        },
-                                                                        g('provider_name_aux', {
-                                                                            initialValue:
-                                                                                E.provider_name,
-                                                                            rules: [
-                                                                                {
-                                                                                    required: !0,
-                                                                                    message:
-                                                                                        '\xa1Por favor elija un proveedor!',
-                                                                                },
-                                                                            ],
-                                                                        })(
-                                                                            I.default.createElement(
-                                                                                h.default,
-                                                                                {
-                                                                                    dataSource: S,
-                                                                                    onSelect: D,
-                                                                                    onSearch: T,
-                                                                                    placeholder:
-                                                                                        'Buscar proveedor',
-                                                                                }
-                                                                            )
-                                                                        )
-                                                                    ),
-                                                                    I.default.createElement(
-                                                                        'div',
-                                                                        {
-                                                                            className:
-                                                                                x.default.more,
-                                                                        },
-                                                                        I.default.createElement(
-                                                                            v.default,
+                                                                    { className: I.default.item },
+                                                                    E('provider_name_aux', {
+                                                                        initialValue:
+                                                                            y.provider_name,
+                                                                        rules: [
                                                                             {
-                                                                                icon: 'plus',
-                                                                                onClick: function() {
-                                                                                    return q();
-                                                                                },
+                                                                                required: !0,
+                                                                                message:
+                                                                                    '\xa1Por favor elija un proveedor!',
+                                                                            },
+                                                                        ],
+                                                                    })(
+                                                                        x.default.createElement(
+                                                                            h.default,
+                                                                            {
+                                                                                dataSource: D,
+                                                                                onSelect: T,
+                                                                                onSearch: S,
+                                                                                placeholder:
+                                                                                    'Buscar proveedor',
                                                                             }
-                                                                        ),
-                                                                        I.default.createElement(
-                                                                            M.default,
-                                                                            null
                                                                         )
                                                                     )
-                                                                )
-                                                            ),
-                                                            I.default.createElement(
-                                                                k.default.Item,
-                                                                {
-                                                                    label: 'ID',
-                                                                    className: x.default.hidden,
-                                                                },
-                                                                g('provider_id', {
-                                                                    initialValue:
-                                                                        E.provider_id ||
-                                                                        this.state.selectProviderID,
-                                                                })(
-                                                                    I.default.createElement(
-                                                                        m.default,
+                                                                ),
+                                                                x.default.createElement(
+                                                                    'div',
+                                                                    { className: I.default.more },
+                                                                    x.default.createElement(
+                                                                        v.default,
+                                                                        {
+                                                                            icon: 'plus',
+                                                                            onClick: function() {
+                                                                                return q();
+                                                                            },
+                                                                        }
+                                                                    ),
+                                                                    x.default.createElement(
+                                                                        _.default,
                                                                         null
                                                                     )
                                                                 )
                                                             )
                                                         ),
-                                                        I.default.createElement(
-                                                            s.default,
-                                                            { xs: 24, sm: 16, md: 12, lg: 8 },
-                                                            I.default.createElement(
-                                                                k.default.Item,
-                                                                (0, p.default)({}, O, {
-                                                                    label: 'Fecha entrega',
-                                                                }),
-                                                                g('deliver_date', {
-                                                                    initialValue: E.deliver_date
-                                                                        ? (0, P.default)(
-                                                                              new Date(
-                                                                                  E.deliver_date
-                                                                              ),
-                                                                              'DD/MM/YYYY'
-                                                                          )
-                                                                        : void 0,
-                                                                })(
-                                                                    I.default.createElement(
-                                                                        f.default,
-                                                                        { format: 'DD/MM/YYYY' }
-                                                                    )
+                                                        x.default.createElement(
+                                                            b.default.Item,
+                                                            {
+                                                                label: 'ID',
+                                                                className: I.default.hidden,
+                                                            },
+                                                            E('provider_id', {
+                                                                initialValue:
+                                                                    y.provider_id ||
+                                                                    this.state.selectProviderID,
+                                                            })(
+                                                                x.default.createElement(
+                                                                    p.default,
+                                                                    null
                                                                 )
                                                             )
-                                                        ),
-                                                        I.default.createElement(
-                                                            s.default,
-                                                            { xs: 24, sm: 16, md: 12, lg: 8 },
-                                                            I.default.createElement(
-                                                                k.default.Item,
-                                                                (0, p.default)({}, O, {
-                                                                    hasFeedback: !0,
-                                                                    label: 'Observaci\xf3n',
-                                                                }),
-                                                                g('observation', {
-                                                                    initialValue: E.observation,
-                                                                })(
-                                                                    I.default.createElement(
-                                                                        c.default.TextArea,
-                                                                        { autosize: !0 }
-                                                                    )
+                                                        )
+                                                    ),
+                                                    x.default.createElement(
+                                                        s.default,
+                                                        { xs: 24, sm: 16, md: 12, lg: 8 },
+                                                        x.default.createElement(
+                                                            b.default.Item,
+                                                            (0, m.default)({}, O, {
+                                                                label: 'Fecha entrega',
+                                                            }),
+                                                            E('deliver_date', {
+                                                                initialValue: y.deliver_date
+                                                                    ? (0, M.default)(
+                                                                          new Date(y.deliver_date),
+                                                                          'DD/MM/YYYY'
+                                                                      )
+                                                                    : void 0,
+                                                            })(
+                                                                x.default.createElement(f.default, {
+                                                                    format: 'DD/MM/YYYY',
+                                                                })
+                                                            )
+                                                        )
+                                                    ),
+                                                    x.default.createElement(
+                                                        s.default,
+                                                        { xs: 24, sm: 16, md: 12, lg: 8 },
+                                                        x.default.createElement(
+                                                            b.default.Item,
+                                                            (0, m.default)({}, O, {
+                                                                hasFeedback: !0,
+                                                                label: 'Observaci\xf3n',
+                                                            }),
+                                                            E('observation', {
+                                                                initialValue: y.observation,
+                                                            })(
+                                                                x.default.createElement(
+                                                                    c.default.TextArea,
+                                                                    { autosize: !0 }
                                                                 )
                                                             )
-                                                        ),
-                                                        I.default.createElement(
-                                                            s.default,
-                                                            { xs: 24, sm: 16, md: 12, lg: 8 },
-                                                            I.default.createElement(
-                                                                k.default.Item,
-                                                                (0, p.default)({}, O, {
-                                                                    label: 'Sugerir ganador',
-                                                                }),
-                                                                g('suggest_winner', {
-                                                                    valuePropName: 'checked',
-                                                                    initialValue: E.suggest_winner,
-                                                                })(
-                                                                    I.default.createElement(
-                                                                        o.default,
-                                                                        null
-                                                                    )
+                                                        )
+                                                    ),
+                                                    x.default.createElement(
+                                                        s.default,
+                                                        { xs: 24, sm: 16, md: 12, lg: 8 },
+                                                        x.default.createElement(
+                                                            b.default.Item,
+                                                            (0, m.default)({}, O, {
+                                                                label: 'Sugerir ganador',
+                                                            }),
+                                                            E('suggest_winner', {
+                                                                valuePropName: 'checked',
+                                                                initialValue: y.suggest_winner,
+                                                            })(
+                                                                x.default.createElement(
+                                                                    d.default,
+                                                                    null
                                                                 )
                                                             )
                                                         )
                                                     )
-                                                ),
-                                                I.default.createElement(_.default, null)
-                                            )
+                                                )
+                                            ),
+                                            x.default.createElement(P.default, null)
                                         );
                                     },
                                 },
                             ]),
                             t
                         );
-                    })(I.default.Component)
+                    })(x.default.Component)
                 ),
-                D = (function(e) {
+                T = (function(e) {
                     function t(e) {
                         var a;
                         return (
-                            (0, E.default)(this, t),
-                            (a = (0, y.default)(this, (0, b.default)(t).call(this, e))),
+                            (0, y.default)(this, t),
+                            (a = (0, g.default)(this, (0, C.default)(t).call(this, e))),
                             (a.handleConfirm = a.handleConfirm.bind(
                                 (0, i.default)((0, i.default)(a))
                             )),
@@ -1461,8 +1447,8 @@
                         );
                     }
                     return (
-                        (0, C.default)(t, e),
-                        (0, g.default)(t, [
+                        (0, k.default)(t, e),
+                        (0, E.default)(t, [
                             {
                                 key: 'handleConfirm',
                                 value: function(e) {
@@ -1492,13 +1478,13 @@
                                         r = a.provider,
                                         i = a.require,
                                         u = (a.loading, l.modalType),
-                                        d = l.modalVisible,
-                                        o = (l.currentItem,
+                                        o = l.modalVisible,
+                                        d = (l.currentItem,
                                         {
                                             data: 'create' == u ? {} : i.currentQuotation,
                                             disabled: 'detail' == u,
                                             type: u,
-                                            visible: d,
+                                            visible: o,
                                             onOk: function() {
                                                 t(u);
                                             },
@@ -1506,9 +1492,9 @@
                                                 n({ type: 'quotation/resetQuotation' });
                                             },
                                         });
-                                    return I.default.createElement(
-                                        T,
-                                        (0, p.default)({}, o, {
+                                    return x.default.createElement(
+                                        S,
+                                        (0, m.default)({}, d, {
                                             dispatch: n,
                                             provider: r,
                                             wrappedComponentRef: function(t) {
@@ -1521,16 +1507,16 @@
                         ]),
                         t
                     );
-                })(I.Component),
-                S = function(e) {
+                })(x.Component),
+                D = function(e) {
                     var t = e.quotation,
                         a = e.provider,
                         n = e.require,
                         l = e.loading;
                     return { quotation: t, provider: a, require: n, loading: l.effects };
                 },
-                V = (0, w.connect)(S)(D);
-            t.default = V;
+                W = (0, w.connect)(D)(T);
+            t.default = W;
         },
         g6Q8: function(e, t, a) {
             'use strict';
@@ -1540,57 +1526,57 @@
             var r = l(a('kLXV')),
                 i = l(a('lwsE')),
                 u = l(a('W8MJ')),
-                d = l(a('a1gu')),
-                o = l(a('Nsbk')),
+                o = l(a('a1gu')),
+                d = l(a('Nsbk')),
                 c = l(a('7W2i')),
                 f = l(a('PJYZ'));
             a('+L6B');
             var s = l(a('2/Rp')),
-                m = n(a('q1tI')),
-                p = l(a('oDxf')),
+                p = n(a('q1tI')),
+                m = l(a('oDxf')),
                 v = l(a('iQbp')),
                 h = a('MuoO'),
-                E = function(e) {
+                y = function(e) {
                     var t = e.data;
-                    return m.default.createElement(
+                    return p.default.createElement(
                         v.default,
                         {
                             filename: 'cotizacion.xlsx',
-                            element: m.default.createElement(
+                            element: p.default.createElement(
                                 s.default,
                                 { type: 'primary' },
                                 'Cotizacion'
                             ),
                         },
-                        m.default.createElement(
+                        p.default.createElement(
                             v.default.Sheet,
                             { data: t, name: 'Cotizacion' },
-                            m.default.createElement(v.default.Column, {
+                            p.default.createElement(v.default.Column, {
                                 label: 'Casting',
                                 value: 'winner',
                             }),
-                            m.default.createElement(v.default.Column, {
+                            p.default.createElement(v.default.Column, {
                                 label: 'Proveedor',
                                 value: 'provider_name',
                             }),
-                            m.default.createElement(v.default.Column, {
+                            p.default.createElement(v.default.Column, {
                                 label: 'Presupuesto',
                                 value: 'summation',
                             }),
-                            m.default.createElement(v.default.Column, {
+                            p.default.createElement(v.default.Column, {
                                 label: 'Cotizador Nombre',
                                 value: 'user_first_name',
                             }),
-                            m.default.createElement(v.default.Column, {
+                            p.default.createElement(v.default.Column, {
                                 label: 'Cotizador Apellidos',
                                 value: 'user_last_name',
                             })
                         )
                     );
                 },
-                g = function(e) {
+                E = function(e) {
                     var t = e.dispatch;
-                    return m.default.createElement(
+                    return p.default.createElement(
                         s.default,
                         {
                             type: 'primary',
@@ -1601,12 +1587,12 @@
                         'Todo Las Cotizaciones'
                     );
                 },
-                y = (function(e) {
+                g = (function(e) {
                     function t(e) {
                         var a;
                         return (
                             (0, i.default)(this, t),
-                            (a = (0, d.default)(this, (0, o.default)(t).call(this, e))),
+                            (a = (0, o.default)(this, (0, d.default)(t).call(this, e))),
                             (a.state = { dataVisible: !1, dataAll: !1 }),
                             (a.handleDataVisible = a.handleDataVisible.bind(
                                 (0, f.default)((0, f.default)(a))
@@ -1640,7 +1626,7 @@
                                         a = e.visible,
                                         n = e.quotation,
                                         l = e.dispatch;
-                                    return m.default.createElement(
+                                    return p.default.createElement(
                                         r.default,
                                         {
                                             title: 'Exportar requerimientos',
@@ -1648,23 +1634,23 @@
                                             footer: null,
                                             visible: a,
                                         },
-                                        m.default.createElement(E, { data: n.list }),
-                                        m.default.createElement(p.default, null),
-                                        m.default.createElement(g, { dispatch: l })
+                                        p.default.createElement(y, { data: n.list }),
+                                        p.default.createElement(m.default, null),
+                                        p.default.createElement(E, { dispatch: l })
                                     );
                                 },
                             },
                         ]),
                         t
                     );
-                })(m.Component),
-                b = function(e) {
+                })(p.Component),
+                C = function(e) {
                     var t = e.dowloand,
                         a = e.quotation;
                     return { dowloand: t, quotation: a };
                 },
-                C = (0, h.connect)(b)(y);
-            t.default = C;
+                k = (0, h.connect)(C)(g);
+            t.default = k;
         },
         gPi7: function(e, t, a) {
             'use strict';
@@ -1676,41 +1662,41 @@
             var i = l(a('kLXV'));
             a('+L6B');
             var u = l(a('2/Rp')),
-                d = l(a('lwsE')),
-                o = l(a('W8MJ')),
+                o = l(a('lwsE')),
+                d = l(a('W8MJ')),
                 c = l(a('a1gu')),
                 f = l(a('Nsbk')),
                 s = l(a('7W2i')),
-                m = l(a('PJYZ'));
+                p = l(a('PJYZ'));
             a('5NDa');
-            var p = l(a('5rEg')),
+            var m = l(a('5rEg')),
                 v = n(a('q1tI')),
                 h = a('MuoO'),
-                E = l(a('zHco')),
-                g = l(a('xNcC')),
-                y = l(a('d5+N')),
-                b = l(a('fTcV')),
-                C = l(a('Qjay')),
-                k = l(a('g6Q8')),
+                y = l(a('zHco')),
+                E = l(a('xNcC')),
+                g = l(a('d5+N')),
+                C = l(a('fTcV')),
+                k = l(a('Qjay')),
+                b = l(a('g6Q8')),
                 q = l(a('oDxf')),
-                I = (p.default.Search,
+                x = (m.default.Search,
                 (function(e) {
                     function t(e) {
                         var a;
                         return (
-                            (0, d.default)(this, t),
+                            (0, o.default)(this, t),
                             (a = (0, c.default)(this, (0, f.default)(t).call(this, e))),
                             (a.state = { visibleExport: !1 }),
-                            (a.onQueryAll = a.onQueryAll.bind((0, m.default)((0, m.default)(a)))),
+                            (a.onQueryAll = a.onQueryAll.bind((0, p.default)((0, p.default)(a)))),
                             (a.handleToggleExport = a.handleToggleExport.bind(
-                                (0, m.default)((0, m.default)(a))
+                                (0, p.default)((0, p.default)(a))
                             )),
                             a
                         );
                     }
                     return (
                         (0, s.default)(t, e),
-                        (0, o.default)(t, [
+                        (0, d.default)(t, [
                             {
                                 key: 'componentDidMount',
                                 value: function() {
@@ -1739,13 +1725,13 @@
                                         a = t.dispatch,
                                         n = (t.setting, t.quotation),
                                         l = t.loadingAll,
-                                        d = n.list,
-                                        o = n.total,
+                                        o = n.list,
+                                        d = n.total,
                                         c = n.requirementItem,
                                         f = {
                                             requirementItem: c,
-                                            total: o,
-                                            dataSource: d,
+                                            total: d,
+                                            dataSource: o,
                                             loadingAll: l,
                                             onUpdate: function(e) {
                                                 a({ type: 'quotation/update', payload: e });
@@ -1783,39 +1769,39 @@
                                                           }
                                                 );
                                         },
-                                        m = function() {
+                                        p = function() {
                                             a({
                                                 type: 'requirement/rejected',
                                                 payload: { requirement_id: c.id },
                                             }),
                                                 a({ type: 'quotation/requirement' });
                                         },
-                                        p = c.state,
+                                        m = c.state,
                                         h =
-                                            '4' === p
-                                                ? g.default.close
-                                                : '3' === p
-                                                    ? g.default.accepted
-                                                    : '2' === p
-                                                        ? g.default.rejected
-                                                        : '1' === p
-                                                            ? g.default.process
-                                                            : g.default.check,
-                                        I = !('1' === c.state || '0' === c.state),
-                                        x = !(
+                                            '4' === m
+                                                ? E.default.close
+                                                : '3' === m
+                                                    ? E.default.accepted
+                                                    : '2' === m
+                                                        ? E.default.rejected
+                                                        : '1' === m
+                                                            ? E.default.process
+                                                            : E.default.check,
+                                        x = !('1' === c.state || '0' === c.state),
+                                        I = !(
                                             '1' === c.state ||
                                             '0' === c.state ||
                                             '3' === c.state
                                         );
                                     return v.default.createElement(
-                                        E.default,
+                                        y.default,
                                         { title: 'Cotizaciones' },
                                         v.default.createElement(
                                             r.default,
                                             { bordered: !1, className: h },
                                             v.default.createElement(
                                                 'div',
-                                                { className: g.default.header },
+                                                { className: E.default.header },
                                                 v.default.createElement(
                                                     u.default,
                                                     {
@@ -1824,14 +1810,14 @@
                                                         onClick: function() {
                                                             return s('create');
                                                         },
-                                                        disabled: I,
+                                                        disabled: x,
                                                     },
                                                     'Insertar cotizacion'
                                                 ),
                                                 v.default.createElement(
                                                     u.default,
                                                     {
-                                                        disabled: x,
+                                                        disabled: I,
                                                         icon: 'close',
                                                         onClick: function() {
                                                             i.default.confirm({
@@ -1842,7 +1828,7 @@
                                                                 okType: 'danger',
                                                                 cancelText: 'NO',
                                                                 onOk: function() {
-                                                                    m();
+                                                                    p();
                                                                 },
                                                             });
                                                         },
@@ -1859,7 +1845,7 @@
                                                     },
                                                     'Exportar'
                                                 ),
-                                                v.default.createElement(k.default, {
+                                                v.default.createElement(b.default, {
                                                     visible: this.state.visibleExport,
                                                     onCancel: function() {
                                                         return e.handleToggleExport(!1);
@@ -1875,12 +1861,12 @@
                                                     },
                                                     'Actualizar'
                                                 ),
-                                                v.default.createElement(b.default, null)
+                                                v.default.createElement(C.default, null)
                                             ),
-                                            v.default.createElement(y.default, f)
+                                            v.default.createElement(g.default, f)
                                         ),
                                         v.default.createElement(q.default, { size: 'large' }),
-                                        v.default.createElement(C.default, { stateCard: h })
+                                        v.default.createElement(k.default, { stateCard: h })
                                     );
                                 },
                             },
@@ -1888,7 +1874,7 @@
                         t
                     );
                 })(v.Component)),
-                x = function(e) {
+                I = function(e) {
                     var t = e.quotation,
                         a = e.global,
                         n = e.loading;
@@ -1898,7 +1884,7 @@
                         loadingAll: n.effects['quotation/all'],
                     };
                 },
-                w = (0, h.connect)(x)(I);
+                w = (0, h.connect)(I)(x);
             t.default = w;
         },
         jUjp: function(e, t, a) {
@@ -1909,16 +1895,16 @@
             var r = l(a('kLXV')),
                 i = l(a('lwsE')),
                 u = l(a('W8MJ')),
-                d = l(a('a1gu')),
-                o = l(a('Nsbk')),
+                o = l(a('a1gu')),
+                d = l(a('Nsbk')),
                 c = l(a('7W2i')),
                 f = n(a('q1tI')),
                 s = a('MuoO'),
-                m = (function(e) {
+                p = (function(e) {
                     function t(e) {
                         return (
                             (0, i.default)(this, t),
-                            (0, d.default)(this, (0, o.default)(t).call(this, e))
+                            (0, o.default)(this, (0, d.default)(t).call(this, e))
                         );
                     }
                     return (
@@ -1956,11 +1942,11 @@
                         t
                     );
                 })(f.Component),
-                p = function(e) {
+                m = function(e) {
                     var t = e.print;
                     return { print: t };
                 },
-                v = (0, s.connect)(p)(m);
+                v = (0, s.connect)(m)(p);
             t.default = v;
         },
         s7Js: function(e, t, a) {
@@ -1971,16 +1957,16 @@
             var r = l(a('kLXV')),
                 i = l(a('lwsE')),
                 u = l(a('W8MJ')),
-                d = l(a('a1gu')),
-                o = l(a('Nsbk')),
+                o = l(a('a1gu')),
+                d = l(a('Nsbk')),
                 c = l(a('7W2i')),
                 f = n(a('q1tI')),
                 s = a('MuoO'),
-                m = (function(e) {
+                p = (function(e) {
                     function t(e) {
                         return (
                             (0, i.default)(this, t),
-                            (0, d.default)(this, (0, o.default)(t).call(this, e))
+                            (0, o.default)(this, (0, d.default)(t).call(this, e))
                         );
                     }
                     return (
@@ -2018,11 +2004,11 @@
                         t
                     );
                 })(f.Component),
-                p = function(e) {
+                m = function(e) {
                     var t = e.print;
                     return { print: t };
                 },
-                v = (0, s.connect)(p)(m);
+                v = (0, s.connect)(m)(p);
             t.default = v;
         },
         sKQO: function(e, t, a) {
@@ -2033,16 +2019,16 @@
             var r = l(a('kLXV')),
                 i = l(a('lwsE')),
                 u = l(a('W8MJ')),
-                d = l(a('a1gu')),
-                o = l(a('Nsbk')),
+                o = l(a('a1gu')),
+                d = l(a('Nsbk')),
                 c = l(a('7W2i')),
                 f = n(a('q1tI')),
                 s = a('MuoO'),
-                m = (function(e) {
+                p = (function(e) {
                     function t(e) {
                         return (
                             (0, i.default)(this, t),
-                            (0, d.default)(this, (0, o.default)(t).call(this, e))
+                            (0, o.default)(this, (0, d.default)(t).call(this, e))
                         );
                     }
                     return (
@@ -2080,11 +2066,11 @@
                         t
                     );
                 })(f.Component),
-                p = function(e) {
+                m = function(e) {
                     var t = e.print;
                     return { print: t };
                 },
-                v = (0, s.connect)(p)(m);
+                v = (0, s.connect)(m)(p);
             t.default = v;
         },
         'v/1x': function(e, t, a) {
@@ -2104,302 +2090,6 @@
                 expired: 'sn\\pages\\-quotation\\index-expired',
                 close: 'sn\\pages\\-quotation\\index-close',
             };
-        },
-        xd0P: function(e, t, a) {
-            'use strict';
-            var n = a('284h'),
-                l = a('TqRt');
-            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
-            var r = l(a('MVZn')),
-                i = l(a('PJYZ'));
-            a('2qtc');
-            var u = l(a('kLXV'));
-            a('sRBo');
-            var d = l(a('kaz8')),
-                o = l(a('pVnL'));
-            a('5NDa');
-            var c = l(a('5rEg')),
-                f = l(a('lwsE')),
-                s = l(a('W8MJ')),
-                m = l(a('a1gu')),
-                p = l(a('Nsbk')),
-                v = l(a('7W2i'));
-            a('y8nQ');
-            var h = l(a('Vl3Y')),
-                E = n(a('q1tI')),
-                g = a('MuoO'),
-                y = { labelCol: { span: 8 }, wrapperCol: { span: 12 } },
-                b = h.default.create()(
-                    (function(e) {
-                        function t(e) {
-                            var a;
-                            return (
-                                (0, f.default)(this, t),
-                                (a = (0, m.default)(this, (0, p.default)(t).call(this, e))),
-                                (a.state = {}),
-                                a
-                            );
-                        }
-                        return (
-                            (0, v.default)(t, e),
-                            (0, s.default)(t, [
-                                {
-                                    key: 'render',
-                                    value: function() {
-                                        var e = this.props,
-                                            t = e.visible,
-                                            a = e.onCancel,
-                                            n = e.onOk,
-                                            l = e.form,
-                                            r = e.confirmLoading,
-                                            i = e.data,
-                                            f = l.getFieldDecorator;
-                                        return E.default.createElement(
-                                            u.default,
-                                            {
-                                                title: 'Proveedor',
-                                                okText: 'Guardar',
-                                                confirmLoading: r,
-                                                onCancel: a,
-                                                onOk: n,
-                                                visible: t,
-                                            },
-                                            E.default.createElement(
-                                                h.default,
-                                                { layout: 'horizontal' },
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'RUC',
-                                                    }),
-                                                    f('ruc', {
-                                                        initialValue: i.ruc,
-                                                        rules: [
-                                                            {
-                                                                required: !0,
-                                                                message:
-                                                                    '\xa1Por favor ingrese un RUC!',
-                                                            },
-                                                            {
-                                                                pattern: /^[0-9]{11}$/,
-                                                                message:
-                                                                    '\xa1Ingrese un RUC v\xe1lido!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'RUC',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Nombre o raz\xf3n social',
-                                                    }),
-                                                    f('name', {
-                                                        initialValue: i.name,
-                                                        rules: [
-                                                            {
-                                                                required: !0,
-                                                                message:
-                                                                    '\xa1Por favor un Nombre o raz\xf3n social!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'Nombre o raz\xf3n social',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Representante',
-                                                    }),
-                                                    f('manager', { initialValue: i.manager })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'Representante',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Email',
-                                                    }),
-                                                    f('email', {
-                                                        initialValue: i.email,
-                                                        rules: [
-                                                            {
-                                                                type: 'email',
-                                                                message:
-                                                                    '\xa1Ingrese un correo valido!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'Email',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Telefono',
-                                                    }),
-                                                    f('phone', {
-                                                        initialValue: i.phone,
-                                                        rules: [
-                                                            {
-                                                                pattern: /^[0-9]{6,12}$/,
-                                                                message:
-                                                                    '\xa1Ingrese un telefono v\xe1lido!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'Telefono',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Direcci\xf3n',
-                                                    }),
-                                                    f('address', { initialValue: i.address })(
-                                                        E.default.createElement(c.default, {
-                                                            placeholder: 'Direcci\xf3n',
-                                                        })
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({ hasFeedback: !0 }, y, {
-                                                        label: 'Observaci\xf3n',
-                                                    }),
-                                                    f('observation', {
-                                                        initialValue: i.observation,
-                                                    })(
-                                                        E.default.createElement(
-                                                            c.default.TextArea,
-                                                            { placeholder: 'Observaci\xf3n' }
-                                                        )
-                                                    )
-                                                ),
-                                                E.default.createElement(
-                                                    h.default.Item,
-                                                    (0, o.default)({}, y, { label: 'Estado' }),
-                                                    f('state', {
-                                                        valuePropName: 'checked',
-                                                        initialValue: i.state,
-                                                    })(E.default.createElement(d.default, null))
-                                                )
-                                            )
-                                        );
-                                    },
-                                },
-                            ]),
-                            t
-                        );
-                    })(E.default.Component)
-                ),
-                C = (function(e) {
-                    function t(e) {
-                        var a;
-                        return (
-                            (0, f.default)(this, t),
-                            (a = (0, m.default)(this, (0, p.default)(t).call(this, e))),
-                            (a.handleConfirm = a.handleConfirm.bind(
-                                (0, i.default)((0, i.default)(a))
-                            )),
-                            (a.handleCancel = a.handleCancel.bind(
-                                (0, i.default)((0, i.default)(a))
-                            )),
-                            a
-                        );
-                    }
-                    return (
-                        (0, v.default)(t, e),
-                        (0, s.default)(t, [
-                            {
-                                key: 'handleConfirm',
-                                value: function(e) {
-                                    var t = this.props,
-                                        a = t.dispatch,
-                                        n = t.provider.currentItem,
-                                        l = this.formRef.props.form;
-                                    l.validateFields(function(t, i) {
-                                        t ||
-                                            (a({
-                                                type: 'provider/'.concat(e),
-                                                payload: (0, r.default)({}, i, { id: n.id }),
-                                            }),
-                                            l.resetFields());
-                                    });
-                                },
-                            },
-                            {
-                                key: 'handleCancel',
-                                value: function() {
-                                    var e = this.formRef.props.form;
-                                    e.resetFields();
-                                },
-                            },
-                            {
-                                key: 'render',
-                                value: function() {
-                                    var e = this,
-                                        t = this.handleConfirm,
-                                        a = this.handleCancel,
-                                        n = this.props,
-                                        l = n.dispatch,
-                                        r = n.provider,
-                                        i = n.loading,
-                                        u = r.currentItem,
-                                        d = r.modalType,
-                                        c = r.modalVisible,
-                                        f = r.validRuc,
-                                        s = {
-                                            validRuc: f,
-                                            data: 'create' == d ? { state: !0 } : u,
-                                            disabled: 'detail' == d,
-                                            type: d,
-                                            visible: c,
-                                            confirmLoading: i,
-                                            onOk: function() {
-                                                t(d);
-                                            },
-                                            onCancel: function() {
-                                                l({ type: 'provider/resetProvider' }), a();
-                                            },
-                                        };
-                                    return E.default.createElement(
-                                        b,
-                                        (0, o.default)({}, s, {
-                                            dispatch: l,
-                                            wrappedComponentRef: function(t) {
-                                                return (e.formRef = t);
-                                            },
-                                        })
-                                    );
-                                },
-                            },
-                        ]),
-                        t
-                    );
-                })(E.Component),
-                k = function(e) {
-                    var t = e.provider,
-                        a = e.loading;
-                    return {
-                        provider: t,
-                        loading: a.effects['provider/create'] || a.effects['provider/update'],
-                    };
-                },
-                q = (0, g.connect)(k)(C);
-            t.default = q;
         },
     },
 ]);

@@ -23,8 +23,8 @@
             var m = l(a('8z0m')),
                 v = l(a('q1tI')),
                 h = a('MuoO'),
-                g = m.default.Dragger,
-                y = (function(e) {
+                y = m.default.Dragger,
+                g = (function(e) {
                     function t(e) {
                         var a;
                         return (
@@ -137,7 +137,7 @@
                                                       )
                                                   )
                                                 : v.default.createElement(
-                                                      g,
+                                                      y,
                                                       s,
                                                       v.default.createElement(
                                                           'p',
@@ -170,304 +170,8 @@
                         a = (e.global, e.loading);
                     return { provider: t, loading: a.effects['provider/ProviderUploads'] };
                 },
-                b = (0, h.connect)(E)(y);
-            t.default = b;
-        },
-        Ioab: function(e, t, a) {
-            'use strict';
-            var l = a('284h'),
-                n = a('TqRt');
-            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
-            var r = n(a('MVZn')),
-                o = n(a('PJYZ'));
-            a('2qtc');
-            var d = n(a('kLXV'));
-            a('sRBo');
-            var u = n(a('kaz8')),
-                i = n(a('pVnL'));
-            a('5NDa');
-            var c = n(a('5rEg')),
-                f = n(a('lwsE')),
-                s = n(a('W8MJ')),
-                p = n(a('a1gu')),
-                m = n(a('Nsbk')),
-                v = n(a('7W2i'));
-            a('y8nQ');
-            var h = n(a('Vl3Y')),
-                g = l(a('q1tI')),
-                y = a('MuoO'),
-                E = { labelCol: { span: 8 }, wrapperCol: { span: 12 } },
-                b = h.default.create()(
-                    (function(e) {
-                        function t(e) {
-                            var a;
-                            return (
-                                (0, f.default)(this, t),
-                                (a = (0, p.default)(this, (0, m.default)(t).call(this, e))),
-                                (a.state = {}),
-                                a
-                            );
-                        }
-                        return (
-                            (0, v.default)(t, e),
-                            (0, s.default)(t, [
-                                {
-                                    key: 'render',
-                                    value: function() {
-                                        var e = this.props,
-                                            t = e.visible,
-                                            a = e.onCancel,
-                                            l = e.onOk,
-                                            n = e.form,
-                                            r = e.confirmLoading,
-                                            o = e.data,
-                                            f = n.getFieldDecorator;
-                                        return g.default.createElement(
-                                            d.default,
-                                            {
-                                                title: 'Proveedor',
-                                                okText: 'Guardar',
-                                                confirmLoading: r,
-                                                onCancel: a,
-                                                onOk: l,
-                                                visible: t,
-                                            },
-                                            g.default.createElement(
-                                                h.default,
-                                                { layout: 'horizontal' },
-                                                g.default.createElement(
-                                                    h.default.Item,
-                                                    (0, i.default)({ hasFeedback: !0 }, E, {
-                                                        label: 'RUC',
-                                                    }),
-                                                    f('ruc', {
-                                                        initialValue: o.ruc,
-                                                        rules: [
-                                                            {
-                                                                required: !0,
-                                                                message:
-                                                                    '\xa1Por favor ingrese un RUC!',
-                                                            },
-                                                            {
-                                                                pattern: /^[0-9]{11}$/,
-                                                                message:
-                                                                    '\xa1Ingrese un RUC v\xe1lido!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        g.default.createElement(c.default, {
-                                                            placeholder: 'RUC',
-                                                        })
-                                                    )
-                                                ),
-                                                g.default.createElement(
-                                                    h.default.Item,
-                                                    (0, i.default)({ hasFeedback: !0 }, E, {
-                                                        label: 'Nombre o raz\xf3n social',
-                                                    }),
-                                                    f('name', {
-                                                        initialValue: o.name,
-                                                        rules: [
-                                                            {
-                                                                required: !0,
-                                                                message:
-                                                                    '\xa1Por favor un Nombre o raz\xf3n social!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        g.default.createElement(c.default, {
-                                                            placeholder: 'Nombre o raz\xf3n social',
-                                                        })
-                                                    )
-                                                ),
-                                                g.default.createElement(
-                                                    h.default.Item,
-                                                    (0, i.default)({ hasFeedback: !0 }, E, {
-                                                        label: 'Representante',
-                                                    }),
-                                                    f('manager', { initialValue: o.manager })(
-                                                        g.default.createElement(c.default, {
-                                                            placeholder: 'Representante',
-                                                        })
-                                                    )
-                                                ),
-                                                g.default.createElement(
-                                                    h.default.Item,
-                                                    (0, i.default)({ hasFeedback: !0 }, E, {
-                                                        label: 'Email',
-                                                    }),
-                                                    f('email', {
-                                                        initialValue: o.email,
-                                                        rules: [
-                                                            {
-                                                                type: 'email',
-                                                                message:
-                                                                    '\xa1Ingrese un correo valido!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        g.default.createElement(c.default, {
-                                                            placeholder: 'Email',
-                                                        })
-                                                    )
-                                                ),
-                                                g.default.createElement(
-                                                    h.default.Item,
-                                                    (0, i.default)({ hasFeedback: !0 }, E, {
-                                                        label: 'Telefono',
-                                                    }),
-                                                    f('phone', {
-                                                        initialValue: o.phone,
-                                                        rules: [
-                                                            {
-                                                                pattern: /^[0-9]{6,12}$/,
-                                                                message:
-                                                                    '\xa1Ingrese un telefono v\xe1lido!',
-                                                            },
-                                                        ],
-                                                    })(
-                                                        g.default.createElement(c.default, {
-                                                            placeholder: 'Telefono',
-                                                        })
-                                                    )
-                                                ),
-                                                g.default.createElement(
-                                                    h.default.Item,
-                                                    (0, i.default)({ hasFeedback: !0 }, E, {
-                                                        label: 'Direcci\xf3n',
-                                                    }),
-                                                    f('address', { initialValue: o.address })(
-                                                        g.default.createElement(c.default, {
-                                                            placeholder: 'Direcci\xf3n',
-                                                        })
-                                                    )
-                                                ),
-                                                g.default.createElement(
-                                                    h.default.Item,
-                                                    (0, i.default)({ hasFeedback: !0 }, E, {
-                                                        label: 'Observaci\xf3n',
-                                                    }),
-                                                    f('observation', {
-                                                        initialValue: o.observation,
-                                                    })(
-                                                        g.default.createElement(
-                                                            c.default.TextArea,
-                                                            { placeholder: 'Observaci\xf3n' }
-                                                        )
-                                                    )
-                                                ),
-                                                g.default.createElement(
-                                                    h.default.Item,
-                                                    (0, i.default)({}, E, { label: 'Estado' }),
-                                                    f('state', {
-                                                        valuePropName: 'checked',
-                                                        initialValue: o.state,
-                                                    })(g.default.createElement(u.default, null))
-                                                )
-                                            )
-                                        );
-                                    },
-                                },
-                            ]),
-                            t
-                        );
-                    })(g.default.Component)
-                ),
-                k = (function(e) {
-                    function t(e) {
-                        var a;
-                        return (
-                            (0, f.default)(this, t),
-                            (a = (0, p.default)(this, (0, m.default)(t).call(this, e))),
-                            (a.handleConfirm = a.handleConfirm.bind(
-                                (0, o.default)((0, o.default)(a))
-                            )),
-                            (a.handleCancel = a.handleCancel.bind(
-                                (0, o.default)((0, o.default)(a))
-                            )),
-                            a
-                        );
-                    }
-                    return (
-                        (0, v.default)(t, e),
-                        (0, s.default)(t, [
-                            {
-                                key: 'handleConfirm',
-                                value: function(e) {
-                                    var t = this.props,
-                                        a = t.dispatch,
-                                        l = t.provider.currentItem,
-                                        n = this.formRef.props.form;
-                                    n.validateFields(function(t, o) {
-                                        t ||
-                                            (a({
-                                                type: 'provider/'.concat(e),
-                                                payload: (0, r.default)({}, o, { id: l.id }),
-                                            }),
-                                            n.resetFields());
-                                    });
-                                },
-                            },
-                            {
-                                key: 'handleCancel',
-                                value: function() {
-                                    var e = this.formRef.props.form;
-                                    e.resetFields();
-                                },
-                            },
-                            {
-                                key: 'render',
-                                value: function() {
-                                    var e = this,
-                                        t = this.handleConfirm,
-                                        a = this.handleCancel,
-                                        l = this.props,
-                                        n = l.dispatch,
-                                        r = l.provider,
-                                        o = l.loading,
-                                        d = r.currentItem,
-                                        u = r.modalType,
-                                        c = r.modalVisible,
-                                        f = r.validRuc,
-                                        s = {
-                                            validRuc: f,
-                                            data: 'create' == u ? { state: !0 } : d,
-                                            disabled: 'detail' == u,
-                                            type: u,
-                                            visible: c,
-                                            confirmLoading: o,
-                                            onOk: function() {
-                                                t(u);
-                                            },
-                                            onCancel: function() {
-                                                n({ type: 'provider/resetProvider' }), a();
-                                            },
-                                        };
-                                    return g.default.createElement(
-                                        b,
-                                        (0, i.default)({}, s, {
-                                            dispatch: n,
-                                            wrappedComponentRef: function(t) {
-                                                return (e.formRef = t);
-                                            },
-                                        })
-                                    );
-                                },
-                            },
-                        ]),
-                        t
-                    );
-                })(g.Component),
-                C = function(e) {
-                    var t = e.provider,
-                        a = e.loading;
-                    return {
-                        provider: t,
-                        loading: a.effects['provider/create'] || a.effects['provider/update'],
-                    };
-                },
-                I = (0, y.connect)(C)(k);
-            t.default = I;
+                k = (0, h.connect)(E)(g);
+            t.default = k;
         },
         'M/rd': function(e, t, a) {
             'use strict';
@@ -488,11 +192,11 @@
                 m = l(a('q1tI')),
                 v = a('MuoO'),
                 h = n(a('zHco')),
-                g = n(a('q4SD')),
-                y = n(a('N7xc')),
+                y = n(a('q4SD')),
+                g = n(a('N7xc')),
                 E = n(a('Ioab')),
-                b = n(a('H2Iy')),
-                k = p.default.Search,
+                k = n(a('H2Iy')),
+                x = p.default.Search,
                 C = (function(e) {
                     function t(e) {
                         var a;
@@ -585,7 +289,7 @@
                                             { bordered: !1 },
                                             m.default.createElement(
                                                 'div',
-                                                { className: g.default.header },
+                                                { className: y.default.header },
                                                 m.default.createElement(
                                                     o.default,
                                                     {
@@ -617,7 +321,7 @@
                                                     },
                                                     'Actualizar'
                                                 ),
-                                                m.default.createElement(k, {
+                                                m.default.createElement(x, {
                                                     placeholder: 'Buscar usuario',
                                                     value: f,
                                                     onChange: function(e) {
@@ -629,9 +333,9 @@
                                                     style: { width: 200 },
                                                 }),
                                                 m.default.createElement(E.default, null),
-                                                m.default.createElement(b.default, null)
+                                                m.default.createElement(k.default, null)
                                             ),
-                                            m.default.createElement(y.default, s)
+                                            m.default.createElement(g.default, s)
                                         )
                                     );
                                 },
@@ -640,14 +344,14 @@
                         t
                     );
                 })(m.Component),
-                I = function(e) {
+                b = function(e) {
                     var t = e.provider,
                         a = e.global,
                         l = e.loading;
                     return { provider: t, setting: a.setting, loading: l.effects };
                 },
-                x = (0, v.connect)(I)(C);
-            t.default = x;
+                I = (0, v.connect)(b)(C);
+            t.default = I;
         },
         N7xc: function(e, t, a) {
             'use strict';
@@ -671,10 +375,10 @@
                 m = n(a('Nsbk')),
                 v = n(a('7W2i')),
                 h = n(a('PJYZ')),
-                g = l(a('q1tI')),
-                y = (n(a('17x9')), n(a('CkN6'))),
+                y = l(a('q1tI')),
+                g = (n(a('17x9')), n(a('CkN6'))),
                 E = n(a('q4SD')),
-                b = (function(e) {
+                k = (function(e) {
                     function t(e) {
                         var a;
                         return (
@@ -719,8 +423,8 @@
                                         m = l.dataSource,
                                         v = l.loading,
                                         h = l.total,
-                                        b = l.pageSize,
-                                        k = l.current,
+                                        k = l.pageSize,
+                                        x = l.current,
                                         C = [
                                             {
                                                 title: 'RUC',
@@ -762,7 +466,7 @@
                                                 key: 'state',
                                                 width: '60px',
                                                 render: function(e, t) {
-                                                    return g.default.createElement(c.default, {
+                                                    return y.default.createElement(c.default, {
                                                         size: 'small',
                                                         checked: e.state,
                                                         onChange: function(t) {
@@ -776,13 +480,13 @@
                                                 key: 'accion',
                                                 width: '110px',
                                                 render: function(e, t) {
-                                                    return g.default.createElement(
+                                                    return y.default.createElement(
                                                         'div',
                                                         { className: E.default.actions },
-                                                        g.default.createElement(
+                                                        y.default.createElement(
                                                             u.default,
                                                             { title: 'Editar' },
-                                                            g.default.createElement(i.default, {
+                                                            y.default.createElement(i.default, {
                                                                 type: 'edit',
                                                                 className: E.default.update,
                                                                 onClick: function() {
@@ -790,10 +494,10 @@
                                                                 },
                                                             })
                                                         ),
-                                                        g.default.createElement(
+                                                        y.default.createElement(
                                                             u.default,
                                                             { title: 'Eliminar' },
-                                                            g.default.createElement(i.default, {
+                                                            y.default.createElement(i.default, {
                                                                 type: 'delete',
                                                                 className: E.default.delete,
                                                                 onClick: function() {
@@ -815,25 +519,25 @@
                                                 },
                                             },
                                         ];
-                                    return g.default.createElement(
+                                    return y.default.createElement(
                                         'div',
                                         null,
-                                        g.default.createElement(
+                                        y.default.createElement(
                                             'div',
                                             { className: E.default.table },
-                                            g.default.createElement(
+                                            y.default.createElement(
                                                 'div',
                                                 { className: E.default.tableAlert },
-                                                g.default.createElement(o.default, {
-                                                    message: g.default.createElement(
-                                                        g.Fragment,
+                                                y.default.createElement(o.default, {
+                                                    message: y.default.createElement(
+                                                        y.Fragment,
                                                         null,
-                                                        g.default.createElement(
+                                                        y.default.createElement(
                                                             'span',
                                                             null,
                                                             ''.concat(h, ' Proveedores')
                                                         ),
-                                                        g.default.createElement(
+                                                        y.default.createElement(
                                                             'a',
                                                             {
                                                                 onClick: this.clearAllFilters,
@@ -848,7 +552,7 @@
                                                     showIcon: !0,
                                                 })
                                             ),
-                                            g.default.createElement(y.default, {
+                                            y.default.createElement(g.default, {
                                                 columns: C,
                                                 dataSource: m,
                                                 loading: v,
@@ -860,12 +564,12 @@
                                                 },
                                             })
                                         ),
-                                        g.default.createElement(r.default, {
+                                        y.default.createElement(r.default, {
                                             showQuickJumper: !0,
                                             total: h,
-                                            pageSize: b,
+                                            pageSize: k,
                                             defaultCurrent: 1,
-                                            current: k,
+                                            current: x,
                                             showTotal: function(e) {
                                                 return 'Total '.concat(e, ' items');
                                             },
@@ -877,9 +581,9 @@
                         ]),
                         t
                     );
-                })(g.Component),
-                k = b;
-            t.default = k;
+                })(y.Component),
+                x = k;
+            t.default = x;
         },
         q4SD: function(e, t, a) {
             e.exports = { header: 'sn\\pages\\-provider\\index-header' };
