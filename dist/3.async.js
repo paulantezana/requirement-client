@@ -3,14 +3,14 @@
     {
         BOD2: function(e, t, a) {
             e.exports = {
-                container: 'sn\\layouts\\-user-layout-container',
-                lang: 'sn\\layouts\\-user-layout-lang',
-                content: 'sn\\layouts\\-user-layout-content',
-                top: 'sn\\layouts\\-user-layout-top',
-                header: 'sn\\layouts\\-user-layout-header',
-                logo: 'sn\\layouts\\-user-layout-logo',
-                title: 'sn\\layouts\\-user-layout-title',
-                desc: 'sn\\layouts\\-user-layout-desc',
+                container: 'sn-\\layouts\\-user-layout-container',
+                lang: 'sn-\\layouts\\-user-layout-lang',
+                content: 'sn-\\layouts\\-user-layout-content',
+                top: 'sn-\\layouts\\-user-layout-top',
+                header: 'sn-\\layouts\\-user-layout-header',
+                logo: 'sn-\\layouts\\-user-layout-logo',
+                title: 'sn-\\layouts\\-user-layout-title',
+                desc: 'sn-\\layouts\\-user-layout-desc',
             };
         },
         jH8a: function(e, t, a) {

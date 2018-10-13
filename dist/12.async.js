@@ -592,26 +592,26 @@
         },
         WDld: function(e, t, a) {
             e.exports = {
-                chartCard: 'sn\\components\\-charts\\-chart-card\\index-chartCard',
-                chartTop: 'sn\\components\\-charts\\-chart-card\\index-chartTop',
-                chartTopMargin: 'sn\\components\\-charts\\-chart-card\\index-chartTopMargin',
-                chartTopHasMargin: 'sn\\components\\-charts\\-chart-card\\index-chartTopHasMargin',
-                metaWrap: 'sn\\components\\-charts\\-chart-card\\index-metaWrap',
-                avatar: 'sn\\components\\-charts\\-chart-card\\index-avatar',
-                meta: 'sn\\components\\-charts\\-chart-card\\index-meta',
-                action: 'sn\\components\\-charts\\-chart-card\\index-action',
-                total: 'sn\\components\\-charts\\-chart-card\\index-total',
-                content: 'sn\\components\\-charts\\-chart-card\\index-content',
-                contentFixed: 'sn\\components\\-charts\\-chart-card\\index-contentFixed',
-                footer: 'sn\\components\\-charts\\-chart-card\\index-footer',
-                footerMargin: 'sn\\components\\-charts\\-chart-card\\index-footerMargin',
+                chartCard: 'sn-\\components\\-charts\\-chart-card\\index-chartCard',
+                chartTop: 'sn-\\components\\-charts\\-chart-card\\index-chartTop',
+                chartTopMargin: 'sn-\\components\\-charts\\-chart-card\\index-chartTopMargin',
+                chartTopHasMargin: 'sn-\\components\\-charts\\-chart-card\\index-chartTopHasMargin',
+                metaWrap: 'sn-\\components\\-charts\\-chart-card\\index-metaWrap',
+                avatar: 'sn-\\components\\-charts\\-chart-card\\index-avatar',
+                meta: 'sn-\\components\\-charts\\-chart-card\\index-meta',
+                action: 'sn-\\components\\-charts\\-chart-card\\index-action',
+                total: 'sn-\\components\\-charts\\-chart-card\\index-total',
+                content: 'sn-\\components\\-charts\\-chart-card\\index-content',
+                contentFixed: 'sn-\\components\\-charts\\-chart-card\\index-contentFixed',
+                footer: 'sn-\\components\\-charts\\-chart-card\\index-footer',
+                footerMargin: 'sn-\\components\\-charts\\-chart-card\\index-footerMargin',
             };
         },
         ZjCj: function(e, t, a) {
             e.exports = {
-                miniChart: 'sn\\pages\\-dashboard\\-top\\index-miniChart',
-                chartContent: 'sn\\pages\\-dashboard\\-top\\index-chartContent',
-                chartLoading: 'sn\\pages\\-dashboard\\-top\\index-chartLoading',
+                miniChart: 'sn-\\pages\\-dashboard\\-top\\index-miniChart',
+                chartContent: 'sn-\\pages\\-dashboard\\-top\\index-chartContent',
+                chartLoading: 'sn-\\pages\\-dashboard\\-top\\index-chartLoading',
             };
         },
         qyk8: function(e, t, a) {

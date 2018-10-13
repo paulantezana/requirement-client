@@ -6,7 +6,6 @@ import groupBy from 'lodash/groupBy';
 import NoticeIcon from '../NoticeIcon';
 import SelectLang from '../SelectLang';
 import styles from './index.less';
-import { service } from '@/utils/config';
 
 export default class GlobalHeaderRight extends PureComponent {
     getNoticeData() {
@@ -51,9 +50,9 @@ export default class GlobalHeaderRight extends PureComponent {
         } = this.props;
         const menu = (
             <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
-                <Menu.Item key="profile">
+                <Menu.Item key="userCenter">
                     <Icon type="user" />
-                    <FormattedMessage id="menu.account.profile" defaultMessage="Profile" />
+                    <FormattedMessage id="menu.account.profile" defaultMessage="profile" />
                 </Menu.Item>
                 <Menu.Divider />
                 <Menu.Item key="logout">
@@ -75,16 +74,19 @@ export default class GlobalHeaderRight extends PureComponent {
                         href="https://paulantezana.com"
                         rel="noopener noreferrer"
                         className={styles.action}
-                        title="{ formatMessage({id: 'component.globalHeader.help'}) }"
                     >
                         <Icon type="question-circle-o" />
                     </a>
                 </Tooltip>
-                {/* <NoticeIcon
+                <NoticeIcon
                     className={styles.action}
                     count={currentUser.notifyCount}
                     onItemClick={(item, tabProps) => {
                         console.log(item, tabProps); // eslint-disable-line
+                    }}
+                    locale={{
+                        emptyText: formatMessage({ id: 'component.noticeIcon.empty' }),
+                        clear: formatMessage({ id: 'component.noticeIcon.clear' }),
                     }}
                     onClear={onNoticeClear}
                     onPopupVisibleChange={onNoticeVisibleChange}
@@ -100,21 +102,28 @@ export default class GlobalHeaderRight extends PureComponent {
                         })}
                         emptyImage="https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg"
                     />
-                    <NoticeIcon.Tab
-                        list={noticeData.message}
-                        title={formatMessage({ id: 'component.globalHeader.message' })}
-                        name="message"
-                        emptyText={formatMessage({ id: 'component.globalHeader.message.empty' })}
-                        emptyImage="https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg"
-                    />
-                </NoticeIcon> */}
+                    {/* <NoticeIcon.Tab
+            list={noticeData.message}
+            title={formatMessage({ id: 'component.globalHeader.message' })}
+            name="message"
+            emptyText={formatMessage({ id: 'component.globalHeader.message.empty' })}
+            emptyImage="https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg"
+          />
+          <NoticeIcon.Tab
+            list={noticeData.event}
+            title={formatMessage({ id: 'component.globalHeader.event' })}
+            name="event"
+            emptyText={formatMessage({ id: 'component.globalHeader.event.empty' })}
+            emptyImage="https://gw.alipayobjects.com/zos/rmsportal/HsIsxMZiWKrNUavQUXqx.svg"
+          /> */}
+                </NoticeIcon>
                 {currentUser.user_name ? (
                     <Dropdown overlay={menu}>
                         <span className={`${styles.action} ${styles.account}`}>
                             <Avatar
                                 size="small"
                                 className={styles.avatar}
-                                src={`${service.path}/${currentUser.avatar}`}
+                                src={currentUser.avatar}
                                 alt="avatar"
                             />
                             <span className={styles.name}>{currentUser.user_name}</span>

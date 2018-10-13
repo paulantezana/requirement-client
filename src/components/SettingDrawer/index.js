@@ -224,7 +224,6 @@ class SettingDrawer extends PureComponent {
                             {formatMessage({ id: 'app.setting.weakmode' })}
                         </List.Item>
                     </Body>
-                    <Divider />
                 </div>
             </Drawer>
         );

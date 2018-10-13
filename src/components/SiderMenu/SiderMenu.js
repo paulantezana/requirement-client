@@ -111,7 +111,7 @@ export default class SiderMenu extends PureComponent {
                 <div className={styles.logo} id="logo">
                     <Link to="/">
                         <img src={logo} alt="logo" />
-                        <h1>RQM WebApp</h1>
+                        <h1>RQM System</h1>
                     </Link>
                 </div>
                 <BaseMenu
@@ -119,7 +119,7 @@ export default class SiderMenu extends PureComponent {
                     mode="inline"
                     handleOpenChange={this.handleOpenChange}
                     onOpenChange={this.handleOpenChange}
-                    style={{ padding: '16px 0', width: '100%' }}
+                    style={{ padding: '16px 0', width: '100%', overflowX: 'hidden' }}
                     {...defaultProps}
                 />
             </Sider>

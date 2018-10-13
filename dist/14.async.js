@@ -65,7 +65,7 @@
         },
         '4OMY': function(e, t, a) {
             e.exports = {
-                editing: 'sn\\pages\\-quotation\\-form\\-quotation-detail\\index-editing',
+                editing: 'sn-\\pages\\-quotation\\-form\\-quotation-detail\\index-editing',
             };
         },
         BRgM: function(e, t, a) {},
@@ -919,18 +919,18 @@
         },
         R7w7: function(e, t, a) {
             e.exports = {
-                table: 'sn\\pages\\-quotation\\-list\\index-table',
-                tableAlert: 'sn\\pages\\-quotation\\-list\\index-tableAlert',
-                actions: 'sn\\pages\\-quotation\\-list\\index-actions',
-                delete: 'sn\\pages\\-quotation\\-list\\index-delete',
-                update: 'sn\\pages\\-quotation\\-list\\index-update',
-                onWinner1: 'sn\\pages\\-quotation\\-list\\index-onWinner1',
-                onWinner2: 'sn\\pages\\-quotation\\-list\\index-onWinner2',
-                onWinner3: 'sn\\pages\\-quotation\\-list\\index-onWinner3',
+                table: 'sn-\\pages\\-quotation\\-list\\index-table',
+                tableAlert: 'sn-\\pages\\-quotation\\-list\\index-tableAlert',
+                actions: 'sn-\\pages\\-quotation\\-list\\index-actions',
+                delete: 'sn-\\pages\\-quotation\\-list\\index-delete',
+                update: 'sn-\\pages\\-quotation\\-list\\index-update',
+                onWinner1: 'sn-\\pages\\-quotation\\-list\\index-onWinner1',
+                onWinner2: 'sn-\\pages\\-quotation\\-list\\index-onWinner2',
+                onWinner3: 'sn-\\pages\\-quotation\\-list\\index-onWinner3',
             };
         },
         'SYP/': function(e, t, a) {
-            e.exports = { header: 'sn\\pages\\-quotation\\-viwer-c-c\\index-header' };
+            e.exports = { header: 'sn-\\pages\\-quotation\\-viwer-c-c\\index-header' };
         },
         'd5+N': function(e, t, a) {
             'use strict';
@@ -951,7 +951,7 @@
             a('Pwec');
             var m = l(a('CtXQ')),
                 v = n(a('q1tI')),
-                h = (l(a('17x9')), l(a('CkN6'))),
+                h = l(a('CkN6')),
                 y = l(a('R7w7')),
                 E = function(e) {
                     var t = e.total,
@@ -2075,20 +2075,20 @@
         },
         'v/1x': function(e, t, a) {
             e.exports = {
-                search: 'sn\\pages\\-quotation\\-form\\index-search',
-                item: 'sn\\pages\\-quotation\\-form\\index-item',
-                hidden: 'sn\\pages\\-quotation\\-form\\index-hidden',
+                search: 'sn-\\pages\\-quotation\\-form\\index-search',
+                item: 'sn-\\pages\\-quotation\\-form\\index-item',
+                hidden: 'sn-\\pages\\-quotation\\-form\\index-hidden',
             };
         },
         xNcC: function(e, t, a) {
             e.exports = {
-                header: 'sn\\pages\\-quotation\\index-header',
-                check: 'sn\\pages\\-quotation\\index-check',
-                process: 'sn\\pages\\-quotation\\index-process',
-                rejected: 'sn\\pages\\-quotation\\index-rejected',
-                accepted: 'sn\\pages\\-quotation\\index-accepted',
-                expired: 'sn\\pages\\-quotation\\index-expired',
-                close: 'sn\\pages\\-quotation\\index-close',
+                header: 'sn-\\pages\\-quotation\\index-header',
+                check: 'sn-\\pages\\-quotation\\index-check',
+                process: 'sn-\\pages\\-quotation\\index-process',
+                rejected: 'sn-\\pages\\-quotation\\index-rejected',
+                accepted: 'sn-\\pages\\-quotation\\index-accepted',
+                expired: 'sn-\\pages\\-quotation\\index-expired',
+                close: 'sn-\\pages\\-quotation\\index-close',
             };
         },
     },

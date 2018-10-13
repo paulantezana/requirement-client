@@ -586,7 +586,7 @@
             t.default = x;
         },
         q4SD: function(e, t, a) {
-            e.exports = { header: 'sn\\pages\\-provider\\index-header' };
+            e.exports = { header: 'sn-\\pages\\-provider\\index-header' };
         },
     },
 ]);

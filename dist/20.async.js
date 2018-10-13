@@ -313,9 +313,9 @@
         },
         KEOF: function(e, a, t) {
             e.exports = {
-                avatar_title: 'sn\\pages\\-user\\-profile\\avatar-avatar_title',
-                avatar: 'sn\\pages\\-user\\-profile\\avatar-avatar',
-                button_view: 'sn\\pages\\-user\\-profile\\avatar-button_view',
+                avatar_title: 'sn-\\pages\\-user\\-profile\\avatar-avatar_title',
+                avatar: 'sn-\\pages\\-user\\-profile\\avatar-avatar',
+                button_view: 'sn-\\pages\\-user\\-profile\\avatar-button_view',
             };
         },
         Nm0y: function(e, a, t) {

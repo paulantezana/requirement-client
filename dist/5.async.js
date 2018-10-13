@@ -3,8 +3,8 @@
     {
         '2HGp': function(e, t, a) {
             e.exports = {
-                form: 'sn\\pages\\-user\\-login\\index-form',
-                forgot: 'sn\\pages\\-user\\-login\\index-forgot',
+                form: 'sn-\\pages\\-user\\-login\\index-form',
+                forgot: 'sn-\\pages\\-user\\-login\\index-forgot',
             };
         },
         '6T+2': function(e, t, a) {

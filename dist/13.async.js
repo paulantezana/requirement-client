@@ -1304,18 +1304,18 @@
         },
         YYmh: function(e, t, a) {
             e.exports = {
-                search: 'sn\\pages\\-requirement\\-form\\-form-add-product\\index-search',
-                item: 'sn\\pages\\-requirement\\-form\\-form-add-product\\index-item',
-                hidden: 'sn\\pages\\-requirement\\-form\\-form-add-product\\index-hidden',
+                search: 'sn-\\pages\\-requirement\\-form\\-form-add-product\\index-search',
+                item: 'sn-\\pages\\-requirement\\-form\\-form-add-product\\index-item',
+                hidden: 'sn-\\pages\\-requirement\\-form\\-form-add-product\\index-hidden',
             };
         },
         YorV: function(e, t, a) {
             e.exports = {
-                table: 'sn\\pages\\-requirement\\-form\\-list\\index-table',
-                tableAlert: 'sn\\pages\\-requirement\\-form\\-list\\index-tableAlert',
-                actions: 'sn\\pages\\-requirement\\-form\\-list\\index-actions',
-                delete: 'sn\\pages\\-requirement\\-form\\-list\\index-delete',
-                update: 'sn\\pages\\-requirement\\-form\\-list\\index-update',
+                table: 'sn-\\pages\\-requirement\\-form\\-list\\index-table',
+                tableAlert: 'sn-\\pages\\-requirement\\-form\\-list\\index-tableAlert',
+                actions: 'sn-\\pages\\-requirement\\-form\\-list\\index-actions',
+                delete: 'sn-\\pages\\-requirement\\-form\\-list\\index-delete',
+                update: 'sn-\\pages\\-requirement\\-form\\-list\\index-update',
             };
         },
         gCjn: function(e, t, a) {
@@ -1671,24 +1671,24 @@
         },
         rk3I: function(e, t, a) {
             e.exports = {
-                table: 'sn\\pages\\-requirement\\-list\\index-table',
-                tableAlert: 'sn\\pages\\-requirement\\-list\\index-tableAlert',
-                actions: 'sn\\pages\\-requirement\\-list\\index-actions',
-                delete: 'sn\\pages\\-requirement\\-list\\index-delete',
-                duplicate: 'sn\\pages\\-requirement\\-list\\index-duplicate',
-                printer: 'sn\\pages\\-requirement\\-list\\index-printer',
-                quote: 'sn\\pages\\-requirement\\-list\\index-quote',
-                update: 'sn\\pages\\-requirement\\-list\\index-update',
-                check: 'sn\\pages\\-requirement\\-list\\index-check',
-                process: 'sn\\pages\\-requirement\\-list\\index-process',
-                rejected: 'sn\\pages\\-requirement\\-list\\index-rejected',
-                accepted: 'sn\\pages\\-requirement\\-list\\index-accepted',
-                expired: 'sn\\pages\\-requirement\\-list\\index-expired',
-                close: 'sn\\pages\\-requirement\\-list\\index-close',
+                table: 'sn-\\pages\\-requirement\\-list\\index-table',
+                tableAlert: 'sn-\\pages\\-requirement\\-list\\index-tableAlert',
+                actions: 'sn-\\pages\\-requirement\\-list\\index-actions',
+                delete: 'sn-\\pages\\-requirement\\-list\\index-delete',
+                duplicate: 'sn-\\pages\\-requirement\\-list\\index-duplicate',
+                printer: 'sn-\\pages\\-requirement\\-list\\index-printer',
+                quote: 'sn-\\pages\\-requirement\\-list\\index-quote',
+                update: 'sn-\\pages\\-requirement\\-list\\index-update',
+                check: 'sn-\\pages\\-requirement\\-list\\index-check',
+                process: 'sn-\\pages\\-requirement\\-list\\index-process',
+                rejected: 'sn-\\pages\\-requirement\\-list\\index-rejected',
+                accepted: 'sn-\\pages\\-requirement\\-list\\index-accepted',
+                expired: 'sn-\\pages\\-requirement\\-list\\index-expired',
+                close: 'sn-\\pages\\-requirement\\-list\\index-close',
             };
         },
         wIe2: function(e, t, a) {
-            e.exports = { header: 'sn\\pages\\-requirement\\index-header' };
+            e.exports = { header: 'sn-\\pages\\-requirement\\index-header' };
         },
         wqf9: function(e, t, a) {
             'use strict';

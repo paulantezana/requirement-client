@@ -123,8 +123,8 @@
         },
         SWs1: function(e, t, a) {
             e.exports = {
-                submit: 'sn\\pages\\-user\\-forgot\\index-submit',
-                container: 'sn\\pages\\-user\\-forgot\\index-container',
+                submit: 'sn-\\pages\\-user\\-forgot\\index-submit',
+                container: 'sn-\\pages\\-user\\-forgot\\index-container',
             };
         },
         Tqt7: function(e, t, a) {

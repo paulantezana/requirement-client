@@ -3,9 +3,9 @@
     {
         '4Ofr': function(e, t, a) {
             e.exports = {
-                themeColor: 'sn\\components\\-setting-drawer\\-theme-color-themeColor',
-                title: 'sn\\components\\-setting-drawer\\-theme-color-title',
-                colorBlock: 'sn\\components\\-setting-drawer\\-theme-color-colorBlock',
+                themeColor: 'sn-\\components\\-setting-drawer\\-theme-color-themeColor',
+                title: 'sn-\\components\\-setting-drawer\\-theme-color-title',
+                colorBlock: 'sn-\\components\\-setting-drawer\\-theme-color-colorBlock',
             };
         },
         '8TWP': function(e, t, a) {
@@ -29,12 +29,11 @@
             a('Znn+');
             var h = l(a('ZTPi')),
                 g = n(a('q1tI')),
-                v = a('LLXN'),
-                y = l(a('TSYQ')),
-                b = l(a('SlZz')),
-                E = l(a('btmg')),
-                k = h.default.TabPane,
-                M = (function(e) {
+                v = l(a('TSYQ')),
+                y = l(a('SlZz')),
+                b = l(a('btmg')),
+                E = h.default.TabPane,
+                k = (function(e) {
                     function t() {
                         var e, a;
                         (0, s.default)(this, t);
@@ -77,10 +76,10 @@
                                                       .concat(t.props.list.length, ')')
                                                 : t.props.title;
                                         return g.default.createElement(
-                                            k,
+                                            E,
                                             { tab: a, key: t.props.name },
                                             g.default.createElement(
-                                                b.default,
+                                                y.default,
                                                 (0, c.default)({}, t.props, {
                                                     data: t.props.list,
                                                     onClick: function(a) {
@@ -101,7 +100,7 @@
                                         g.default.createElement(
                                             h.default,
                                             {
-                                                className: E.default.tabs,
+                                                className: b.default.tabs,
                                                 onChange: this.onTabChange,
                                             },
                                             r
@@ -119,13 +118,13 @@
                                         l = e.popupVisible,
                                         u = e.onPopupVisibleChange,
                                         s = e.bell,
-                                        d = (0, y.default)(t, E.default.noticeButton),
+                                        d = (0, v.default)(t, b.default.noticeButton),
                                         f = this.getNotificationBox(),
                                         m =
                                             s ||
                                             g.default.createElement(i.default, {
                                                 type: 'bell',
-                                                className: E.default.icon,
+                                                className: b.default.icon,
                                             }),
                                         p = g.default.createElement(
                                             'span',
@@ -135,7 +134,7 @@
                                                 {
                                                     count: a,
                                                     style: { boxShadow: 'none' },
-                                                    className: E.default.badge,
+                                                    className: b.default.badge,
                                                 },
                                                 m
                                             )
@@ -150,7 +149,7 @@
                                                 {
                                                     placement: 'bottomRight',
                                                     content: f,
-                                                    popupClassName: E.default.popover,
+                                                    popupClassName: b.default.popover,
                                                     trigger: 'click',
                                                     arrowPointAtCenter: !0,
                                                     popupAlign: n,
@@ -167,18 +166,15 @@
                         t
                     );
                 })(g.PureComponent);
-            (t.default = M),
-                (M.Tab = k),
-                (M.defaultProps = {
+            (t.default = k),
+                (k.Tab = E),
+                (k.defaultProps = {
                     onItemClick: function() {},
                     onPopupVisibleChange: function() {},
                     onTabChange: function() {},
                     onClear: function() {},
                     loading: !1,
-                    locale: {
-                        emptyText: (0, v.formatMessage)({ id: 'component.noticeIcon.empty' }),
-                        clear: (0, v.formatMessage)({ id: 'component.noticeIcon.clear' }),
-                    },
+                    locale: { emptyText: 'No notifications', clear: 'Clear' },
                     emptyImage:
                         'https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg',
                 });
@@ -305,7 +301,7 @@
                                                     src: a,
                                                     alt: 'logo',
                                                 }),
-                                                p.default.createElement('h1', null, 'RQM WebApp')
+                                                p.default.createElement('h1', null, 'RQM System')
                                             )
                                         ),
                                         p.default.createElement(
@@ -317,7 +313,11 @@
                                                     mode: 'inline',
                                                     handleOpenChange: this.handleOpenChange,
                                                     onOpenChange: this.handleOpenChange,
-                                                    style: { padding: '16px 0', width: '100%' },
+                                                    style: {
+                                                        padding: '16px 0',
+                                                        width: '100%',
+                                                        overflowX: 'hidden',
+                                                    },
                                                 },
                                                 s
                                             )
@@ -345,34 +345,34 @@
         },
         BFsb: function(e, t, a) {
             e.exports = {
-                content: 'sn\\components\\-setting-drawer\\index-content',
-                blockChecbox: 'sn\\components\\-setting-drawer\\index-blockChecbox',
-                item: 'sn\\components\\-setting-drawer\\index-item',
-                selectIcon: 'sn\\components\\-setting-drawer\\index-selectIcon',
-                color_block: 'sn\\components\\-setting-drawer\\index-color_block',
-                title: 'sn\\components\\-setting-drawer\\index-title',
-                handle: 'sn\\components\\-setting-drawer\\index-handle',
-                productionHint: 'sn\\components\\-setting-drawer\\index-productionHint',
+                content: 'sn-\\components\\-setting-drawer\\index-content',
+                blockChecbox: 'sn-\\components\\-setting-drawer\\index-blockChecbox',
+                item: 'sn-\\components\\-setting-drawer\\index-item',
+                selectIcon: 'sn-\\components\\-setting-drawer\\index-selectIcon',
+                color_block: 'sn-\\components\\-setting-drawer\\index-color_block',
+                title: 'sn-\\components\\-setting-drawer\\index-title',
+                handle: 'sn-\\components\\-setting-drawer\\index-handle',
+                productionHint: 'sn-\\components\\-setting-drawer\\index-productionHint',
             };
         },
         BsfW: function(e, t, a) {
             e.exports = {
-                list: 'sn\\components\\-notice-icon\\-notice-list-list',
-                item: 'sn\\components\\-notice-icon\\-notice-list-item',
-                meta: 'sn\\components\\-notice-icon\\-notice-list-meta',
-                avatar: 'sn\\components\\-notice-icon\\-notice-list-avatar',
-                iconElement: 'sn\\components\\-notice-icon\\-notice-list-iconElement',
-                read: 'sn\\components\\-notice-icon\\-notice-list-read',
-                title: 'sn\\components\\-notice-icon\\-notice-list-title',
-                description: 'sn\\components\\-notice-icon\\-notice-list-description',
-                datetime: 'sn\\components\\-notice-icon\\-notice-list-datetime',
-                extra: 'sn\\components\\-notice-icon\\-notice-list-extra',
-                notFound: 'sn\\components\\-notice-icon\\-notice-list-notFound',
-                clear: 'sn\\components\\-notice-icon\\-notice-list-clear',
+                list: 'sn-\\components\\-notice-icon\\-notice-list-list',
+                item: 'sn-\\components\\-notice-icon\\-notice-list-item',
+                meta: 'sn-\\components\\-notice-icon\\-notice-list-meta',
+                avatar: 'sn-\\components\\-notice-icon\\-notice-list-avatar',
+                iconElement: 'sn-\\components\\-notice-icon\\-notice-list-iconElement',
+                read: 'sn-\\components\\-notice-icon\\-notice-list-read',
+                title: 'sn-\\components\\-notice-icon\\-notice-list-title',
+                description: 'sn-\\components\\-notice-icon\\-notice-list-description',
+                datetime: 'sn-\\components\\-notice-icon\\-notice-list-datetime',
+                extra: 'sn-\\components\\-notice-icon\\-notice-list-extra',
+                notFound: 'sn-\\components\\-notice-icon\\-notice-list-notFound',
+                clear: 'sn-\\components\\-notice-icon\\-notice-list-clear',
             };
         },
         IGtV: function(e, t, a) {
-            e.exports = { fixedHeader: 'sn\\layouts\\-header-fixedHeader' };
+            e.exports = { fixedHeader: 'sn-\\layouts\\-header-fixedHeader' };
         },
         IamK: function(e, t, a) {
             'use strict';
@@ -423,13 +423,13 @@
         },
         JwhZ: function(e, t, a) {
             e.exports = {
-                head: 'sn\\components\\-top-nav-header\\index-head',
-                light: 'sn\\components\\-top-nav-header\\index-light',
-                main: 'sn\\components\\-top-nav-header\\index-main',
-                wide: 'sn\\components\\-top-nav-header\\index-wide',
-                left: 'sn\\components\\-top-nav-header\\index-left',
-                right: 'sn\\components\\-top-nav-header\\index-right',
-                logo: 'sn\\components\\-top-nav-header\\index-logo',
+                head: 'sn-\\components\\-top-nav-header\\index-head',
+                light: 'sn-\\components\\-top-nav-header\\index-light',
+                main: 'sn-\\components\\-top-nav-header\\index-main',
+                wide: 'sn-\\components\\-top-nav-header\\index-wide',
+                left: 'sn-\\components\\-top-nav-header\\index-left',
+                right: 'sn-\\components\\-top-nav-header\\index-right',
+                logo: 'sn-\\components\\-top-nav-header\\index-logo',
             };
         },
         NtFa: function(e, t, a) {
@@ -505,7 +505,7 @@
                                                 p.default.createElement('img', {
                                                     src: n,
                                                     alt: 'logo',
-                                                    width: '32',
+                                                    width: '24',
                                                 })
                                             ),
                                         p.default.createElement(i.default, {
@@ -861,8 +861,7 @@
                                                             id: 'app.setting.weakmode',
                                                         })
                                                     )
-                                                ),
-                                                E.default.createElement(r.default, null)
+                                                )
                                             )
                                         );
                                     },
@@ -1130,9 +1129,9 @@
                 b = a('LLXN'),
                 E = l(a('wd/R')),
                 k = l(a('bt/X')),
-                M = (l(a('8TWP')), l(a('bfXr'))),
-                C = l(a('h3zL')),
-                x = a('Aeqt'),
+                M = l(a('8TWP')),
+                C = l(a('bfXr')),
+                x = l(a('h3zL')),
                 N = (function(e) {
                     function t() {
                         return (
@@ -1179,26 +1178,27 @@
                                 value: function() {
                                     var e = this.props,
                                         t = e.currentUser,
-                                        a = (e.fetchingNotices,
-                                        e.onNoticeVisibleChange,
-                                        e.onMenuClick),
-                                        n = (e.onNoticeClear, e.theme),
-                                        l = y.default.createElement(
+                                        a = e.fetchingNotices,
+                                        n = e.onNoticeVisibleChange,
+                                        l = e.onMenuClick,
+                                        d = e.onNoticeClear,
+                                        f = e.theme,
+                                        m = y.default.createElement(
                                             c.default,
                                             {
-                                                className: C.default.menu,
+                                                className: x.default.menu,
                                                 selectedKeys: [],
-                                                onClick: a,
+                                                onClick: l,
                                             },
                                             y.default.createElement(
                                                 c.default.Item,
-                                                { key: 'profile' },
+                                                { key: 'userCenter' },
                                                 y.default.createElement(s.default, {
                                                     type: 'user',
                                                 }),
                                                 y.default.createElement(b.FormattedMessage, {
                                                     id: 'menu.account.profile',
-                                                    defaultMessage: 'Profile',
+                                                    defaultMessage: 'profile',
                                                 })
                                             ),
                                             y.default.createElement(c.default.Divider, null),
@@ -1214,15 +1214,16 @@
                                                 })
                                             )
                                         ),
-                                        d = (this.getNoticeData(), C.default.right);
+                                        p = this.getNoticeData(),
+                                        h = x.default.right;
                                     return (
-                                        'dark' === n &&
-                                            (d = ''
-                                                .concat(C.default.right, '  ')
-                                                .concat(C.default.dark)),
+                                        'dark' === f &&
+                                            (h = ''
+                                                .concat(x.default.right, '  ')
+                                                .concat(x.default.dark)),
                                         y.default.createElement(
                                             'div',
-                                            { className: d },
+                                            { className: h },
                                             y.default.createElement(
                                                 u.default,
                                                 {
@@ -1236,37 +1237,68 @@
                                                         target: '_blank',
                                                         href: 'https://paulantezana.com',
                                                         rel: 'noopener noreferrer',
-                                                        className: C.default.action,
-                                                        title:
-                                                            "{ formatMessage({id: 'component.globalHeader.help'}) }",
+                                                        className: x.default.action,
                                                     },
                                                     y.default.createElement(s.default, {
                                                         type: 'question-circle-o',
                                                     })
                                                 )
                                             ),
+                                            y.default.createElement(
+                                                M.default,
+                                                {
+                                                    className: x.default.action,
+                                                    count: t.notifyCount,
+                                                    onItemClick: function(e, t) {
+                                                        console.log(e, t);
+                                                    },
+                                                    locale: {
+                                                        emptyText: (0, b.formatMessage)({
+                                                            id: 'component.noticeIcon.empty',
+                                                        }),
+                                                        clear: (0, b.formatMessage)({
+                                                            id: 'component.noticeIcon.clear',
+                                                        }),
+                                                    },
+                                                    onClear: d,
+                                                    onPopupVisibleChange: n,
+                                                    loading: a,
+                                                    popupAlign: { offset: [20, -16] },
+                                                },
+                                                y.default.createElement(M.default.Tab, {
+                                                    list: p.notification,
+                                                    title: (0, b.formatMessage)({
+                                                        id: 'component.globalHeader.notification',
+                                                    }),
+                                                    name: 'notification',
+                                                    emptyText: (0, b.formatMessage)({
+                                                        id:
+                                                            'component.globalHeader.notification.empty',
+                                                    }),
+                                                    emptyImage:
+                                                        'https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg',
+                                                })
+                                            ),
                                             t.user_name
                                                 ? y.default.createElement(
                                                       r.default,
-                                                      { overlay: l },
+                                                      { overlay: m },
                                                       y.default.createElement(
                                                           'span',
                                                           {
                                                               className: ''
-                                                                  .concat(C.default.action, ' ')
-                                                                  .concat(C.default.account),
+                                                                  .concat(x.default.action, ' ')
+                                                                  .concat(x.default.account),
                                                           },
                                                           y.default.createElement(i.default, {
                                                               size: 'small',
-                                                              className: C.default.avatar,
-                                                              src: ''
-                                                                  .concat(x.service.path, '/')
-                                                                  .concat(t.avatar),
+                                                              className: x.default.avatar,
+                                                              src: t.avatar,
                                                               alt: 'avatar',
                                                           }),
                                                           y.default.createElement(
                                                               'span',
-                                                              { className: C.default.name },
+                                                              { className: x.default.name },
                                                               t.user_name
                                                           )
                                                       )
@@ -1275,8 +1307,8 @@
                                                       size: 'small',
                                                       style: { marginLeft: 8, marginRight: 8 },
                                                   }),
-                                            y.default.createElement(M.default, {
-                                                className: C.default.action,
+                                            y.default.createElement(C.default, {
+                                                className: x.default.action,
                                             })
                                         )
                                     );
@@ -1290,10 +1322,10 @@
         },
         btmg: function(e, t, a) {
             e.exports = {
-                popover: 'sn\\components\\-notice-icon\\index-popover',
-                noticeButton: 'sn\\components\\-notice-icon\\index-noticeButton',
-                icon: 'sn\\components\\-notice-icon\\index-icon',
-                tabs: 'sn\\components\\-notice-icon\\index-tabs',
+                popover: 'sn-\\components\\-notice-icon\\index-popover',
+                noticeButton: 'sn-\\components\\-notice-icon\\index-noticeButton',
+                icon: 'sn-\\components\\-notice-icon\\index-icon',
+                tabs: 'sn-\\components\\-notice-icon\\index-tabs',
             };
         },
         ctiy: function(e, t, a) {
@@ -1587,17 +1619,17 @@
         },
         h3zL: function(e, t, a) {
             e.exports = {
-                header: 'sn\\components\\-global-header\\index-header',
-                logo: 'sn\\components\\-global-header\\index-logo',
-                menu: 'sn\\components\\-global-header\\index-menu',
-                trigger: 'sn\\components\\-global-header\\index-trigger',
-                right: 'sn\\components\\-global-header\\index-right',
-                action: 'sn\\components\\-global-header\\index-action',
-                search: 'sn\\components\\-global-header\\index-search',
-                account: 'sn\\components\\-global-header\\index-account',
-                avatar: 'sn\\components\\-global-header\\index-avatar',
-                dark: 'sn\\components\\-global-header\\index-dark',
-                name: 'sn\\components\\-global-header\\index-name',
+                header: 'sn-\\components\\-global-header\\index-header',
+                logo: 'sn-\\components\\-global-header\\index-logo',
+                menu: 'sn-\\components\\-global-header\\index-menu',
+                trigger: 'sn-\\components\\-global-header\\index-trigger',
+                right: 'sn-\\components\\-global-header\\index-right',
+                action: 'sn-\\components\\-global-header\\index-action',
+                search: 'sn-\\components\\-global-header\\index-search',
+                account: 'sn-\\components\\-global-header\\index-account',
+                avatar: 'sn-\\components\\-global-header\\index-avatar',
+                dark: 'sn-\\components\\-global-header\\index-dark',
+                name: 'sn-\\components\\-global-header\\index-name',
             };
         },
         m8Tn: function(e, t, a) {
@@ -1630,27 +1662,38 @@
                 w = n(a('ctiy')),
                 P = n(a('R1Dz')),
                 S = n(a('wOmh')),
-                T = (n(a('xqX8')), d.default.Content);
-            function W(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : '',
-                    a = arguments.length > 2 ? arguments[2] : void 0,
-                    n = arguments.length > 3 ? arguments[3] : void 0;
-                return e.map(function(e) {
-                    var l = 'menu';
-                    n && e.name
-                        ? (l = ''.concat(n, '.').concat(e.name))
-                        : e.name
-                            ? (l = 'menu.'.concat(e.name))
-                            : n && (l = n);
-                    var o = (0, s.default)({}, e, { locale: l, authority: e.authority || a });
-                    if (e.routes) {
-                        var r = W(e.routes, ''.concat(t).concat(e.path, '/'), e.authority, l);
-                        o.children = r;
-                    }
-                    return delete o.routes, o;
-                });
+                T = (a('PENG'), n(a('xqX8'))),
+                I = d.default.Content;
+            function W(e, t, a) {
+                return e
+                    .map(function(e) {
+                        var n = 'menu';
+                        if (
+                            (a && e.name
+                                ? (n = ''.concat(a, '.').concat(e.name))
+                                : e.name
+                                    ? (n = 'menu.'.concat(e.name))
+                                    : a && (n = a),
+                            e.path)
+                        ) {
+                            var l = (0, s.default)({}, e, {
+                                locale: n,
+                                authority: e.authority || t,
+                            });
+                            if (e.routes) {
+                                var o = W(e.routes, e.authority, n);
+                                l.children = o;
+                            }
+                            return delete l.routes, l;
+                        }
+                        return null;
+                    })
+                    .filter(function(e) {
+                        return e;
+                    });
             }
-            var I = {
+            var O = (0, h.default)(W, p.default),
+                q = {
                     'screen-xs': { maxWidth: 575 },
                     'screen-sm': { minWidth: 576, maxWidth: 767 },
                     'screen-md': { minWidth: 768, maxWidth: 991 },
@@ -1658,12 +1701,13 @@
                     'screen-xl': { minWidth: 1200, maxWidth: 1599 },
                     'screen-xxl': { minWidth: 1600 },
                 },
-                O = (function(e) {
+                F = (function(e) {
                     function t(e) {
                         var a;
                         return (
                             (0, o.default)(this, t),
                             (a = (0, i.default)(this, (0, u.default)(t).call(this, e))),
+                            (a.state = { rendering: !0, isMobile: !1, menuData: a.getMenuData() }),
                             (a.matchParamsPath = function(e) {
                                 var t = Object.keys(a.breadcrumbNameMap).find(function(t) {
                                     return (0, b.default)(t).test(e);
@@ -1672,12 +1716,12 @@
                             }),
                             (a.getPageTitle = function(e) {
                                 var t = a.matchParamsPath(e);
-                                if (!t) return 'RQM WebApp';
+                                if (!t) return 'RQM System';
                                 var n = (0, k.formatMessage)({
                                     id: t.locale || t.name,
                                     defaultMessage: t.name,
                                 });
-                                return ''.concat(n, ' - RQM WebApp');
+                                return ''.concat(n, ' - RQM System');
                             }),
                             (a.getLayoutStyle = function() {
                                 var e = a.state.isMobile,
@@ -1697,7 +1741,6 @@
                                 var t = a.props.dispatch;
                                 t({ type: 'global/changeLayoutCollapsed', payload: e });
                             }),
-                            (a.state = { rendering: !0, isMobile: !1 }),
                             (a.getPageTitle = (0, h.default)(a.getPageTitle)),
                             (a.getBreadcrumbNameMap = (0, h.default)(
                                 a.getBreadcrumbNameMap,
@@ -1757,7 +1800,7 @@
                                 key: 'getMenuData',
                                 value: function() {
                                     var e = this.props.route.routes;
-                                    return W(e);
+                                    return O(e);
                                 },
                             },
                             {
@@ -1787,79 +1830,84 @@
                                         a = t.navTheme,
                                         n = t.layout,
                                         o = t.children,
-                                        r = t.location.pathname,
-                                        i = this.state.isMobile,
-                                        u = 'topmenu' === n,
-                                        c = this.getMenuData(),
-                                        p = this.matchParamsPath(r),
-                                        h = f.default.createElement(
-                                            d.default,
-                                            null,
-                                            u && !i
-                                                ? null
-                                                : f.default.createElement(
-                                                      M.default,
-                                                      (0, l.default)(
-                                                          {
-                                                              logo: x.default,
-                                                              Authorized: C.default,
-                                                              theme: a,
-                                                              onCollapse: this.handleMenuCollapse,
-                                                              menuData: c,
-                                                              isMobile: i,
-                                                          },
-                                                          this.props
-                                                      )
-                                                  ),
-                                            f.default.createElement(
-                                                d.default,
-                                                {
-                                                    style: (0, s.default)(
-                                                        {},
-                                                        this.getLayoutStyle(),
-                                                        { minHeight: '100vh' }
-                                                    ),
-                                                },
-                                                f.default.createElement(
-                                                    w.default,
-                                                    (0, l.default)(
-                                                        {
-                                                            menuData: c,
-                                                            handleMenuCollapse: this
-                                                                .handleMenuCollapse,
-                                                            logo: x.default,
-                                                            isMobile: i,
-                                                        },
-                                                        this.props
-                                                    )
-                                                ),
-                                                f.default.createElement(
-                                                    T,
-                                                    { style: this.getContentStyle() },
-                                                    f.default.createElement(
-                                                        C.default,
-                                                        {
-                                                            authority: p.authority,
-                                                            noMatch: f.default.createElement(
-                                                                S.default,
-                                                                null
-                                                            ),
-                                                        },
-                                                        o
-                                                    )
-                                                ),
-                                                f.default.createElement(N.default, null)
-                                            )
-                                        );
+                                        r = t.completed,
+                                        i = t.location.pathname,
+                                        u = this.state,
+                                        c = u.isMobile,
+                                        p = u.menuData,
+                                        h = 'topmenu' === n,
+                                        g = this.matchParamsPath(i),
+                                        b = r
+                                            ? f.default.createElement(
+                                                  d.default,
+                                                  null,
+                                                  h && !c
+                                                      ? null
+                                                      : f.default.createElement(
+                                                            M.default,
+                                                            (0, l.default)(
+                                                                {
+                                                                    logo: x.default,
+                                                                    Authorized: C.default,
+                                                                    theme: a,
+                                                                    onCollapse: this
+                                                                        .handleMenuCollapse,
+                                                                    menuData: p,
+                                                                    isMobile: c,
+                                                                },
+                                                                this.props
+                                                            )
+                                                        ),
+                                                  f.default.createElement(
+                                                      d.default,
+                                                      {
+                                                          style: (0, s.default)(
+                                                              {},
+                                                              this.getLayoutStyle(),
+                                                              { minHeight: '100vh' }
+                                                          ),
+                                                      },
+                                                      f.default.createElement(
+                                                          w.default,
+                                                          (0, l.default)(
+                                                              {
+                                                                  menuData: p,
+                                                                  handleMenuCollapse: this
+                                                                      .handleMenuCollapse,
+                                                                  logo: x.default,
+                                                                  isMobile: c,
+                                                              },
+                                                              this.props
+                                                          )
+                                                      ),
+                                                      f.default.createElement(
+                                                          I,
+                                                          { style: this.getContentStyle() },
+                                                          f.default.createElement(
+                                                              C.default,
+                                                              {
+                                                                  authority: g && g.authority,
+                                                                  noMatch: f.default.createElement(
+                                                                      S.default,
+                                                                      null
+                                                                  ),
+                                                              },
+                                                              o
+                                                          )
+                                                      ),
+                                                      f.default.createElement(N.default, null)
+                                                  )
+                                              )
+                                            : f.default.createElement(T.default, null);
                                     return f.default.createElement(
                                         f.default.Fragment,
                                         null,
                                         f.default.createElement(
                                             m.default,
-                                            { title: this.getPageTitle(r) },
+                                            { title: this.getPageTitle(i) },
                                             f.default.createElement(
                                                 v.ContainerQuery,
-                                                { query: I },
+                                                { query: q },
                                                 function(t) {
                                                     return f.default.createElement(
                                                         P.default.Provider,
@@ -1867,7 +1915,7 @@
                                                         f.default.createElement(
                                                             'div',
                                                             { className: (0, y.default)(t) },
-                                                            h
+                                                            b
                                                         )
                                                     );
                                                 }
@@ -1881,21 +1929,21 @@
                         t
                     );
                 })(f.default.PureComponent),
-                q = (0, g.connect)(function(e) {
+                L = (0, g.connect)(function(e) {
                     var t = e.global,
                         a = e.setting;
                     return (0,
-                    s.default)({ collapsed: t.collapsed, global: t, layout: a.layout }, a);
-                })(O);
-            t.default = q;
+                    s.default)({ collapsed: t.collapsed, completed: t.success, layout: a.layout }, a);
+                })(F);
+            t.default = L;
         },
         mR0u: function(e, t, a) {
             e.exports = {
-                logo: 'sn\\components\\-sider-menu\\index-logo',
-                sider: 'sn\\components\\-sider-menu\\index-sider',
-                fixSiderbar: 'sn\\components\\-sider-menu\\index-fixSiderbar',
-                light: 'sn\\components\\-sider-menu\\index-light',
-                icon: 'sn\\components\\-sider-menu\\index-icon',
+                logo: 'sn-\\components\\-sider-menu\\index-logo',
+                sider: 'sn-\\components\\-sider-menu\\index-sider',
+                fixSiderbar: 'sn-\\components\\-sider-menu\\index-fixSiderbar',
+                light: 'sn-\\components\\-sider-menu\\index-light',
+                icon: 'sn-\\components\\-sider-menu\\index-icon',
             };
         },
         oFg3: function(e, t, a) {
@@ -1916,29 +1964,31 @@
             var f = l(a('BvKs')),
                 m = n(a('q1tI')),
                 p = l(a('mOP9')),
-                h = a('LLXN'),
-                g = l(a('bALw')),
-                v = a('S/9j'),
-                y = l(a('mR0u')),
-                b = f.default.SubMenu,
-                E = function(e) {
+                h = l(a('Y+p1')),
+                g = l(a('Wwog')),
+                v = a('LLXN'),
+                y = l(a('bALw')),
+                b = a('S/9j'),
+                E = l(a('mR0u')),
+                k = f.default.SubMenu,
+                M = function(e) {
                     return 'string' === typeof e && 0 === e.indexOf('http')
                         ? m.default.createElement('img', {
                               src: e,
                               alt: 'icon',
-                              className: y.default.icon,
+                              className: E.default.icon,
                           })
                         : 'string' === typeof e
                             ? m.default.createElement(d.default, { type: e })
                             : e;
                 },
-                k = function(e, t) {
+                C = (0, g.default)(function(e, t) {
                     return e.filter(function(e) {
-                        return e && (0, g.default)(e).test(t);
+                        return e && (0, y.default)(e).test(t);
                     });
-                };
-            t.getMenuMatches = k;
-            var M = (function(e) {
+                }, h.default);
+            t.getMenuMatches = C;
+            var x = (function(e) {
                 function t(e) {
                     var a;
                     return (
@@ -1959,10 +2009,9 @@
                                       })
                                 : [];
                         }),
-                        (a.getSelectedMenuKeys = function() {
-                            var e = a.props.location.pathname;
-                            return (0, v.urlToList)(e).map(function(e) {
-                                return k(a.flatMenuKeys, e).pop();
+                        (a.getSelectedMenuKeys = function(e) {
+                            return (0, b.urlToList)(e).map(function(e) {
+                                return C(a.flatMenuKeys, e).pop();
                             });
                         }),
                         (a.getSubMenuOrItem = function(e) {
@@ -1973,15 +2022,15 @@
                                     return e.name;
                                 })
                             ) {
-                                var t = (0, h.formatMessage)({ id: e.locale });
+                                var t = e.locale ? (0, v.formatMessage)({ id: e.locale }) : e.name;
                                 return m.default.createElement(
-                                    b,
+                                    k,
                                     {
                                         title: e.icon
                                             ? m.default.createElement(
                                                   'span',
                                                   null,
-                                                  E(e.icon),
+                                                  M(e.icon),
                                                   m.default.createElement('span', null, t)
                                               )
                                             : t,
@@ -1997,9 +2046,9 @@
                             );
                         }),
                         (a.getMenuItemPath = function(e) {
-                            var t = (0, h.formatMessage)({ id: e.locale }),
+                            var t = e.locale ? (0, v.formatMessage)({ id: e.locale }) : e.name,
                                 n = a.conversionPath(e.path),
-                                l = E(e.icon),
+                                l = M(e.icon),
                                 o = e.target;
                             if (/^https?:\/\//.test(n))
                                 return m.default.createElement(
@@ -2041,6 +2090,7 @@
                                 ? e
                                 : '/'.concat(e || '').replace(/\/+/g, '/');
                         }),
+                        (a.getSelectedMenuKeys = (0, g.default)(a.getSelectedMenuKeys, h.default)),
                         (a.flatMenuKeys = a.getFlatMenuKeys(e.menuData)),
                         a
                     );
@@ -2069,14 +2119,15 @@
                                     t = e.openKeys,
                                     a = e.theme,
                                     n = e.mode,
-                                    l = this.getSelectedMenuKeys();
-                                !l.length && t && (l = [t[t.length - 1]]);
-                                var r = {};
-                                t && (r = { openKeys: t });
-                                var i = this.props,
-                                    u = i.handleOpenChange,
-                                    c = i.style,
-                                    s = i.menuData;
+                                    l = e.location.pathname,
+                                    r = this.getSelectedMenuKeys(l);
+                                !r.length && t && (r = [t[t.length - 1]]);
+                                var i = {};
+                                t && (i = { openKeys: t });
+                                var u = this.props,
+                                    c = u.handleOpenChange,
+                                    s = u.style,
+                                    d = u.menuData;
                                 return m.default.createElement(
                                     f.default,
                                     (0, o.default)(
@@ -2084,14 +2135,14 @@
                                             key: 'Menu',
                                             mode: n,
                                             theme: a,
-                                            onOpenChange: u,
-                                            selectedKeys: l,
-                                            style: c,
+                                            onOpenChange: c,
+                                            selectedKeys: r,
+                                            style: s,
                                             className: 'horizontal' === n ? 'top-nav-menu' : '',
                                         },
-                                        r
+                                        i
                                     ),
-                                    this.getNavMenuItems(s)
+                                    this.getNavMenuItems(d)
                                 );
                             },
                         },
@@ -2099,7 +2150,7 @@
                     t
                 );
             })(m.PureComponent);
-            t.default = M;
+            t.default = x;
         },
         wWO0: function(e, t, a) {
             'use strict';

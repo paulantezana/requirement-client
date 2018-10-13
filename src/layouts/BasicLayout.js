@@ -17,40 +17,44 @@ import Footer from './Footer';
 import Header from './Header';
 import Context from './MenuContext';
 import Exception403 from '../pages/Exception/403';
+import { userInfo } from 'os';
 import PageLoading from '@/components/PageLoading';
 
 const { Content } = Layout;
 
 // Conversion router to menu.
-function formatter(data, parentPath = '', parentAuthority, parentName) {
-    return data.map(item => {
-        let locale = 'menu';
-        if (parentName && item.name) {
-            locale = `${parentName}.${item.name}`;
-        } else if (item.name) {
-            locale = `menu.${item.name}`;
-        } else if (parentName) {
-            locale = parentName;
-        }
-        const result = {
-            ...item,
-            locale,
-            authority: item.authority || parentAuthority,
-        };
-        if (item.routes) {
-            const children = formatter(
-                item.routes,
-                `${parentPath}${item.path}/`,
-                item.authority,
-                locale
-            );
-            // Reduce memory usage
-            result.children = children;
-        }
-        delete result.routes;
-        return result;
-    });
+function formatter(data, parentAuthority, parentName) {
+    return data
+        .map(item => {
+            let locale = 'menu';
+            if (parentName && item.name) {
+                locale = `${parentName}.${item.name}`;
+            } else if (item.name) {
+                locale = `menu.${item.name}`;
+            } else if (parentName) {
+                locale = parentName;
+            }
+            if (item.path) {
+                const result = {
+                    ...item,
+                    locale,
+                    authority: item.authority || parentAuthority,
+                };
+                if (item.routes) {
+                    const children = formatter(item.routes, item.authority, locale);
+                    // Reduce memory usage
+                    result.children = children;
+                }
+                delete result.routes;
+                return result;
+            }
+
+            return null;
+        })
+        .filter(item => item);
 }
+
+const memoizeOneFormatter = memoizeOne(formatter, isEqual);
 
 const query = {
     'screen-xs': {
@@ -80,15 +84,17 @@ const query = {
 class BasicLayout extends React.PureComponent {
     constructor(props) {
         super(props);
-        this.state = {
-            rendering: true,
-            isMobile: false,
-        };
         this.getPageTitle = memoizeOne(this.getPageTitle);
         this.getBreadcrumbNameMap = memoizeOne(this.getBreadcrumbNameMap, isEqual);
         this.breadcrumbNameMap = this.getBreadcrumbNameMap();
         this.matchParamsPath = memoizeOne(this.matchParamsPath, isEqual);
     }
+
+    state = {
+        rendering: true,
+        isMobile: false,
+        menuData: this.getMenuData(),
+    };
 
     componentDidMount() {
         const { dispatch } = this.props;
@@ -141,7 +147,7 @@ class BasicLayout extends React.PureComponent {
         const {
             route: { routes },
         } = this.props;
-        return formatter(routes);
+        return memoizeOneFormatter(routes);
     }
 
     /**
@@ -174,13 +180,13 @@ class BasicLayout extends React.PureComponent {
         const currRouterData = this.matchParamsPath(pathname);
 
         if (!currRouterData) {
-            return 'RQM WebApp';
+            return 'RQM System';
         }
         const message = formatMessage({
             id: currRouterData.locale || currRouterData.name,
             defaultMessage: currRouterData.name,
         });
-        return `${message} - RQM WebApp`;
+        return `${message} - RQM System`;
     };
 
     getLayoutStyle = () => {
@@ -225,13 +231,13 @@ class BasicLayout extends React.PureComponent {
             navTheme,
             layout: PropsLayout,
             children,
+            completed,
             location: { pathname },
         } = this.props;
-        const { isMobile } = this.state;
+        const { isMobile, menuData } = this.state;
         const isTop = PropsLayout === 'topmenu';
-        const menuData = this.getMenuData();
         const routerConfig = this.matchParamsPath(pathname);
-        const layout = (
+        const layout = completed ? (
             <Layout>
                 {isTop && !isMobile ? null : (
                     <SiderMenu
@@ -258,13 +264,18 @@ class BasicLayout extends React.PureComponent {
                         {...this.props}
                     />
                     <Content style={this.getContentStyle()}>
-                        <Authorized authority={routerConfig.authority} noMatch={<Exception403 />}>
+                        <Authorized
+                            authority={routerConfig && routerConfig.authority}
+                            noMatch={<Exception403 />}
+                        >
                             {children}
                         </Authorized>
                     </Content>
                     <Footer />
                 </Layout>
             </Layout>
+        ) : (
+            <PageLoading />
         );
         return (
             <React.Fragment>
@@ -285,7 +296,7 @@ class BasicLayout extends React.PureComponent {
 
 export default connect(({ global, setting }) => ({
     collapsed: global.collapsed,
-    global,
+    completed: global.success,
     layout: setting.layout,
     ...setting,
 }))(BasicLayout);

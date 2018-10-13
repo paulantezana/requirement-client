@@ -1,7 +1,7 @@
 // https://umijs.org/config/
 import os from 'os';
 import pageRoutes from './router.config';
-import webpackplugin from './plugin.config';
+import webpackPlugin from './plugin.config';
 import defaultSettings from '../src/defaultSettings';
 
 export default {
@@ -15,11 +15,11 @@ export default {
                     hmr: true,
                 },
                 targets: {
-                    ie: 9,
+                    ie: 11,
                 },
                 locale: {
                     enable: true, // default false
-                    default: 'en-US', // default zh-CN
+                    default: 'es-ES', // default zh-CN
                     baseNavigator: true, // default true, when it is true, will use `navigator.language` overwrite default
                 },
                 dynamicImport: {
@@ -49,11 +49,10 @@ export default {
     // https://ant.design/docs/react/customize-theme-cn
     theme: {
         'primary-color': defaultSettings.primaryColor,
-
         'layout-header-height': '50px',
         'menu-collapsed-width': '60px',
 
-        'layout-body-background': '#fff',
+        // 'layout-body-background': '#fff',
 
         'layout-header-background': '#1D2B36',
         'layout-sider-background': '#1D2B36',
@@ -64,10 +63,18 @@ export default {
     externals: {
         '@antv/data-set': 'DataSet',
     },
+    // proxy: {
+    //   '/server/api/': {
+    //     target: 'https://preview.pro.ant.design/',
+    //     changeOrigin: true,
+    //     pathRewrite: { '^/server': '' },
+    //   },
+    // },
     ignoreMomentLocale: true,
     lessLoaderOptions: {
         javascriptEnabled: true,
     },
+    disableRedirectHoist: true,
     cssLoaderOptions: {
         modules: true,
         getLocalIdent: (context, localIdentName, localName) => {
@@ -85,15 +92,16 @@ export default {
                     .split('/')
                     .map(a => a.replace(/([A-Z])/g, '-$1'))
                     .map(a => a.toLowerCase());
-                return `sn${arr.join('-')}-${localName}`.replace(/--/g, '-');
+                return `sn-${arr.join('-')}-${localName}`.replace(/--/g, '-');
             }
             return localName;
         },
     },
     manifest: {
-        name: 'RQM WebApp',
+        name: 'Requirement',
         background_color: '#FFF',
-        description: 'Sistema de requerimiento.',
+        description:
+            'An out-of-box UI solution for enterprise applications as a React boilerplate.',
         display: 'standalone',
         start_url: '/index.html',
         icons: [
@@ -105,7 +113,7 @@ export default {
         ],
     },
 
-    chainWebpack: webpackplugin,
+    chainWebpack: webpackPlugin,
     cssnano: {
         mergeRules: false,
     },

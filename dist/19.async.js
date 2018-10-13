@@ -3,8 +3,8 @@
     {
         '2Q2d': function(e, t, a) {
             e.exports = {
-                hidden: 'sn\\pages\\-user\\-users\\-form\\index.scss-hidden',
-                reset: 'sn\\pages\\-user\\-users\\-form\\index.scss-reset',
+                hidden: 'sn-\\pages\\-user\\-users\\-form\\index.scss-hidden',
+                reset: 'sn-\\pages\\-user\\-users\\-form\\index.scss-reset',
             };
         },
         '5fP3': function(e, t, a) {
@@ -726,19 +726,19 @@
         },
         a9Yj: function(e, t, a) {
             e.exports = {
-                row: 'sn\\pages\\-user\\-users\\index-row',
-                header: 'sn\\pages\\-user\\-users\\index-header',
-                actions: 'sn\\pages\\-user\\-users\\index-actions',
-                group: 'sn\\pages\\-user\\-users\\index-group',
+                row: 'sn-\\pages\\-user\\-users\\index-row',
+                header: 'sn-\\pages\\-user\\-users\\index-header',
+                actions: 'sn-\\pages\\-user\\-users\\index-actions',
+                group: 'sn-\\pages\\-user\\-users\\index-group',
             };
         },
         mCnb: function(e, t, a) {
             e.exports = {
-                table: 'sn\\pages\\-user\\-users\\-list\\index-table',
-                tableAlert: 'sn\\pages\\-user\\-users\\-list\\index-tableAlert',
-                actions: 'sn\\pages\\-user\\-users\\-list\\index-actions',
-                delete: 'sn\\pages\\-user\\-users\\-list\\index-delete',
-                update: 'sn\\pages\\-user\\-users\\-list\\index-update',
+                table: 'sn-\\pages\\-user\\-users\\-list\\index-table',
+                tableAlert: 'sn-\\pages\\-user\\-users\\-list\\index-tableAlert',
+                actions: 'sn-\\pages\\-user\\-users\\-list\\index-actions',
+                delete: 'sn-\\pages\\-user\\-users\\-list\\index-delete',
+                update: 'sn-\\pages\\-user\\-users\\-list\\index-update',
             };
         },
         oAXN: function(e, t, a) {

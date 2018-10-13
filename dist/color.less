@@ -1906,6 +1906,12 @@ this.tinycolor = tinycolor;
 @tab-hover-color: @tabs-hover-color;
 @tab-active-color: @tabs-active-color;
 @tabs-ink-bar-bg-color: @tabs-ink-bar-color;
+.listContent .extra {
+    color: rgba(0, 0, 0, 0.45);
+}
+.listContent .extra > em {
+    color: rgba(0, 0, 0, 0.25);
+}
 .avatarItem :global .ant-avatar {
     border: 1px solid #fff;
 }
@@ -1934,7 +1940,6 @@ this.tinycolor = tinycolor;
 .miniProgress .target span {
     border-radius: 100px;
 }
-
 .pie .dot {
     border-radius: 8px;
 }
@@ -1950,13 +1955,13 @@ this.tinycolor = tinycolor;
 .pie .total > h4 {
     color: rgba(0, 0, 0, 0.45);
 }
+
 .pie .total > p {
     color: rgba(0, 0, 0, 0.85);
 }
 .radar .legend .legendItem {
     color: rgba(0, 0, 0, 0.45);
 }
-
 .radar .legend .legendItem h6 {
     color: rgba(0, 0, 0, 0.85);
 }
@@ -1975,13 +1980,13 @@ this.tinycolor = tinycolor;
 .waterWave .text h4 {
     color: rgba(0, 0, 0, 0.85);
 }
+
 .descriptionList .title {
     color: rgba(0, 0, 0, 0.85);
 }
 .descriptionList .term {
     color: rgba(0, 0, 0, 0.85);
 }
-
 .descriptionList .detail {
     color: rgba(0, 0, 0, 0.65);
 }
@@ -1991,13 +1996,13 @@ this.tinycolor = tinycolor;
 .linkGroup > a {
     color: rgba(0, 0, 0, 0.65);
 }
+
 .linkGroup > a:hover {
     color: @primary-color;
 }
 .lines .shadow {
     color: transparent;
 }
-
 .exception .imgEle {
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -2074,6 +2079,18 @@ i.trigger:hover {
 .headerSearch .input:hover,
 .headerSearch .input:focus {
     border-bottom: 1px solid #d9d9d9;
+}
+.login :global .ant-tabs .ant-tabs-bar {
+    border-bottom: 0;
+}
+.login .icon {
+    color: rgba(0, 0, 0, 0.2);
+}
+.login .icon:hover {
+    color: @primary-color;
+}
+.login .prefixIcon {
+    color: rgba(0, 0, 0, 0.25);
 }
 .list .item .avatar {
     background: #fff;
@@ -2280,7 +2297,6 @@ i.trigger:hover {
 .actions .update {
     color: @primary-color;
 }
-
 .noData {
     color: rgba(0, 0, 0, 0.25);
 }
@@ -2313,10 +2329,10 @@ i.trigger:hover {
 .process {
     box-shadow: 0 3px @primary-color inset;
 }
-
 .rejected {
     box-shadow: 0 3px #f5222d inset;
 }
+
 .accepted {
     box-shadow: 0 3px #52c41a inset;
 }
@@ -2335,7 +2351,6 @@ i.trigger:hover {
 .onWinner1 {
     color: @primary-color;
 }
-
 .onWinner2 {
     color: #faad14;
 }
@@ -2350,7 +2365,6 @@ i.trigger:hover {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-
 .actions .delete {
     color: #ff4d4f;
 }
@@ -2360,7 +2374,6 @@ i.trigger:hover {
 .actions .update {
     color: @primary-color;
 }
-
 .actions .printer {
     color: @primary-color;
 }
@@ -2382,6 +2395,7 @@ i.trigger:hover {
 .expired {
     color: #f5222d;
 }
+
 .close {
     color: #f5222d;
 }
@@ -2400,7 +2414,6 @@ i.trigger:hover {
 html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
 body {
     color: rgba(0, 0, 0, 0.65);
     background-color: #fff;
@@ -2476,6 +2489,7 @@ mark {
 }
 .ant-alert-success {
     border: 1px solid #b7eb8f;
+
     background-color: #f6ffed;
 }
 .ant-alert-success .ant-alert-icon {
@@ -7744,6 +7758,15 @@ li.ant-tree-treenode-disabled > .ant-tree-node-content-wrapper:hover {
 .ant-upload-list .ant-upload-success-icon {
     color: #52c41a;
 }
+.antd-pro-components-article-list-content-index-listContent
+    .antd-pro-components-article-list-content-index-extra {
+    color: rgba(0, 0, 0, 0.45);
+}
+.antd-pro-components-article-list-content-index-listContent
+    .antd-pro-components-article-list-content-index-extra
+    > em {
+    color: rgba(0, 0, 0, 0.25);
+}
 .antd-pro-components-avatar-list-index-avatarItem .ant-avatar {
     border: 1px solid #fff;
 }
@@ -7957,6 +7980,18 @@ i.antd-pro-components-global-header-index-trigger:hover {
 .antd-pro-components-header-search-index-headerSearch
     .antd-pro-components-header-search-index-input:focus {
     border-bottom: 1px solid #d9d9d9;
+}
+.antd-pro-components-login-index-login .ant-tabs .ant-tabs-bar {
+    border-bottom: 0;
+}
+.antd-pro-components-login-index-login .antd-pro-components-login-index-icon {
+    color: rgba(0, 0, 0, 0.2);
+}
+.antd-pro-components-login-index-login .antd-pro-components-login-index-icon:hover {
+    color: @primary-color;
+}
+.antd-pro-components-login-index-login .antd-pro-components-login-index-prefixIcon {
+    color: rgba(0, 0, 0, 0.25);
 }
 .antd-pro-components-notice-icon-notice-list-list
     .antd-pro-components-notice-icon-notice-list-item

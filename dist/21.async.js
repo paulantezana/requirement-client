@@ -440,9 +440,9 @@
         },
         xr1I: function(e, t, a) {
             e.exports = {
-                avatar_title: 'sn\\pages\\-setting\\-upload-logo\\index-avatar_title',
-                avatar: 'sn\\pages\\-setting\\-upload-logo\\index-avatar',
-                button_view: 'sn\\pages\\-setting\\-upload-logo\\index-button_view',
+                avatar_title: 'sn-\\pages\\-setting\\-upload-logo\\index-avatar_title',
+                avatar: 'sn-\\pages\\-setting\\-upload-logo\\index-avatar',
+                button_view: 'sn-\\pages\\-setting\\-upload-logo\\index-button_view',
             };
         },
     },

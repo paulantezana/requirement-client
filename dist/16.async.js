@@ -228,11 +228,11 @@
         },
         NkuH: function(e, t, a) {
             e.exports = {
-                table: 'sn\\pages\\-product\\-list\\index-table',
-                tableAlert: 'sn\\pages\\-product\\-list\\index-tableAlert',
-                actions: 'sn\\pages\\-product\\-list\\index-actions',
-                delete: 'sn\\pages\\-product\\-list\\index-delete',
-                update: 'sn\\pages\\-product\\-list\\index-update',
+                table: 'sn-\\pages\\-product\\-list\\index-table',
+                tableAlert: 'sn-\\pages\\-product\\-list\\index-tableAlert',
+                actions: 'sn-\\pages\\-product\\-list\\index-actions',
+                delete: 'sn-\\pages\\-product\\-list\\index-delete',
+                update: 'sn-\\pages\\-product\\-list\\index-update',
             };
         },
         'i/zu': function(e, t, a) {
@@ -404,7 +404,7 @@
             t.default = A;
         },
         s863: function(e, t, a) {
-            e.exports = { header: 'sn\\pages\\-product\\index-header' };
+            e.exports = { header: 'sn-\\pages\\-product\\index-header' };
         },
     },
 ]);
