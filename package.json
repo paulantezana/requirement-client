@@ -23,13 +23,6 @@
     "prettier": "prettier --write ./src/**/**/**/*",
     "pro": "node server.js"
   },
-  "build": {
-    "appId": "com.paulantezana.cotizacion",
-    "win": {
-      "target": "nsis",
-      "icon": "src/assets/icon.ico"
-    }
-  },
   "dependencies": {
     "@antv/data-set": "^0.9.6",
     "@babel/runtime": "^7.0.0",

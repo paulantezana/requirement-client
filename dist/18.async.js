@@ -1,592 +1,646 @@
 (window['webpackJsonp'] = window['webpackJsonp'] || []).push([
     [18],
     {
-        H2Iy: function(e, t, a) {
+        '+FZx': function(e, a, t) {
             'use strict';
-            var l = a('TqRt');
-            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('2qtc');
-            var n = l(a('kLXV'));
-            a('+L6B');
-            var r = l(a('2/Rp'));
-            a('/zsF');
-            var o = l(a('PArb'));
-            a('fOrg');
-            var d = l(a('+KLJ'));
-            a('Pwec');
-            var u = l(a('CtXQ')),
-                i = l(a('lwsE')),
-                c = l(a('W8MJ')),
-                f = l(a('a1gu')),
-                s = l(a('Nsbk')),
-                p = l(a('7W2i'));
-            a('DZo9');
-            var m = l(a('8z0m')),
-                v = l(a('q1tI')),
-                h = a('MuoO'),
-                y = m.default.Dragger,
-                g = (function(e) {
-                    function t(e) {
-                        var a;
-                        return (
-                            (0, i.default)(this, t),
-                            (a = (0, f.default)(this, (0, s.default)(t).call(this, e))),
-                            (a.state = { file: null }),
-                            a
-                        );
-                    }
-                    return (
-                        (0, p.default)(t, e),
-                        (0, c.default)(t, [
-                            {
-                                key: 'render',
-                                value: function() {
-                                    var e = this,
-                                        t = this.props,
-                                        a = t.provider,
-                                        l = t.dispatch,
-                                        i = t.loading,
-                                        c = a.modalUploadVisible,
-                                        f = function() {
-                                            l({ type: 'provider/toggleModalUpload', payload: !1 });
-                                        },
-                                        s = {
-                                            name: 'filestidents',
-                                            uploading: i,
-                                            accept:
-                                                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel',
-                                            showUploadList: !1,
-                                            beforeUpload: function(t) {
-                                                return e.setState({ file: t }), !1;
-                                            },
-                                        },
-                                        p = function() {
-                                            l({
-                                                type: 'provider/ProviderUploads',
-                                                payload: { file: e.state.file },
-                                            });
-                                        },
-                                        m = function() {
-                                            l({ type: 'provider/downloadTemp' });
-                                        },
-                                        h = function() {
-                                            e.setState({ file: null });
-                                        };
-                                    return v.default.createElement(
-                                        'div',
-                                        null,
-                                        v.default.createElement(
-                                            n.default,
-                                            {
-                                                title: 'Basic Modal',
-                                                visible: c,
-                                                footer: null,
-                                                onCancel: f,
-                                            },
-                                            v.default.createElement(
-                                                'p',
-                                                null,
-                                                'Importa la informaci\xf3n de tus proveedores desde un archivo xlsx(Excel). El archivo xlsx se puede formatear con: dni, nombre o raz\xf3n social y otros campos opcionales.'
-                                            ),
-                                            v.default.createElement(
-                                                'p',
-                                                null,
-                                                ' ',
-                                                v.default.createElement(
-                                                    'a',
-                                                    {
-                                                        onClick: function() {
-                                                            return m();
-                                                        },
-                                                    },
-                                                    ' ',
-                                                    v.default.createElement(u.default, {
-                                                        type: 'layout',
-                                                    }),
-                                                    ' Descarga la plantilla'
-                                                ),
-                                                ' ',
-                                                'y abre en Excel para ver el formato con todos los campos aceptados.'
-                                            ),
-                                            this.state.file
-                                                ? v.default.createElement(
-                                                      'div',
-                                                      null,
-                                                      v.default.createElement(d.default, {
-                                                          message: this.state.file.name,
-                                                          type: 'info',
-                                                          closable: !0,
-                                                          onClose: function() {
-                                                              return h();
-                                                          },
-                                                      }),
-                                                      v.default.createElement(o.default, {
-                                                          dashed: !0,
-                                                      }),
-                                                      v.default.createElement(
-                                                          r.default,
-                                                          {
-                                                              type: 'primary',
-                                                              loading: i,
-                                                              icon: 'upload',
-                                                              onClick: function() {
-                                                                  return p();
-                                                              },
-                                                          },
-                                                          ' ',
-                                                          'Subir archivo'
-                                                      )
-                                                  )
-                                                : v.default.createElement(
-                                                      y,
-                                                      s,
-                                                      v.default.createElement(
-                                                          'p',
-                                                          { className: 'ant-upload-drag-icon' },
-                                                          v.default.createElement(u.default, {
-                                                              type: 'inbox',
-                                                          })
-                                                      ),
-                                                      v.default.createElement(
-                                                          'p',
-                                                          { className: 'ant-upload-text' },
-                                                          'Haga clic o arrastre el archivo a esta \xe1rea para cargar'
-                                                      ),
-                                                      v.default.createElement(
-                                                          'p',
-                                                          { className: 'ant-upload-hint' },
-                                                          'Soporte para subir un solo archivo '
-                                                      )
-                                                  )
-                                        )
-                                    );
-                                },
-                            },
-                        ]),
-                        t
-                    );
-                })(v.default.Component),
-                E = function(e) {
-                    var t = e.provider,
-                        a = (e.global, e.loading);
-                    return { provider: t, loading: a.effects['provider/ProviderUploads'] };
+            var l = t('284h'),
+                r = t('TqRt');
+            Object.defineProperty(a, '__esModule', { value: !0 }), (a.default = void 0), t('+L6B');
+            var u = r(t('2/Rp')),
+                n = r(t('pVnL'));
+            t('5NDa');
+            var d = r(t('5rEg')),
+                s = r(t('MVZn')),
+                f = r(t('lwsE')),
+                i = r(t('W8MJ')),
+                o = r(t('a1gu')),
+                c = r(t('Nsbk')),
+                m = r(t('7W2i')),
+                p = r(t('PJYZ'));
+            t('y8nQ');
+            var v = r(t('Vl3Y'));
+            t('7Kak');
+            var b = r(t('9yH6')),
+                h = l(t('q1tI')),
+                E = t('MuoO'),
+                g = b.default.Group,
+                y = {
+                    labelCol: { xs: { span: 24 }, sm: { span: 8 }, md: { span: 6 } },
+                    wrapperCol: { xs: { span: 24 }, sm: { span: 16 }, md: { span: 12 } },
                 },
-                k = (0, h.connect)(E)(g);
-            t.default = k;
-        },
-        'M/rd': function(e, t, a) {
-            'use strict';
-            var l = a('284h'),
-                n = a('TqRt');
-            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('IzEo');
-            var r = n(a('bx4M'));
-            a('+L6B');
-            var o = n(a('2/Rp')),
-                d = n(a('lwsE')),
-                u = n(a('W8MJ')),
-                i = n(a('a1gu')),
-                c = n(a('Nsbk')),
-                f = n(a('7W2i')),
-                s = n(a('PJYZ'));
-            a('5NDa');
-            var p = n(a('5rEg')),
-                m = l(a('q1tI')),
-                v = a('MuoO'),
-                h = n(a('zHco')),
-                y = n(a('q4SD')),
-                g = n(a('N7xc')),
-                E = n(a('Ioab')),
-                k = n(a('H2Iy')),
-                x = p.default.Search,
-                C = (function(e) {
-                    function t(e) {
-                        var a;
+                w = {
+                    wrapperCol: {
+                        xs: { span: 24, offset: 0 },
+                        sm: { span: 16, offset: 8 },
+                        md: { span: 16, offset: 6 },
+                    },
+                },
+                P = v.default.create()(
+                    (function(e) {
+                        function a(e) {
+                            var t;
+                            return (
+                                (0, f.default)(this, a),
+                                (t = (0, o.default)(this, (0, c.default)(a).call(this, e))),
+                                (t.state = { loading: !1 }),
+                                (t.handleSubmit = t.handleSubmit.bind(
+                                    (0, p.default)((0, p.default)(t))
+                                )),
+                                t
+                            );
+                        }
                         return (
-                            (0, d.default)(this, t),
-                            (a = (0, i.default)(this, (0, c.default)(t).call(this, e))),
-                            (a.onQueryAll = a.onQueryAll.bind((0, s.default)((0, s.default)(a)))),
+                            (0, m.default)(a, e),
+                            (0, i.default)(a, [
+                                {
+                                    key: 'handleSubmit',
+                                    value: function(e) {
+                                        e.preventDefault();
+                                        var a = this.props,
+                                            t = a.data,
+                                            l = a.dispatch;
+                                        this.props.form.validateFields(function(e, a) {
+                                            e ||
+                                                l({
+                                                    type: 'global/updateProfile',
+                                                    payload: (0, s.default)({}, a, { id: t.id }),
+                                                });
+                                        });
+                                    },
+                                },
+                                {
+                                    key: 'render',
+                                    value: function() {
+                                        var e = this.props.form.getFieldDecorator,
+                                            a = this.props,
+                                            t = a.data,
+                                            l = a.loading;
+                                        return h.default.createElement(
+                                            h.Fragment,
+                                            null,
+                                            h.default.createElement(
+                                                v.default,
+                                                { onSubmit: this.handleSubmit },
+                                                h.default.createElement(
+                                                    v.default.Item,
+                                                    (0, n.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'DNI',
+                                                    }),
+                                                    e('dni', {
+                                                        initialValue: t.dni,
+                                                        rules: [
+                                                            {
+                                                                required: !0,
+                                                                message:
+                                                                    '\xa1Por favor ingrese su DNI!',
+                                                            },
+                                                            {
+                                                                pattern: /^[0-9]{8}$/,
+                                                                message:
+                                                                    '\xa1Ingrese un DNI v\xe1lido!',
+                                                            },
+                                                        ],
+                                                    })(h.default.createElement(d.default, null))
+                                                ),
+                                                h.default.createElement(
+                                                    v.default.Item,
+                                                    (0, n.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'Email',
+                                                    }),
+                                                    e('email', {
+                                                        initialValue: t.email,
+                                                        rules: [
+                                                            {
+                                                                type: 'email',
+                                                                message:
+                                                                    '\xa1Ingrese un correo valido!',
+                                                            },
+                                                            {
+                                                                required: !0,
+                                                                message:
+                                                                    '\xa1Por favor ingrese su correo!',
+                                                            },
+                                                        ],
+                                                    })(h.default.createElement(d.default, null))
+                                                ),
+                                                h.default.createElement(
+                                                    v.default.Item,
+                                                    (0, n.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'Nombre de usuario',
+                                                    }),
+                                                    e('user_name', {
+                                                        initialValue: t.user_name,
+                                                        rules: [
+                                                            {
+                                                                required: !0,
+                                                                message:
+                                                                    '\xa1Ingrese un nombre v\xe1lido!',
+                                                            },
+                                                        ],
+                                                    })(h.default.createElement(d.default, null))
+                                                ),
+                                                h.default.createElement(
+                                                    v.default.Item,
+                                                    (0, n.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'Nombres',
+                                                    }),
+                                                    e('first_name', { initialValue: t.first_name })(
+                                                        h.default.createElement(d.default, null)
+                                                    )
+                                                ),
+                                                h.default.createElement(
+                                                    v.default.Item,
+                                                    (0, n.default)({ hasFeedback: !0 }, y, {
+                                                        label: 'Apellidos',
+                                                    }),
+                                                    e('last_name', { initialValue: t.last_name })(
+                                                        h.default.createElement(d.default, null)
+                                                    )
+                                                ),
+                                                h.default.createElement(
+                                                    v.default.Item,
+                                                    (0, n.default)({ label: 'Genero' }, y),
+                                                    e('gender', { initialValue: t.gender })(
+                                                        h.default.createElement(
+                                                            g,
+                                                            null,
+                                                            h.default.createElement(
+                                                                b.default,
+                                                                { value: '0' },
+                                                                'Femenino'
+                                                            ),
+                                                            h.default.createElement(
+                                                                b.default,
+                                                                { value: '1' },
+                                                                'Masculino'
+                                                            )
+                                                        )
+                                                    )
+                                                ),
+                                                h.default.createElement(
+                                                    v.default.Item,
+                                                    w,
+                                                    h.default.createElement(
+                                                        u.default,
+                                                        {
+                                                            type: 'primary',
+                                                            loading: l,
+                                                            htmlType: 'submit',
+                                                        },
+                                                        'Guardar cambios'
+                                                    )
+                                                )
+                                            )
+                                        );
+                                    },
+                                },
+                            ]),
                             a
+                        );
+                    })(h.Component)
+                ),
+                k = function(e) {
+                    var a = e.global,
+                        t = e.loading;
+                    return { data: a.user, loading: t.effects['global/updateProfile'] };
+                },
+                F = (0, E.connect)(k)(P);
+            a.default = F;
+        },
+        '4eNv': function(e, a, t) {
+            'use strict';
+            var l = t('284h'),
+                r = t('TqRt');
+            Object.defineProperty(a, '__esModule', { value: !0 }), (a.default = void 0), t('IzEo');
+            var u = r(t('bx4M'));
+            t('Znn+');
+            var n = r(t('ZTPi'));
+            t('Pwec');
+            var d = r(t('CtXQ')),
+                s = r(t('lwsE')),
+                f = r(t('W8MJ')),
+                i = r(t('a1gu')),
+                o = r(t('Nsbk')),
+                c = r(t('7W2i')),
+                m = l(t('q1tI')),
+                p = t('MuoO'),
+                v = r(t('zHco')),
+                b = r(t('+FZx')),
+                h = r(t('Nm0y')),
+                E = r(t('Wavp')),
+                g = (function(e) {
+                    function a() {
+                        return (
+                            (0, s.default)(this, a),
+                            (0, i.default)(this, (0, o.default)(a).apply(this, arguments))
                         );
                     }
                     return (
-                        (0, f.default)(t, e),
-                        (0, u.default)(t, [
-                            {
-                                key: 'componentDidMount',
-                                value: function() {
-                                    this.onQueryAll();
-                                },
-                            },
-                            {
-                                key: 'onQueryAll',
-                                value: function(e) {
-                                    var t = this.props,
-                                        a = t.dispatch,
-                                        l = t.provider.searchText;
-                                    a({ type: 'provider/all', payload: { search: e ? '' : l } });
-                                },
-                            },
+                        (0, c.default)(a, e),
+                        (0, f.default)(a, [
                             {
                                 key: 'render',
                                 value: function() {
-                                    var e = this,
-                                        t = this.props,
-                                        a = t.dispatch,
-                                        l = t.setting,
-                                        n = t.provider,
-                                        d = (t.loading, this.onQueryAll),
-                                        u = n.list,
-                                        i = n.total,
-                                        c = n.current,
-                                        f = n.searchText,
-                                        s = (n.currentItem,
-                                        {
-                                            current: c,
-                                            total: i,
-                                            pageSize: l.item,
-                                            dataSource: u,
-                                            loading: !1,
-                                            onPageChange: function(e) {
-                                                a({
-                                                    type: 'provider/all',
-                                                    payload: { current_page: e, search: f },
-                                                });
-                                            },
-                                            onClear: function() {
-                                                a({ type: 'provider/setSearchText', payload: '' }),
-                                                    d(!0);
-                                            },
-                                            onUpdate: function(e) {
-                                                a({ type: 'provider/update', payload: e });
-                                            },
-                                            onShowModalEdit: function(e, t) {
-                                                p(e, t);
-                                            },
-                                            onDelete: function(e) {
-                                                a({ type: 'provider/delete', payload: e });
-                                            },
-                                        }),
-                                        p = function(e) {
-                                            var t =
-                                                arguments.length > 1 && void 0 !== arguments[1]
-                                                    ? arguments[1]
-                                                    : {};
-                                            a({
-                                                type: 'provider/showModal',
-                                                payload: { currentItem: t, modalType: e },
-                                            });
-                                        },
-                                        v = function(e) {
-                                            a({ type: 'provider/setSearchText', payload: e });
-                                        },
-                                        C = function() {
-                                            a({ type: 'provider/toggleModalUpload', payload: !0 });
-                                        };
                                     return m.default.createElement(
-                                        h.default,
-                                        { title: 'Proveedores' },
+                                        v.default,
+                                        { title: 'Perfil' },
                                         m.default.createElement(
-                                            r.default,
+                                            u.default,
                                             { bordered: !1 },
                                             m.default.createElement(
-                                                'div',
-                                                { className: y.default.header },
+                                                n.default,
+                                                { defaultActiveKey: '1', tabPosition: 'left' },
                                                 m.default.createElement(
-                                                    o.default,
+                                                    n.default.TabPane,
                                                     {
-                                                        icon: 'plus',
-                                                        type: 'primary',
-                                                        onClick: function() {
-                                                            return p('create');
-                                                        },
+                                                        tab: m.default.createElement(
+                                                            'span',
+                                                            null,
+                                                            m.default.createElement(d.default, {
+                                                                type: 'user',
+                                                            }),
+                                                            'Avatar'
+                                                        ),
+                                                        key: '1',
                                                     },
-                                                    'Nuevo proveedor'
+                                                    m.default.createElement(E.default, null)
                                                 ),
                                                 m.default.createElement(
-                                                    o.default,
+                                                    n.default.TabPane,
                                                     {
-                                                        icon: 'upload',
-                                                        onClick: function() {
-                                                            return C();
-                                                        },
+                                                        tab: m.default.createElement(
+                                                            'span',
+                                                            null,
+                                                            m.default.createElement(d.default, {
+                                                                type: 'user',
+                                                            }),
+                                                            'Datos'
+                                                        ),
+                                                        key: '2',
                                                     },
-                                                    'Importar'
+                                                    m.default.createElement(b.default, null)
                                                 ),
                                                 m.default.createElement(
-                                                    o.default,
+                                                    n.default.TabPane,
                                                     {
-                                                        icon: 'reload',
-                                                        onClick: function() {
-                                                            return e.onQueryAll();
-                                                        },
+                                                        tab: m.default.createElement(
+                                                            'span',
+                                                            null,
+                                                            m.default.createElement(d.default, {
+                                                                type: 'safety',
+                                                            }),
+                                                            'Password'
+                                                        ),
+                                                        key: '3',
                                                     },
-                                                    'Actualizar'
-                                                ),
-                                                m.default.createElement(x, {
-                                                    placeholder: 'Buscar usuario',
-                                                    value: f,
-                                                    onChange: function(e) {
-                                                        return v(e.target.value);
-                                                    },
-                                                    onSearch: function(t) {
-                                                        return e.onQueryAll();
-                                                    },
-                                                    style: { width: 200 },
-                                                }),
-                                                m.default.createElement(E.default, null),
-                                                m.default.createElement(k.default, null)
-                                            ),
-                                            m.default.createElement(g.default, s)
+                                                    m.default.createElement(h.default, null)
+                                                )
+                                            )
                                         )
                                     );
                                 },
                             },
                         ]),
-                        t
+                        a
                     );
                 })(m.Component),
-                b = function(e) {
-                    var t = e.provider,
-                        a = e.global,
-                        l = e.loading;
-                    return { provider: t, setting: a.setting, loading: l.effects };
+                y = function(e) {
+                    var a = e.global;
+                    return { global: a };
                 },
-                I = (0, v.connect)(b)(C);
-            t.default = I;
+                w = (0, p.connect)(y)(g);
+            a.default = w;
         },
-        N7xc: function(e, t, a) {
+        KEOF: function(e, a, t) {
+            e.exports = {
+                avatar_title: 'sn-\\pages\\-user\\-profile\\avatar-avatar_title',
+                avatar: 'sn-\\pages\\-user\\-profile\\avatar-avatar',
+                button_view: 'sn-\\pages\\-user\\-profile\\avatar-button_view',
+            };
+        },
+        Nm0y: function(e, a, t) {
             'use strict';
-            var l = a('284h'),
-                n = a('TqRt');
-            Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), a('DjyN');
-            var r = n(a('NUBc'));
-            a('fOrg');
-            var o = n(a('+KLJ'));
-            a('2qtc');
-            var d = n(a('kLXV'));
-            a('5Dmo');
-            var u = n(a('3S7+'));
-            a('Pwec');
-            var i = n(a('CtXQ'));
-            a('BoS7');
-            var c = n(a('Sdc0')),
-                f = n(a('lwsE')),
-                s = n(a('W8MJ')),
-                p = n(a('a1gu')),
-                m = n(a('Nsbk')),
-                v = n(a('7W2i')),
-                h = n(a('PJYZ')),
-                y = l(a('q1tI')),
-                g = (n(a('17x9')), n(a('CkN6'))),
-                E = n(a('q4SD')),
-                k = (function(e) {
-                    function t(e) {
-                        var a;
+            var l = t('284h'),
+                r = t('TqRt');
+            Object.defineProperty(a, '__esModule', { value: !0 }), (a.default = void 0), t('+L6B');
+            var u = r(t('2/Rp')),
+                n = r(t('pVnL'));
+            t('5NDa');
+            var d = r(t('5rEg'));
+            t('Pwec');
+            var s = r(t('CtXQ')),
+                f = r(t('MVZn')),
+                i = r(t('lwsE')),
+                o = r(t('W8MJ')),
+                c = r(t('a1gu')),
+                m = r(t('Nsbk')),
+                p = r(t('7W2i')),
+                v = r(t('PJYZ'));
+            t('y8nQ');
+            var b = r(t('Vl3Y')),
+                h = l(t('q1tI')),
+                E = t('MuoO'),
+                g = {
+                    labelCol: { xs: { span: 24 }, sm: { span: 8 }, md: { span: 6 } },
+                    wrapperCol: { xs: { span: 24 }, sm: { span: 16 }, md: { span: 12 } },
+                },
+                y = {
+                    wrapperCol: {
+                        xs: { span: 24, offset: 0 },
+                        sm: { span: 16, offset: 8 },
+                        md: { span: 16, offset: 6 },
+                    },
+                },
+                w = b.default.create()(
+                    (function(e) {
+                        function a(e) {
+                            var t;
+                            return (
+                                (0, i.default)(this, a),
+                                (t = (0, c.default)(this, (0, m.default)(a).call(this, e))),
+                                (t.state = {}),
+                                (t.handleSubmit = t.handleSubmit.bind(
+                                    (0, v.default)((0, v.default)(t))
+                                )),
+                                (t.compareToFirstPassword = t.compareToFirstPassword.bind(
+                                    (0, v.default)((0, v.default)(t))
+                                )),
+                                (t.validateToNextPassword = t.validateToNextPassword.bind(
+                                    (0, v.default)((0, v.default)(t))
+                                )),
+                                t
+                            );
+                        }
                         return (
-                            (0, f.default)(this, t),
-                            (a = (0, p.default)(this, (0, m.default)(t).call(this, e))),
-                            (a.state = { sortedInfo: null, filteredInfo: null }),
-                            (a.onChange = a.onChange.bind((0, h.default)((0, h.default)(a)))),
-                            (a.clearAllFilters = a.clearAllFilters.bind(
-                                (0, h.default)((0, h.default)(a))
-                            )),
+                            (0, p.default)(a, e),
+                            (0, o.default)(a, [
+                                {
+                                    key: 'compareToFirstPassword',
+                                    value: function(e, a, t) {
+                                        var l = this.props.form;
+                                        a && a !== l.getFieldValue('password')
+                                            ? t('\xa1Las contrase\xf1as no noinciden!')
+                                            : t();
+                                    },
+                                },
+                                {
+                                    key: 'validateToNextPassword',
+                                    value: function(e, a, t) {
+                                        var l = this.props.form;
+                                        a &&
+                                            this.state.confirmDirty &&
+                                            l.validateFields(['confirm'], { force: !0 }),
+                                            t();
+                                    },
+                                },
+                                {
+                                    key: 'handleSubmit',
+                                    value: function(e) {
+                                        e.preventDefault();
+                                        var a = this.props,
+                                            t = a.data,
+                                            l = a.dispatch;
+                                        this.props.form.validateFields(function(e, a) {
+                                            e ||
+                                                l({
+                                                    type: 'user/changePassword',
+                                                    payload: (0, f.default)({}, a, { id: t.id }),
+                                                });
+                                        });
+                                    },
+                                },
+                                {
+                                    key: 'render',
+                                    value: function() {
+                                        var e = this.props.form.getFieldDecorator;
+                                        return h.default.createElement(
+                                            b.default,
+                                            { onSubmit: this.handleSubmit },
+                                            h.default.createElement(
+                                                b.default.Item,
+                                                (0, n.default)({ hasFeedback: !0 }, g, {
+                                                    label: 'Contrase\xf1a Antigua',
+                                                }),
+                                                e('old_password', {
+                                                    rules: [
+                                                        {
+                                                            required: !0,
+                                                            message:
+                                                                'Por favor ingrese su contrase\xf1a antigua!',
+                                                        },
+                                                    ],
+                                                })(
+                                                    h.default.createElement(d.default, {
+                                                        type: 'password',
+                                                        prefix: h.default.createElement(s.default, {
+                                                            type: 'lock',
+                                                            style: { color: 'rgba(0,0,0,.25)' },
+                                                        }),
+                                                        placeholder: 'Contrase\xf1a',
+                                                    })
+                                                )
+                                            ),
+                                            h.default.createElement(
+                                                b.default.Item,
+                                                (0, n.default)({ hasFeedback: !0 }, g, {
+                                                    label: 'Nueva contrase\xf1a',
+                                                }),
+                                                e('password', {
+                                                    rules: [
+                                                        {
+                                                            required: !0,
+                                                            message:
+                                                                'Por favor ingrese su contrase\xf1a!',
+                                                        },
+                                                        {
+                                                            pattern: /^[a-zA-Z0-9 \xe1\xe9\xed\xf3\xfa\xc1\xc9\xcd\xd3\xda\xf1\xd1$@$!%*?&]{6,30}$/,
+                                                            message:
+                                                                '\xa1La contrase\xf1a debe contener entre 6 a 30 caracteres!',
+                                                        },
+                                                        { validator: this.validateToNextPassword },
+                                                    ],
+                                                })(
+                                                    h.default.createElement(d.default, {
+                                                        type: 'password',
+                                                        prefix: h.default.createElement(s.default, {
+                                                            type: 'lock',
+                                                            style: { color: 'rgba(0,0,0,.25)' },
+                                                        }),
+                                                        placeholder: 'Contrase\xf1a',
+                                                    })
+                                                )
+                                            ),
+                                            h.default.createElement(
+                                                b.default.Item,
+                                                (0, n.default)({ hasFeedback: !0 }, g, {
+                                                    label: 'Confirme la nueva contrase\xf1a',
+                                                }),
+                                                e('confirm', {
+                                                    rules: [
+                                                        {
+                                                            required: !0,
+                                                            message:
+                                                                '\xa1Por favor, confirme su contrase\xf1a!',
+                                                        },
+                                                        { validator: this.compareToFirstPassword },
+                                                    ],
+                                                })(
+                                                    h.default.createElement(d.default, {
+                                                        type: 'password',
+                                                        prefix: h.default.createElement(s.default, {
+                                                            type: 'lock',
+                                                            style: { color: 'rgba(0,0,0,.25)' },
+                                                        }),
+                                                        placeholder: 'Repetir Contrase\xf1a',
+                                                    })
+                                                )
+                                            ),
+                                            h.default.createElement(
+                                                b.default.Item,
+                                                y,
+                                                h.default.createElement(
+                                                    u.default,
+                                                    { type: 'primary', htmlType: 'submit' },
+                                                    'Guardar cambios'
+                                                )
+                                            )
+                                        );
+                                    },
+                                },
+                            ]),
                             a
+                        );
+                    })(h.Component)
+                ),
+                P = function(e) {
+                    var a = e.global;
+                    return { data: a.user };
+                },
+                k = (0, E.connect)(P)(w);
+            a.default = k;
+        },
+        Wavp: function(e, a, t) {
+            'use strict';
+            var l = t('284h'),
+                r = t('TqRt');
+            Object.defineProperty(a, '__esModule', { value: !0 }), (a.default = void 0), t('DZo9');
+            var u = r(t('8z0m'));
+            t('+L6B');
+            var n = r(t('2/Rp')),
+                d = r(t('RIqP')),
+                s = r(t('lwsE')),
+                f = r(t('W8MJ')),
+                i = r(t('a1gu')),
+                o = r(t('Nsbk')),
+                c = r(t('7W2i')),
+                m = r(t('PJYZ')),
+                p = l(t('q1tI')),
+                v = t('LLXN'),
+                b = t('MuoO'),
+                h = t('Aeqt'),
+                E = r(t('KEOF')),
+                g = (function(e) {
+                    function a(e) {
+                        var t;
+                        return (
+                            (0, s.default)(this, a),
+                            (t = (0, i.default)(this, (0, o.default)(a).call(this, e))),
+                            (t.state = { fileList: [], uploading: !1 }),
+                            (t.handleUpload = t.handleUpload.bind(
+                                (0, m.default)((0, m.default)(t))
+                            )),
+                            t
                         );
                     }
                     return (
-                        (0, v.default)(t, e),
-                        (0, s.default)(t, [
+                        (0, c.default)(a, e),
+                        (0, f.default)(a, [
                             {
-                                key: 'onChange',
-                                value: function(e, t, a) {
-                                    this.setState({ sortedInfo: a, filteredInfo: t });
-                                },
-                            },
-                            {
-                                key: 'clearAllFilters',
+                                key: 'handleUpload',
                                 value: function() {
-                                    this.setState({ sortedInfo: null, filteredInfo: null }),
-                                        this.props.onClear();
+                                    var e = this.state.fileList;
+                                    this.props.dispatch({
+                                        type: 'user/uploadAvatar',
+                                        payload: { id: this.props.user.id, picture: e[0] },
+                                    });
                                 },
                             },
                             {
                                 key: 'render',
                                 value: function() {
-                                    var e = this.state,
-                                        t = e.sortedInfo,
-                                        a = e.filteredInfo;
-                                    (t = t || {}), (a = a || {});
-                                    var l = this.props,
-                                        n = l.onPageChange,
-                                        f = l.onUpdate,
-                                        s = l.onShowModalEdit,
-                                        p = l.onDelete,
-                                        m = l.dataSource,
-                                        v = l.loading,
-                                        h = l.total,
-                                        k = l.pageSize,
-                                        x = l.current,
-                                        C = [
-                                            {
-                                                title: 'RUC',
-                                                dataIndex: 'ruc',
-                                                key: 'ruc',
-                                                width: '120px',
+                                    var e = this,
+                                        a = (this.state.uploading,
+                                        {
+                                            action: '//jsonplaceholder.typicode.com/posts/',
+                                            onRemove: function(a) {
+                                                e.setState(function(e) {
+                                                    var t = e.fileList,
+                                                        l = t.indexOf(a),
+                                                        r = t.slice();
+                                                    return r.splice(l, 1), { fileList: r };
+                                                });
                                             },
-                                            {
-                                                title: 'Razon social',
-                                                dataIndex: 'name',
-                                                key: 'name',
-                                                sorter: function(e, t) {
-                                                    return e.name.length - t.name.length;
-                                                },
-                                                sortOrder: 'name' === t.columnKey && t.order,
+                                            beforeUpload: function(a) {
+                                                return (
+                                                    e.setState(function(e) {
+                                                        var t = e.fileList;
+                                                        return {
+                                                            fileList: (0, d.default)(t).concat([a]),
+                                                        };
+                                                    }),
+                                                    !1
+                                                );
                                             },
-                                            {
-                                                title: 'Representante',
-                                                dataIndex: 'manager',
-                                                key: 'manager',
-                                                sorter: function(e, t) {
-                                                    return e.manager.length - t.manager.length;
-                                                },
-                                                sortOrder: 'manager' === t.columnKey && t.order,
-                                            },
-                                            { title: 'Email', dataIndex: 'email', key: 'email' },
-                                            { title: 'Telefono', dataIndex: 'phone', key: 'phone' },
-                                            {
-                                                title: 'Direcci\xf3n',
-                                                dataIndex: 'address',
-                                                key: 'address',
-                                                sorter: function(e, t) {
-                                                    return e.address.length - t.address.length;
-                                                },
-                                                sortOrder: 'address' === t.columnKey && t.order,
-                                            },
-                                            {
-                                                title: 'Estado',
-                                                key: 'state',
-                                                width: '60px',
-                                                render: function(e, t) {
-                                                    return y.default.createElement(c.default, {
-                                                        size: 'small',
-                                                        checked: e.state,
-                                                        onChange: function(t) {
-                                                            return f({ id: e.id, state: t });
-                                                        },
-                                                    });
-                                                },
-                                            },
-                                            {
-                                                title: 'Accion',
-                                                key: 'accion',
-                                                width: '110px',
-                                                render: function(e, t) {
-                                                    return y.default.createElement(
-                                                        'div',
-                                                        { className: E.default.actions },
-                                                        y.default.createElement(
-                                                            u.default,
-                                                            { title: 'Editar' },
-                                                            y.default.createElement(i.default, {
-                                                                type: 'edit',
-                                                                className: E.default.update,
-                                                                onClick: function() {
-                                                                    return s('update', e);
-                                                                },
-                                                            })
-                                                        ),
-                                                        y.default.createElement(
-                                                            u.default,
-                                                            { title: 'Eliminar' },
-                                                            y.default.createElement(i.default, {
-                                                                type: 'delete',
-                                                                className: E.default.delete,
-                                                                onClick: function() {
-                                                                    d.default.confirm({
-                                                                        title:
-                                                                            '\xbfEst\xe1s seguro de eliminar este registro?',
-                                                                        content: e.name,
-                                                                        okText: 'SI',
-                                                                        okType: 'danger',
-                                                                        cancelText: 'NO',
-                                                                        onOk: function() {
-                                                                            p({ id: e.id });
-                                                                        },
-                                                                    });
-                                                                },
-                                                            })
-                                                        )
-                                                    );
-                                                },
-                                            },
-                                        ];
-                                    return y.default.createElement(
-                                        'div',
+                                            fileList: this.state.fileList,
+                                        }),
+                                        t = this.props.user;
+                                    return p.default.createElement(
+                                        p.Fragment,
                                         null,
-                                        y.default.createElement(
+                                        p.default.createElement(
                                             'div',
-                                            { className: E.default.table },
-                                            y.default.createElement(
-                                                'div',
-                                                { className: E.default.tableAlert },
-                                                y.default.createElement(o.default, {
-                                                    message: y.default.createElement(
-                                                        y.Fragment,
-                                                        null,
-                                                        y.default.createElement(
-                                                            'span',
-                                                            null,
-                                                            ''.concat(h, ' Proveedores')
-                                                        ),
-                                                        y.default.createElement(
-                                                            'a',
-                                                            {
-                                                                onClick: this.clearAllFilters,
-                                                                style: { marginLeft: 24 },
-                                                            },
-                                                            ' ',
-                                                            'Borrar filtros y actualizar',
-                                                            ' '
-                                                        )
-                                                    ),
-                                                    type: 'info',
-                                                    showIcon: !0,
-                                                })
-                                            ),
-                                            y.default.createElement(g.default, {
-                                                columns: C,
-                                                dataSource: m,
-                                                loading: v,
-                                                pagination: !1,
-                                                onChange: this.onChange,
-                                                minWidth: 800,
-                                                rowKey: function(e) {
-                                                    return e.id;
-                                                },
+                                            { className: E.default.avatar_title },
+                                            'Avatar'
+                                        ),
+                                        p.default.createElement(
+                                            'div',
+                                            { className: E.default.avatar },
+                                            p.default.createElement('img', {
+                                                src: ''
+                                                    .concat(h.service.path, '/')
+                                                    .concat(t.avatar),
+                                                alt: 'avatar',
                                             })
                                         ),
-                                        y.default.createElement(r.default, {
-                                            showQuickJumper: !0,
-                                            total: h,
-                                            pageSize: k,
-                                            defaultCurrent: 1,
-                                            current: x,
-                                            showTotal: function(e) {
-                                                return 'Total '.concat(e, ' items');
-                                            },
-                                            onChange: n,
-                                        })
+                                        p.default.createElement(
+                                            u.default,
+                                            a,
+                                            p.default.createElement(
+                                                'div',
+                                                { className: E.default.button_view },
+                                                p.default.createElement(
+                                                    n.default,
+                                                    { icon: 'upload' },
+                                                    p.default.createElement(v.FormattedMessage, {
+                                                        id: 'app.settings.basic.avatar',
+                                                        defaultMessage: 'Change avatar',
+                                                    })
+                                                )
+                                            )
+                                        )
                                     );
                                 },
                             },
                         ]),
-                        t
+                        a
                     );
-                })(y.Component),
-                x = k;
-            t.default = x;
-        },
-        q4SD: function(e, t, a) {
-            e.exports = { header: 'sn-\\pages\\-provider\\index-header' };
+                })(p.default.Component),
+                y = function(e) {
+                    var a = e.global;
+                    return { user: a.user };
+                },
+                w = (0, b.connect)(y)(g);
+            a.default = w;
         },
     },
 ]);
